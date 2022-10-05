@@ -1,4 +1,4 @@
-baseurl: /
+baseurl: https://lorentznotebook.netlify.app/
 languageCode: en-us
 title: Lorentz Lab Notebook
 theme: hugo-lithium
