@@ -49,6 +49,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     weight = 5
 [[menu.primary]]
     name = "Cheatsheets/Docs"
-    url = "/cheetsheets/"
+    url = "/cheatsheets/"
     weight = 6
 
