@@ -10,3 +10,15 @@ tags: []
 I wanted to find a little bit more elegant method to keeping notes from my various
 analyses. This notebook should hopefully help with this all. I am interested to 
 see how it grows and evolves.
+
+So far today I have worked on understanding the process of setting up, and rendering
+a blogdown document and pushing it up to the hosting server. As well as implementing 
+a theme from GitHub. I think that this a stable enough solution to move forward with. 
+
+Other Tasks for today:
+
+- watch lecture for class for Thursday
+- check in on the ALDEx2 Analysis document to send to Shailes when it's done
+  - [Link to commit](https://github.com/lorentzben/picrust2_shailes/commit/0ab89731173cf12d527517328967c6fe9753621a)
+
+  

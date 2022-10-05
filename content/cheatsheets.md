@@ -27,3 +27,24 @@ blogdown::build_site()
 or
 blogdown::serve_site()
 ```
+
+### Docker
+
+start a rstudio session in docker 
+
+```bash
+docker run -p 8888:8787 -it -v $PWD:/mnt -e ROOT='true' -e PASSWORD='pass' rocker/verse:4.2.0
+```
+
+Make a dockerfile based on a renv.lockfile
+
+```bash
+$ docker run -it -v $PWD:/mnt lorentzb/dockerfiler
+```
+
+```r
+$ R
+> library(dockerfiler)
+> my_dock <- dock_from_renv("renv.lock","focal",FROM=rocker/verse)
+
+```
