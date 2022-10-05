@@ -10,6 +10,10 @@ file.
 
 ```bash
 git log --pretty=format:"%h - %an, %ar : %s"
+
+git log --since=2.weeks
+
+git log --since=1.days --pretty=format:"%h - %an, %ad : %s"
 ```
 
 ### Blogdown specific code
