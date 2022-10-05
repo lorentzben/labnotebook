@@ -7,6 +7,6 @@ categories: []
 tags: []
 ---
 
-I wanted to find a little bit more ellegant method to keeping notes from my various
+I wanted to find a little bit more elegant method to keeping notes from my various
 analyses. This notebook should hopefully help with this all. I am interested to 
 see how it grows and evolves.
