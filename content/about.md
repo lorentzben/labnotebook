@@ -17,4 +17,6 @@ To render docks before pushing to github:
 ```r
 blogdown::check_site()
 blogdown::build_site()
+or
+blogdown::serve_site()
 ```
