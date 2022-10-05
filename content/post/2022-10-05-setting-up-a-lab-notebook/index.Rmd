@@ -1,0 +1,12 @@
+---
+title: Setting Up a Lab Notebook
+author: Ben Lorentz
+date: '2022-10-05'
+slug: setting-up-a-lab-notebook
+categories: []
+tags: []
+---
+
+I wanted to find a little bit more ellegant method to keeping notes from my various
+analyses. This notebook should hopefully help with this all. I am interested to 
+see how it grows and evolves.
