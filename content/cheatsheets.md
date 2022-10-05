@@ -1,11 +1,8 @@
 ---
 title: Helpful Codes
-author: Ben Lorentz
+description: A place to save helpful commands and to organize by domain
 date: '2022-10-05'
-slug: helpful-codes
-categories: []
-tags:
-  - Cheatsheet
+menu: main
 ---
 
 This would be a good command to run at the end of the day especially to pipe to 
