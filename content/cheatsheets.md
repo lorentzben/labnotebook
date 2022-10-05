@@ -23,7 +23,7 @@ blogdown::new_post("TITLE",author = "Ben Lorentz",ext = '.Rmd')
 To render docks before pushing to github:
 ```r
 blogdown::check_site()
-blogdown::build_site()
+blogdown::build_site(build_rmd = TRUE)
 or
 blogdown::serve_site()
 ```
