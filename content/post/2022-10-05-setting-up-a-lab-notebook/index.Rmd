@@ -3,6 +3,7 @@ title: Setting Up a Lab Notebook
 author: Ben Lorentz
 date: '2022-10-04'
 slug: setting-up-a-lab-notebook
+draft: false
 categories: []
 tags: []
 ---
