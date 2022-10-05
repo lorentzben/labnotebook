@@ -19,6 +19,7 @@ So far today I have worked on understanding the process of setting up, and rende
   - check in on tomorrow
 
 Tomorrow's lecture was on short read sequencing and genome assembly topics included were:
+
   - Illumina Type sequencing
   - Quality control like FastQC to check for primers and low quality
   - Trimming of low quality sequences
