@@ -11,7 +11,7 @@ I wanted to find a little bit more elegant method to keeping notes from my vario
 
 So far today I have worked on understanding the process of setting up, and rendering a blogdown document and pushing it up to the hosting server. As well as implementing a theme from GitHub. I think that this a stable enough solution to move forward with. 
 
-#### Other Tasks for today:
+### Other Tasks for today:
 
 - watch lecture for class for Thursday (completed )
 - check in on the ALDEx2 Analysis document to send to Shailes when it's done
@@ -27,13 +27,13 @@ Tomorrow's lecture was on short read sequencing and genome assembly topics inclu
   - Evaluation of assemblies (QUAST,BUSCO)
   
 
-#### Tasks for tomorrow: 
+### Tasks for tomorrow: 
 - See what the report for ALDEx2 looks like
 - Continue working on the [pipeline to generate visualizations after ampliseq](https://github.com/lorentzben/ampliseqvis)
 
-#### Git commits:
+### Git commits:
 
-##### Lorentz Notebook
+#### Lorentz Notebook
 
 ```bash
 e1f678f - Benjamin Lorentz, Wed Oct 5 15:42:08 2022 -0400 : add build rmd = true
@@ -54,7 +54,7 @@ d315c51 - Benjamin Lorentz, Wed Oct 5 14:53:39 2022 -0400 : added updated links 
 d367439 - Benjamin Lorentz, Wed Oct 5 14:32:52 2022 -0400 : modify the config.toml
 ff1b155 - Benjamin Lorentz, Wed Oct 5 14:28:54 2022 -0400 : changed to hugo-tanka
 ```
-###### picrust2_shailes:
+#### picrust2_shailes:
 
 ```bash
 0ab8973 - Benjamin Lorentz, Wed Oct 5 08:52:58 2022 -0400 : needed to generate the effect object for the larger glm
