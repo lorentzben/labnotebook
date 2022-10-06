@@ -13,8 +13,8 @@ description: Description for the page
 
 Tasks for today:
 
-    See what the report for ALDEx2 looks like
-    Continue working on the pipeline to generate visualizations after ampliseq
+   - See what the report for ALDEx2 looks like
+   - Continue working on the pipeline to generate visualizations after ampliseq
 
 So far I have a [cloned nf-core pipeline](https://github.com/lorentzben/ampliseqvis/commit/69d6bf34c3fe649ac54dddd723149481062633ba). I'm not sure that I love the format that they have everything (hence removing a bunch of files), but I think that it is mostly set up to turn their processes (fastqc and multiqc) into report generation like I did for automate 16nf. See below. 
 
