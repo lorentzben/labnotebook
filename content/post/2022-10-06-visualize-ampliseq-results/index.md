@@ -62,6 +62,10 @@ It seems like the nf-core template is in DSL1 and part of the development idea w
 
 Found and watched [this tutorial](https://nf-co.re/developers/developer_tutorials) for DSL2 pipeline structure. 
 
+
+### Introduction to Bioinformatics workflows with Nextflow and nf-core
+
+
 I am going to see about following [this tutorial](https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow/index.html) to see if it can help me build a DSL2 pipeline from scratch. 
 
 From this tutorial there is a really neat way to do paired reads:
@@ -85,3 +89,12 @@ I can see the power of DSL2 and that's a little frustrating but I think the stru
 If you pass multiple values through, you must change val input to each input.
 
 We will pick up on processes part 2. 
+
+### ALDEx2 Analysis
+
+Job: 14502765 failed due to OOM error @ 64gbs
+
+I updated the slurm script to request 128gbs and resubmitted.
+Job: 14560917
+Commit: [65028601d11f820f266cc5cd3a13c846fc1225f4](https://github.com/lorentzben/picrust2_shailes/commit/65028601d11f820f266cc5cd3a13c846fc1225f4)
+
