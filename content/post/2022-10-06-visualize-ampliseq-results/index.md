@@ -60,3 +60,24 @@ process Report01 {
 
 It seems like the nf-core template is in DSL1 and part of the development idea was to learn DSL2 so I may spend 1 chunk trying to see if they have a DSL2 template. If not then DSL1 is good for me.
 
+Found and watched [this tutorial](https://nf-co.re/developers/developer_tutorials) for DSL2 pipeline structure. 
+
+I am going to see about following [this tutorial](https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow/index.html) to see if it can help me build a DSL2 pipeline from scratch. 
+
+From this tutorial there is a really neat way to do paired reads:
+
+```groovy
+$ read_pair_ch = Channel.fromFilePairs('data/yeast/reads/*_{1,2}.fq.gz')
+$ read_pair_ch.view()
+
+[etoh60_3, [data/yeast/reads/etoh60_3_1.fq.gz, data/yeast/reads/etoh60_3_2.fq.gz]]
+[temp33_1, [data/yeast/reads/temp33_1_1.fq.gz, data/yeast/reads/temp33_1_2.fq.gz]]
+[ref1, [data/yeast/reads/ref1_1.fq.gz, data/yeast/reads/ref1_2.fq.gz]]
+[ref2, [data/yeast/reads/ref2_1.fq.gz, data/yeast/reads/ref2_2.fq.gz]]
+```
+
+You can also pull reads from [SRA](https://carpentries-incubator.github.io/workflows-nextflow/04-channels/index.html#the-fromsra-channel-factory)
+
+We had to build the conda env from rnaseq_pipeline and under a different name nf-training which is not perfect, but it worked well enough to run scripts from the local root dir. 
+
+I can see the power of DSL2 and that's a little frustrating but I think the struture of building up chunk at a time makes more sense than the way I learned DSL1. 
