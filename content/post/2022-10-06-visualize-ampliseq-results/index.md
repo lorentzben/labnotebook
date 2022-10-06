@@ -80,4 +80,8 @@ You can also pull reads from [SRA](https://carpentries-incubator.github.io/workf
 
 We had to build the conda env from rnaseq_pipeline and under a different name nf-training which is not perfect, but it worked well enough to run scripts from the local root dir. 
 
-I can see the power of DSL2 and that's a little frustrating but I think the struture of building up chunk at a time makes more sense than the way I learned DSL1. 
+I can see the power of DSL2 and that's a little frustrating but I think the structure of building up chunk at a time makes more sense than the way I learned DSL1. 
+
+If you pass multiple values through, you must change val input to each input.
+
+We will pick up on processes part 2. 
