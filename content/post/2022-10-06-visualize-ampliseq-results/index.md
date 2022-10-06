@@ -88,7 +88,33 @@ I can see the power of DSL2 and that's a little frustrating but I think the stru
 
 If you pass multiple values through, you must change val input to each input.
 
-We will pick up on processes part 2. 
+I see the appeal of the modularity of DSL2 now. For example, I could add in the processes for the lefse report generation, but not call them in the workflow until the lefse result files are generated. This has great implications.
+
+**TODO**
+
+Include a test profile
+
+A test profile is a configuration profile that specifies a short running test data set to check the functionality of the whole pipeline. It can also demonstrate to users of your workflow the kinds of inputs and outputs to expect. Another benefit is the possibility of automated testing of your workflow, ensuring the workflow keeps working as you add new functionality.
+
+```bash
+profiles {
+    test {
+        params {
+           reads = 'https://github.com/my_repo/test/test_reads.fastq.gz'
+           reference = 'https://github.com/my_repo/test/test_reference.fasta.gz'
+        }
+    }
+}
+```
+
+I've completed the tutorial! I have a bunch of really great ideas now to implement. I think I will rebase the ampliviseq since the template is a little too intense.
+
+I've set up a skeleton nextflow script and dev branch that I think I can run locally as well as on the server. I will attempt to do my development locally to see how that workflow goes. Maybe it's worth trying to use conda in the future but for now I will keep my docker images to avoid large slowdowns with bioconda etc. We are in a good spot for a heavy development Friday if we desire. 
+
+## Tasks for tomorrow
+
+- add at least 1 report chunk to the nextflow pipeline
+- read over the homework to see how large it is. 
 
 ### ALDEx2 Analysis
 
@@ -97,4 +123,37 @@ Job: 14502765 failed due to OOM error @ 64gbs
 I updated the slurm script to request 128gbs and resubmitted.
 Job: 14560917
 Commit: [65028601d11f820f266cc5cd3a13c846fc1225f4](https://github.com/lorentzben/picrust2_shailes/commit/65028601d11f820f266cc5cd3a13c846fc1225f4)
+
+
+### Code Commits
+
+#### Lab Notebook
+
+```bash
+6c2c036 - Benjamin Lorentz, Thu Oct 6 12:05:28 2022 -0400 : added note about shailes rendering
+7aa9726 - Benjamin Lorentz, Thu Oct 6 11:53:44 2022 -0400 : add one more note about val and what to start after lunch:
+bc331cf - Benjamin Lorentz, Thu Oct 6 11:46:16 2022 -0400 : Updates for today before lunch
+cf48db5 - Benjamin Lorentz, Thu Oct 6 08:43:56 2022 -0400 : make tasks for today bullet points as opposed to indented
+aa38ad6 - Benjamin Lorentz, Thu Oct 6 08:41:07 2022 -0400 : Added Thursday 10/6 Post
+```
+
+#### Picrust2_shailes
+
+```bash
+6502860 - Benjamin Lorentz, Thu Oct 6 11:58:22 2022 -0400 : add email and greater memory
+```
+
+#### visualize-ampliseq
+
+```bash
+06f7f3a - Benjamin Lorentz, Thu Oct 6 17:09:22 2022 -0400 : had to quote out my string
+716cb96 - Benjamin Lorentz, Thu Oct 6 17:08:31 2022 -0400 : change analysis to input
+ffee63a - Benjamin Lorentz, Thu Oct 6 17:06:25 2022 -0400 : change to python
+e55da76 - Benjamin Lorentz, Thu Oct 6 17:02:28 2022 -0400 : Skeleton Commit
+9ccedef - Benjamin Lorentz, Thu Oct 6 16:37:28 2022 -0400 : update readme
+9b54027 - Ben Lorentz, Thu Oct 6 16:35:02 2022 -0400 : Initial commit
+```
+
+
+
 
