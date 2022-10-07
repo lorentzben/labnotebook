@@ -42,4 +42,52 @@ TODO: check if this table looks similar to the qiime2 version when loaded into p
 </ul>
 <p>I am going to fire up a docker image of lorentzb/r01:2.0 to compare phyloseq objects based on objects.</p>
 <p>TODO: compare the stacked bar plot made by qiime2 and my script.</p>
+<p>Note: you cannot read in some tsv files and some qza files with the phyloseq from qza method (this makes sense but is still irritating). I will parallel my development of a solution here. (I also might have to change back from an un-rarified table or have to cull the taxonomy file).</p>
+<pre class="r"><code>library(qiime2R)
+library(phyloseq)
+library(ggplot2)
+library(tidyverse)
+
+#function from https://community.rstudio.com/t/convert-tibble-into-matrix/68262/2
+make_matrix &lt;- function(df,rownames = NULL){
+  my_matrix &lt;-  as.matrix(df)
+  if(!is.null(rownames))
+    rownames(my_matrix) = rownames
+  my_matrix
+}
+
+#import ASV table from ampliseq analysis
+new_table_file &lt;- &quot;new-files/rel-table-ASV.tsv&quot;
+new_table &lt;- read_tsv(new_table_file, skip=1)
+new_table_df &lt;- data.frame(new_table)
+rownames(new_table_df) &lt;- new_table_df[,1]
+new_table_df &lt;- new_table_df[2:length(new_table_df[1,])]
+new_table_ps &lt;- otu_table(new_table_df, taxa_are_rows=T)
+
+#import taxonomy table from ampliseq analysis
+new_tax_file &lt;- &quot;new-files/ASV_tax.tsv&quot;
+new_tax &lt;- read_tsv(new_tax_file)
+new_tax_df &lt;- data.frame(new_tax)
+rownames(new_tax_df) &lt;- new_tax_df[,1]
+new_tax_df &lt;- new_tax_df[2:length(new_tax_df[1,])]
+new_tax_mat &lt;- make_matrix(new_tax_df)
+new_tax_ps &lt;- tax_table(new_tax_mat)
+
+#import rooted tree from ampliseq analysis 
+new_tree_file &lt;- &quot;new-files/rooted-tree.qza&quot;
+new_tree_obj &lt;- read_qza(new_tree_file)
+new_tree &lt;- new_tree_obj$data
+new_tree_ps &lt;- read_tree(new_tree)
+
+#import metadata file 
+new_metadata_file &lt;- &quot;new-files/all_days_sbm_cec_nf_treatment_metadata.tsv&quot;
+new_metadata &lt;- read_tsv(new_metadata_file)
+
+phyloseq(new_table_ps, new_tax_ps, new_tree_ps, new_metadata)</code></pre>
+<p>This approach seems to be working super well! There is a new issue now:</p>
+<pre class="bash"><code>Quitting from lines 44-269 (01_report.Rmd)
+Error in `$&lt;-.data.frame`(`*tmp*`, &quot;Species&quot;, value = c(NA, NA, NA, NA,  :
+  replacement has 9125 rows, data has 20525
+Calls: &lt;Anonymous&gt; ... eval_with_user_handlers -&gt; eval -&gt; eval -&gt; $&lt;- -&gt; $&lt;-.data.frame</code></pre>
+<p>I think we need to step through line by line to see what the issue is.</p>
 </div>

@@ -35,3 +35,60 @@ TODO: check if this table looks similar to the qiime2 version when loaded into p
 I am going to fire up a docker image of lorentzb/r01:2.0 to compare phyloseq objects based on objects.
 
 TODO: compare the stacked bar plot made by qiime2 and my script.
+
+Note: you cannot read in some tsv files and some qza files with the phyloseq from qza method (this makes sense but is still irritating). I will parallel my development of a solution here. (I also might have to change back from an un-rarified table or have to cull the taxonomy file). 
+
+```{r eval=FALSE, include=TRUE}
+library(qiime2R)
+library(phyloseq)
+library(ggplot2)
+library(tidyverse)
+
+#function from https://community.rstudio.com/t/convert-tibble-into-matrix/68262/2
+make_matrix <- function(df,rownames = NULL){
+  my_matrix <-  as.matrix(df)
+  if(!is.null(rownames))
+    rownames(my_matrix) = rownames
+  my_matrix
+}
+
+#import ASV table from ampliseq analysis
+new_table_file <- "new-files/rel-table-ASV.tsv"
+new_table <- read_tsv(new_table_file, skip=1)
+new_table_df <- data.frame(new_table)
+rownames(new_table_df) <- new_table_df[,1]
+new_table_df <- new_table_df[2:length(new_table_df[1,])]
+new_table_ps <- otu_table(new_table_df, taxa_are_rows=T)
+
+#import taxonomy table from ampliseq analysis
+new_tax_file <- "new-files/ASV_tax.tsv"
+new_tax <- read_tsv(new_tax_file)
+new_tax_df <- data.frame(new_tax)
+rownames(new_tax_df) <- new_tax_df[,1]
+new_tax_df <- new_tax_df[2:length(new_tax_df[1,])]
+new_tax_mat <- make_matrix(new_tax_df)
+new_tax_ps <- tax_table(new_tax_mat)
+
+#import rooted tree from ampliseq analysis 
+new_tree_file <- "new-files/rooted-tree.qza"
+new_tree_obj <- read_qza(new_tree_file)
+new_tree <- new_tree_obj$data
+new_tree_ps <- read_tree(new_tree)
+
+#import metadata file 
+new_metadata_file <- "new-files/all_days_sbm_cec_nf_treatment_metadata.tsv"
+new_metadata <- read_tsv(new_metadata_file)
+
+phyloseq(new_table_ps, new_tax_ps, new_tree_ps, new_metadata)
+```
+
+This approach seems to be working super well! There is a new issue now:
+
+```{bash eval=FALSE, include=TRUE}
+Quitting from lines 44-269 (01_report.Rmd)
+Error in `$<-.data.frame`(`*tmp*`, "Species", value = c(NA, NA, NA, NA,  :
+  replacement has 9125 rows, data has 20525
+Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> $<- -> $<-.data.frame
+```
+
+I think we need to step through line by line to see what the issue is. 
