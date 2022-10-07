@@ -1,0 +1,14 @@
+---
+title: Building Ampliseq Visualization
+author: 'Ben Lorentz'
+date: '2022-10-07'
+slug: ['building-ampliseq-visualization']
+categories: []
+---
+
+Tasks from yesterday
+
+  - add at least 1 report chunk to the nextflow pipeline
+  - read over the homework to see how large it is.
+  
+
