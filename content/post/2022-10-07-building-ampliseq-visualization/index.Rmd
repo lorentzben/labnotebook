@@ -92,3 +92,110 @@ Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> $<- -> $<-.dat
 ```
 
 I think we need to step through line by line to see what the issue is. 
+
+I am able to render the file by hand now, but it doesn't look exactly like the qiime2 render so I want to investigate what that looks like. 
+
+Phylum:
+
+Actinobacteriota: Desulfobacterota
+Cyanobacteria : Cyanobacteria
+Desulfobacterota : Verrucomicrobiota
+Verrucomicrobiota : Actinobacteriota
+:
+Bacteroidota : Bacteroidota
+Proteobacteria : Proteobacteria
+:
+Firmicutes : Firmicutes
+
+Genus:
+
+Alistipes : Cyanobacteriia :
+Ligilactobacillus : Desulfovibrionia
+Parabacteroides : Coriobactriia
+Subdoligranulum :verrucomicroabiae
+Sellimonas:Actinobacteria
+Blautia : Gammaproteobacteria
+Bacteroides: Alphaproteobacteria
+:
+:
+Faecalibacterium : Bacteroidia
+Ruminococcus torques : Bacilli
+Lactobacillus : Clostridida
+:
+
+Something looks wonky here so I want to work through this:
+
+I confirmed that these are the same
+data.frame(rowSums(otu_table(cycle_1))) == taxa_sums(cycle_1)
+
+I want to try to get my data into [microbiome analyst](https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/upload/OtuUploadView.xhtml)
+If we can do that maybe I can lift their r-code and use that for future analysis.
+I think we should re-base the report 01 based on this. 
+
+example code:
+```R
+mbSet<-Init.mbSetObj()
+mbSet<-SetModuleType(mbSet, "mdp")
+mbSet<-ReadSampleTable(mbSet, "all_days_sbm_cec_nf_treatment_metadata_2.csv");
+mbSet<-Read16STaxaTable(mbSet, "ASV_tax_species.txt");
+mbSet<-Read16SAbundData(mbSet, "rel-table-ASV.txt","text","Others/Not_specific","T");
+mbSet<-SanityCheckData(mbSet, "text");
+mbSet<-PlotLibSizeView(mbSet, "norm_libsizes_0","png");
+mbSet<-CreatePhyloseqObj(mbSet, "text","Others/Not_specific","F")
+mbSet<-ApplyAbundanceFilter(mbSet, "prevalence", 0, 0.2);
+mbSet<-ApplyVarianceFilter(mbSet, "iqr", 0.0);
+mbSet<-PerformNormalization(mbSet, "none", "none", "none");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_0","Phylum","condition", "null", "barraw",10, "set3","sum",10, "bottom", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_1","Genus","condition", "none", "barnorm",10, "set3","sum",10, "bottom", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_2","Genus","condition", "none", "barnorm",10, "set3","sum",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_3","Genus","condition", "day", "barnorm",10, "set3","sum",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_4","Genus","condition", "none", "barnorm",10, "set3","sum",10, "top", "F", "png");
+mbSet<-PlotTaxaAbundanceBarSamGrp(mbSet, "taxa_alpha_5","Genus","condition", "day", "barnorm",10,"set3","sum", 10, "top", "F", "png");
+mbSet<-PlotTaxaAbundanceBarSamGrp(mbSet, "taxa_alpha_6","Genus","condition", "none", "barnorm",10,"set3","sum", 10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_7","Genus","condition", "none", "barnorm",10, "set3","sum",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_8","Genus","condition", "none", "barnorm",10, "set3","sum",10, "top", "T", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_9","Genus","condition", "none", "barnorm",10, "set3","sum",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_10","Genus","condition", "none", "barnorm",10, "set3","med",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_11","Genus","condition", "day", "barnorm",10, "set3","med",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_12","Genus","condition", "gut_segment", "barnorm",10, "set3","med",10, "top", "F", "png");
+mbSet<-PlotTaxaAundanceBar(mbSet, "taxa_alpha_13","Genus","condition", "condition", "barnorm",10, "set3","med",10, "top", "F", "png");
+mbSet<-PlotTaxaAbundanceBarSamGrp(mbSet, "taxa_alpha_14","Genus","condition", "day", "barnorm",10,"set3","med", 10, "top", "F", "png");
+mbSet<-PlotTaxaAbundanceBarSamGrp(mbSet, "taxa_alpha_15","Genus","condition", "day", "barnorm",10,"set3","med", 10, "bottom", "F", "png");
+mbSet<-PlotTaxaAbundanceBarSamGrp(mbSet, "taxa_alpha_16","Genus","condition", "day", "barnorm",9346,"set3","med", 10, "bottom", "F", "png");
+```
+
+### Git Commits
+
+#### Lab Notebook
+```bash
+20ff1b4 - Benjamin Lorentz, Fri Oct 7 12:19:39 2022 -0400 : added notes before lunch
+9d0f273 - Benjamin Lorentz, Fri Oct 7 10:46:49 2022 -0400 : added notes on file locations for report_01
+5b2b7c1 - Benjamin Lorentz, Fri Oct 7 08:44:49 2022 -0400 : added post for today and tasks from yesterday
+605f97e - Benjamin Lorentz, Thu Oct 6 17:16:56 2022 -0400 : added final notes for thursday
+```
+
+#### Visualize-Ampliseq
+```bash
+81ae917 - Benjamin Lorentz, Fri Oct 7 15:01:40 2022 -0400 : remove the clean blocks
+8c50dde - Benjamin Lorentz, Fri Oct 7 14:53:27 2022 -0400 : need to use new_metadata_ps
+5a4f663 - Benjamin Lorentz, Fri Oct 7 14:48:27 2022 -0400 : added domain
+67d2988 - Benjamin Lorentz, Fri Oct 7 14:43:48 2022 -0400 : use the ampliseq dada2 file that has species
+0541401 - Benjamin Lorentz, Fri Oct 7 14:37:19 2022 -0400 : change  to  Doublecheck this doesnt break anything
+46ef402 - Benjamin Lorentz, Fri Oct 7 14:34:36 2022 -0400 : change  to  Doublecheck this doesnt break anything
+3f73d36 - Benjamin Lorentz, Fri Oct 7 14:09:45 2022 -0400 : found the error with the sample data
+8069e69 - Benjamin Lorentz, Fri Oct 7 13:55:31 2022 -0400 : remove the cleaning step
+71bd1de - Benjamin Lorentz, Fri Oct 7 13:45:15 2022 -0400 : change unidentified domain
+cae02b4 - Benjamin Lorentz, Fri Oct 7 12:09:04 2022 -0400 : Add report gen file and Mods for 01
+06f7f3a - Benjamin Lorentz, Thu Oct 6 17:09:22 2022 -0400 : had to quote out my string
+716cb96 - Benjamin Lorentz, Thu Oct 6 17:08:31 2022 -0400 : change analysis to input
+```
+
+# TODO For next week:
+
+- Rebase Report-01 based on microbiome analyst
+  - store a copy of the current stacked bar with tax.clean function in it
+  - Figure out how to install and pick a version to pin
+  - Build a docker image
+  - determine general appropriate stacked bar
+  - implement
+- Work on Homework 3 for class (Genome Assembly)

@@ -90,4 +90,103 @@ Error in `$&lt;-.data.frame`(`*tmp*`, &quot;Species&quot;, value = c(NA, NA, NA,
   replacement has 9125 rows, data has 20525
 Calls: &lt;Anonymous&gt; ... eval_with_user_handlers -&gt; eval -&gt; eval -&gt; $&lt;- -&gt; $&lt;-.data.frame</code></pre>
 <p>I think we need to step through line by line to see what the issue is.</p>
+<p>I am able to render the file by hand now, but it doesn’t look exactly like the qiime2 render so I want to investigate what that looks like.</p>
+<p>Phylum:</p>
+<p>Actinobacteriota: Desulfobacterota
+Cyanobacteria : Cyanobacteria
+Desulfobacterota : Verrucomicrobiota
+Verrucomicrobiota : Actinobacteriota
+:
+Bacteroidota : Bacteroidota
+Proteobacteria : Proteobacteria
+:
+Firmicutes : Firmicutes</p>
+<p>Genus:</p>
+<p>Alistipes : Cyanobacteriia :
+Ligilactobacillus : Desulfovibrionia
+Parabacteroides : Coriobactriia
+Subdoligranulum :verrucomicroabiae
+Sellimonas:Actinobacteria
+Blautia : Gammaproteobacteria
+Bacteroides: Alphaproteobacteria
+:
+:
+Faecalibacterium : Bacteroidia
+Ruminococcus torques : Bacilli
+Lactobacillus : Clostridida
+:</p>
+<p>Something looks wonky here so I want to work through this:</p>
+<p>I confirmed that these are the same
+data.frame(rowSums(otu_table(cycle_1))) == taxa_sums(cycle_1)</p>
+<p>I want to try to get my data into <a href="https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/upload/OtuUploadView.xhtml">microbiome analyst</a>
+If we can do that maybe I can lift their r-code and use that for future analysis.
+I think we should re-base the report 01 based on this.</p>
+<p>example code:</p>
+<pre class="r"><code>mbSet&lt;-Init.mbSetObj()
+mbSet&lt;-SetModuleType(mbSet, &quot;mdp&quot;)
+mbSet&lt;-ReadSampleTable(mbSet, &quot;all_days_sbm_cec_nf_treatment_metadata_2.csv&quot;);
+mbSet&lt;-Read16STaxaTable(mbSet, &quot;ASV_tax_species.txt&quot;);
+mbSet&lt;-Read16SAbundData(mbSet, &quot;rel-table-ASV.txt&quot;,&quot;text&quot;,&quot;Others/Not_specific&quot;,&quot;T&quot;);
+mbSet&lt;-SanityCheckData(mbSet, &quot;text&quot;);
+mbSet&lt;-PlotLibSizeView(mbSet, &quot;norm_libsizes_0&quot;,&quot;png&quot;);
+mbSet&lt;-CreatePhyloseqObj(mbSet, &quot;text&quot;,&quot;Others/Not_specific&quot;,&quot;F&quot;)
+mbSet&lt;-ApplyAbundanceFilter(mbSet, &quot;prevalence&quot;, 0, 0.2);
+mbSet&lt;-ApplyVarianceFilter(mbSet, &quot;iqr&quot;, 0.0);
+mbSet&lt;-PerformNormalization(mbSet, &quot;none&quot;, &quot;none&quot;, &quot;none&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_0&quot;,&quot;Phylum&quot;,&quot;condition&quot;, &quot;null&quot;, &quot;barraw&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;bottom&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_1&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;bottom&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_2&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_3&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;day&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_4&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAbundanceBarSamGrp(mbSet, &quot;taxa_alpha_5&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;day&quot;, &quot;barnorm&quot;,10,&quot;set3&quot;,&quot;sum&quot;, 10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAbundanceBarSamGrp(mbSet, &quot;taxa_alpha_6&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10,&quot;set3&quot;,&quot;sum&quot;, 10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_7&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_8&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;top&quot;, &quot;T&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_9&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;sum&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_10&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;none&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;med&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_11&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;day&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;med&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_12&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;gut_segment&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;med&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAundanceBar(mbSet, &quot;taxa_alpha_13&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;condition&quot;, &quot;barnorm&quot;,10, &quot;set3&quot;,&quot;med&quot;,10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAbundanceBarSamGrp(mbSet, &quot;taxa_alpha_14&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;day&quot;, &quot;barnorm&quot;,10,&quot;set3&quot;,&quot;med&quot;, 10, &quot;top&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAbundanceBarSamGrp(mbSet, &quot;taxa_alpha_15&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;day&quot;, &quot;barnorm&quot;,10,&quot;set3&quot;,&quot;med&quot;, 10, &quot;bottom&quot;, &quot;F&quot;, &quot;png&quot;);
+mbSet&lt;-PlotTaxaAbundanceBarSamGrp(mbSet, &quot;taxa_alpha_16&quot;,&quot;Genus&quot;,&quot;condition&quot;, &quot;day&quot;, &quot;barnorm&quot;,9346,&quot;set3&quot;,&quot;med&quot;, 10, &quot;bottom&quot;, &quot;F&quot;, &quot;png&quot;);</code></pre>
+</div>
+<div id="git-commits" class="section level3">
+<h3>Git Commits</h3>
+<div id="lab-notebook" class="section level4">
+<h4>Lab Notebook</h4>
+<pre class="bash"><code>20ff1b4 - Benjamin Lorentz, Fri Oct 7 12:19:39 2022 -0400 : added notes before lunch
+9d0f273 - Benjamin Lorentz, Fri Oct 7 10:46:49 2022 -0400 : added notes on file locations for report_01
+5b2b7c1 - Benjamin Lorentz, Fri Oct 7 08:44:49 2022 -0400 : added post for today and tasks from yesterday
+605f97e - Benjamin Lorentz, Thu Oct 6 17:16:56 2022 -0400 : added final notes for thursday</code></pre>
+</div>
+<div id="visualize-ampliseq" class="section level4">
+<h4>Visualize-Ampliseq</h4>
+<pre class="bash"><code>81ae917 - Benjamin Lorentz, Fri Oct 7 15:01:40 2022 -0400 : remove the clean blocks
+8c50dde - Benjamin Lorentz, Fri Oct 7 14:53:27 2022 -0400 : need to use new_metadata_ps
+5a4f663 - Benjamin Lorentz, Fri Oct 7 14:48:27 2022 -0400 : added domain
+67d2988 - Benjamin Lorentz, Fri Oct 7 14:43:48 2022 -0400 : use the ampliseq dada2 file that has species
+0541401 - Benjamin Lorentz, Fri Oct 7 14:37:19 2022 -0400 : change  to  Doublecheck this doesnt break anything
+46ef402 - Benjamin Lorentz, Fri Oct 7 14:34:36 2022 -0400 : change  to  Doublecheck this doesnt break anything
+3f73d36 - Benjamin Lorentz, Fri Oct 7 14:09:45 2022 -0400 : found the error with the sample data
+8069e69 - Benjamin Lorentz, Fri Oct 7 13:55:31 2022 -0400 : remove the cleaning step
+71bd1de - Benjamin Lorentz, Fri Oct 7 13:45:15 2022 -0400 : change unidentified domain
+cae02b4 - Benjamin Lorentz, Fri Oct 7 12:09:04 2022 -0400 : Add report gen file and Mods for 01
+06f7f3a - Benjamin Lorentz, Thu Oct 6 17:09:22 2022 -0400 : had to quote out my string
+716cb96 - Benjamin Lorentz, Thu Oct 6 17:08:31 2022 -0400 : change analysis to input</code></pre>
+</div>
+</div>
+<div id="todo-for-next-week" class="section level1">
+<h1>TODO For next week:</h1>
+<ul>
+<li>Rebase Report-01 based on microbiome analyst
+<ul>
+<li>store a copy of the current stacked bar with tax.clean function in it</li>
+<li>Figure out how to install and pick a version to pin</li>
+<li>Build a docker image</li>
+<li>determine general appropriate stacked bar</li>
+<li>implement</li>
+</ul></li>
+<li>Work on Homework 3 for class (Genome Assembly)</li>
+</ul>
 </div>
