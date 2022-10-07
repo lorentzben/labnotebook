@@ -13,3 +13,33 @@ categories: []
 <li>add at least 1 report chunk to the nextflow pipeline</li>
 <li>read over the homework to see how large it is.</li>
 </ul>
+<div id="visualizing-report-01" class="section level3">
+<h3>Visualizing Report 01</h3>
+<p>The structure of the output directory is much more complex than my previous one. Luckily this will carry through to the other processes. We need to find the matching files for:</p>
+<ul>
+<li>rarefied table (2 options):
+<ul>
+<li>rel-table-ASV.tsv: Tab-separated relative abundance table for all ASVs.</li>
+<li>rel-table-ASV_with-DADA2-tax.tsv: Tab-separated table for all ASVs with DADA2 taxonomic classification, sequence and relative abundance.
+#TODO checkif this table looks like the one loaded with phyloseq.</li>
+</ul></li>
+<li>rooted tree:
+<ul>
+<li>qiime2/phylogenetic_tree/
+<ul>
+<li>rooted-tree.qza</li>
+</ul></li>
+</ul></li>
+<li>taxonomy file:
+<ul>
+<li>dada2/
+<ul>
+<li>ASV_tax.tsv
+TODO: check if this table looks similar to the qiime2 version when loaded into phyloseq.</li>
+</ul></li>
+</ul></li>
+<li>metadata file (this needs to be copied from the ampliseq pipeline run)</li>
+</ul>
+<p>I am going to fire up a docker image of lorentzb/r01:2.0 to compare phyloseq objects based on objects.</p>
+<p>TODO: compare the stacked bar plot made by qiime2 and my script.</p>
+</div>

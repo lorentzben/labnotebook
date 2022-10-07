@@ -12,3 +12,26 @@ Tasks from yesterday
   - read over the homework to see how large it is.
   
 
+### Visualizing Report 01
+
+The structure of the output directory is much more complex than my previous one. Luckily this will carry through to the other processes. We need to find the matching files for:
+
+- rarefied table (2 options):
+  - rel-table-ASV.tsv: Tab-separated relative abundance table for all ASVs.
+  - rel-table-ASV_with-DADA2-tax.tsv: Tab-separated table for all ASVs with DADA2 taxonomic classification, sequence and relative abundance.
+#TODO checkif this table looks like the one loaded with phyloseq.
+  
+- rooted tree:
+  - qiime2/phylogenetic_tree/
+    - rooted-tree.qza
+    
+- taxonomy file: 
+  - dada2/
+    - ASV_tax.tsv
+TODO: check if this table looks similar to the qiime2 version when loaded into phyloseq.
+
+- metadata file (this needs to be copied from the ampliseq pipeline run)
+
+I am going to fire up a docker image of lorentzb/r01:2.0 to compare phyloseq objects based on objects.
+
+TODO: compare the stacked bar plot made by qiime2 and my script.
