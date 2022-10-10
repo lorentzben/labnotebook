@@ -30,6 +30,10 @@ Note when looking into NF-Core stuff they suggest the heriachy to be Bioconda ->
 
 We keep running into an issue with installing just the dependencies for Microbiome analyst. Since they are using the bleeding edge packages and I was previously using 4.2.0 I think the MASS package baked into rocker/verse:4.2.0 was a little too old. I am downloading rocker/verse:4.2.1 to see if we can install on that one. 
 
+This seems like the correct approach to use 4.2.1 we just need to install Tax4Fun through github I think. From the github "nick-youngblut/Tax4Fun by ensuring the following dependencies are also installed - rhdf5; qiimer; joey711/biom."
+
+Eventually they will migrate to tax4fun2. 
+
 ### Homework 3
 
 I have sucessfully assembed long reads with canu and short reads with SPADES. Quast and Mummer are running right now. 
@@ -40,4 +44,5 @@ Todos for tomorrow:
 - Watch lectures for #14 for class
 - Check in on the classifier (though it outran 96hrs so it may take longer)
 - Continue trying to build the microbiome analyst image 
+  - install github version of tax4fun
 
