@@ -11,7 +11,7 @@ meta_img: images/image.png
 description: Description for the page
 ---
 
-Todos for today:
+### Todos for today:
 
 - reply to Shailes to set up a time to meet ***Meeting tomorrow at 3pm***
 - Watch lectures for #14 for class ***Done and class attended***
@@ -26,7 +26,7 @@ Issues I encountered along the way: First there were dependencies from github th
 
 I also cleaned up my homework for class which included evaluating assembly stats from Quast and images from Mummer. By updating the scrip to copy these files to the outdir and comment to github issues. 
 
-Todo for tomorrow:
+### Todo for tomorrow:
 
 - Meet with Shailes at 3pm
   - Look over ALDEx2 code to make sure I can explain what we want to do based on his analysis structure. 
@@ -37,7 +37,7 @@ Todo for tomorrow:
 - Start on Report 02
 - Check in on classifier
   
-Git Commits 
+### Git Commits 
 
 #### Lorentz Lab Notebook
 
