@@ -41,6 +41,12 @@ Filtering we must evaluate:
 
 The first two are set to default values and I chose no data normalization. We can compare these parameters to see how the results differ.
 
+Small Tasks:
+- compare MbA web to QIIME2 analysis
+- Programmify Item of Interest
+  - Possibility of 2 level IoI
+
+
 ### Meeting with Shailes:
 
 I want to look over my script again to make sure it is commented up nicely. I can offer to just run the analysis for him if he wants to give me his picrust2 data. 
