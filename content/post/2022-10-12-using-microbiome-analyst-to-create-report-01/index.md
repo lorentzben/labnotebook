@@ -92,4 +92,4 @@ b99788b - Benjamin Lorentz, Wed Oct 12 09:51:12 2022 -0400 : re-organize the mba
 - Make report 01 work through the nextflow platform. 
 - Start on Report 02 
 - Check in on classifier ***still running***
-- Make up cheatsheet for 
+- Make up cheatsheet for QIIME2 and Phyloseq
