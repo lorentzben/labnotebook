@@ -30,5 +30,13 @@ Next steps:
 
 I forgot to include the Stacked Bar Charts that collapse all samples into their IoI category so I implemented some lines to do that. 
 
+The way to save the user submitted item of interest is:
+
+```nextflow
+file 'item_of_interest.csv'
+
+ioi_ch = Channel.of(params.ioi)
+```
+
 The current nextflow script will copy the correct files into the work directory and generate all of the figures. The current issue is related to the knitting program not being able to find these rendered figures.
 
