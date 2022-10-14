@@ -32,7 +32,11 @@ There was a problem importing results/dada2/ASV_tax_species.tsv:
   ['Feature ID', 'Taxon'] must be the first two header values. The first two header values provided are: ['ASV_ID', 'Domain'] (on line 1).
 ```
 
-So we will need to see which file we can use to import. 
+So we will need to see which file we can use to import.
+
+### Ben Jackwood 
+
+Ben Jackwood stopped by today to get some help documenting the blast parser. It sounds like Dr. Jackwood wants to implement it as part of a workflow in the future so Ben wanted to be sure he understood how it is installed/works. I updated the [readme](https://github.com/lorentzben/jackwood_blast_parser/blob/main/README.md) with him and we had to clean his conda env/reinstall miniconda since his conda bin was in /opt which tells me we may have been using the docker image on his session since that is where conda is stored for the docker instances. One thing to look forward to in the future would be if we want to use a different BLAST format, (we are using 6). If a different one would include taxonomic names then we wouldn't need to use the parser at all possibly, or a modification, but also don't break a good thing.
 
 Task: Unzip a taxonomy.qza file and see what kind of format they're working with and then modify my taxonomy file to match it. 
 
