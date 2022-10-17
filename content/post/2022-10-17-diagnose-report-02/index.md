@@ -11,7 +11,7 @@ meta_img: images/image.png
 description: Description for the page
 ---
 
-### Todos for next week:
+### Todos for today:
 
 - Mantatory Cybersecurity Training
 - Watch lectures for Tuesday's Class
