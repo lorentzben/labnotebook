@@ -116,6 +116,7 @@ He is going to run the code through and see what difference he observes and then
   - Reach out to Dr. Aggrey to see if he approves of idea or has an alternative.
 - Update repo for Homework for this week
 - Check in on classifier still running
+- Check in on slurm run slurm-14913334.out
 
 - update WSL2 packages locally
 
