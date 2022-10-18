@@ -61,3 +61,35 @@ update WSL2 packages locally
 apt list --upgradable
  
 ```
+
+### Notes from Class
+
+Projects at the beginning of November, and Meetings with Dr. Bergman to discuss ideas.\
+Ideas with improvement with methods and results discussion. RNA-seq might be a good idea for a re-implementation project. 
+
+Homework 4 due next week. 
+
+Variant Calling Format and there is Structural Variants 
+
+30x or more coverage for diploid, 25-50x is good enough.
+
+5x process poisson process mean == varience closer to 1x more missed locations. 
+
+sort map and index bam file to reference file. 
+
+SAMTools and BCFtools are focused on varient calling. 
+
+mpileup command takes mapped read compared to reference using quality score what is the likelihood genotype is like reference alternative, or haplotype. 
+
+VCF and BCF aren't the same binary vs human readable as sam vs bam, can save the compressed human-readable version to save data space but still access the results. 
+
+BCFtools vs Zcat to open the mpileup format
+
+You would want to report the call file format. 
+
+Indel and SNP examples, this is something I've got to wrap my head around, what is QTL. 
+
+Evolutionary genetics, medical, QTL. Next mapping to explore gene expression-> chip-seq and methylation. 
+
+### Meeting with Shailes follow-up with ALDEx2 analysis
+
