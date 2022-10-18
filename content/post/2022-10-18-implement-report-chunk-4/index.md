@@ -62,6 +62,8 @@ apt list --upgradable
  
 ```
 
+This still wasn't working. I want to go back and see how I made this work with Lefse/Graphlan images in the past.
+
 ### Notes from Class
 
 Projects at the beginning of November, and Meetings with Dr. Bergman to discuss ideas.\
@@ -93,3 +95,62 @@ Evolutionary genetics, medical, QTL. Next mapping to explore gene expression-> c
 
 ### Meeting with Shailes follow-up with ALDEx2 analysis
 
+Where we left off:
+
+we determined that he wants to run a comparision between each daypoint (day-0) control and challenge and then challenge and challenge and BMD
+
+We installed the ALDEx2 package through Bioc::Manager and upgraded the R-installation to 4.2.1
+
+Shailes made the different condition comparison vectors, now we just have to separate them into separate analysis chunks so that the visualization is a little bit easier to see. 
+
+We have to subset the whole dataframe for each comparision but I think we have got a workable comparsion to look at each of the control/treatement or treatment/supplement conditions. 
+
+We talked a little bit about rendering the documents using rmarkdown and then how to plot lefse-like barplots to represent significant pathways. 
+
+He is going to run the code through and see what difference he observes and then we will re-connect to see what the next step is.
+
+### Todos for tomorrow:
+
+- Start Report 05
+- Look into genomic type project for class (see project description)
+  - Reach out to Dr. Aggrey to see if he approves of idea or has an alternative.
+- Update repo for Homework for this week
+- Check in on classifier still running
+
+- update WSL2 packages locally
+
+### Code Commits 
+
+
+#### Lab Noteboook
+
+```bash
+ae0120f - Benjamin Lorentz, Tue Oct 18 14:04:56 2022 -0400 : added notes from class related to varient calling
+a4079e0 - Benjamin Lorentz, Tue Oct 18 11:54:19 2022 -0400 : pre-lunch notes
+db0d882 - Benjamin Lorentz, Tue Oct 18 09:00:20 2022 -0400 : new page for Tuesday
+```
+
+#### Visualize Ampliseq
+
+```bash
+655a382 - Benjamin Lorentz, Tue Oct 18 17:22:59 2022 -0400 : remove the inclusion
+41ea133 - Benjamin Lorentz, Tue Oct 18 17:19:43 2022 -0400 : add rstudio root file
+9d57060 - Benjamin Lorentz, Tue Oct 18 17:18:37 2022 -0400 : add getwd before
+36e289b - Benjamin Lorentz, Tue Oct 18 17:14:09 2022 -0400 : glob filenames
+8017990 - Benjamin Lorentz, Tue Oct 18 17:13:13 2022 -0400 : try this
+22df195 - Benjamin Lorentz, Tue Oct 18 17:11:09 2022 -0400 : list files 2
+623bec2 - Benjamin Lorentz, Tue Oct 18 17:09:26 2022 -0400 : list files
+0a56d26 - Benjamin Lorentz, Tue Oct 18 17:07:49 2022 -0400 : remove clean true
+fa85a72 - Benjamin Lorentz, Tue Oct 18 17:03:44 2022 -0400 : cp L
+9adf7f7 - Benjamin Lorentz, Tue Oct 18 17:01:12 2022 -0400 : update report 02
+534ed0a - Benjamin Lorentz, Tue Oct 18 16:44:28 2022 -0400 : can we publish the images to both dirs
+55eba01 - Benjamin Lorentz, Tue Oct 18 16:37:39 2022 -0400 : try this
+e6045af - Benjamin Lorentz, Tue Oct 18 16:26:40 2022 -0400 : try to include photos again
+6929cc5 - Benjamin Lorentz, Tue Oct 18 16:20:17 2022 -0400 : replace Figures with barplots for correct path
+8030687 - Benjamin Lorentz, Tue Oct 18 16:17:19 2022 -0400 : use knitr include_graphics
+793109c - Benjamin Lorentz, Tue Oct 18 11:37:32 2022 -0400 : it is mode not mSode...
+54de462 - Benjamin Lorentz, Tue Oct 18 10:32:54 2022 -0400 : evenness not ace
+2b4d178 - Benjamin Lorentz, Tue Oct 18 10:32:07 2022 -0400 : needed to add the results prepend to directories
+030e453 - Benjamin Lorentz, Tue Oct 18 10:26:35 2022 -0400 : add report chunk 04
+
+```
