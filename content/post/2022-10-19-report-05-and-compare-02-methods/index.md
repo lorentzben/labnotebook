@@ -146,3 +146,47 @@ Todos for tomorrow:
 - Check in on classifier still running
 - update WSL2 packages locally
 
+
+### Git commits
+
+#### Lab Notebook
+
+```bash
+817c5dc - Benjamin Lorentz, Wed Oct 19 16:30:44 2022 -0400 : added notes from tomorrows lecture
+30caa23 - Benjamin Lorentz, Wed Oct 19 12:51:44 2022 -0400 : notes before lunch
+43ea4ea - Benjamin Lorentz, Wed Oct 19 09:10:24 2022 -0400 : added post for wednesday
+322d47e - Benjamin Lorentz, Tue Oct 18 18:07:02 2022 -0400 : added note about automate_16_nf run
+a36e1df - Benjamin Lorentz, Tue Oct 18 17:26:25 2022 -0400 : last notes for today
+```
+
+#### Visualize Ampliseq
+
+```bash
+fa4086d - Benjamin Lorentz, Wed Oct 19 14:54:30 2022 -0400 : update the output file names
+f160fa1 - Benjamin Lorentz, Wed Oct 19 14:46:05 2022 -0400 : update channels
+db591d0 - Benjamin Lorentz, Wed Oct 19 14:39:58 2022 -0400 : added chunk 05
+dce3c01 - Benjamin Lorentz, Wed Oct 19 12:49:35 2022 -0400 : misspelling
+a90e0ff - Benjamin Lorentz, Wed Oct 19 12:48:31 2022 -0400 : try to use contains as opposed to ==
+a9a93d0 - Benjamin Lorentz, Wed Oct 19 12:45:47 2022 -0400 : add to log header
+593b7c7 - Benjamin Lorentz, Wed Oct 19 12:40:22 2022 -0400 : echo workflow profile in bash
+3ecd0cb - Benjamin Lorentz, Wed Oct 19 12:36:01 2022 -0400 : add dollar signs
+221c922 - Benjamin Lorentz, Wed Oct 19 12:23:33 2022 -0400 : added the local report
+6e31d20 - Benjamin Lorentz, Wed Oct 19 12:18:53 2022 -0400 : this should render okay on the server and locally based on the local vs slurm profile
+36fd005 - Benjamin Lorentz, Wed Oct 19 11:24:09 2022 -0400 : use pwd variable
+6ec336e - Benjamin Lorentz, Wed Oct 19 10:52:39 2022 -0400 : try to list out files before list.files
+e27fb25 - Benjamin Lorentz, Wed Oct 19 10:36:26 2022 -0400 : fix the ls call
+a221832 - Benjamin Lorentz, Wed Oct 19 10:34:44 2022 -0400 : add echo pwd
+bdc3585 - Benjamin Lorentz, Wed Oct 19 10:30:31 2022 -0400 : list files in dir
+5dcacd3 - Benjamin Lorentz, Tue Oct 18 17:52:40 2022 -0400 : revert to symlinks
+dc0badd - Benjamin Lorentz, Tue Oct 18 17:49:00 2022 -0400 : revert
+09ac62e - Benjamin Lorentz, Tue Oct 18 17:33:04 2022 -0400 : test on server
+655a382 - Benjamin Lorentz, Tue Oct 18 17:22:59 2022 -0400 : remove the inclusion
+41ea133 - Benjamin Lorentz, Tue Oct 18 17:19:43 2022 -0400 : add rstudio root file
+9d57060 - Benjamin Lorentz, Tue Oct 18 17:18:37 2022 -0400 : add getwd before
+36e289b - Benjamin Lorentz, Tue Oct 18 17:14:09 2022 -0400 : glob filenames
+8017990 - Benjamin Lorentz, Tue Oct 18 17:13:13 2022 -0400 : try this
+22df195 - Benjamin Lorentz, Tue Oct 18 17:11:09 2022 -0400 : list files 2
+623bec2 - Benjamin Lorentz, Tue Oct 18 17:09:26 2022 -0400 : list files
+0a56d26 - Benjamin Lorentz, Tue Oct 18 17:07:49 2022 -0400 : remove clean true
+fa85a72 - Benjamin Lorentz, Tue Oct 18 17:03:44 2022 -0400 : cp L
+```
