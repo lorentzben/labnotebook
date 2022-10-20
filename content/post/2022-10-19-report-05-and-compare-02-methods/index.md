@@ -78,7 +78,7 @@ lrwxrwxrwx 1 bjl34716 sealab 103 Oct 18 22:41 7_image_graph.png -> /scratch/bjl3
 
 This is the error I keep receiving when I try to run the pipeline locally:
 
-``bash
+```bash
  Error in include_graphics(tree_filenames) :
     Cannot find the file(s): "../../../../../my_utils/work/39/a46d3ba33948cfd64267d4f9221ab2/phylo_trees/NC_image_graph.png"; "../../../../../my_utils/work/39/a46d3ba33948cfd64267d4f9221ab2/phylo_trees/OC_image_graph.png"; "../../../../../my_utils/work/39/a46d3ba33948cfd64267d4f9221ab2/phylo_trees/UC_image_graph.png"
   Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> include_graphics
