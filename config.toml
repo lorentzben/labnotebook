@@ -5,6 +5,9 @@ canonifyurls = true
 languagecode = "en"
 theme = "hugo-tanka"
 
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+
 enableEmoji = true
 hasCJKLanguage = false
 

@@ -2,7 +2,7 @@
 title: Project decision for GENE 8940E
 author: Ben Lorentz
 date: '2022-10-24'
-slug: []
+slug: ['projectDecision']
 categories: []
 tags:
   - one tag
@@ -57,4 +57,4 @@ I set up the repository called [gene8940-term-paper](https://github.com/lorentzb
 #### Sheets et. al. 2022 
 
 This paper seems like a decent overview of comparing Illieal and Cecal microbiome differences over 48 days and comparing between slow growing and fast growing broilers. I do have some concerns about the effects they stated they observed especially that the only big difference between lines was at day 7 and then the lines seemed somewhat similar?
-My notes are here: [Sheets et al 2022](https://lorentznotebook.netlify.app/post/2022-10-24-sheets-et-al-2022/)
+My notes are here: [Sheets et al 2022](/2020/10/24/sheets2022/)
