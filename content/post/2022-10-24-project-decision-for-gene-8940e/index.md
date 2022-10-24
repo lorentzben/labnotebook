@@ -33,3 +33,6 @@ description: Description for the page
   - Can we use this to find the major players in chicken gut segments?
 - How can multi-omics projects be implemented in host-microbe interactions
 - Check in on classifier still running
+
+
+I set up a Daily alert using [Stork](https://www.storkapp.me/) so that I can scan really quickly and see if there are any papers that look liek they are worth reviewing. A second option could be setting up an [EBSCO alert](https://connect.ebsco.com/s/article/How-to-Use-Journal-Alerts?language=en_US) if I don't like the types of results I am getting. 
