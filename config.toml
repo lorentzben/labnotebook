@@ -59,3 +59,4 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     
 [permalinks]
     post = "/:year/:month/:day/:slug/"
+    papers = "/:year/:month/:day/:slug/"
