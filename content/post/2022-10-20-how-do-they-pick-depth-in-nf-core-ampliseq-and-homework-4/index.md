@@ -2,7 +2,7 @@
 title: How do they pick depth in nf-core/ampliseq, and homework 4
 author: Ben Lorentz
 date: '2022-10-20'
-slug: []
+slug: ['homework4']
 categories: []
 tags:
   - one tag

@@ -2,7 +2,7 @@
 title: Implement Report Chunk 4
 author: Ben Lorentz
 date: '2022-10-18'
-slug: []
+slug: ['implement04']
 categories: []
 tags:
   - one tag

@@ -2,7 +2,7 @@
 title: Using Microbiome Analyst to Create Report 01
 author: Ben Lorentz
 date: '2022-10-12'
-slug: []
+slug: ['microbiomeAnalyst']
 categories: []
 tags:
   - one tag

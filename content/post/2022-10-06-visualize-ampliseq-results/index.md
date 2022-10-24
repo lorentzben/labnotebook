@@ -2,7 +2,7 @@
 title: Visualize Ampliseq Results
 author: ''
 date: '2022-10-06'
-slug: []
+slug: ['visualizeAmpliseq]
 categories: []
 tags:
   - one tag

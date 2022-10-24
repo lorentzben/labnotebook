@@ -2,7 +2,7 @@
 title: Diagnose Report 02
 author: Ben Lorentz
 date: '2022-10-17'
-slug: []
+slug: ['diagnoseReport02']
 categories: []
 tags:
   - one tag

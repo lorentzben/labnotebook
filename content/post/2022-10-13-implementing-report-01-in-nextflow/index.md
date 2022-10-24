@@ -2,7 +2,7 @@
 title: Implementing Report 01 in Nextflow
 author: Ben Lorentz
 date: '2022-10-13'
-slug: []
+slug: ['implement01']
 categories: []
 tags:
   - one tag

@@ -2,7 +2,7 @@
 title: Report 05 and Compare 02 Methods
 author: Ben Lorentz
 date: '2022-10-19'
-slug: []
+slug: ['implementReport05']
 categories: []
 tags:
   - one tag

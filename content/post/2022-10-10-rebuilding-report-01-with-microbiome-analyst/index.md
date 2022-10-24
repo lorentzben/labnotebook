@@ -2,7 +2,7 @@
 title: Rebuilding Report 01 with Microbiome Analyst
 author: 'Ben Lorentz'
 date: '2022-10-10'
-slug: []
+slug: ['rebuild01Microbiome']
 categories: []
 tags:
   - one tag

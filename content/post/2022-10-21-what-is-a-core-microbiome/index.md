@@ -2,7 +2,7 @@
 title: What is a core microbiome?
 author: Ben Lorentz
 date: '2022-10-21'
-slug: []
+slug: ['coreMicrobiome']
 categories: []
 tags:
   - one tag

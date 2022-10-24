@@ -3,6 +3,7 @@ title: Helpful Codes
 description: A place to save helpful commands and to organize by domain
 date: '2022-10-05'
 menu: main
+slug: 'cheatsheets'
 ---
 
 This would be a good command to run at the end of the day especially to pipe to 

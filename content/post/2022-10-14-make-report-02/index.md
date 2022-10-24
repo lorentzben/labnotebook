@@ -2,7 +2,7 @@
 title: Make Report_02
 author: Ben Lorentz
 date: '2022-10-14'
-slug: []
+slug: ['makeReport02']
 categories: []
 tags:
   - one tag
