@@ -1,3 +1,16 @@
+---
+title: Sheets et al 2022
+author: ''
+date: '2022-10-24'
+slug: ['sheets']
+categories: []
+tags:
+  - one tag
+  - another tag
+meta_img: images/image.png
+description: Description for the page
+---
+
 # Ileal and cecal microbiota response to Salmonella Typhimurium challenge in conventional and slow-growing broilers
 #### (2022) - Tessa R. Sheets, Carmen L. Wickware, Ashlyn M. Snyder, Shawna L. Weimer, Timothy A. Johnson
 - **Link**:: https://www.frontiersin.org/articles/10.3389/fphys.2022.971255/full
