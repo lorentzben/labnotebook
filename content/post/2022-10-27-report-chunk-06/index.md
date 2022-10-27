@@ -223,7 +223,7 @@ Figures                       results
 
 ### Report 01 Issues
 
-in work/ I am getting the error
+in work/7f/657f4474ffedad9c33d2df75047bf0  I am getting the error
 
 ```bash
 Quitting from lines 118-157 (01_report_MbA.Rmd)
