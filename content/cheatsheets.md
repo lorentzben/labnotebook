@@ -53,3 +53,13 @@ $ R
 > my_dock <- dock_from_renv("renv.lock","focal",FROM=rocker/verse)
 
 ```
+
+This command will print out the contents of the directory and sort the filesize which can be good to figure out what files need to be removed. 
+
+```bash
+
+$ du -hs * | sort -h
+
+du -hc | sort -h
+
+```

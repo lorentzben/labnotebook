@@ -11,16 +11,16 @@ meta_img: images/image.png
 description: Description for the page
 ---
 
-Todos for Tomorrow:
+Todos for Today:
 - Open Enrollment for Work *Done*
 - continue reading jones
 - Homework 5
 - Visualize Ampliseq
   - Refine chunk 06
   - add example params and slurm for ampliseq into ampliseq-vis repos
-- Fix chunk 01
-  - cd into /home/bjl34716/my_utils/work/7f/657f4474ffedad9c33d2df75047bf0
-  - run report 01 line by line in singularity docker://lorentzb/microbiome_analyst:1.1
+  - Fix chunk 01
+    - cd into /home/bjl34716/my_utils/work/7f/657f4474ffedad9c33d2df75047bf0
+    - run report 01 line by line in singularity docker://lorentzb/microbiome_analyst:1.1
 - nf-core/Ampliseq
   - Plugin error from diversity: All numbers are identical in kruskal [forum link](https://forum.qiime2.org/t/error-plugin-error-from-diversity-all-numbers-are-identical-in-kruskal/15033)
   - examine raw results
@@ -35,7 +35,11 @@ Todos for Tomorrow:
 - How can multi-omics projects be implemented in host-microbe interactions
 - Check in on classifier still running
 
+---
+
 - Shaile’s compare flip/flop
+
+---
 
 - BIOSQL, SQL or Mongo DB tutorials
 - Genome Assembly from Isolates
@@ -138,24 +142,115 @@ on my local: /mnt/f/my_utils/ampliseq-benchmarking
 #### Low Rich analysis
 
 - revision d9450931b808c1b4c6516d4be5eedeb7ee81a35c
-- nf name mighty_mandelbrot
-- slurm slurm-15124529.out
+- nf name compassionate_hilbert
+- slurm slurm-15126906.out
 
 #### Medium Rich analysis
 
 - revision d9450931b808c1b4c6516d4be5eedeb7ee81a35c
-- nf-name thirsty_avogadro
-- slurm 15124537
+- nf-name mighty_poitras
+- slurm 15127379
 
 #### High Rich analysis
 
 - revision d9450931b808c1b4c6516d4be5eedeb7ee81a35c
-- nf-name loving_venter
-- slurm 15124540
+- nf-name angry_wilson
+- slurm 15127830
+
+TODO
+- include output stats at the end of each run in the repo
 
 ### Visualize Ampliseq
 
 Todo 
   - Refine chunk 06
   - add example params and slurm for ampliseq into ampliseq-vis repos
+  - Fix chunk 01
+    - cd into /home/bjl34716/my_utils/work/7f/657f4474ffedad9c33d2df75047bf0
+    - run report 01 line by line in singularity docker://lorentzb/microbiome_analyst:1.1
+    
+#### Report 01
 
+working dir /home/bjl34716/my_utils/work/7f/657f4474ffedad9c33d2df75047bf0/
+
+we will go line by line to figure out what the issue is: 
+
+```bash
+Quitting from lines 118-157 (01_report_MbA.Rmd)
+Error in mbSetObj$dataSet : $ operator is invalid for atomic vectors
+Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> PlotTaxaAundanceBar
+```
+
+Singularity was having trouble accessing local files so I am migrating to the server.
+the working directory is /scratch/bjl34716/ampliseq-vis/work/fe/16636a
+
+I think the issue was the skip section of report 01 mba since it removed the header for the metadata file. I have since fixed it in two steps as opposed to one and pushed revision: f0fec40030f3581d86e2c586ae2dddf9fc63f6bd 
+
+We still must fix report 06.
+
+--- 
+
+Todos for Next Week:
+
+- Homework 5
+- continue reading jones
+- Visualize Ampliseq
+  - Refine chunk 06
+  - add example params and slurm for ampliseq into ampliseq-vis repos
+- nf-core/Ampliseq
+  - compare low, medium, high richness results
+- Term Paper
+  - Collect reference genome and annotations
+- re-watch the lecture for ChIP-seq
+- What is a core microbiome?
+  - Can we use this to find the major players in chicken gut segments?
+  - are keystone species more important in gut microbiomes?
+- How can multi-omics projects be implemented in host-microbe interactions
+- Check in on classifier still running
+
+---
+
+- Shaile’s compare flip/flop and reply to his email
+
+---
+
+- BIOSQL, SQL or Mongo DB tutorials
+- Genome Assembly from Isolates
+- Kelly Shotgun Metagenomic Data
+- good example 16s data to hone parameters
+
+
+### Git Log
+
+#### Lab Notebook
+
+```bash
+7c887e6 - Benjamin Lorentz, Fri Oct 28 13:03:48 2022 -0400 : notes about my repo for benchmarking ampliseq
+b4467e1 - Benjamin Lorentz, Fri Oct 28 11:56:13 2022 -0400 : more notes for friday
+9e3adf5 - Benjamin Lorentz, Fri Oct 28 11:49:56 2022 -0400 : notes on subsetting samples
+05810f5 - Benjamin Lorentz, Fri Oct 28 08:57:55 2022 -0400 : page for friday
+30a1947 - Benjamin Lorentz, Thu Oct 27 17:26:23 2022 -0400 : update path notes for report 01 issues
+866ad2c - Benjamin Lorentz, Thu Oct 27 17:24:22 2022 -0400 : notes for the end of thursday
+```
+
+
+#### Ampliseq-benchmark
+
+```bash
+d945093 - Benjamin Lorentz, Fri Oct 28 13:00:01 2022 -0400 : had to actually add the manifests
+bac1bfb - Benjamin Lorentz, Fri Oct 28 12:56:49 2022 -0400 : needs an underscore as opposed to a hyphen
+99cee8e - Benjamin Lorentz, Fri Oct 28 12:54:42 2022 -0400 : update paths so they are correct
+483b140 - Benjamin Lorentz, Fri Oct 28 12:50:10 2022 -0400 :  had to separate the string from the bracket
+fae2efb - Benjamin Lorentz, Fri Oct 28 12:46:19 2022 -0400 : added manifests in
+537216e - Benjamin Lorentz, Fri Oct 28 12:41:11 2022 -0400 : eveything but individual mapping files
+228aa98 - Ben Lorentz, Fri Oct 28 12:28:09 2022 -0400 : Initial commit
+```
+
+#### Visualize Ampliseq
+
+```bash
+f0fec40 - Benjamin Lorentz, Fri Oct 28 16:49:13 2022 -0400 : I think fix the metadata issue
+8cf01df - Benjamin Lorentz, Thu Oct 27 17:15:40 2022 -0400 : metadata won't' have a prepend if it is copied in
+28f677e - Benjamin Lorentz, Thu Oct 27 17:13:27 2022 -0400 : report 06 is written in R
+dbdd3db - Benjamin Lorentz, Thu Oct 27 17:08:08 2022 -0400 : Edits to 01 and 06
+```
