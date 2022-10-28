@@ -131,6 +131,28 @@ D14P3b1cec
 D28P44b1cec
 ```
 
+This is getting ridiculous so I setup [ampliseq-benchmarking](https://github.com/lorentzben/ampliseq-benchmarking)
+on the server: /home/bjl34716/nf_dev/ampliseq-benchmarking
+on my local: /mnt/f/my_utils/ampliseq-benchmarking
+
+#### Low Rich analysis
+
+- revision d9450931b808c1b4c6516d4be5eedeb7ee81a35c
+- nf name mighty_mandelbrot
+- slurm slurm-15124529.out
+
+#### Medium Rich analysis
+
+- revision d9450931b808c1b4c6516d4be5eedeb7ee81a35c
+- nf-name thirsty_avogadro
+- slurm 15124537
+
+#### High Rich analysis
+
+- revision d9450931b808c1b4c6516d4be5eedeb7ee81a35c
+- nf-name loving_venter
+- slurm 15124540
+
 ### Visualize Ampliseq
 
 Todo 
