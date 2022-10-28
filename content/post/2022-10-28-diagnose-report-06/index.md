@@ -93,7 +93,7 @@ D14P3b1cec
 D28P44b1cec
 ```
 
-A following analysis could remove these samples in the 'C' group as they have less than 1000 ASVs by the end of analysis "while much lower number of sequences (~1000) is usually an adequate number to characterize beta-diversity (i.e. differences between samples; (Lundin et al. 2012))."- [Golebiewski et. al 2019](https://sfamjournals.onlinelibrary.wiley.com/doi/10.1111/jam.14380):
+A following analysis could remove these samples in the 'C' group as they have less than 1000 ASVs by the end of analysis "while much lower number of sequences (~1000) is usually an adequate number to characterize beta-diversity (i.e. differences between samples; (Lundin et al. 2012))."- [Golebiewski et. al 2019](https://sfamjournals.onlinelibrary.wiley.com/doi/10.1111/jam.14380) or "There is no single cut-off that works best for all datasets, but researchers often use minimum cut-offs within the range of 1000 to 4000 reads." - [Amplicon SOP qiime2](https://github.com/LangilleLab/microbiome_helper/wiki/Amplicon-SOP-v2-(qiime2-2020.8)#43-exclude-low-depth-samples):
 
 ```bash
 # Filter for least rich
