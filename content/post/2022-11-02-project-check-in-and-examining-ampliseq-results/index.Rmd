@@ -83,7 +83,8 @@ Low Richness successfully completed and was downloaded to the ssd.
 ```{r message=FALSE}
 
 low<-read.csv("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv",sep = '\t')
-knitr::kable(low)
+order_low <- low[order(low$filtered_tax_filter,decreasing = T),]
+knitr::kable(order_low)
 
 ```
 
@@ -112,7 +113,8 @@ High Richness
 ```{r message=FALSE}
 
 high<-read.csv("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv",sep='\t')
-knitr::kable(high)
+order_high <- high[order(high$filtered_tax_filter,decreasing = T),]
+knitr::kable(order_high)
 
 ```
 
