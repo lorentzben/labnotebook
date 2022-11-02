@@ -83,7 +83,7 @@ Low Richness successfully completed and was downloaded to the ssd.
 ```{r message=FALSE}
 
 low<-read.csv("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv",sep = '\t')
-data.frame(low)
+knitr::kable(low)
 
 ```
 
@@ -112,7 +112,8 @@ High Richness
 ```{r message=FALSE}
 
 high<-read.csv("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv",sep='\t')
-data.frame(high)
+knitr::kable(high)
+
 ```
 
 

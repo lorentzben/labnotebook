@@ -78,181 +78,1245 @@ change the design to include just this factor, e.g. ~ group</code></pre>
 <h3>Examine nf-core/Ampliseq</h3>
 <p>Low Richness successfully completed and was downloaded to the ssd.</p>
 <pre class="r"><code>low&lt;-read.csv(&quot;/mnt/content/tables_for_ampliseq/low_richness_stats.tsv&quot;,sep = &#39;\t&#39;)
-data.frame(low)</code></pre>
-<pre><code>##         sample DADA2_input filtered denoisedF denoisedR merged nonchim
-## 1  D14P11b1cec       82828     1848      1434      1571    981     965
-## 2  D14P12b1cec       26625    18152     17044     17710  15160   11243
-## 3  D14P13b1cec       43079    30976     29526     30241  26001   18579
-## 4  D14P16b1cec       71470    50532     47934     49523  41931   32044
-## 5  D14P17b1cec       92635     2728      2334      2504   1667    1658
-## 6  D14P18b1cec       34364    23918     22637     23268  19455   17606
-## 7  D14P19b1cec       84517     1729      1439      1554   1135    1117
-## 8  D14P23b1cec       99505     1898      1707      1784   1512    1512
-## 9  D14P24b1cec       53175    37019     34979     36204  29266   26339
-## 10 D14P26b1cec       54199    39133     37225     38221  32103   24843
-## 11 D14P28b1cec       71151    50147     47592     49111  41541   37486
-## 12 D14P34b1cec       18093    12818     11605     12190   9164    8603
-## 13 D14P35b1cec       97287     2098      1706      1854   1463    1458
-## 14 D14P37b1cec       42194    29741     28309     28938  25336   20771
-## 15 D14P38b1cec       37614    26723     25011     25731  21537   19648
-## 16 D14P40b1cec      100717    70612     68439     69797  59974   43438
-## 17 D14P41b1cec       73447    50776     48455     50008  42104   32658
-## 18 D14P43b1cec       66107    45679     44326     44989  39882   36085
-## 19 D14P44b1cec       66459    47469     45586     46516  40192   36054
-## 20 D14P48b1cec       43074    29651     27592     28849  22087   19727
-## 21  D14P4b1cec       67619    47536     45448     46543  38609   31899
-## 22 D14P50b1cec       56348    40577     38573     39817  32067   27560
-## 23 D14P52b1cec       81391    58281     56464     57309  51051   46843
-## 24 D14P55b1cec      202185   135569    133888    134536 122332   88909
-## 25 D14P57b1cec       19407    13957     12779     13256  10679    9851
-## 26 D14P58b1cec       85488    61182     58396     59968  49677   39401
-## 27 D14P60b1cec      103869    68943     66412     67913  58390   51867
-## 28  D14P6b1cec       36152    25603     24088     24768  20178   18542
-## 29  D14P8b1cec       35218    25266     23921     24654  20670   17989
-## 30 D28P11b1cec       51792    37786     35263     36420  29255   25689
-## 31 D28P12b1cec       50324    35669     33168     34639  28235   23409
-## 32 D28P13b1cec       44566    30702     28065     29463  21458   19843
-## 33 D28P16b1cec       92178    67451     64677     66147  58403   45296
-## 34 D28P17b1cec      147482    98549     92506     96122  78957   61090
-## 35 D28P18b1cec       68330    48419     44480     46726  35457   29490
-## 36 D28P19b1cec      137600    94156     89534     92306  79197   60747
-## 37 D28P23b1cec       81577    54985     50621     53117  41205   35820
-## 38 D28P24b1cec      127569    86345     82278     84478  72099   62964
-## 39 D28P26b1cec       81540    55235     51868     53723  43229   37608
-## 40 D28P28b1cec       88753     2773      2187      2437   1781    1757
-## 41 D28P34b1cec      105646     2018      1650      1740   1307    1240
-## 42 D28P35b1cec       54225    39034     36473     37760  31750   27087
-## 43 D28P37b1cec       57015    41486     38583     40259  32619   27100
-## 44  D28P3b1cec       55498    37864     34613     36413  27621   22466
-## 45 D28P40b1cec       83194     2016      1542      1655   1117    1031
-## 46 D28P41b1cec       58545    38432     36616     37529  32577   23266
-## 47 D28P43b1cec       36547    26328     24619     25432  21247   17888
-## 48 D28P48b1cec       51498    37033     34486     35819  29455   24635
-## 49  D28P4b1cec       80423    58524     55367     57264  48008   41354
-## 50 D28P50b1cec       47431    33394     31578     32491  27591   24167
-## 51 D28P52b1cec      142951     4170      3665      3701   3169    3021
-## 52 D28P55b1cec       87904    65938     62427     64372  53547   46426
-## 53 D28P57b1cec      126084    94271     90302     92547  81158   68512
-## 54 D28P58b1cec      125728     3098      2507      2671   1767    1710
-## 55 D28P60b1cec      110611     2216      1815      1883   1247    1226
-## 56  D28P6b1cec       87252    63267     60012     61685  53923   40984
-## 57  D28P8b1cec       83008    60351     57047     58944  50264   45279
-## 58  D7P11b1cec       53849    36576     35760     36164  33637   30991
-## 59  D7P12b1cec       58349    42829     41821     42402  36741   29564
-## 60  D7P16b1cec       83355    60708     59594     60181  54924   46196
-## 61  D7P17b1cec      144408    96048     94622     95326  86037   76236
-## 62  D7P18b1cec       60805    42786     41087     41845  34715   30522
-## 63  D7P19b1cec      113511    76016     73798     75103  63060   53480
-## 64  D7P23b1cec       86909    57719     56214     56893  47168   41611
-## 65  D7P24b1cec       96827    64591     63174     63945  56166   45497
-## 66  D7P26b1cec       70855    48352     47833     47897  45409   34250
-## 67  D7P28b1cec       82160    58193     56767     57542  50751   42697
-## 68  D7P34b1cec       99382    71337     69481     70487  63652   58930
-## 69  D7P35b1cec       40623    29038     27765     28314  23910   19066
-## 70  D7P37b1cec       56173    37354     36779     37033  33658   27960
-## 71  D7P38b1cec       62473    44558     42933     43744  36386   32949
-## 72   D7P3b1cec       74716    52239     50974     51209  42657   36382
-## 73  D7P40b1cec       71803    50533     49033     49797  43932   37419
-## 74  D7P41b1cec      127380    82225     80513     81373  73258   54294
-## 75  D7P43b1cec      157745   103862    101143    102698  87843   74146
-## 76  D7P44b1cec       84510    60044     58547     59288  54190   43787
-## 77  D7P48b1cec      114525    73949     72589     73125  64064   49956
-## 78   D7P4b1cec       80263    56500     55026     55769  49144   45435
-## 79  D7P50b1cec       77760    51790     50621     51038  46838   41526
-## 80  D7P52b1cec      110400     3292      2950      3012   2524    2487
-## 81  D7P55b1cec      126980     2678      2420      2481   2040    1973
-## 82  D7P57b1cec      101383     2058      1780      1815   1225    1192
-## 83  D7P58b1cec       65393    45987     44504     45143  38738   31155
-## 84  D7P60b1cec       55166    39816     38276     39000  33471   28215
-## 85   D7P6b1cec       68625    48876     47714     48237  43716   37343
-## 86   D7P8b1cec       67888    48955     47550     48261  43649   36617
-##    input_tax_filter filtered_tax_filter lost retained_percent lost_percent
-## 1               965                 965    0        100.00000   0.00000000
-## 2             11243               11243    0        100.00000   0.00000000
-## 3             18579               18579    0        100.00000   0.00000000
-## 4             32044               31815  229         99.28536   0.71464237
-## 5              1658                1658    0        100.00000   0.00000000
-## 6             17606               17606    0        100.00000   0.00000000
-## 7              1117                1117    0        100.00000   0.00000000
-## 8              1512                1512    0        100.00000   0.00000000
-## 9             26339               26339    0        100.00000   0.00000000
-## 10            24843               24755   88         99.64578   0.35422453
-## 11            37486               37486    0        100.00000   0.00000000
-## 12             8603                8603    0        100.00000   0.00000000
-## 13             1458                1458    0        100.00000   0.00000000
-## 14            20771               20771    0        100.00000   0.00000000
-## 15            19648               19642    6         99.96946   0.03053746
-## 16            43438               43372   66         99.84806   0.15194070
-## 17            32658               32658    0        100.00000   0.00000000
-## 18            36085               35866  219         99.39310   0.60690037
-## 19            36054               36032   22         99.93898   0.06101958
-## 20            19727               19727    0        100.00000   0.00000000
-## 21            31899               31899    0        100.00000   0.00000000
-## 22            27560               27560    0        100.00000   0.00000000
-## 23            46843               46843    0        100.00000   0.00000000
-## 24            88909               87955  954         98.92699   1.07300723
-## 25             9851                9851    0        100.00000   0.00000000
-## 26            39401               39262  139         99.64722   0.35278292
-## 27            51867               51867    0        100.00000   0.00000000
-## 28            18542               18542    0        100.00000   0.00000000
-## 29            17989               17989    0        100.00000   0.00000000
-## 30            25689               25689    0        100.00000   0.00000000
-## 31            23409               23409    0        100.00000   0.00000000
-## 32            19843               19843    0        100.00000   0.00000000
-## 33            45296               45296    0        100.00000   0.00000000
-## 34            61090               61090    0        100.00000   0.00000000
-## 35            29490               29490    0        100.00000   0.00000000
-## 36            60747               60645  102         99.83209   0.16790953
-## 37            35820               35820    0        100.00000   0.00000000
-## 38            62964               62964    0        100.00000   0.00000000
-## 39            37608               37608    0        100.00000   0.00000000
-## 40             1757                1757    0        100.00000   0.00000000
-## 41             1240                1240    0        100.00000   0.00000000
-## 42            27087               27087    0        100.00000   0.00000000
-## 43            27100               27100    0        100.00000   0.00000000
-## 44            22466               22466    0        100.00000   0.00000000
-## 45             1031                1031    0        100.00000   0.00000000
-## 46            23266               23266    0        100.00000   0.00000000
-## 47            17888               17888    0        100.00000   0.00000000
-## 48            24635               24635    0        100.00000   0.00000000
-## 49            41354               41354    0        100.00000   0.00000000
-## 50            24167               24167    0        100.00000   0.00000000
-## 51             3021                3021    0        100.00000   0.00000000
-## 52            46426               46426    0        100.00000   0.00000000
-## 53            68512               68512    0        100.00000   0.00000000
-## 54             1710                1702    8         99.53216   0.46783626
-## 55             1226                1226    0        100.00000   0.00000000
-## 56            40984               40931   53         99.87068   0.12931876
-## 57            45279               45186   93         99.79461   0.20539323
-## 58            30991               30991    0        100.00000   0.00000000
-## 59            29564               29209  355         98.79922   1.20078474
-## 60            46196               46196    0        100.00000   0.00000000
-## 61            76236               76236    0        100.00000   0.00000000
-## 62            30522               30522    0        100.00000   0.00000000
-## 63            53480               53431   49         99.90838   0.09162304
-## 64            41611               41611    0        100.00000   0.00000000
-## 65            45497               45281  216         99.52524   0.47475658
-## 66            34250               33821  429         98.74745   1.25255474
-## 67            42697               42697    0        100.00000   0.00000000
-## 68            58930               58848   82         99.86085   0.13914814
-## 69            19066               18851  215         98.87234   1.12766181
-## 70            27960               27960    0        100.00000   0.00000000
-## 71            32949               32949    0        100.00000   0.00000000
-## 72            36382               36248  134         99.63169   0.36831400
-## 73            37419               37396   23         99.93853   0.06146610
-## 74            54294               54136  158         99.70899   0.29100821
-## 75            74146               74146    0        100.00000   0.00000000
-## 76            43787               43303  484         98.89465   1.10535090
-## 77            49956               49956    0        100.00000   0.00000000
-## 78            45435               45435    0        100.00000   0.00000000
-## 79            41526               41246  280         99.32572   0.67427636
-## 80             2487                2487    0        100.00000   0.00000000
-## 81             1973                1973    0        100.00000   0.00000000
-## 82             1192                1192    0        100.00000   0.00000000
-## 83            31155               31155    0        100.00000   0.00000000
-## 84            28215               28186   29         99.89722   0.10278221
-## 85            37343               37263   80         99.78577   0.21423024
-## 86            36617               36523   94         99.74329   0.25671136</code></pre>
+knitr::kable(low)</code></pre>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="6%" />
+<col width="7%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="12%" />
+<col width="14%" />
+<col width="3%" />
+<col width="12%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">sample</th>
+<th align="right">DADA2_input</th>
+<th align="right">filtered</th>
+<th align="right">denoisedF</th>
+<th align="right">denoisedR</th>
+<th align="right">merged</th>
+<th align="right">nonchim</th>
+<th align="right">input_tax_filter</th>
+<th align="right">filtered_tax_filter</th>
+<th align="right">lost</th>
+<th align="right">retained_percent</th>
+<th align="right">lost_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">D14P11b1cec</td>
+<td align="right">82828</td>
+<td align="right">1848</td>
+<td align="right">1434</td>
+<td align="right">1571</td>
+<td align="right">981</td>
+<td align="right">965</td>
+<td align="right">965</td>
+<td align="right">965</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P12b1cec</td>
+<td align="right">26625</td>
+<td align="right">18152</td>
+<td align="right">17044</td>
+<td align="right">17710</td>
+<td align="right">15160</td>
+<td align="right">11243</td>
+<td align="right">11243</td>
+<td align="right">11243</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P13b1cec</td>
+<td align="right">43079</td>
+<td align="right">30976</td>
+<td align="right">29526</td>
+<td align="right">30241</td>
+<td align="right">26001</td>
+<td align="right">18579</td>
+<td align="right">18579</td>
+<td align="right">18579</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P16b1cec</td>
+<td align="right">71470</td>
+<td align="right">50532</td>
+<td align="right">47934</td>
+<td align="right">49523</td>
+<td align="right">41931</td>
+<td align="right">32044</td>
+<td align="right">32044</td>
+<td align="right">31815</td>
+<td align="right">229</td>
+<td align="right">99.28536</td>
+<td align="right">0.7146424</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P17b1cec</td>
+<td align="right">92635</td>
+<td align="right">2728</td>
+<td align="right">2334</td>
+<td align="right">2504</td>
+<td align="right">1667</td>
+<td align="right">1658</td>
+<td align="right">1658</td>
+<td align="right">1658</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P18b1cec</td>
+<td align="right">34364</td>
+<td align="right">23918</td>
+<td align="right">22637</td>
+<td align="right">23268</td>
+<td align="right">19455</td>
+<td align="right">17606</td>
+<td align="right">17606</td>
+<td align="right">17606</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P19b1cec</td>
+<td align="right">84517</td>
+<td align="right">1729</td>
+<td align="right">1439</td>
+<td align="right">1554</td>
+<td align="right">1135</td>
+<td align="right">1117</td>
+<td align="right">1117</td>
+<td align="right">1117</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P23b1cec</td>
+<td align="right">99505</td>
+<td align="right">1898</td>
+<td align="right">1707</td>
+<td align="right">1784</td>
+<td align="right">1512</td>
+<td align="right">1512</td>
+<td align="right">1512</td>
+<td align="right">1512</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P24b1cec</td>
+<td align="right">53175</td>
+<td align="right">37019</td>
+<td align="right">34979</td>
+<td align="right">36204</td>
+<td align="right">29266</td>
+<td align="right">26339</td>
+<td align="right">26339</td>
+<td align="right">26339</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P26b1cec</td>
+<td align="right">54199</td>
+<td align="right">39133</td>
+<td align="right">37225</td>
+<td align="right">38221</td>
+<td align="right">32103</td>
+<td align="right">24843</td>
+<td align="right">24843</td>
+<td align="right">24755</td>
+<td align="right">88</td>
+<td align="right">99.64578</td>
+<td align="right">0.3542245</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P28b1cec</td>
+<td align="right">71151</td>
+<td align="right">50147</td>
+<td align="right">47592</td>
+<td align="right">49111</td>
+<td align="right">41541</td>
+<td align="right">37486</td>
+<td align="right">37486</td>
+<td align="right">37486</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P34b1cec</td>
+<td align="right">18093</td>
+<td align="right">12818</td>
+<td align="right">11605</td>
+<td align="right">12190</td>
+<td align="right">9164</td>
+<td align="right">8603</td>
+<td align="right">8603</td>
+<td align="right">8603</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P35b1cec</td>
+<td align="right">97287</td>
+<td align="right">2098</td>
+<td align="right">1706</td>
+<td align="right">1854</td>
+<td align="right">1463</td>
+<td align="right">1458</td>
+<td align="right">1458</td>
+<td align="right">1458</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P37b1cec</td>
+<td align="right">42194</td>
+<td align="right">29741</td>
+<td align="right">28309</td>
+<td align="right">28938</td>
+<td align="right">25336</td>
+<td align="right">20771</td>
+<td align="right">20771</td>
+<td align="right">20771</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P38b1cec</td>
+<td align="right">37614</td>
+<td align="right">26723</td>
+<td align="right">25011</td>
+<td align="right">25731</td>
+<td align="right">21537</td>
+<td align="right">19648</td>
+<td align="right">19648</td>
+<td align="right">19642</td>
+<td align="right">6</td>
+<td align="right">99.96946</td>
+<td align="right">0.0305375</td>
+</tr>
+<tr class="even">
+<td align="left">D14P40b1cec</td>
+<td align="right">100717</td>
+<td align="right">70612</td>
+<td align="right">68439</td>
+<td align="right">69797</td>
+<td align="right">59974</td>
+<td align="right">43438</td>
+<td align="right">43438</td>
+<td align="right">43372</td>
+<td align="right">66</td>
+<td align="right">99.84806</td>
+<td align="right">0.1519407</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P41b1cec</td>
+<td align="right">73447</td>
+<td align="right">50776</td>
+<td align="right">48455</td>
+<td align="right">50008</td>
+<td align="right">42104</td>
+<td align="right">32658</td>
+<td align="right">32658</td>
+<td align="right">32658</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P43b1cec</td>
+<td align="right">66107</td>
+<td align="right">45679</td>
+<td align="right">44326</td>
+<td align="right">44989</td>
+<td align="right">39882</td>
+<td align="right">36085</td>
+<td align="right">36085</td>
+<td align="right">35866</td>
+<td align="right">219</td>
+<td align="right">99.39310</td>
+<td align="right">0.6069004</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P44b1cec</td>
+<td align="right">66459</td>
+<td align="right">47469</td>
+<td align="right">45586</td>
+<td align="right">46516</td>
+<td align="right">40192</td>
+<td align="right">36054</td>
+<td align="right">36054</td>
+<td align="right">36032</td>
+<td align="right">22</td>
+<td align="right">99.93898</td>
+<td align="right">0.0610196</td>
+</tr>
+<tr class="even">
+<td align="left">D14P48b1cec</td>
+<td align="right">43074</td>
+<td align="right">29651</td>
+<td align="right">27592</td>
+<td align="right">28849</td>
+<td align="right">22087</td>
+<td align="right">19727</td>
+<td align="right">19727</td>
+<td align="right">19727</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P4b1cec</td>
+<td align="right">67619</td>
+<td align="right">47536</td>
+<td align="right">45448</td>
+<td align="right">46543</td>
+<td align="right">38609</td>
+<td align="right">31899</td>
+<td align="right">31899</td>
+<td align="right">31899</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P50b1cec</td>
+<td align="right">56348</td>
+<td align="right">40577</td>
+<td align="right">38573</td>
+<td align="right">39817</td>
+<td align="right">32067</td>
+<td align="right">27560</td>
+<td align="right">27560</td>
+<td align="right">27560</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P52b1cec</td>
+<td align="right">81391</td>
+<td align="right">58281</td>
+<td align="right">56464</td>
+<td align="right">57309</td>
+<td align="right">51051</td>
+<td align="right">46843</td>
+<td align="right">46843</td>
+<td align="right">46843</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P55b1cec</td>
+<td align="right">202185</td>
+<td align="right">135569</td>
+<td align="right">133888</td>
+<td align="right">134536</td>
+<td align="right">122332</td>
+<td align="right">88909</td>
+<td align="right">88909</td>
+<td align="right">87955</td>
+<td align="right">954</td>
+<td align="right">98.92699</td>
+<td align="right">1.0730072</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P57b1cec</td>
+<td align="right">19407</td>
+<td align="right">13957</td>
+<td align="right">12779</td>
+<td align="right">13256</td>
+<td align="right">10679</td>
+<td align="right">9851</td>
+<td align="right">9851</td>
+<td align="right">9851</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P58b1cec</td>
+<td align="right">85488</td>
+<td align="right">61182</td>
+<td align="right">58396</td>
+<td align="right">59968</td>
+<td align="right">49677</td>
+<td align="right">39401</td>
+<td align="right">39401</td>
+<td align="right">39262</td>
+<td align="right">139</td>
+<td align="right">99.64722</td>
+<td align="right">0.3527829</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P60b1cec</td>
+<td align="right">103869</td>
+<td align="right">68943</td>
+<td align="right">66412</td>
+<td align="right">67913</td>
+<td align="right">58390</td>
+<td align="right">51867</td>
+<td align="right">51867</td>
+<td align="right">51867</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P6b1cec</td>
+<td align="right">36152</td>
+<td align="right">25603</td>
+<td align="right">24088</td>
+<td align="right">24768</td>
+<td align="right">20178</td>
+<td align="right">18542</td>
+<td align="right">18542</td>
+<td align="right">18542</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P8b1cec</td>
+<td align="right">35218</td>
+<td align="right">25266</td>
+<td align="right">23921</td>
+<td align="right">24654</td>
+<td align="right">20670</td>
+<td align="right">17989</td>
+<td align="right">17989</td>
+<td align="right">17989</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P11b1cec</td>
+<td align="right">51792</td>
+<td align="right">37786</td>
+<td align="right">35263</td>
+<td align="right">36420</td>
+<td align="right">29255</td>
+<td align="right">25689</td>
+<td align="right">25689</td>
+<td align="right">25689</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P12b1cec</td>
+<td align="right">50324</td>
+<td align="right">35669</td>
+<td align="right">33168</td>
+<td align="right">34639</td>
+<td align="right">28235</td>
+<td align="right">23409</td>
+<td align="right">23409</td>
+<td align="right">23409</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P13b1cec</td>
+<td align="right">44566</td>
+<td align="right">30702</td>
+<td align="right">28065</td>
+<td align="right">29463</td>
+<td align="right">21458</td>
+<td align="right">19843</td>
+<td align="right">19843</td>
+<td align="right">19843</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P16b1cec</td>
+<td align="right">92178</td>
+<td align="right">67451</td>
+<td align="right">64677</td>
+<td align="right">66147</td>
+<td align="right">58403</td>
+<td align="right">45296</td>
+<td align="right">45296</td>
+<td align="right">45296</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P17b1cec</td>
+<td align="right">147482</td>
+<td align="right">98549</td>
+<td align="right">92506</td>
+<td align="right">96122</td>
+<td align="right">78957</td>
+<td align="right">61090</td>
+<td align="right">61090</td>
+<td align="right">61090</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P18b1cec</td>
+<td align="right">68330</td>
+<td align="right">48419</td>
+<td align="right">44480</td>
+<td align="right">46726</td>
+<td align="right">35457</td>
+<td align="right">29490</td>
+<td align="right">29490</td>
+<td align="right">29490</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P19b1cec</td>
+<td align="right">137600</td>
+<td align="right">94156</td>
+<td align="right">89534</td>
+<td align="right">92306</td>
+<td align="right">79197</td>
+<td align="right">60747</td>
+<td align="right">60747</td>
+<td align="right">60645</td>
+<td align="right">102</td>
+<td align="right">99.83209</td>
+<td align="right">0.1679095</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P23b1cec</td>
+<td align="right">81577</td>
+<td align="right">54985</td>
+<td align="right">50621</td>
+<td align="right">53117</td>
+<td align="right">41205</td>
+<td align="right">35820</td>
+<td align="right">35820</td>
+<td align="right">35820</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P24b1cec</td>
+<td align="right">127569</td>
+<td align="right">86345</td>
+<td align="right">82278</td>
+<td align="right">84478</td>
+<td align="right">72099</td>
+<td align="right">62964</td>
+<td align="right">62964</td>
+<td align="right">62964</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P26b1cec</td>
+<td align="right">81540</td>
+<td align="right">55235</td>
+<td align="right">51868</td>
+<td align="right">53723</td>
+<td align="right">43229</td>
+<td align="right">37608</td>
+<td align="right">37608</td>
+<td align="right">37608</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P28b1cec</td>
+<td align="right">88753</td>
+<td align="right">2773</td>
+<td align="right">2187</td>
+<td align="right">2437</td>
+<td align="right">1781</td>
+<td align="right">1757</td>
+<td align="right">1757</td>
+<td align="right">1757</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P34b1cec</td>
+<td align="right">105646</td>
+<td align="right">2018</td>
+<td align="right">1650</td>
+<td align="right">1740</td>
+<td align="right">1307</td>
+<td align="right">1240</td>
+<td align="right">1240</td>
+<td align="right">1240</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P35b1cec</td>
+<td align="right">54225</td>
+<td align="right">39034</td>
+<td align="right">36473</td>
+<td align="right">37760</td>
+<td align="right">31750</td>
+<td align="right">27087</td>
+<td align="right">27087</td>
+<td align="right">27087</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P37b1cec</td>
+<td align="right">57015</td>
+<td align="right">41486</td>
+<td align="right">38583</td>
+<td align="right">40259</td>
+<td align="right">32619</td>
+<td align="right">27100</td>
+<td align="right">27100</td>
+<td align="right">27100</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P3b1cec</td>
+<td align="right">55498</td>
+<td align="right">37864</td>
+<td align="right">34613</td>
+<td align="right">36413</td>
+<td align="right">27621</td>
+<td align="right">22466</td>
+<td align="right">22466</td>
+<td align="right">22466</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P40b1cec</td>
+<td align="right">83194</td>
+<td align="right">2016</td>
+<td align="right">1542</td>
+<td align="right">1655</td>
+<td align="right">1117</td>
+<td align="right">1031</td>
+<td align="right">1031</td>
+<td align="right">1031</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P41b1cec</td>
+<td align="right">58545</td>
+<td align="right">38432</td>
+<td align="right">36616</td>
+<td align="right">37529</td>
+<td align="right">32577</td>
+<td align="right">23266</td>
+<td align="right">23266</td>
+<td align="right">23266</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P43b1cec</td>
+<td align="right">36547</td>
+<td align="right">26328</td>
+<td align="right">24619</td>
+<td align="right">25432</td>
+<td align="right">21247</td>
+<td align="right">17888</td>
+<td align="right">17888</td>
+<td align="right">17888</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P48b1cec</td>
+<td align="right">51498</td>
+<td align="right">37033</td>
+<td align="right">34486</td>
+<td align="right">35819</td>
+<td align="right">29455</td>
+<td align="right">24635</td>
+<td align="right">24635</td>
+<td align="right">24635</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P4b1cec</td>
+<td align="right">80423</td>
+<td align="right">58524</td>
+<td align="right">55367</td>
+<td align="right">57264</td>
+<td align="right">48008</td>
+<td align="right">41354</td>
+<td align="right">41354</td>
+<td align="right">41354</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P50b1cec</td>
+<td align="right">47431</td>
+<td align="right">33394</td>
+<td align="right">31578</td>
+<td align="right">32491</td>
+<td align="right">27591</td>
+<td align="right">24167</td>
+<td align="right">24167</td>
+<td align="right">24167</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P52b1cec</td>
+<td align="right">142951</td>
+<td align="right">4170</td>
+<td align="right">3665</td>
+<td align="right">3701</td>
+<td align="right">3169</td>
+<td align="right">3021</td>
+<td align="right">3021</td>
+<td align="right">3021</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P55b1cec</td>
+<td align="right">87904</td>
+<td align="right">65938</td>
+<td align="right">62427</td>
+<td align="right">64372</td>
+<td align="right">53547</td>
+<td align="right">46426</td>
+<td align="right">46426</td>
+<td align="right">46426</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P57b1cec</td>
+<td align="right">126084</td>
+<td align="right">94271</td>
+<td align="right">90302</td>
+<td align="right">92547</td>
+<td align="right">81158</td>
+<td align="right">68512</td>
+<td align="right">68512</td>
+<td align="right">68512</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P58b1cec</td>
+<td align="right">125728</td>
+<td align="right">3098</td>
+<td align="right">2507</td>
+<td align="right">2671</td>
+<td align="right">1767</td>
+<td align="right">1710</td>
+<td align="right">1710</td>
+<td align="right">1702</td>
+<td align="right">8</td>
+<td align="right">99.53216</td>
+<td align="right">0.4678363</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P60b1cec</td>
+<td align="right">110611</td>
+<td align="right">2216</td>
+<td align="right">1815</td>
+<td align="right">1883</td>
+<td align="right">1247</td>
+<td align="right">1226</td>
+<td align="right">1226</td>
+<td align="right">1226</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P6b1cec</td>
+<td align="right">87252</td>
+<td align="right">63267</td>
+<td align="right">60012</td>
+<td align="right">61685</td>
+<td align="right">53923</td>
+<td align="right">40984</td>
+<td align="right">40984</td>
+<td align="right">40931</td>
+<td align="right">53</td>
+<td align="right">99.87068</td>
+<td align="right">0.1293188</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P8b1cec</td>
+<td align="right">83008</td>
+<td align="right">60351</td>
+<td align="right">57047</td>
+<td align="right">58944</td>
+<td align="right">50264</td>
+<td align="right">45279</td>
+<td align="right">45279</td>
+<td align="right">45186</td>
+<td align="right">93</td>
+<td align="right">99.79461</td>
+<td align="right">0.2053932</td>
+</tr>
+<tr class="even">
+<td align="left">D7P11b1cec</td>
+<td align="right">53849</td>
+<td align="right">36576</td>
+<td align="right">35760</td>
+<td align="right">36164</td>
+<td align="right">33637</td>
+<td align="right">30991</td>
+<td align="right">30991</td>
+<td align="right">30991</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P12b1cec</td>
+<td align="right">58349</td>
+<td align="right">42829</td>
+<td align="right">41821</td>
+<td align="right">42402</td>
+<td align="right">36741</td>
+<td align="right">29564</td>
+<td align="right">29564</td>
+<td align="right">29209</td>
+<td align="right">355</td>
+<td align="right">98.79922</td>
+<td align="right">1.2007847</td>
+</tr>
+<tr class="even">
+<td align="left">D7P16b1cec</td>
+<td align="right">83355</td>
+<td align="right">60708</td>
+<td align="right">59594</td>
+<td align="right">60181</td>
+<td align="right">54924</td>
+<td align="right">46196</td>
+<td align="right">46196</td>
+<td align="right">46196</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P17b1cec</td>
+<td align="right">144408</td>
+<td align="right">96048</td>
+<td align="right">94622</td>
+<td align="right">95326</td>
+<td align="right">86037</td>
+<td align="right">76236</td>
+<td align="right">76236</td>
+<td align="right">76236</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P18b1cec</td>
+<td align="right">60805</td>
+<td align="right">42786</td>
+<td align="right">41087</td>
+<td align="right">41845</td>
+<td align="right">34715</td>
+<td align="right">30522</td>
+<td align="right">30522</td>
+<td align="right">30522</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P19b1cec</td>
+<td align="right">113511</td>
+<td align="right">76016</td>
+<td align="right">73798</td>
+<td align="right">75103</td>
+<td align="right">63060</td>
+<td align="right">53480</td>
+<td align="right">53480</td>
+<td align="right">53431</td>
+<td align="right">49</td>
+<td align="right">99.90838</td>
+<td align="right">0.0916230</td>
+</tr>
+<tr class="even">
+<td align="left">D7P23b1cec</td>
+<td align="right">86909</td>
+<td align="right">57719</td>
+<td align="right">56214</td>
+<td align="right">56893</td>
+<td align="right">47168</td>
+<td align="right">41611</td>
+<td align="right">41611</td>
+<td align="right">41611</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P24b1cec</td>
+<td align="right">96827</td>
+<td align="right">64591</td>
+<td align="right">63174</td>
+<td align="right">63945</td>
+<td align="right">56166</td>
+<td align="right">45497</td>
+<td align="right">45497</td>
+<td align="right">45281</td>
+<td align="right">216</td>
+<td align="right">99.52524</td>
+<td align="right">0.4747566</td>
+</tr>
+<tr class="even">
+<td align="left">D7P26b1cec</td>
+<td align="right">70855</td>
+<td align="right">48352</td>
+<td align="right">47833</td>
+<td align="right">47897</td>
+<td align="right">45409</td>
+<td align="right">34250</td>
+<td align="right">34250</td>
+<td align="right">33821</td>
+<td align="right">429</td>
+<td align="right">98.74745</td>
+<td align="right">1.2525547</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P28b1cec</td>
+<td align="right">82160</td>
+<td align="right">58193</td>
+<td align="right">56767</td>
+<td align="right">57542</td>
+<td align="right">50751</td>
+<td align="right">42697</td>
+<td align="right">42697</td>
+<td align="right">42697</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P34b1cec</td>
+<td align="right">99382</td>
+<td align="right">71337</td>
+<td align="right">69481</td>
+<td align="right">70487</td>
+<td align="right">63652</td>
+<td align="right">58930</td>
+<td align="right">58930</td>
+<td align="right">58848</td>
+<td align="right">82</td>
+<td align="right">99.86085</td>
+<td align="right">0.1391481</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P35b1cec</td>
+<td align="right">40623</td>
+<td align="right">29038</td>
+<td align="right">27765</td>
+<td align="right">28314</td>
+<td align="right">23910</td>
+<td align="right">19066</td>
+<td align="right">19066</td>
+<td align="right">18851</td>
+<td align="right">215</td>
+<td align="right">98.87234</td>
+<td align="right">1.1276618</td>
+</tr>
+<tr class="even">
+<td align="left">D7P37b1cec</td>
+<td align="right">56173</td>
+<td align="right">37354</td>
+<td align="right">36779</td>
+<td align="right">37033</td>
+<td align="right">33658</td>
+<td align="right">27960</td>
+<td align="right">27960</td>
+<td align="right">27960</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P38b1cec</td>
+<td align="right">62473</td>
+<td align="right">44558</td>
+<td align="right">42933</td>
+<td align="right">43744</td>
+<td align="right">36386</td>
+<td align="right">32949</td>
+<td align="right">32949</td>
+<td align="right">32949</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P3b1cec</td>
+<td align="right">74716</td>
+<td align="right">52239</td>
+<td align="right">50974</td>
+<td align="right">51209</td>
+<td align="right">42657</td>
+<td align="right">36382</td>
+<td align="right">36382</td>
+<td align="right">36248</td>
+<td align="right">134</td>
+<td align="right">99.63169</td>
+<td align="right">0.3683140</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P40b1cec</td>
+<td align="right">71803</td>
+<td align="right">50533</td>
+<td align="right">49033</td>
+<td align="right">49797</td>
+<td align="right">43932</td>
+<td align="right">37419</td>
+<td align="right">37419</td>
+<td align="right">37396</td>
+<td align="right">23</td>
+<td align="right">99.93853</td>
+<td align="right">0.0614661</td>
+</tr>
+<tr class="even">
+<td align="left">D7P41b1cec</td>
+<td align="right">127380</td>
+<td align="right">82225</td>
+<td align="right">80513</td>
+<td align="right">81373</td>
+<td align="right">73258</td>
+<td align="right">54294</td>
+<td align="right">54294</td>
+<td align="right">54136</td>
+<td align="right">158</td>
+<td align="right">99.70899</td>
+<td align="right">0.2910082</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P43b1cec</td>
+<td align="right">157745</td>
+<td align="right">103862</td>
+<td align="right">101143</td>
+<td align="right">102698</td>
+<td align="right">87843</td>
+<td align="right">74146</td>
+<td align="right">74146</td>
+<td align="right">74146</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P44b1cec</td>
+<td align="right">84510</td>
+<td align="right">60044</td>
+<td align="right">58547</td>
+<td align="right">59288</td>
+<td align="right">54190</td>
+<td align="right">43787</td>
+<td align="right">43787</td>
+<td align="right">43303</td>
+<td align="right">484</td>
+<td align="right">98.89465</td>
+<td align="right">1.1053509</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P48b1cec</td>
+<td align="right">114525</td>
+<td align="right">73949</td>
+<td align="right">72589</td>
+<td align="right">73125</td>
+<td align="right">64064</td>
+<td align="right">49956</td>
+<td align="right">49956</td>
+<td align="right">49956</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P4b1cec</td>
+<td align="right">80263</td>
+<td align="right">56500</td>
+<td align="right">55026</td>
+<td align="right">55769</td>
+<td align="right">49144</td>
+<td align="right">45435</td>
+<td align="right">45435</td>
+<td align="right">45435</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P50b1cec</td>
+<td align="right">77760</td>
+<td align="right">51790</td>
+<td align="right">50621</td>
+<td align="right">51038</td>
+<td align="right">46838</td>
+<td align="right">41526</td>
+<td align="right">41526</td>
+<td align="right">41246</td>
+<td align="right">280</td>
+<td align="right">99.32572</td>
+<td align="right">0.6742764</td>
+</tr>
+<tr class="even">
+<td align="left">D7P52b1cec</td>
+<td align="right">110400</td>
+<td align="right">3292</td>
+<td align="right">2950</td>
+<td align="right">3012</td>
+<td align="right">2524</td>
+<td align="right">2487</td>
+<td align="right">2487</td>
+<td align="right">2487</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P55b1cec</td>
+<td align="right">126980</td>
+<td align="right">2678</td>
+<td align="right">2420</td>
+<td align="right">2481</td>
+<td align="right">2040</td>
+<td align="right">1973</td>
+<td align="right">1973</td>
+<td align="right">1973</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P57b1cec</td>
+<td align="right">101383</td>
+<td align="right">2058</td>
+<td align="right">1780</td>
+<td align="right">1815</td>
+<td align="right">1225</td>
+<td align="right">1192</td>
+<td align="right">1192</td>
+<td align="right">1192</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P58b1cec</td>
+<td align="right">65393</td>
+<td align="right">45987</td>
+<td align="right">44504</td>
+<td align="right">45143</td>
+<td align="right">38738</td>
+<td align="right">31155</td>
+<td align="right">31155</td>
+<td align="right">31155</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P60b1cec</td>
+<td align="right">55166</td>
+<td align="right">39816</td>
+<td align="right">38276</td>
+<td align="right">39000</td>
+<td align="right">33471</td>
+<td align="right">28215</td>
+<td align="right">28215</td>
+<td align="right">28186</td>
+<td align="right">29</td>
+<td align="right">99.89722</td>
+<td align="right">0.1027822</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P6b1cec</td>
+<td align="right">68625</td>
+<td align="right">48876</td>
+<td align="right">47714</td>
+<td align="right">48237</td>
+<td align="right">43716</td>
+<td align="right">37343</td>
+<td align="right">37343</td>
+<td align="right">37263</td>
+<td align="right">80</td>
+<td align="right">99.78577</td>
+<td align="right">0.2142302</td>
+</tr>
+<tr class="even">
+<td align="left">D7P8b1cec</td>
+<td align="right">67888</td>
+<td align="right">48955</td>
+<td align="right">47550</td>
+<td align="right">48261</td>
+<td align="right">43649</td>
+<td align="right">36617</td>
+<td align="right">36617</td>
+<td align="right">36523</td>
+<td align="right">94</td>
+<td align="right">99.74329</td>
+<td align="right">0.2567114</td>
+</tr>
+</tbody>
+</table>
 <p>Medium Richness failed halfway through</p>
 <pre class="bash"><code>Error executing process &gt; &#39;NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INASV (ASV_table.tsv)&#39;
 
@@ -264,147 +1328,1019 @@ slurm: 15165472
 nextflow: cranky_kalam</p>
 <p>High Richness</p>
 <pre class="r"><code>high&lt;-read.csv(&quot;/mnt/content/tables_for_ampliseq/high_richness_stats.tsv&quot;,sep=&#39;\t&#39;)
-data.frame(high)</code></pre>
-<pre><code>##         sample DADA2_input filtered denoisedF denoisedR merged nonchim
-## 1  D14P12b1cec       26625    18152     16996     17674  15062   11141
-## 2  D14P13b1cec       43079    30976     29523     30224  25935   18583
-## 3  D14P16b1cec       71470    50532     48011     49472  41956   32335
-## 4  D14P18b1cec       34364    23918     22635     23325  19465   17675
-## 5  D14P24b1cec       53175    37019     35144     36223  29362   26255
-## 6  D14P26b1cec       54199    39133     37363     38147  32144   24927
-## 7  D14P28b1cec       71151    50147     47742     49078  41532   37040
-## 8  D14P37b1cec       42194    29741     28322     28934  25326   20949
-## 9  D14P38b1cec       37614    26723     25070     25711  21571   19600
-## 10 D14P40b1cec      100717    70612     68586     69809  60064   43195
-## 11 D14P41b1cec       73447    50776     48510     49960  42140   32968
-## 12 D14P43b1cec       66107    45679     44352     44961  39893   36125
-## 13 D14P44b1cec       66459    47469     45569     46483  40037   35829
-## 14 D14P48b1cec       43074    29651     27682     28890  22155   19832
-## 15  D14P4b1cec       67619    47536     45436     46509  38640   31914
-## 16 D14P50b1cec       56348    40577     38616     39706  31953   27380
-## 17 D14P52b1cec       81391    58281     56509     57311  51051   46726
-## 18 D14P55b1cec      202185   135569    133919    134530 122136   88326
-## 19 D14P58b1cec       85488    61182     58551     59948  49699   39613
-## 20 D14P60b1cec      103869    68943     66363     67967  58355   51769
-## 21  D14P6b1cec       36152    25603     24139     24809  20258   18752
-## 22  D14P8b1cec       35218    25266     24059     24619  20744   18160
-## 23 D28P11b1cec       51792    37786     35378     36392  29277   25443
-## 24 D28P12b1cec       50324    35669     33215     34588  28223   23462
-## 25 D28P13b1cec       44566    30702     28005     29383  21322   19769
-## 26 D28P16b1cec       92178    67451     64731     66126  58427   45545
-## 27 D28P17b1cec      147482    98549     92888     96142  79175   61053
-## 28 D28P18b1cec       68330    48419     44788     46681  35600   29733
-## 29 D28P19b1cec      137600    94156     89582     92310  79375   60725
-## 30 D28P23b1cec       81577    54985     50736     53091  41278   35644
-## 31 D28P24b1cec      127569    86345     82546     84546  72261   63030
-## 32 D28P26b1cec       81540    55235     51971     53752  43333   37795
-## 33 D28P35b1cec       54225    39034     36544     37771  31774   27012
-## 34 D28P37b1cec       57015    41486     38777     40124  32660   27176
-## 35  D28P3b1cec       55498    37864     34698     36399  27689   22621
-## 36 D28P41b1cec       58545    38432     36592     37530  32610   23473
-## 37 D28P43b1cec       36547    26328     24686     25367  21258   18064
-## 38 D28P48b1cec       51498    37033     34515     35863  29520   24658
-## 39  D28P4b1cec       80423    58524     55384     57343  48045   41547
-## 40 D28P50b1cec       47431    33394     31765     32427  27677   24283
-## 41 D28P55b1cec       87904    65938     62477     64342  53540   46469
-## 42 D28P57b1cec      126084    94271     90494     92684  81334   68358
-## 43  D28P6b1cec       87252    63267     60110     61627  53908   40612
-## 44  D28P8b1cec       83008    60351     57180     58953  50299   45044
-## 45  D7P11b1cec       53849    36576     35756     36202  33650   30983
-## 46  D7P12b1cec       58349    42829     41803     42363  36716   29591
-## 47  D7P16b1cec       83355    60708     59670     60119  54909   46129
-## 48  D7P17b1cec      144408    96048     94594     95376  86030   76131
-## 49  D7P18b1cec       60805    42786     41145     41893  34747   30558
-## 50  D7P19b1cec      113511    76016     73996     75126  63194   53569
-## 51  D7P23b1cec       86909    57719     56148     56931  47153   41310
-## 52  D7P24b1cec       96827    64591     63108     63871  55922   45234
-## 53  D7P26b1cec       70855    48352     47791     47912  45358   34370
-## 54  D7P28b1cec       82160    58193     56762     57650  50855   42749
-## 55  D7P34b1cec       99382    71337     69549     70500  63767   59006
-## 56  D7P35b1cec       40623    29038     27705     28314  23851   18840
-## 57  D7P37b1cec       56173    37354     36764     37018  33630   27868
-## 58  D7P38b1cec       62473    44558     42959     43766  36441   33002
-## 59   D7P3b1cec       74716    52239     50999     51237  42600   36225
-## 60  D7P40b1cec       71803    50533     49022     49798  43905   37440
-## 61  D7P41b1cec      127380    82225     80516     81406  73233   54275
-## 62  D7P43b1cec      157745   103862    101145    102703  87782   74031
-## 63  D7P44b1cec       84510    60044     58735     59270  54260   43739
-## 64  D7P48b1cec      114525    73949     72725     73074  64016   49826
-## 65   D7P4b1cec       80263    56500     55008     55799  49145   45403
-## 66  D7P50b1cec       77760    51790     50541     51110  46738   41470
-## 67  D7P58b1cec       65393    45987     44599     45169  38778   30986
-## 68  D7P60b1cec       55166    39816     38422     38971  33555   28270
-## 69   D7P6b1cec       68625    48876     47679     48262  43682   37134
-## 70   D7P8b1cec       67888    48955     47743     48285  43838   36690
-##    input_tax_filter filtered_tax_filter lost retained_percent lost_percent
-## 1             11141               11141    0        100.00000   0.00000000
-## 2             18583               18574    9         99.95157   0.04843136
-## 3             32335               31997  338         98.95469   1.04530694
-## 4             17675               17675    0        100.00000   0.00000000
-## 5             26255               26255    0        100.00000   0.00000000
-## 6             24927               24804  123         99.50656   0.49344085
-## 7             37040               37040    0        100.00000   0.00000000
-## 8             20949               20949    0        100.00000   0.00000000
-## 9             19600               19600    0        100.00000   0.00000000
-## 10            43195               43129   66         99.84720   0.15279546
-## 11            32968               32968    0        100.00000   0.00000000
-## 12            36125               35857  268         99.25813   0.74186851
-## 13            35829               35792   37         99.89673   0.10326830
-## 14            19832               19832    0        100.00000   0.00000000
-## 15            31914               31914    0        100.00000   0.00000000
-## 16            27380               27380    0        100.00000   0.00000000
-## 17            46726               46719    7         99.98502   0.01498095
-## 18            88326               87432  894         98.98784   1.01215950
-## 19            39613               39458  155         99.60871   0.39128569
-## 20            51769               51754   15         99.97103   0.02897487
-## 21            18752               18732   20         99.89334   0.10665529
-## 22            18160               18153    7         99.96145   0.03854626
-## 23            25443               25443    0        100.00000   0.00000000
-## 24            23462               23455    7         99.97016   0.02983548
-## 25            19769               19769    0        100.00000   0.00000000
-## 26            45545               45545    0        100.00000   0.00000000
-## 27            61053               61040   13         99.97871   0.02129297
-## 28            29733               29733    0        100.00000   0.00000000
-## 29            60725               60620  105         99.82709   0.17291066
-## 30            35644               35635    9         99.97475   0.02524969
-## 31            63030               63030    0        100.00000   0.00000000
-## 32            37795               37795    0        100.00000   0.00000000
-## 33            27012               27012    0        100.00000   0.00000000
-## 34            27176               27176    0        100.00000   0.00000000
-## 35            22621               22621    0        100.00000   0.00000000
-## 36            23473               23473    0        100.00000   0.00000000
-## 37            18064               18064    0        100.00000   0.00000000
-## 38            24658               24651    7         99.97161   0.02838835
-## 39            41547               41530   17         99.95908   0.04091752
-## 40            24283               24271   12         99.95058   0.04941729
-## 41            46469               46436   33         99.92898   0.07101509
-## 42            68358               68316   42         99.93856   0.06144124
-## 43            40612               40551   61         99.84980   0.15020191
-## 44            45044               44954   90         99.80020   0.19980464
-## 45            30983               30983    0        100.00000   0.00000000
-## 46            29591               29245  346         98.83073   1.16927444
-## 47            46129               46115   14         99.96965   0.03034967
-## 48            76131               76015  116         99.84763   0.15236894
-## 49            30558               30558    0        100.00000   0.00000000
-## 50            53569               53539   30         99.94400   0.05600254
-## 51            41310               41310    0        100.00000   0.00000000
-## 52            45234               45036  198         99.56228   0.43772384
-## 53            34370               33875  495         98.55979   1.44020949
-## 54            42749               42749    0        100.00000   0.00000000
-## 55            59006               58887  119         99.79833   0.20167441
-## 56            18840               18624  216         98.85350   1.14649682
-## 57            27868               27849   19         99.93182   0.06817856
-## 58            33002               33002    0        100.00000   0.00000000
-## 59            36225               36089  136         99.62457   0.37543133
-## 60            37440               37440    0        100.00000   0.00000000
-## 61            54275               54110  165         99.69599   0.30400737
-## 62            74031               74031    0        100.00000   0.00000000
-## 63            43739               43256  483         98.89572   1.10427765
-## 64            49826               49826    0        100.00000   0.00000000
-## 65            45403               45403    0        100.00000   0.00000000
-## 66            41470               41154  316         99.23800   0.76199662
-## 67            30986               30986    0        100.00000   0.00000000
-## 68            28270               28257   13         99.95401   0.04598514
-## 69            37134               37040   94         99.74686   0.25313729
-## 70            36690               36566  124         99.66203   0.33796675</code></pre>
+knitr::kable(high)</code></pre>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="6%" />
+<col width="7%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="12%" />
+<col width="14%" />
+<col width="3%" />
+<col width="12%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">sample</th>
+<th align="right">DADA2_input</th>
+<th align="right">filtered</th>
+<th align="right">denoisedF</th>
+<th align="right">denoisedR</th>
+<th align="right">merged</th>
+<th align="right">nonchim</th>
+<th align="right">input_tax_filter</th>
+<th align="right">filtered_tax_filter</th>
+<th align="right">lost</th>
+<th align="right">retained_percent</th>
+<th align="right">lost_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">D14P12b1cec</td>
+<td align="right">26625</td>
+<td align="right">18152</td>
+<td align="right">16996</td>
+<td align="right">17674</td>
+<td align="right">15062</td>
+<td align="right">11141</td>
+<td align="right">11141</td>
+<td align="right">11141</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P13b1cec</td>
+<td align="right">43079</td>
+<td align="right">30976</td>
+<td align="right">29523</td>
+<td align="right">30224</td>
+<td align="right">25935</td>
+<td align="right">18583</td>
+<td align="right">18583</td>
+<td align="right">18574</td>
+<td align="right">9</td>
+<td align="right">99.95157</td>
+<td align="right">0.0484314</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P16b1cec</td>
+<td align="right">71470</td>
+<td align="right">50532</td>
+<td align="right">48011</td>
+<td align="right">49472</td>
+<td align="right">41956</td>
+<td align="right">32335</td>
+<td align="right">32335</td>
+<td align="right">31997</td>
+<td align="right">338</td>
+<td align="right">98.95469</td>
+<td align="right">1.0453069</td>
+</tr>
+<tr class="even">
+<td align="left">D14P18b1cec</td>
+<td align="right">34364</td>
+<td align="right">23918</td>
+<td align="right">22635</td>
+<td align="right">23325</td>
+<td align="right">19465</td>
+<td align="right">17675</td>
+<td align="right">17675</td>
+<td align="right">17675</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P24b1cec</td>
+<td align="right">53175</td>
+<td align="right">37019</td>
+<td align="right">35144</td>
+<td align="right">36223</td>
+<td align="right">29362</td>
+<td align="right">26255</td>
+<td align="right">26255</td>
+<td align="right">26255</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P26b1cec</td>
+<td align="right">54199</td>
+<td align="right">39133</td>
+<td align="right">37363</td>
+<td align="right">38147</td>
+<td align="right">32144</td>
+<td align="right">24927</td>
+<td align="right">24927</td>
+<td align="right">24804</td>
+<td align="right">123</td>
+<td align="right">99.50656</td>
+<td align="right">0.4934408</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P28b1cec</td>
+<td align="right">71151</td>
+<td align="right">50147</td>
+<td align="right">47742</td>
+<td align="right">49078</td>
+<td align="right">41532</td>
+<td align="right">37040</td>
+<td align="right">37040</td>
+<td align="right">37040</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P37b1cec</td>
+<td align="right">42194</td>
+<td align="right">29741</td>
+<td align="right">28322</td>
+<td align="right">28934</td>
+<td align="right">25326</td>
+<td align="right">20949</td>
+<td align="right">20949</td>
+<td align="right">20949</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P38b1cec</td>
+<td align="right">37614</td>
+<td align="right">26723</td>
+<td align="right">25070</td>
+<td align="right">25711</td>
+<td align="right">21571</td>
+<td align="right">19600</td>
+<td align="right">19600</td>
+<td align="right">19600</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P40b1cec</td>
+<td align="right">100717</td>
+<td align="right">70612</td>
+<td align="right">68586</td>
+<td align="right">69809</td>
+<td align="right">60064</td>
+<td align="right">43195</td>
+<td align="right">43195</td>
+<td align="right">43129</td>
+<td align="right">66</td>
+<td align="right">99.84720</td>
+<td align="right">0.1527955</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P41b1cec</td>
+<td align="right">73447</td>
+<td align="right">50776</td>
+<td align="right">48510</td>
+<td align="right">49960</td>
+<td align="right">42140</td>
+<td align="right">32968</td>
+<td align="right">32968</td>
+<td align="right">32968</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P43b1cec</td>
+<td align="right">66107</td>
+<td align="right">45679</td>
+<td align="right">44352</td>
+<td align="right">44961</td>
+<td align="right">39893</td>
+<td align="right">36125</td>
+<td align="right">36125</td>
+<td align="right">35857</td>
+<td align="right">268</td>
+<td align="right">99.25813</td>
+<td align="right">0.7418685</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P44b1cec</td>
+<td align="right">66459</td>
+<td align="right">47469</td>
+<td align="right">45569</td>
+<td align="right">46483</td>
+<td align="right">40037</td>
+<td align="right">35829</td>
+<td align="right">35829</td>
+<td align="right">35792</td>
+<td align="right">37</td>
+<td align="right">99.89673</td>
+<td align="right">0.1032683</td>
+</tr>
+<tr class="even">
+<td align="left">D14P48b1cec</td>
+<td align="right">43074</td>
+<td align="right">29651</td>
+<td align="right">27682</td>
+<td align="right">28890</td>
+<td align="right">22155</td>
+<td align="right">19832</td>
+<td align="right">19832</td>
+<td align="right">19832</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P4b1cec</td>
+<td align="right">67619</td>
+<td align="right">47536</td>
+<td align="right">45436</td>
+<td align="right">46509</td>
+<td align="right">38640</td>
+<td align="right">31914</td>
+<td align="right">31914</td>
+<td align="right">31914</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D14P50b1cec</td>
+<td align="right">56348</td>
+<td align="right">40577</td>
+<td align="right">38616</td>
+<td align="right">39706</td>
+<td align="right">31953</td>
+<td align="right">27380</td>
+<td align="right">27380</td>
+<td align="right">27380</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P52b1cec</td>
+<td align="right">81391</td>
+<td align="right">58281</td>
+<td align="right">56509</td>
+<td align="right">57311</td>
+<td align="right">51051</td>
+<td align="right">46726</td>
+<td align="right">46726</td>
+<td align="right">46719</td>
+<td align="right">7</td>
+<td align="right">99.98502</td>
+<td align="right">0.0149810</td>
+</tr>
+<tr class="even">
+<td align="left">D14P55b1cec</td>
+<td align="right">202185</td>
+<td align="right">135569</td>
+<td align="right">133919</td>
+<td align="right">134530</td>
+<td align="right">122136</td>
+<td align="right">88326</td>
+<td align="right">88326</td>
+<td align="right">87432</td>
+<td align="right">894</td>
+<td align="right">98.98784</td>
+<td align="right">1.0121595</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P58b1cec</td>
+<td align="right">85488</td>
+<td align="right">61182</td>
+<td align="right">58551</td>
+<td align="right">59948</td>
+<td align="right">49699</td>
+<td align="right">39613</td>
+<td align="right">39613</td>
+<td align="right">39458</td>
+<td align="right">155</td>
+<td align="right">99.60871</td>
+<td align="right">0.3912857</td>
+</tr>
+<tr class="even">
+<td align="left">D14P60b1cec</td>
+<td align="right">103869</td>
+<td align="right">68943</td>
+<td align="right">66363</td>
+<td align="right">67967</td>
+<td align="right">58355</td>
+<td align="right">51769</td>
+<td align="right">51769</td>
+<td align="right">51754</td>
+<td align="right">15</td>
+<td align="right">99.97103</td>
+<td align="right">0.0289749</td>
+</tr>
+<tr class="odd">
+<td align="left">D14P6b1cec</td>
+<td align="right">36152</td>
+<td align="right">25603</td>
+<td align="right">24139</td>
+<td align="right">24809</td>
+<td align="right">20258</td>
+<td align="right">18752</td>
+<td align="right">18752</td>
+<td align="right">18732</td>
+<td align="right">20</td>
+<td align="right">99.89334</td>
+<td align="right">0.1066553</td>
+</tr>
+<tr class="even">
+<td align="left">D14P8b1cec</td>
+<td align="right">35218</td>
+<td align="right">25266</td>
+<td align="right">24059</td>
+<td align="right">24619</td>
+<td align="right">20744</td>
+<td align="right">18160</td>
+<td align="right">18160</td>
+<td align="right">18153</td>
+<td align="right">7</td>
+<td align="right">99.96145</td>
+<td align="right">0.0385463</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P11b1cec</td>
+<td align="right">51792</td>
+<td align="right">37786</td>
+<td align="right">35378</td>
+<td align="right">36392</td>
+<td align="right">29277</td>
+<td align="right">25443</td>
+<td align="right">25443</td>
+<td align="right">25443</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P12b1cec</td>
+<td align="right">50324</td>
+<td align="right">35669</td>
+<td align="right">33215</td>
+<td align="right">34588</td>
+<td align="right">28223</td>
+<td align="right">23462</td>
+<td align="right">23462</td>
+<td align="right">23455</td>
+<td align="right">7</td>
+<td align="right">99.97016</td>
+<td align="right">0.0298355</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P13b1cec</td>
+<td align="right">44566</td>
+<td align="right">30702</td>
+<td align="right">28005</td>
+<td align="right">29383</td>
+<td align="right">21322</td>
+<td align="right">19769</td>
+<td align="right">19769</td>
+<td align="right">19769</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P16b1cec</td>
+<td align="right">92178</td>
+<td align="right">67451</td>
+<td align="right">64731</td>
+<td align="right">66126</td>
+<td align="right">58427</td>
+<td align="right">45545</td>
+<td align="right">45545</td>
+<td align="right">45545</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P17b1cec</td>
+<td align="right">147482</td>
+<td align="right">98549</td>
+<td align="right">92888</td>
+<td align="right">96142</td>
+<td align="right">79175</td>
+<td align="right">61053</td>
+<td align="right">61053</td>
+<td align="right">61040</td>
+<td align="right">13</td>
+<td align="right">99.97871</td>
+<td align="right">0.0212930</td>
+</tr>
+<tr class="even">
+<td align="left">D28P18b1cec</td>
+<td align="right">68330</td>
+<td align="right">48419</td>
+<td align="right">44788</td>
+<td align="right">46681</td>
+<td align="right">35600</td>
+<td align="right">29733</td>
+<td align="right">29733</td>
+<td align="right">29733</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P19b1cec</td>
+<td align="right">137600</td>
+<td align="right">94156</td>
+<td align="right">89582</td>
+<td align="right">92310</td>
+<td align="right">79375</td>
+<td align="right">60725</td>
+<td align="right">60725</td>
+<td align="right">60620</td>
+<td align="right">105</td>
+<td align="right">99.82709</td>
+<td align="right">0.1729107</td>
+</tr>
+<tr class="even">
+<td align="left">D28P23b1cec</td>
+<td align="right">81577</td>
+<td align="right">54985</td>
+<td align="right">50736</td>
+<td align="right">53091</td>
+<td align="right">41278</td>
+<td align="right">35644</td>
+<td align="right">35644</td>
+<td align="right">35635</td>
+<td align="right">9</td>
+<td align="right">99.97475</td>
+<td align="right">0.0252497</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P24b1cec</td>
+<td align="right">127569</td>
+<td align="right">86345</td>
+<td align="right">82546</td>
+<td align="right">84546</td>
+<td align="right">72261</td>
+<td align="right">63030</td>
+<td align="right">63030</td>
+<td align="right">63030</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P26b1cec</td>
+<td align="right">81540</td>
+<td align="right">55235</td>
+<td align="right">51971</td>
+<td align="right">53752</td>
+<td align="right">43333</td>
+<td align="right">37795</td>
+<td align="right">37795</td>
+<td align="right">37795</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P35b1cec</td>
+<td align="right">54225</td>
+<td align="right">39034</td>
+<td align="right">36544</td>
+<td align="right">37771</td>
+<td align="right">31774</td>
+<td align="right">27012</td>
+<td align="right">27012</td>
+<td align="right">27012</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P37b1cec</td>
+<td align="right">57015</td>
+<td align="right">41486</td>
+<td align="right">38777</td>
+<td align="right">40124</td>
+<td align="right">32660</td>
+<td align="right">27176</td>
+<td align="right">27176</td>
+<td align="right">27176</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P3b1cec</td>
+<td align="right">55498</td>
+<td align="right">37864</td>
+<td align="right">34698</td>
+<td align="right">36399</td>
+<td align="right">27689</td>
+<td align="right">22621</td>
+<td align="right">22621</td>
+<td align="right">22621</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P41b1cec</td>
+<td align="right">58545</td>
+<td align="right">38432</td>
+<td align="right">36592</td>
+<td align="right">37530</td>
+<td align="right">32610</td>
+<td align="right">23473</td>
+<td align="right">23473</td>
+<td align="right">23473</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P43b1cec</td>
+<td align="right">36547</td>
+<td align="right">26328</td>
+<td align="right">24686</td>
+<td align="right">25367</td>
+<td align="right">21258</td>
+<td align="right">18064</td>
+<td align="right">18064</td>
+<td align="right">18064</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D28P48b1cec</td>
+<td align="right">51498</td>
+<td align="right">37033</td>
+<td align="right">34515</td>
+<td align="right">35863</td>
+<td align="right">29520</td>
+<td align="right">24658</td>
+<td align="right">24658</td>
+<td align="right">24651</td>
+<td align="right">7</td>
+<td align="right">99.97161</td>
+<td align="right">0.0283884</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P4b1cec</td>
+<td align="right">80423</td>
+<td align="right">58524</td>
+<td align="right">55384</td>
+<td align="right">57343</td>
+<td align="right">48045</td>
+<td align="right">41547</td>
+<td align="right">41547</td>
+<td align="right">41530</td>
+<td align="right">17</td>
+<td align="right">99.95908</td>
+<td align="right">0.0409175</td>
+</tr>
+<tr class="even">
+<td align="left">D28P50b1cec</td>
+<td align="right">47431</td>
+<td align="right">33394</td>
+<td align="right">31765</td>
+<td align="right">32427</td>
+<td align="right">27677</td>
+<td align="right">24283</td>
+<td align="right">24283</td>
+<td align="right">24271</td>
+<td align="right">12</td>
+<td align="right">99.95058</td>
+<td align="right">0.0494173</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P55b1cec</td>
+<td align="right">87904</td>
+<td align="right">65938</td>
+<td align="right">62477</td>
+<td align="right">64342</td>
+<td align="right">53540</td>
+<td align="right">46469</td>
+<td align="right">46469</td>
+<td align="right">46436</td>
+<td align="right">33</td>
+<td align="right">99.92898</td>
+<td align="right">0.0710151</td>
+</tr>
+<tr class="even">
+<td align="left">D28P57b1cec</td>
+<td align="right">126084</td>
+<td align="right">94271</td>
+<td align="right">90494</td>
+<td align="right">92684</td>
+<td align="right">81334</td>
+<td align="right">68358</td>
+<td align="right">68358</td>
+<td align="right">68316</td>
+<td align="right">42</td>
+<td align="right">99.93856</td>
+<td align="right">0.0614412</td>
+</tr>
+<tr class="odd">
+<td align="left">D28P6b1cec</td>
+<td align="right">87252</td>
+<td align="right">63267</td>
+<td align="right">60110</td>
+<td align="right">61627</td>
+<td align="right">53908</td>
+<td align="right">40612</td>
+<td align="right">40612</td>
+<td align="right">40551</td>
+<td align="right">61</td>
+<td align="right">99.84980</td>
+<td align="right">0.1502019</td>
+</tr>
+<tr class="even">
+<td align="left">D28P8b1cec</td>
+<td align="right">83008</td>
+<td align="right">60351</td>
+<td align="right">57180</td>
+<td align="right">58953</td>
+<td align="right">50299</td>
+<td align="right">45044</td>
+<td align="right">45044</td>
+<td align="right">44954</td>
+<td align="right">90</td>
+<td align="right">99.80020</td>
+<td align="right">0.1998046</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P11b1cec</td>
+<td align="right">53849</td>
+<td align="right">36576</td>
+<td align="right">35756</td>
+<td align="right">36202</td>
+<td align="right">33650</td>
+<td align="right">30983</td>
+<td align="right">30983</td>
+<td align="right">30983</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P12b1cec</td>
+<td align="right">58349</td>
+<td align="right">42829</td>
+<td align="right">41803</td>
+<td align="right">42363</td>
+<td align="right">36716</td>
+<td align="right">29591</td>
+<td align="right">29591</td>
+<td align="right">29245</td>
+<td align="right">346</td>
+<td align="right">98.83073</td>
+<td align="right">1.1692744</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P16b1cec</td>
+<td align="right">83355</td>
+<td align="right">60708</td>
+<td align="right">59670</td>
+<td align="right">60119</td>
+<td align="right">54909</td>
+<td align="right">46129</td>
+<td align="right">46129</td>
+<td align="right">46115</td>
+<td align="right">14</td>
+<td align="right">99.96965</td>
+<td align="right">0.0303497</td>
+</tr>
+<tr class="even">
+<td align="left">D7P17b1cec</td>
+<td align="right">144408</td>
+<td align="right">96048</td>
+<td align="right">94594</td>
+<td align="right">95376</td>
+<td align="right">86030</td>
+<td align="right">76131</td>
+<td align="right">76131</td>
+<td align="right">76015</td>
+<td align="right">116</td>
+<td align="right">99.84763</td>
+<td align="right">0.1523689</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P18b1cec</td>
+<td align="right">60805</td>
+<td align="right">42786</td>
+<td align="right">41145</td>
+<td align="right">41893</td>
+<td align="right">34747</td>
+<td align="right">30558</td>
+<td align="right">30558</td>
+<td align="right">30558</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P19b1cec</td>
+<td align="right">113511</td>
+<td align="right">76016</td>
+<td align="right">73996</td>
+<td align="right">75126</td>
+<td align="right">63194</td>
+<td align="right">53569</td>
+<td align="right">53569</td>
+<td align="right">53539</td>
+<td align="right">30</td>
+<td align="right">99.94400</td>
+<td align="right">0.0560025</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P23b1cec</td>
+<td align="right">86909</td>
+<td align="right">57719</td>
+<td align="right">56148</td>
+<td align="right">56931</td>
+<td align="right">47153</td>
+<td align="right">41310</td>
+<td align="right">41310</td>
+<td align="right">41310</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P24b1cec</td>
+<td align="right">96827</td>
+<td align="right">64591</td>
+<td align="right">63108</td>
+<td align="right">63871</td>
+<td align="right">55922</td>
+<td align="right">45234</td>
+<td align="right">45234</td>
+<td align="right">45036</td>
+<td align="right">198</td>
+<td align="right">99.56228</td>
+<td align="right">0.4377238</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P26b1cec</td>
+<td align="right">70855</td>
+<td align="right">48352</td>
+<td align="right">47791</td>
+<td align="right">47912</td>
+<td align="right">45358</td>
+<td align="right">34370</td>
+<td align="right">34370</td>
+<td align="right">33875</td>
+<td align="right">495</td>
+<td align="right">98.55979</td>
+<td align="right">1.4402095</td>
+</tr>
+<tr class="even">
+<td align="left">D7P28b1cec</td>
+<td align="right">82160</td>
+<td align="right">58193</td>
+<td align="right">56762</td>
+<td align="right">57650</td>
+<td align="right">50855</td>
+<td align="right">42749</td>
+<td align="right">42749</td>
+<td align="right">42749</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P34b1cec</td>
+<td align="right">99382</td>
+<td align="right">71337</td>
+<td align="right">69549</td>
+<td align="right">70500</td>
+<td align="right">63767</td>
+<td align="right">59006</td>
+<td align="right">59006</td>
+<td align="right">58887</td>
+<td align="right">119</td>
+<td align="right">99.79833</td>
+<td align="right">0.2016744</td>
+</tr>
+<tr class="even">
+<td align="left">D7P35b1cec</td>
+<td align="right">40623</td>
+<td align="right">29038</td>
+<td align="right">27705</td>
+<td align="right">28314</td>
+<td align="right">23851</td>
+<td align="right">18840</td>
+<td align="right">18840</td>
+<td align="right">18624</td>
+<td align="right">216</td>
+<td align="right">98.85350</td>
+<td align="right">1.1464968</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P37b1cec</td>
+<td align="right">56173</td>
+<td align="right">37354</td>
+<td align="right">36764</td>
+<td align="right">37018</td>
+<td align="right">33630</td>
+<td align="right">27868</td>
+<td align="right">27868</td>
+<td align="right">27849</td>
+<td align="right">19</td>
+<td align="right">99.93182</td>
+<td align="right">0.0681786</td>
+</tr>
+<tr class="even">
+<td align="left">D7P38b1cec</td>
+<td align="right">62473</td>
+<td align="right">44558</td>
+<td align="right">42959</td>
+<td align="right">43766</td>
+<td align="right">36441</td>
+<td align="right">33002</td>
+<td align="right">33002</td>
+<td align="right">33002</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P3b1cec</td>
+<td align="right">74716</td>
+<td align="right">52239</td>
+<td align="right">50999</td>
+<td align="right">51237</td>
+<td align="right">42600</td>
+<td align="right">36225</td>
+<td align="right">36225</td>
+<td align="right">36089</td>
+<td align="right">136</td>
+<td align="right">99.62457</td>
+<td align="right">0.3754313</td>
+</tr>
+<tr class="even">
+<td align="left">D7P40b1cec</td>
+<td align="right">71803</td>
+<td align="right">50533</td>
+<td align="right">49022</td>
+<td align="right">49798</td>
+<td align="right">43905</td>
+<td align="right">37440</td>
+<td align="right">37440</td>
+<td align="right">37440</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P41b1cec</td>
+<td align="right">127380</td>
+<td align="right">82225</td>
+<td align="right">80516</td>
+<td align="right">81406</td>
+<td align="right">73233</td>
+<td align="right">54275</td>
+<td align="right">54275</td>
+<td align="right">54110</td>
+<td align="right">165</td>
+<td align="right">99.69599</td>
+<td align="right">0.3040074</td>
+</tr>
+<tr class="even">
+<td align="left">D7P43b1cec</td>
+<td align="right">157745</td>
+<td align="right">103862</td>
+<td align="right">101145</td>
+<td align="right">102703</td>
+<td align="right">87782</td>
+<td align="right">74031</td>
+<td align="right">74031</td>
+<td align="right">74031</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P44b1cec</td>
+<td align="right">84510</td>
+<td align="right">60044</td>
+<td align="right">58735</td>
+<td align="right">59270</td>
+<td align="right">54260</td>
+<td align="right">43739</td>
+<td align="right">43739</td>
+<td align="right">43256</td>
+<td align="right">483</td>
+<td align="right">98.89572</td>
+<td align="right">1.1042776</td>
+</tr>
+<tr class="even">
+<td align="left">D7P48b1cec</td>
+<td align="right">114525</td>
+<td align="right">73949</td>
+<td align="right">72725</td>
+<td align="right">73074</td>
+<td align="right">64016</td>
+<td align="right">49826</td>
+<td align="right">49826</td>
+<td align="right">49826</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P4b1cec</td>
+<td align="right">80263</td>
+<td align="right">56500</td>
+<td align="right">55008</td>
+<td align="right">55799</td>
+<td align="right">49145</td>
+<td align="right">45403</td>
+<td align="right">45403</td>
+<td align="right">45403</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P50b1cec</td>
+<td align="right">77760</td>
+<td align="right">51790</td>
+<td align="right">50541</td>
+<td align="right">51110</td>
+<td align="right">46738</td>
+<td align="right">41470</td>
+<td align="right">41470</td>
+<td align="right">41154</td>
+<td align="right">316</td>
+<td align="right">99.23800</td>
+<td align="right">0.7619966</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P58b1cec</td>
+<td align="right">65393</td>
+<td align="right">45987</td>
+<td align="right">44599</td>
+<td align="right">45169</td>
+<td align="right">38778</td>
+<td align="right">30986</td>
+<td align="right">30986</td>
+<td align="right">30986</td>
+<td align="right">0</td>
+<td align="right">100.00000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">D7P60b1cec</td>
+<td align="right">55166</td>
+<td align="right">39816</td>
+<td align="right">38422</td>
+<td align="right">38971</td>
+<td align="right">33555</td>
+<td align="right">28270</td>
+<td align="right">28270</td>
+<td align="right">28257</td>
+<td align="right">13</td>
+<td align="right">99.95401</td>
+<td align="right">0.0459851</td>
+</tr>
+<tr class="odd">
+<td align="left">D7P6b1cec</td>
+<td align="right">68625</td>
+<td align="right">48876</td>
+<td align="right">47679</td>
+<td align="right">48262</td>
+<td align="right">43682</td>
+<td align="right">37134</td>
+<td align="right">37134</td>
+<td align="right">37040</td>
+<td align="right">94</td>
+<td align="right">99.74686</td>
+<td align="right">0.2531373</td>
+</tr>
+<tr class="even">
+<td align="left">D7P8b1cec</td>
+<td align="right">67888</td>
+<td align="right">48955</td>
+<td align="right">47743</td>
+<td align="right">48285</td>
+<td align="right">43838</td>
+<td align="right">36690</td>
+<td align="right">36690</td>
+<td align="right">36566</td>
+<td align="right">124</td>
+<td align="right">99.66203</td>
+<td align="right">0.3379667</td>
+</tr>
+</tbody>
+</table>
 </div>
