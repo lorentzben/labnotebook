@@ -32,6 +32,8 @@ blogdown::build_site(build_rmd = TRUE)
 blogdown::build_site(build_rmd = 'newfile')
 or
 blogdown::serve_site()
+or
+render("content/post/2022-11-02-project-check-in-and-examining-ampliseq-results/index.Rmd")
 ```
 
 ### Docker
