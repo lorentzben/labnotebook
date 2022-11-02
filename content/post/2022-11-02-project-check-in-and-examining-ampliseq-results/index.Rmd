@@ -84,7 +84,7 @@ Low Richness successfully completed and was downloaded to the ssd.
 
 low<-read.csv("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv",sep = '\t')
 order_low <- low[order(low$filtered_tax_filter,decreasing = T),]
-knitr::kable(order_low)
+knitr::kable(order_low, row.names = F)
 
 ```
 
@@ -114,8 +114,39 @@ High Richness
 
 high<-read.csv("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv",sep='\t')
 order_high <- high[order(high$filtered_tax_filter,decreasing = T),]
-knitr::kable(order_high)
+knitr::kable(order_high,row.names = F)
 
 ```
 
+### Visualize Ampliseq 
 
+The reports for chunks 01-06 rendered correctly :) so the next step is to set up report 07 for tomorrow. One thing of note is that the PCoA plots did not get copied into the result dir, so check this when you re-run. 
+
+### Define project outline for Term paper
+
+I want to base my analysis off of [this paper](https://pubmed.ncbi.nlm.nih.gov/31552140/), I plan to re-analyse the data using Kallisto and then Sleuth to plot the differential expression. The previous analysis used Star to map readsto the ref genome and then used HTSeq to quanitfy mapped reads and then used DESeq2 to identify differentially expressed then they used DAVID to do GO and pathway analysis of DEGs. 
+
+### Todos for Today:
+- continue reading jones
+- Visualize Ampliseq
+  - check png files for PCoA
+  - Build chunk 07
+  - add example params and slurm for ampliseq into ampliseq-vis repos
+- re-watch the lecture for ChIP-seq
+- What is a core microbiome?
+  - Can we use this to find the major players in chicken gut segments?
+  - are keystone species more important in gut microbiomes?
+- How can multi-omics projects be implemented in host-microbe interactions
+- Check in on classifier still running
+
+---
+
+- Try to run DESeq2's GLM/LRT on shaile's design
+- Learn a little more about GLM in R
+
+---
+
+- BIOSQL, SQL or Mongo DB tutorials
+- Genome Assembly from Isolates
+- Kelly Shotgun Metagenomic Data
+- good example 16s data to hone parameters

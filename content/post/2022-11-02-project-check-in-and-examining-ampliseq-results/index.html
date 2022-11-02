@@ -79,26 +79,24 @@ change the design to include just this factor, e.g. ~ group</code></pre>
 <p>Low Richness successfully completed and was downloaded to the ssd.</p>
 <pre class="r"><code>low&lt;-read.csv(&quot;/mnt/content/tables_for_ampliseq/low_richness_stats.tsv&quot;,sep = &#39;\t&#39;)
 order_low &lt;- low[order(low$filtered_tax_filter,decreasing = T),]
-knitr::kable(order_low)</code></pre>
+knitr::kable(order_low, row.names = F)</code></pre>
 <table>
 <colgroup>
-<col width="2%" />
 <col width="8%" />
 <col width="8%" />
 <col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="4%" />
+<col width="7%" />
+<col width="7%" />
 <col width="5%" />
-<col width="11%" />
-<col width="13%" />
+<col width="5%" />
+<col width="12%" />
+<col width="14%" />
 <col width="3%" />
-<col width="11%" />
+<col width="12%" />
 <col width="9%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"></th>
 <th align="left">sample</th>
 <th align="right">DADA2_input</th>
 <th align="right">filtered</th>
@@ -115,7 +113,6 @@ knitr::kable(order_low)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">24</td>
 <td align="left">D14P55b1cec</td>
 <td align="right">202185</td>
 <td align="right">135569</td>
@@ -130,7 +127,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">1.0730072</td>
 </tr>
 <tr class="even">
-<td align="left">61</td>
 <td align="left">D7P17b1cec</td>
 <td align="right">144408</td>
 <td align="right">96048</td>
@@ -145,7 +141,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">75</td>
 <td align="left">D7P43b1cec</td>
 <td align="right">157745</td>
 <td align="right">103862</td>
@@ -160,7 +155,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">53</td>
 <td align="left">D28P57b1cec</td>
 <td align="right">126084</td>
 <td align="right">94271</td>
@@ -175,7 +169,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">38</td>
 <td align="left">D28P24b1cec</td>
 <td align="right">127569</td>
 <td align="right">86345</td>
@@ -190,7 +183,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">34</td>
 <td align="left">D28P17b1cec</td>
 <td align="right">147482</td>
 <td align="right">98549</td>
@@ -205,7 +197,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">36</td>
 <td align="left">D28P19b1cec</td>
 <td align="right">137600</td>
 <td align="right">94156</td>
@@ -220,7 +211,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.1679095</td>
 </tr>
 <tr class="even">
-<td align="left">68</td>
 <td align="left">D7P34b1cec</td>
 <td align="right">99382</td>
 <td align="right">71337</td>
@@ -235,7 +225,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.1391481</td>
 </tr>
 <tr class="odd">
-<td align="left">74</td>
 <td align="left">D7P41b1cec</td>
 <td align="right">127380</td>
 <td align="right">82225</td>
@@ -250,7 +239,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.2910082</td>
 </tr>
 <tr class="even">
-<td align="left">63</td>
 <td align="left">D7P19b1cec</td>
 <td align="right">113511</td>
 <td align="right">76016</td>
@@ -265,7 +253,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0916230</td>
 </tr>
 <tr class="odd">
-<td align="left">27</td>
 <td align="left">D14P60b1cec</td>
 <td align="right">103869</td>
 <td align="right">68943</td>
@@ -280,7 +267,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">77</td>
 <td align="left">D7P48b1cec</td>
 <td align="right">114525</td>
 <td align="right">73949</td>
@@ -295,7 +281,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">23</td>
 <td align="left">D14P52b1cec</td>
 <td align="right">81391</td>
 <td align="right">58281</td>
@@ -310,7 +295,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">52</td>
 <td align="left">D28P55b1cec</td>
 <td align="right">87904</td>
 <td align="right">65938</td>
@@ -325,7 +309,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">60</td>
 <td align="left">D7P16b1cec</td>
 <td align="right">83355</td>
 <td align="right">60708</td>
@@ -340,7 +323,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">78</td>
 <td align="left">D7P4b1cec</td>
 <td align="right">80263</td>
 <td align="right">56500</td>
@@ -355,7 +337,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">33</td>
 <td align="left">D28P16b1cec</td>
 <td align="right">92178</td>
 <td align="right">67451</td>
@@ -370,7 +351,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">65</td>
 <td align="left">D7P24b1cec</td>
 <td align="right">96827</td>
 <td align="right">64591</td>
@@ -385,7 +365,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.4747566</td>
 </tr>
 <tr class="odd">
-<td align="left">57</td>
 <td align="left">D28P8b1cec</td>
 <td align="right">83008</td>
 <td align="right">60351</td>
@@ -400,7 +379,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.2053932</td>
 </tr>
 <tr class="even">
-<td align="left">16</td>
 <td align="left">D14P40b1cec</td>
 <td align="right">100717</td>
 <td align="right">70612</td>
@@ -415,7 +393,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.1519407</td>
 </tr>
 <tr class="odd">
-<td align="left">76</td>
 <td align="left">D7P44b1cec</td>
 <td align="right">84510</td>
 <td align="right">60044</td>
@@ -430,7 +407,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">1.1053509</td>
 </tr>
 <tr class="even">
-<td align="left">67</td>
 <td align="left">D7P28b1cec</td>
 <td align="right">82160</td>
 <td align="right">58193</td>
@@ -445,7 +421,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">64</td>
 <td align="left">D7P23b1cec</td>
 <td align="right">86909</td>
 <td align="right">57719</td>
@@ -460,7 +435,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">49</td>
 <td align="left">D28P4b1cec</td>
 <td align="right">80423</td>
 <td align="right">58524</td>
@@ -475,7 +449,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">79</td>
 <td align="left">D7P50b1cec</td>
 <td align="right">77760</td>
 <td align="right">51790</td>
@@ -490,7 +463,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.6742764</td>
 </tr>
 <tr class="even">
-<td align="left">56</td>
 <td align="left">D28P6b1cec</td>
 <td align="right">87252</td>
 <td align="right">63267</td>
@@ -505,7 +477,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.1293188</td>
 </tr>
 <tr class="odd">
-<td align="left">26</td>
 <td align="left">D14P58b1cec</td>
 <td align="right">85488</td>
 <td align="right">61182</td>
@@ -520,7 +491,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.3527829</td>
 </tr>
 <tr class="even">
-<td align="left">39</td>
 <td align="left">D28P26b1cec</td>
 <td align="right">81540</td>
 <td align="right">55235</td>
@@ -535,7 +505,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">11</td>
 <td align="left">D14P28b1cec</td>
 <td align="right">71151</td>
 <td align="right">50147</td>
@@ -550,7 +519,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">73</td>
 <td align="left">D7P40b1cec</td>
 <td align="right">71803</td>
 <td align="right">50533</td>
@@ -565,7 +533,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0614661</td>
 </tr>
 <tr class="odd">
-<td align="left">85</td>
 <td align="left">D7P6b1cec</td>
 <td align="right">68625</td>
 <td align="right">48876</td>
@@ -580,7 +547,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.2142302</td>
 </tr>
 <tr class="even">
-<td align="left">86</td>
 <td align="left">D7P8b1cec</td>
 <td align="right">67888</td>
 <td align="right">48955</td>
@@ -595,7 +561,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.2567114</td>
 </tr>
 <tr class="odd">
-<td align="left">72</td>
 <td align="left">D7P3b1cec</td>
 <td align="right">74716</td>
 <td align="right">52239</td>
@@ -610,7 +575,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.3683140</td>
 </tr>
 <tr class="even">
-<td align="left">19</td>
 <td align="left">D14P44b1cec</td>
 <td align="right">66459</td>
 <td align="right">47469</td>
@@ -625,7 +589,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0610196</td>
 </tr>
 <tr class="odd">
-<td align="left">18</td>
 <td align="left">D14P43b1cec</td>
 <td align="right">66107</td>
 <td align="right">45679</td>
@@ -640,7 +603,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.6069004</td>
 </tr>
 <tr class="even">
-<td align="left">37</td>
 <td align="left">D28P23b1cec</td>
 <td align="right">81577</td>
 <td align="right">54985</td>
@@ -655,7 +617,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">66</td>
 <td align="left">D7P26b1cec</td>
 <td align="right">70855</td>
 <td align="right">48352</td>
@@ -670,7 +631,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">1.2525547</td>
 </tr>
 <tr class="even">
-<td align="left">71</td>
 <td align="left">D7P38b1cec</td>
 <td align="right">62473</td>
 <td align="right">44558</td>
@@ -685,7 +645,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">17</td>
 <td align="left">D14P41b1cec</td>
 <td align="right">73447</td>
 <td align="right">50776</td>
@@ -700,7 +659,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">21</td>
 <td align="left">D14P4b1cec</td>
 <td align="right">67619</td>
 <td align="right">47536</td>
@@ -715,7 +673,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">4</td>
 <td align="left">D14P16b1cec</td>
 <td align="right">71470</td>
 <td align="right">50532</td>
@@ -730,7 +687,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.7146424</td>
 </tr>
 <tr class="even">
-<td align="left">83</td>
 <td align="left">D7P58b1cec</td>
 <td align="right">65393</td>
 <td align="right">45987</td>
@@ -745,7 +701,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">58</td>
 <td align="left">D7P11b1cec</td>
 <td align="right">53849</td>
 <td align="right">36576</td>
@@ -760,7 +715,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">62</td>
 <td align="left">D7P18b1cec</td>
 <td align="right">60805</td>
 <td align="right">42786</td>
@@ -775,7 +729,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">35</td>
 <td align="left">D28P18b1cec</td>
 <td align="right">68330</td>
 <td align="right">48419</td>
@@ -790,7 +743,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">59</td>
 <td align="left">D7P12b1cec</td>
 <td align="right">58349</td>
 <td align="right">42829</td>
@@ -805,7 +757,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">1.2007847</td>
 </tr>
 <tr class="odd">
-<td align="left">84</td>
 <td align="left">D7P60b1cec</td>
 <td align="right">55166</td>
 <td align="right">39816</td>
@@ -820,7 +771,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.1027822</td>
 </tr>
 <tr class="even">
-<td align="left">70</td>
 <td align="left">D7P37b1cec</td>
 <td align="right">56173</td>
 <td align="right">37354</td>
@@ -835,7 +785,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">22</td>
 <td align="left">D14P50b1cec</td>
 <td align="right">56348</td>
 <td align="right">40577</td>
@@ -850,7 +799,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">43</td>
 <td align="left">D28P37b1cec</td>
 <td align="right">57015</td>
 <td align="right">41486</td>
@@ -865,7 +813,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">42</td>
 <td align="left">D28P35b1cec</td>
 <td align="right">54225</td>
 <td align="right">39034</td>
@@ -880,7 +827,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">9</td>
 <td align="left">D14P24b1cec</td>
 <td align="right">53175</td>
 <td align="right">37019</td>
@@ -895,7 +841,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">30</td>
 <td align="left">D28P11b1cec</td>
 <td align="right">51792</td>
 <td align="right">37786</td>
@@ -910,7 +855,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">10</td>
 <td align="left">D14P26b1cec</td>
 <td align="right">54199</td>
 <td align="right">39133</td>
@@ -925,7 +869,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.3542245</td>
 </tr>
 <tr class="odd">
-<td align="left">48</td>
 <td align="left">D28P48b1cec</td>
 <td align="right">51498</td>
 <td align="right">37033</td>
@@ -940,7 +883,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">50</td>
 <td align="left">D28P50b1cec</td>
 <td align="right">47431</td>
 <td align="right">33394</td>
@@ -955,7 +897,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">31</td>
 <td align="left">D28P12b1cec</td>
 <td align="right">50324</td>
 <td align="right">35669</td>
@@ -970,7 +911,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">46</td>
 <td align="left">D28P41b1cec</td>
 <td align="right">58545</td>
 <td align="right">38432</td>
@@ -985,7 +925,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">44</td>
 <td align="left">D28P3b1cec</td>
 <td align="right">55498</td>
 <td align="right">37864</td>
@@ -1000,7 +939,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">14</td>
 <td align="left">D14P37b1cec</td>
 <td align="right">42194</td>
 <td align="right">29741</td>
@@ -1015,7 +953,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">32</td>
 <td align="left">D28P13b1cec</td>
 <td align="right">44566</td>
 <td align="right">30702</td>
@@ -1030,7 +967,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">20</td>
 <td align="left">D14P48b1cec</td>
 <td align="right">43074</td>
 <td align="right">29651</td>
@@ -1045,7 +981,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">15</td>
 <td align="left">D14P38b1cec</td>
 <td align="right">37614</td>
 <td align="right">26723</td>
@@ -1060,7 +995,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0305375</td>
 </tr>
 <tr class="even">
-<td align="left">69</td>
 <td align="left">D7P35b1cec</td>
 <td align="right">40623</td>
 <td align="right">29038</td>
@@ -1075,7 +1009,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">1.1276618</td>
 </tr>
 <tr class="odd">
-<td align="left">3</td>
 <td align="left">D14P13b1cec</td>
 <td align="right">43079</td>
 <td align="right">30976</td>
@@ -1090,7 +1023,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">28</td>
 <td align="left">D14P6b1cec</td>
 <td align="right">36152</td>
 <td align="right">25603</td>
@@ -1105,7 +1037,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">29</td>
 <td align="left">D14P8b1cec</td>
 <td align="right">35218</td>
 <td align="right">25266</td>
@@ -1120,7 +1051,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">47</td>
 <td align="left">D28P43b1cec</td>
 <td align="right">36547</td>
 <td align="right">26328</td>
@@ -1135,7 +1065,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">6</td>
 <td align="left">D14P18b1cec</td>
 <td align="right">34364</td>
 <td align="right">23918</td>
@@ -1150,7 +1079,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">2</td>
 <td align="left">D14P12b1cec</td>
 <td align="right">26625</td>
 <td align="right">18152</td>
@@ -1165,7 +1093,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">25</td>
 <td align="left">D14P57b1cec</td>
 <td align="right">19407</td>
 <td align="right">13957</td>
@@ -1180,7 +1107,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">12</td>
 <td align="left">D14P34b1cec</td>
 <td align="right">18093</td>
 <td align="right">12818</td>
@@ -1195,7 +1121,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">51</td>
 <td align="left">D28P52b1cec</td>
 <td align="right">142951</td>
 <td align="right">4170</td>
@@ -1210,7 +1135,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">80</td>
 <td align="left">D7P52b1cec</td>
 <td align="right">110400</td>
 <td align="right">3292</td>
@@ -1225,7 +1149,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">81</td>
 <td align="left">D7P55b1cec</td>
 <td align="right">126980</td>
 <td align="right">2678</td>
@@ -1240,7 +1163,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">40</td>
 <td align="left">D28P28b1cec</td>
 <td align="right">88753</td>
 <td align="right">2773</td>
@@ -1255,7 +1177,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">54</td>
 <td align="left">D28P58b1cec</td>
 <td align="right">125728</td>
 <td align="right">3098</td>
@@ -1270,7 +1191,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.4678363</td>
 </tr>
 <tr class="even">
-<td align="left">5</td>
 <td align="left">D14P17b1cec</td>
 <td align="right">92635</td>
 <td align="right">2728</td>
@@ -1285,7 +1205,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">8</td>
 <td align="left">D14P23b1cec</td>
 <td align="right">99505</td>
 <td align="right">1898</td>
@@ -1300,7 +1219,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">13</td>
 <td align="left">D14P35b1cec</td>
 <td align="right">97287</td>
 <td align="right">2098</td>
@@ -1315,7 +1233,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">41</td>
 <td align="left">D28P34b1cec</td>
 <td align="right">105646</td>
 <td align="right">2018</td>
@@ -1330,7 +1247,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">55</td>
 <td align="left">D28P60b1cec</td>
 <td align="right">110611</td>
 <td align="right">2216</td>
@@ -1345,7 +1261,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">82</td>
 <td align="left">D7P57b1cec</td>
 <td align="right">101383</td>
 <td align="right">2058</td>
@@ -1360,7 +1275,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">7</td>
 <td align="left">D14P19b1cec</td>
 <td align="right">84517</td>
 <td align="right">1729</td>
@@ -1375,7 +1289,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">45</td>
 <td align="left">D28P40b1cec</td>
 <td align="right">83194</td>
 <td align="right">2016</td>
@@ -1390,7 +1303,6 @@ knitr::kable(order_low)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">1</td>
 <td align="left">D14P11b1cec</td>
 <td align="right">82828</td>
 <td align="right">1848</td>
@@ -1418,26 +1330,24 @@ nextflow: cranky_kalam</p>
 <p>High Richness</p>
 <pre class="r"><code>high&lt;-read.csv(&quot;/mnt/content/tables_for_ampliseq/high_richness_stats.tsv&quot;,sep=&#39;\t&#39;)
 order_high &lt;- high[order(high$filtered_tax_filter,decreasing = T),]
-knitr::kable(order_high)</code></pre>
+knitr::kable(order_high,row.names = F)</code></pre>
 <table>
 <colgroup>
-<col width="2%" />
 <col width="8%" />
 <col width="8%" />
 <col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="4%" />
+<col width="7%" />
+<col width="7%" />
 <col width="5%" />
-<col width="11%" />
-<col width="13%" />
+<col width="5%" />
+<col width="12%" />
+<col width="14%" />
 <col width="3%" />
-<col width="11%" />
+<col width="12%" />
 <col width="9%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"></th>
 <th align="left">sample</th>
 <th align="right">DADA2_input</th>
 <th align="right">filtered</th>
@@ -1454,7 +1364,6 @@ knitr::kable(order_high)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">18</td>
 <td align="left">D14P55b1cec</td>
 <td align="right">202185</td>
 <td align="right">135569</td>
@@ -1469,7 +1378,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">1.0121595</td>
 </tr>
 <tr class="even">
-<td align="left">48</td>
 <td align="left">D7P17b1cec</td>
 <td align="right">144408</td>
 <td align="right">96048</td>
@@ -1484,7 +1392,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1523689</td>
 </tr>
 <tr class="odd">
-<td align="left">62</td>
 <td align="left">D7P43b1cec</td>
 <td align="right">157745</td>
 <td align="right">103862</td>
@@ -1499,7 +1406,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">42</td>
 <td align="left">D28P57b1cec</td>
 <td align="right">126084</td>
 <td align="right">94271</td>
@@ -1514,7 +1420,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0614412</td>
 </tr>
 <tr class="odd">
-<td align="left">31</td>
 <td align="left">D28P24b1cec</td>
 <td align="right">127569</td>
 <td align="right">86345</td>
@@ -1529,7 +1434,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">27</td>
 <td align="left">D28P17b1cec</td>
 <td align="right">147482</td>
 <td align="right">98549</td>
@@ -1544,7 +1448,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0212930</td>
 </tr>
 <tr class="odd">
-<td align="left">29</td>
 <td align="left">D28P19b1cec</td>
 <td align="right">137600</td>
 <td align="right">94156</td>
@@ -1559,7 +1462,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1729107</td>
 </tr>
 <tr class="even">
-<td align="left">55</td>
 <td align="left">D7P34b1cec</td>
 <td align="right">99382</td>
 <td align="right">71337</td>
@@ -1574,7 +1476,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.2016744</td>
 </tr>
 <tr class="odd">
-<td align="left">61</td>
 <td align="left">D7P41b1cec</td>
 <td align="right">127380</td>
 <td align="right">82225</td>
@@ -1589,7 +1490,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.3040074</td>
 </tr>
 <tr class="even">
-<td align="left">50</td>
 <td align="left">D7P19b1cec</td>
 <td align="right">113511</td>
 <td align="right">76016</td>
@@ -1604,7 +1504,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0560025</td>
 </tr>
 <tr class="odd">
-<td align="left">20</td>
 <td align="left">D14P60b1cec</td>
 <td align="right">103869</td>
 <td align="right">68943</td>
@@ -1619,7 +1518,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0289749</td>
 </tr>
 <tr class="even">
-<td align="left">64</td>
 <td align="left">D7P48b1cec</td>
 <td align="right">114525</td>
 <td align="right">73949</td>
@@ -1634,7 +1532,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">17</td>
 <td align="left">D14P52b1cec</td>
 <td align="right">81391</td>
 <td align="right">58281</td>
@@ -1649,7 +1546,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0149810</td>
 </tr>
 <tr class="even">
-<td align="left">41</td>
 <td align="left">D28P55b1cec</td>
 <td align="right">87904</td>
 <td align="right">65938</td>
@@ -1664,7 +1560,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0710151</td>
 </tr>
 <tr class="odd">
-<td align="left">47</td>
 <td align="left">D7P16b1cec</td>
 <td align="right">83355</td>
 <td align="right">60708</td>
@@ -1679,7 +1574,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0303497</td>
 </tr>
 <tr class="even">
-<td align="left">26</td>
 <td align="left">D28P16b1cec</td>
 <td align="right">92178</td>
 <td align="right">67451</td>
@@ -1694,7 +1588,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">65</td>
 <td align="left">D7P4b1cec</td>
 <td align="right">80263</td>
 <td align="right">56500</td>
@@ -1709,7 +1602,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">52</td>
 <td align="left">D7P24b1cec</td>
 <td align="right">96827</td>
 <td align="right">64591</td>
@@ -1724,7 +1616,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.4377238</td>
 </tr>
 <tr class="odd">
-<td align="left">44</td>
 <td align="left">D28P8b1cec</td>
 <td align="right">83008</td>
 <td align="right">60351</td>
@@ -1739,7 +1630,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1998046</td>
 </tr>
 <tr class="even">
-<td align="left">63</td>
 <td align="left">D7P44b1cec</td>
 <td align="right">84510</td>
 <td align="right">60044</td>
@@ -1754,7 +1644,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">1.1042776</td>
 </tr>
 <tr class="odd">
-<td align="left">10</td>
 <td align="left">D14P40b1cec</td>
 <td align="right">100717</td>
 <td align="right">70612</td>
@@ -1769,7 +1658,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1527955</td>
 </tr>
 <tr class="even">
-<td align="left">54</td>
 <td align="left">D7P28b1cec</td>
 <td align="right">82160</td>
 <td align="right">58193</td>
@@ -1784,7 +1672,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">39</td>
 <td align="left">D28P4b1cec</td>
 <td align="right">80423</td>
 <td align="right">58524</td>
@@ -1799,7 +1686,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0409175</td>
 </tr>
 <tr class="even">
-<td align="left">51</td>
 <td align="left">D7P23b1cec</td>
 <td align="right">86909</td>
 <td align="right">57719</td>
@@ -1814,7 +1700,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">66</td>
 <td align="left">D7P50b1cec</td>
 <td align="right">77760</td>
 <td align="right">51790</td>
@@ -1829,7 +1714,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.7619966</td>
 </tr>
 <tr class="even">
-<td align="left">43</td>
 <td align="left">D28P6b1cec</td>
 <td align="right">87252</td>
 <td align="right">63267</td>
@@ -1844,7 +1728,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1502019</td>
 </tr>
 <tr class="odd">
-<td align="left">19</td>
 <td align="left">D14P58b1cec</td>
 <td align="right">85488</td>
 <td align="right">61182</td>
@@ -1859,7 +1742,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.3912857</td>
 </tr>
 <tr class="even">
-<td align="left">32</td>
 <td align="left">D28P26b1cec</td>
 <td align="right">81540</td>
 <td align="right">55235</td>
@@ -1874,7 +1756,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">60</td>
 <td align="left">D7P40b1cec</td>
 <td align="right">71803</td>
 <td align="right">50533</td>
@@ -1889,7 +1770,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">7</td>
 <td align="left">D14P28b1cec</td>
 <td align="right">71151</td>
 <td align="right">50147</td>
@@ -1904,7 +1784,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">69</td>
 <td align="left">D7P6b1cec</td>
 <td align="right">68625</td>
 <td align="right">48876</td>
@@ -1919,7 +1798,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.2531373</td>
 </tr>
 <tr class="even">
-<td align="left">70</td>
 <td align="left">D7P8b1cec</td>
 <td align="right">67888</td>
 <td align="right">48955</td>
@@ -1934,7 +1812,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.3379667</td>
 </tr>
 <tr class="odd">
-<td align="left">59</td>
 <td align="left">D7P3b1cec</td>
 <td align="right">74716</td>
 <td align="right">52239</td>
@@ -1949,7 +1826,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.3754313</td>
 </tr>
 <tr class="even">
-<td align="left">12</td>
 <td align="left">D14P43b1cec</td>
 <td align="right">66107</td>
 <td align="right">45679</td>
@@ -1964,7 +1840,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.7418685</td>
 </tr>
 <tr class="odd">
-<td align="left">13</td>
 <td align="left">D14P44b1cec</td>
 <td align="right">66459</td>
 <td align="right">47469</td>
@@ -1979,7 +1854,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1032683</td>
 </tr>
 <tr class="even">
-<td align="left">30</td>
 <td align="left">D28P23b1cec</td>
 <td align="right">81577</td>
 <td align="right">54985</td>
@@ -1994,7 +1868,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0252497</td>
 </tr>
 <tr class="odd">
-<td align="left">53</td>
 <td align="left">D7P26b1cec</td>
 <td align="right">70855</td>
 <td align="right">48352</td>
@@ -2009,7 +1882,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">1.4402095</td>
 </tr>
 <tr class="even">
-<td align="left">58</td>
 <td align="left">D7P38b1cec</td>
 <td align="right">62473</td>
 <td align="right">44558</td>
@@ -2024,7 +1896,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">11</td>
 <td align="left">D14P41b1cec</td>
 <td align="right">73447</td>
 <td align="right">50776</td>
@@ -2039,7 +1910,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">3</td>
 <td align="left">D14P16b1cec</td>
 <td align="right">71470</td>
 <td align="right">50532</td>
@@ -2054,7 +1924,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">1.0453069</td>
 </tr>
 <tr class="odd">
-<td align="left">15</td>
 <td align="left">D14P4b1cec</td>
 <td align="right">67619</td>
 <td align="right">47536</td>
@@ -2069,7 +1938,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">67</td>
 <td align="left">D7P58b1cec</td>
 <td align="right">65393</td>
 <td align="right">45987</td>
@@ -2084,7 +1952,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">45</td>
 <td align="left">D7P11b1cec</td>
 <td align="right">53849</td>
 <td align="right">36576</td>
@@ -2099,7 +1966,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">49</td>
 <td align="left">D7P18b1cec</td>
 <td align="right">60805</td>
 <td align="right">42786</td>
@@ -2114,7 +1980,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">28</td>
 <td align="left">D28P18b1cec</td>
 <td align="right">68330</td>
 <td align="right">48419</td>
@@ -2129,7 +1994,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">46</td>
 <td align="left">D7P12b1cec</td>
 <td align="right">58349</td>
 <td align="right">42829</td>
@@ -2144,7 +2008,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">1.1692744</td>
 </tr>
 <tr class="odd">
-<td align="left">68</td>
 <td align="left">D7P60b1cec</td>
 <td align="right">55166</td>
 <td align="right">39816</td>
@@ -2159,7 +2022,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0459851</td>
 </tr>
 <tr class="even">
-<td align="left">57</td>
 <td align="left">D7P37b1cec</td>
 <td align="right">56173</td>
 <td align="right">37354</td>
@@ -2174,7 +2036,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0681786</td>
 </tr>
 <tr class="odd">
-<td align="left">16</td>
 <td align="left">D14P50b1cec</td>
 <td align="right">56348</td>
 <td align="right">40577</td>
@@ -2189,7 +2050,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">34</td>
 <td align="left">D28P37b1cec</td>
 <td align="right">57015</td>
 <td align="right">41486</td>
@@ -2204,7 +2064,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">33</td>
 <td align="left">D28P35b1cec</td>
 <td align="right">54225</td>
 <td align="right">39034</td>
@@ -2219,7 +2078,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">5</td>
 <td align="left">D14P24b1cec</td>
 <td align="right">53175</td>
 <td align="right">37019</td>
@@ -2234,7 +2092,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">23</td>
 <td align="left">D28P11b1cec</td>
 <td align="right">51792</td>
 <td align="right">37786</td>
@@ -2249,7 +2106,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">6</td>
 <td align="left">D14P26b1cec</td>
 <td align="right">54199</td>
 <td align="right">39133</td>
@@ -2264,7 +2120,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.4934408</td>
 </tr>
 <tr class="odd">
-<td align="left">38</td>
 <td align="left">D28P48b1cec</td>
 <td align="right">51498</td>
 <td align="right">37033</td>
@@ -2279,7 +2134,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0283884</td>
 </tr>
 <tr class="even">
-<td align="left">40</td>
 <td align="left">D28P50b1cec</td>
 <td align="right">47431</td>
 <td align="right">33394</td>
@@ -2294,7 +2148,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0494173</td>
 </tr>
 <tr class="odd">
-<td align="left">36</td>
 <td align="left">D28P41b1cec</td>
 <td align="right">58545</td>
 <td align="right">38432</td>
@@ -2309,7 +2162,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">24</td>
 <td align="left">D28P12b1cec</td>
 <td align="right">50324</td>
 <td align="right">35669</td>
@@ -2324,7 +2176,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0298355</td>
 </tr>
 <tr class="odd">
-<td align="left">35</td>
 <td align="left">D28P3b1cec</td>
 <td align="right">55498</td>
 <td align="right">37864</td>
@@ -2339,7 +2190,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">8</td>
 <td align="left">D14P37b1cec</td>
 <td align="right">42194</td>
 <td align="right">29741</td>
@@ -2354,7 +2204,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">14</td>
 <td align="left">D14P48b1cec</td>
 <td align="right">43074</td>
 <td align="right">29651</td>
@@ -2369,7 +2218,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">25</td>
 <td align="left">D28P13b1cec</td>
 <td align="right">44566</td>
 <td align="right">30702</td>
@@ -2384,7 +2232,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">9</td>
 <td align="left">D14P38b1cec</td>
 <td align="right">37614</td>
 <td align="right">26723</td>
@@ -2399,7 +2246,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">21</td>
 <td align="left">D14P6b1cec</td>
 <td align="right">36152</td>
 <td align="right">25603</td>
@@ -2414,7 +2260,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.1066553</td>
 </tr>
 <tr class="odd">
-<td align="left">56</td>
 <td align="left">D7P35b1cec</td>
 <td align="right">40623</td>
 <td align="right">29038</td>
@@ -2429,7 +2274,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">1.1464968</td>
 </tr>
 <tr class="even">
-<td align="left">2</td>
 <td align="left">D14P13b1cec</td>
 <td align="right">43079</td>
 <td align="right">30976</td>
@@ -2444,7 +2288,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0484314</td>
 </tr>
 <tr class="odd">
-<td align="left">22</td>
 <td align="left">D14P8b1cec</td>
 <td align="right">35218</td>
 <td align="right">25266</td>
@@ -2459,7 +2302,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0385463</td>
 </tr>
 <tr class="even">
-<td align="left">37</td>
 <td align="left">D28P43b1cec</td>
 <td align="right">36547</td>
 <td align="right">26328</td>
@@ -2474,7 +2316,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td align="left">4</td>
 <td align="left">D14P18b1cec</td>
 <td align="right">34364</td>
 <td align="right">23918</td>
@@ -2489,7 +2330,6 @@ knitr::kable(order_high)</code></pre>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td align="left">1</td>
 <td align="left">D14P12b1cec</td>
 <td align="right">26625</td>
 <td align="right">18152</td>
@@ -2505,4 +2345,44 @@ knitr::kable(order_high)</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="visualize-ampliseq" class="section level3">
+<h3>Visualize Ampliseq</h3>
+<p>The reports for chunks 01-06 rendered correctly :) so the next step is to set up report 07 for tomorrow. One thing of note is that the PCoA plots did not get copied into the result dir, so check this when you re-run.</p>
+</div>
+<div id="define-project-outline-for-term-paper" class="section level3">
+<h3>Define project outline for Term paper</h3>
+<p>I want to base my analysis off of <a href="https://pubmed.ncbi.nlm.nih.gov/31552140/">this paper</a>, I plan to re-analyse the data using Kallisto and then Sleuth to plot the differential expression. The previous analysis used Star to map readsto the ref genome and then used HTSeq to quanitfy mapped reads and then used DESeq2 to identify differentially expressed then they used DAVID to do GO and pathway analysis of DEGs.</p>
+</div>
+<div id="todos-for-today-1" class="section level3">
+<h3>Todos for Today:</h3>
+<ul>
+<li>continue reading jones</li>
+<li>Visualize Ampliseq
+<ul>
+<li>check png files for PCoA</li>
+<li>Build chunk 07</li>
+<li>add example params and slurm for ampliseq into ampliseq-vis repos</li>
+</ul></li>
+<li>re-watch the lecture for ChIP-seq</li>
+<li>What is a core microbiome?
+<ul>
+<li>Can we use this to find the major players in chicken gut segments?</li>
+<li>are keystone species more important in gut microbiomes?</li>
+</ul></li>
+<li>How can multi-omics projects be implemented in host-microbe interactions</li>
+<li>Check in on classifier still running</li>
+</ul>
+<hr />
+<ul>
+<li>Try to run DESeq2’s GLM/LRT on shaile’s design</li>
+<li>Learn a little more about GLM in R</li>
+</ul>
+<hr />
+<ul>
+<li>BIOSQL, SQL or Mongo DB tutorials</li>
+<li>Genome Assembly from Isolates</li>
+<li>Kelly Shotgun Metagenomic Data</li>
+<li>good example 16s data to hone parameters</li>
+</ul>
 </div>
