@@ -81,11 +81,8 @@ Ben stopped by to ask about trying to align a Gene HAT2 or GCS1 to an Eimeria Ma
 Low Richness successfully completed and was downloaded to the ssd.
 
 ```{r message=FALSE}
-library(readr)
-library(dplyr)
 
-
-low<-read_table("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv")
+low<-read.csv("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv",sep = '\t')
 data.frame(low)
 
 ```
@@ -100,8 +97,7 @@ Caused by:
 ```
 
 ```{r}
-library(readr)
-library(dplyr)
+
 
 #read_table("/mnt/content/tables_for_ampliseq/med_richness_stats.tsv")
 
@@ -114,10 +110,8 @@ nextflow: cranky_kalam
 High Richness
 
 ```{r message=FALSE}
-library(readr)
-library(dplyr)
 
-high<-read_table("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv")
+high<-read.csv("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv",sep='\t')
 data.frame(high)
 ```
 
