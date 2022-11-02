@@ -80,11 +80,13 @@ Ben stopped by to ask about trying to align a Gene HAT2 or GCS1 to an Eimeria Ma
 
 Low Richness successfully completed and was downloaded to the ssd.
 
-```{r}
+```{r message=FALSE}
 library(readr)
 library(dplyr)
 
-read_table("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv")
+
+low<-read_table("/mnt/content/tables_for_ampliseq/low_richness_stats.tsv")
+data.frame(low)
 
 ```
 
@@ -111,12 +113,12 @@ nextflow: cranky_kalam
 
 High Richness
 
-```{r}
+```{r message=FALSE}
 library(readr)
 library(dplyr)
 
-read_table("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv")
-
+high<-read_table("/mnt/content/tables_for_ampliseq/high_richness_stats.tsv")
+data.frame(high)
 ```
 
 
