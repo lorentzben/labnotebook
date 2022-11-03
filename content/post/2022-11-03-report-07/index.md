@@ -39,3 +39,11 @@ description: Description for the page
 
 Today I want to get some good momentum with visualize ampliseq. I know that I will slow down when class time comes, especially since I must finish my project proposal today during class. If there is overflow time too then I can also start my analysis of one of the tissues. I have a feeling that the analysis will be pretty straight forward to run, the long part will be making sense out of my results. I think two types of result will be good to examine. 1: Did I recover the same number/type of DEG as the original paper? 2: What trends do my DEG point to?
 
+### Visualize Ampliseq
+
+One current issue is that report_04_*.log is stored in the report_gen_file dir in the projectDir, I've tried to delete it in the script and tried to not generate those files but it did not work, current solution is rm -rf ~/.nextflow/assets/lorentzben/visualize-ampliseq . 
+
+I was able to implement report 07 rarefaction charts.
+
+I am working on implementing report 08, the first attempt failed due to OOM error but is restarting. 
+
