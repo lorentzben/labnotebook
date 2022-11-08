@@ -44,3 +44,11 @@ description: Description for the page
 - good example 16s data to hone parameters
 
 I want to finish website migration, Then Finish importing and synthesizing Tillocca, find taxa table from Tillocca references, then maybe Shailes data, and finally during class time start one tissue analysis. 
+
+### Host Microbiome Interactions Website
+
+I was able to get the website set up pretty close to the format I want to start with. One improvement might be the sections part in like citations etc, but that is something we'll have to figure out a little later. We also must update all of the links to make sure they lead to the correct location and add DOI links for the papers cited. Then we also need to make sure all the citations are digested into the proper sections. The updated page is [here](https://lorentz-host-microbe-interaction.netlify.app/).
+
+### Term Project
+
+I am going to log into class to have some work-partners while I get a tissue analysis set up. 
