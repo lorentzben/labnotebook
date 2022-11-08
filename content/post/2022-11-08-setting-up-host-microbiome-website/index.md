@@ -51,4 +51,4 @@ I was able to get the website set up pretty close to the format I want to start 
 
 ### Term Project
 
-I am going to log into class to have some work-partners while I get a tissue analysis set up. 
+I am going to log into class to have some work-partners while I get a tissue analysis set up. While logged in, I decided that it makes more sense to just run all the kallisto runs at once and creates a nested directory of kallisto results. The next step will be making different sleuth scripts for each tissue. (because of the metadata I think this is easiest) 
