@@ -61,6 +61,7 @@ I've imported the first three papers, Oakley talks about the specific taxa Megam
 
 I feel like I need to spend some time summarizing the quotes I've collected into my own words, but also the first real step is just figuring out who is present, we must stay focused on that. Right now the focus is importing the papers.
 
+We also need to remove the paper notes section...
 
 ### Term Paper 
 
