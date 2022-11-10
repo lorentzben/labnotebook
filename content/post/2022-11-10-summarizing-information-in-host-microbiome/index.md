@@ -150,14 +150,14 @@ computing variance of betas
 [  full  ]
 formula:  ~condition 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
  	conditionlow
 [  reduced  ]
 formula:  ~1 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
 > 
@@ -178,7 +178,7 @@ coefficients:
 +   print(lenght(sleuth_significant$target_id))
 + }
 Error in get_bootstrap_summary(obj, target_id, units) : 
-  couldn't find target_id 'NA'
+  couldnt find target_id 'NA'
 Calls: plot_bootstrap -> get_bootstrap_summary
 Execution halted
 running sleuth on duodenum results
@@ -258,14 +258,14 @@ computing variance of betas
 [  full  ]
 formula:  ~condition 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
  	conditionlow
 [  reduced  ]
 formula:  ~1 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
 > 
@@ -286,7 +286,7 @@ coefficients:
 +   print(lenght(sleuth_significant$target_id))
 + }
 Error in get_bootstrap_summary(obj, target_id, units) : 
-  couldn't find target_id 'NA'
+  couldnt find target_id 'NA'
 Calls: plot_bootstrap -> get_bootstrap_summary
 Execution halted
 running sleuth on ileum results
@@ -372,14 +372,14 @@ computing variance of betas
 [  full  ]
 formula:  ~condition 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
  	conditionlow
 [  reduced  ]
 formula:  ~1 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
 > 
@@ -400,7 +400,7 @@ coefficients:
 +   print(lenght(sleuth_significant$target_id))
 + }
 Error in get_bootstrap_summary(obj, target_id, units) : 
-  couldn't find target_id 'NA'
+  couldnt find target_id 'NA'
 Calls: plot_bootstrap -> get_bootstrap_summary
 Execution halted
 running sleuth on jejunum results
@@ -483,14 +483,14 @@ computing variance of betas
 [  full  ]
 formula:  ~condition 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
  	conditionlow
 [  reduced  ]
 formula:  ~1 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
 > 
@@ -511,7 +511,7 @@ coefficients:
 +   print(lenght(sleuth_significant$target_id))
 + }
 Error in get_bootstrap_summary(obj, target_id, units) : 
-  couldn't find target_id 'NA'
+  couldnt find target_id 'NA'
 Calls: plot_bootstrap -> get_bootstrap_summary
 Execution halted
 running sleuth on liver results
@@ -597,14 +597,14 @@ computing variance of betas
 [  full  ]
 formula:  ~condition 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
  	conditionlow
 [  reduced  ]
 formula:  ~1 
 data modeled:  obs_counts 
-transform sync'ed:  TRUE 
+transform synced:  TRUE 
 coefficients:
 	(Intercept)
 > 
@@ -625,7 +625,7 @@ coefficients:
 +   print(lenght(sleuth_significant$target_id))
 + }
 Error in get_bootstrap_summary(obj, target_id, units) : 
-  couldn't find target_id 'NA'
+  couldnt find target_id 'NA'
 Calls: plot_bootstrap -> get_bootstrap_summary
 Execution halted
 ```
@@ -633,7 +633,7 @@ Execution halted
 The main error is: 
 
   "Error in get_bootstrap_summary(obj, target_id, units) : 
-    couldn't find target_id 'NA'
+    couldnt find target_id 'NA'
   Calls: plot_bootstrap -> get_bootstrap_summary"
 
 and the result files are empty. We will have to run the code line by line to see what the issue is.
@@ -643,6 +643,7 @@ So my gut check was correct, all of the genes/transcripts are being filtered out
 I sent this message to Dr. Bergman and Jingxuan:
 
 ```
+
 Hi Dr. Bergman and Jingxuan, I am working on my DEG analysis of RNA seq data in 5 different tissues in chickens comparing high feed efficiency vs low feed efficiency birds. I have successfully run my data through kallisto and am working in sleuth. 
 
 My current issue is that when filtering transcripts based on q-values I have no significant hits, while the paper I am referencing (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6754422/) (where they were using STAR and HTSeq) had a little over a thousand hits (although they were using p-values and Fold changes > 1.5) I’m guessing that they used p-value because some of their adjusted p-vals were N/A so they wanted to have a value for every observation. I also ran the wald test with similar results. 
@@ -656,3 +657,71 @@ I need to post a weekly update on the github issue for what progress we have mad
 
 ### Shailes' Data 
 
+The docker image did not include DESeq2, so I need to build a new docker image/update the current one using the rocker verse image and renv and then rebuilding and tagging. 
+
+### Todos for Tomorrow:
+
+- write weely update for Gene 8940
+- Tillocca
+  - look at references and see if we can get a generalized taxa table
+  - from the taxa table functionally annotate the 'role' of the taxa present in each segement
+    - they may have done some of this heavy lifting for us.
+- continue reading jones
+- Visualize Ampliseq
+  - add example params and slurm for ampliseq into ampliseq-vis repos
+- Run Visualize Ampliseq
+  - on low med high richness samples
+- re-watch the lecture for ChIP-seq
+- What is a core microbiome?
+  - Can we use this to find the major players in chicken gut segments?
+  - are keystone species more important in gut microbiomes?
+- How can multi-omics projects be implemented in host-microbe interactions
+- Check in on classifier still running
+
+---
+
+- rebuild docker image to include deseq2 
+- Try to run DESeq2’s GLM/LRT on shaile’s design
+
+---
+
+- BIOSQL, SQL or Mongo DB tutorials
+- Genome Assembly from Isolates
+- Kelly Shotgun Metagenomic Data
+- good example 16s data to hone parameters
+- read reviews from Tilocca
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+6e8702a - Benjamin Lorentz, Thu Nov 10 15:36:52 2022 -0500 : updated notes for the day
+b2261c7 - Benjamin Lorentz, Thu Nov 10 11:45:15 2022 -0500 : updates based on thursday notes
+7032b4e - Benjamin Lorentz, Thu Nov 10 09:59:07 2022 -0500 : added post for thursday
+```
+
+#### Host Microbe interaction
+
+```bash
+9c0a235 - Benjamin Lorentz, Thu Nov 10 11:42:36 2022 -0500 : fix link in role of scfa
+829e721 - Benjamin Lorentz, Thu Nov 10 11:38:28 2022 -0500 : reorder the small intestine names, and add some summaries
+ac28369 - Benjamin Lorentz, Thu Nov 10 11:23:53 2022 -0500 : imported zou
+c133561 - Ben Lorentz, Wed Nov 9 20:59:24 2022 -0500 : first half of zou
+```
+
+#### Shailes
+
+```bash
+56e79cf - Benjamin Lorentz, Thu Nov 10 16:58:40 2022 -0500 : new note,need to update docker to include deseq2
+```
+
+#### Gene 8940 Term Paper
+
+```bash
+177b4e1 - Benjamin Lorentz, Thu Nov 10 15:39:13 2022 -0500 : added wilks test script
+91ec53c - Benjamin Lorentz, Thu Nov 10 13:26:30 2022 -0500 : updated sleuth driver script
+9c4538f - Benjamin Lorentz, Thu Nov 10 13:23:47 2022 -0500 : adding citation for dr bergman
+85c921f - Benjamin Lorentz, Thu Nov 10 13:22:29 2022 -0500 : add ileum, jejunum, and liver scripts
+5910223 - Benjamin Lorentz, Thu Nov 10 13:11:23 2022 -0500 : added ceca and duodenum script
+```
