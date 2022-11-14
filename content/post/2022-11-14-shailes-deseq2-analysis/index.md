@@ -101,3 +101,66 @@ Do you feel comfortable trying to do this?In either case, I think you will poten
 ```
 
 And compare FC and uncorrected p-values.
+
+I decided to run the wald test on the 5 tissues and to look into the gene lists, to make my time worthwhile since there are going to be a ton of hits, I want to sort by p/q value and then sort by fold change to see the smallest p and the largest fold change. Then tomorrow I should see about implementing the DESeq2 analysis to see if the results are similar or different. 
+
+### Visualize Ampliseq
+
+I don't think the pipeline actually generates the matrix, so I can pipe in the COREMETRIC.out.distance to bypass that...
+
+### Todos for Today:
+
+- talk to Casey in person about analysis and how to write the words part about a flub
+- Run the data through DESeq after samtools(?) or alignment..
+- Update Visualize ampliseq to use the correct channel
+- Tillocca
+  - look at references and see if we can get a generalized taxa table
+  - from the taxa table functionally annotate the 'role' of the taxa present in each segment
+    - they may have done some of this heavy lifting for us.
+- continue reading jones
+- Re-Run the low med high analyses
+  - Run Visualize Ampliseq
+    - on low med high richness samples
+- re-watch the lecture for ChIP-seq
+- What is a core microbiome?
+  - Can we use this to find the major players in chicken gut segments?
+  - are keystone species more important in gut microbiomes?
+- How can multi-omics projects be implemented in host-microbe interactions
+- Check in on classifier still running
+
+---
+
+- BIOSQL, SQL or Mongo DB tutorials
+- Genome Assembly from Isolates
+- Kelly Shotgun Metagenomic Data
+- good example 16s data to hone parameters
+- read reviews from Tilocca
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+6e6919c - Benjamin Lorentz, Mon Nov 14 15:42:15 2022 -0500 : include dr. bergmans note
+b6f94dd - Benjamin Lorentz, Mon Nov 14 15:20:38 2022 -0500 : added notes from shailes work and begining of bergman
+adabc2a - Benjamin Lorentz, Mon Nov 14 09:22:07 2022 -0500 : added heading for shailes
+45fdbfb - Benjamin Lorentz, Mon Nov 14 09:09:50 2022 -0500 : page for monday
+```
+
+#### Term Paper
+
+```bash
+f3c8b33 - Benjamin Lorentz, Mon Nov 14 16:25:27 2022 -0500 : added wald test scripts and updated sleuth driver script
+16e4534 - Benjamin Lorentz, Mon Nov 14 16:21:32 2022 -0500 : generate DGE list using less stringent ps
+```
+
+#### Shailes Picrust 2
+
+```bash
+015cc4b - Benjamin Lorentz, Mon Nov 14 15:12:04 2022 -0500 : added contrasts doc which has the same results as the inita
+l way I did contrasts
+5fcd08a - Benjamin Lorentz, Mon Nov 14 14:45:06 2022 -0500 : added result files and code to generate them
+d3f4aac - Benjamin Lorentz, Mon Nov 14 12:13:34 2022 -0500 : all together analysis complete
+c1df2fd - Benjamin Lorentz, Mon Nov 14 11:26:34 2022 -0500 : added shailes analysis
+1f1659b - Benjamin Lorentz, Mon Nov 14 09:21:03 2022 -0500 : added deseq2 docker img
+```
