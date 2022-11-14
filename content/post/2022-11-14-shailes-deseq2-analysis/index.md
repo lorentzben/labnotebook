@@ -102,7 +102,7 @@ Do you feel comfortable trying to do this?In either case, I think you will poten
 
 And compare FC and uncorrected p-values.
 
-I decided to run the wald test on the 5 tissues and to look into the gene lists, to make my time worthwhile since there are going to be a ton of hits, I want to sort by p/q value and then sort by fold change to see the smallest p and the largest fold change. Then tomorrow I should see about implementing the DESeq2 analysis to see if the results are similar or different. 
+I decided to run the wald test on the 5 tissues and to look into the gene lists, to make my time worthwhile since there are going to be a ton of hits, I want to sort by p/q value and then sort by fold change to see the smallest p and the largest fold change. Then tomorrow I should see about implementing the DESeq2 analysis to see if the results are similar or different. Slurm job:  32544
 
 ### Visualize Ampliseq
 
