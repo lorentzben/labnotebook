@@ -45,4 +45,7 @@ I was able to build a docker image that includes DESeq2, I need to update the do
 
 Next try to implement Dr. Bergman's Suggestions to see if the methods match the paper (closely). 
 
-Next Review the ampliseq run to see if there is still issues with the diversity analysis. I think the next best solution would be to use core metric out for chunk 10. 
+Next Review the ampliseq run to see if there is still issues with the diversity analysis. I think the next best solution would be to use core metric out for chunk 10.
+
+### Shaile's Docker Image
+
