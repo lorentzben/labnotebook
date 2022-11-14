@@ -49,3 +49,47 @@ Next Review the ampliseq run to see if there is still issues with the diversity 
 
 ### Shaile's Docker Image
 
+I was able to generate some results for the question Shailes was asking which was: "Does the treatment additive cause a significant difference between the challenge and challenge with additive", I sent over the results to him with this email:
+
+```md
+Hi Shailes, 
+
+I was able to implement the package DESeq2 to test for differential expression of the different treatment types (control, challenge, challenge+BMD). 
+The results are stored in a directory here: https://github.com/lorentzben/picrust2_shailes/tree/main/results that you can download and examine. 
+
+The directory all_together contains the pathways and KEGG id’s that were found to be significant at q < 0.05 for each timepoint (0,24,72,168) and uses contrasts to slice the whole dataset to compare each timepoint.
+The directory by_time has the same structure as all_together, however each timepoint was separated into it’s separate analysis and then the comparisons were done.
+
+When comparing the results, all_together was less conservative than by_time so I chose to proceed with by_time, of note the by_time pathways were also found to be significant in the all_together dataset, however there may appear to be some spurious hits. 
+
+The final directory contains the plots in the lefse style format you showed me previously, these are rendered from the by_time results and there are a couple with no significant pathways.
+
+The code used to generate all of these results is here: https://github.com/lorentzben/picrust2_shailes/blob/main/code/Shailes_DESeq2_analysis.Rmd
+
+Please give this all a look over and let me know what kind of questions you have. 
+
+Thanks, 
+
+Ben Lorentz
+```
+
+I also found out how to make contrasts make sense in DESeq2. You just need to make sure they are formed in a way DESeq likes (I used [this block](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#contrasts) in the tutorial). For example I set up a contrast to compare challenge and challenge+BMD like this:
+
+```r
+resultsNames(dds)
+
+res0_ctrl <- results(dds, contrast=c('group', 'Control0','Challenge_BMD0'))
+sighits0_crtl_path <- subset(res0_ctrl, padj < 0.05)
+```
+
+I in the end went with the data that was subset to only examine one day at a time since I didn't want to have background noise from day 0 affecting day 168, since this was more conservative and the same pathways were still found to be significant, however I can very much see the argument for the other side. I think this chapter of differential expression is pretty well close to understood, but who knows what's still in store.
+
+### Term paper analysis to match the reference paper
+
+I want to implement Dr. Bergman's suggestion:
+
+```md
+
+```
+
+And compare FC and uncorrected p-values.
