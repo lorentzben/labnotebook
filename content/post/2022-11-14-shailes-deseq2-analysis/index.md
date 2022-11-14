@@ -89,7 +89,15 @@ I in the end went with the data that was subset to only examine one day at a tim
 I want to implement Dr. Bergman's suggestion:
 
 ```md
+Hi Ben. 
 
+I think you are interpreting this situation correctly, and if the authors did not correct for multiple testing, then I think their GO analysis is suspect, so there may not be a strong motivation to replicate this part of their analysis.
+
+In your sleuth Wald test analysis, do you also see a large number of genes with beta estimates > 1.5 and uncorrected p-values < 0.05 as are seen for DESeq2 in the paper? If so, perhaps you can run the GO analysis on this DEG list.
+
+Alternatively, to confirm your suspicion that the authors used unccorected p-values, you could try to replicate their DESeq2 analysis. 
+
+Do you feel comfortable trying to do this?In either case, I think you will potentially learn that the DEG list that the authors used for GO analysis may be pretty low stringency, and therefore their GO analysis may not be terribly meaningful /shrug
 ```
 
 And compare FC and uncorrected p-values.
