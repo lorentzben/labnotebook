@@ -43,3 +43,15 @@ First order of today is to collect Sleuth results from the teaching cluster, the
 
 Then we need to update the visualize ampliseq pipeline to include the correct channels. 
 
+### Term Paper 
+
+I have collected the supplamentatry tables 6-10 from the original analysis. I have also collected my results that parallels the authors analysis using Kallisto and Sleuth. I think I want to spend the time to start the HISAT2 and DESeq2 analysis and then try to join the gene lists to see who is left on each side. This way I can talk to Dr. Bergman about who is missing and the methods of analysis. 
+
+I am a little confused as the methods for DEG in the old way, we use HISat2 to align and get sam -> bam files, but then how does hiseq2 know... we just feed the samfile and then the GTF file with the annotations.
+
+I want to build a [Kallisto specific index](https://github.com/pachterlab/kallisto-transcriptome-indices) to see if that provides different results.
+
+
+
+
+
