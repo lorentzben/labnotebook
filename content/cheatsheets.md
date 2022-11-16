@@ -66,3 +66,9 @@ $ du -hs * | sort -h
 du -hc | sort -h
 
 ```
+
+This tag is helpful when you want to link to a paragraph in Obsidian from another text
+
+```bash
+<a id="^c1a3b2"></a>
+```
