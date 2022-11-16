@@ -110,10 +110,6 @@ My task today is to import the Adhikari 2020 paper that I annotated last night. 
   - Run Visualize Ampliseq
     - on low med high richness samples
 - re-watch the lecture for ChIP-seq
-- What is a core microbiome?
-  - Can we use this to find the major players in chicken gut segments?
-  - are keystone species more important in gut microbiomes?
-- How can multi-omics projects be implemented in host-microbe interactions
 - Check in on classifier still running
 
 ---
