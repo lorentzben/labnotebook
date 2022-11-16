@@ -164,3 +164,20 @@ e665e24 - Benjamin Lorentz, Tue Nov 15 11:38:14 2022 -0500 : added first hisat c
 4aba9ba - Benjamin Lorentz, Tue Nov 15 09:44:36 2022 -0500 : added supplemental tables
 989eca5 - Benjamin Lorentz, Tue Nov 15 09:25:26 2022 -0500 : incorrectly named ileum out
 ```
+
+### Visualize Ampliseq
+
+I removed the nextflow cache on the server and added the channel for the COREMETRIC distances to go into report 10 since I don't think that nf-core/ampliseq includes that.
+
+I will confirm this by slurm run 15376557
+nextflow run reverent_wing
+revision 9636db01247bfdbb9777794d2e1270b18933ad64 
+
+```bash
+
+
+```
+
+To check if it truly finishes correctly I should remove "/work/sealab/bjl34716/ampliseq-benchmarking/low_richness/" and then run it again since the cache should just copy everything over really easily. 
+
+The task "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOM_ASV" has been running for 30 minutes, but previously it ran in 6 minutes, the queue is very full right now so I will let it run overnight and check in tomorrow. 
