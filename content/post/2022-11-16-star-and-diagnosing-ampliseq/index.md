@@ -93,6 +93,8 @@ nextflow name: astonishing_cuvier
 
 If it gets hung up again (currently 13:28:48-15:51) then we can add the flag --skip_ancom. There is currently 2 days on the execution, so we might want to wait for this to error out. 
 
+I also got curious about skipping ANCOM so I updated the medium richenss script (rev: 06c560571a27fd95f558993dde8b2668385b067e 
+) and submitted it as a slurm job (15392298) to see if it can finish
 
 ### Host Microbiome 
 
