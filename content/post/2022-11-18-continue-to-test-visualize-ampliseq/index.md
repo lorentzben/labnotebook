@@ -53,7 +53,7 @@ No such file: /scratch/bjl34716/nf_dev/ampliseq-benchmark/med_richness/balanced_
 
 I had to change med_richness to medium_richness
 
-slurm 15427721
+slurm 15428845
 revision f030c1686f07a5fe83c07f741285de6a6ef53d1f 
 
 ```bash
@@ -258,5 +258,7 @@ revision
 
 
 ### Host Microbiome Interaction
+
+I ingested the papers [Adhikari](/papers/adhikariEffectsHousingTypes2020), [Bhattacharya](/papers/bhattacharyaSupervisedMachineLearning2022), and [Blokker](/papers/blokkerEvaluationNovelPrecision2022) into this repo since they were not really directly related to the host microbiome project but were still interesting. 
 
 
