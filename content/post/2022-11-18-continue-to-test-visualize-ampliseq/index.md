@@ -261,4 +261,45 @@ revision
 
 I ingested the papers [Adhikari](/papers/adhikariEffectsHousingTypes2020), [Bhattacharya](/papers/bhattacharyaSupervisedMachineLearning2022), and [Blokker](/papers/blokkerEvaluationNovelPrecision2022) into this repo since they were not really directly related to the host microbiome project but were still interesting. 
 
+### Todos for Today:
 
+- Figure out if we can compare GALG and GALT in any meaningful way
+- Check in on Medium Richness analysis
+- re run HTSeq and quantify 
+- Run the data through DESeq after samtools(?) or alignment.
+- Tillocca
+  - look at references and see if we can get a generalized taxa table
+  - from the taxa table functionally annotate the 'role' of the taxa present in each segment
+    - they may have done some of this heavy lifting for us.
+- continue reading jones
+- Re-Run the low med high analyses
+  - Run Visualize Ampliseq
+    - on low med high richness samples
+- re-watch the lecture for ChIP-seq
+- Check in on classifier still running
+
+---
+
+- BIOSQL, SQL or Mongo DB tutorials
+- Genome Assembly from Isolates
+- Kelly Shotgun Metagenomic Data
+- good example 16s data to hone parameters
+- read reviews from Tilocca
+
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+9a1304f - Benjamin Lorentz, Fri Nov 18 14:47:17 2022 -0500 : added adetunji
+85201b3 - Benjamin Lorentz, Fri Nov 18 13:50:29 2022 -0500 : add 3 papers that I read this week
+5edb68a - Benjamin Lorentz, Fri Nov 18 11:52:10 2022 -0500 : notes for Friday so far
+49d00d7 - Benjamin Lorentz, Thu Nov 17 17:00:35 2022 -0500 : final notes for thursday
+```
+
+#### Term Paper
+
+```bash
+a1318a6 - Benjamin Lorentz, Fri Nov 18 16:50:22 2022 -0500 : started to examine resultsfiles
+```
