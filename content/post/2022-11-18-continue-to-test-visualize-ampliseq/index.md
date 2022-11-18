@@ -261,7 +261,7 @@ revision
 
 I ingested the papers [Adhikari](/papers/adhikariEffectsHousingTypes2020), [Bhattacharya](/papers/bhattacharyaSupervisedMachineLearning2022), and [Blokker](/papers/blokkerEvaluationNovelPrecision2022) into this repo since they were not really directly related to the host microbiome project but were still interesting. 
 
-### Todos for Today:
+### Todos for Next Week:
 
 - Figure out if we can compare GALG and GALT in any meaningful way
 - Check in on Medium Richness analysis
