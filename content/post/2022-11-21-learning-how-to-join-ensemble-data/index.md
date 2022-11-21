@@ -60,6 +60,21 @@ I would be open to input into how to make these gene and transcript IDs equivale
 
 ```
 
+Another update for project
+
+I was able to resolve this joining issue, the first mistake was that biomaRt was using database version 108 as opposed to 80 which was the reference I was using. Once I updated the proper query url and I was able to join the two datasets based on gene_ID, I was able to recover:
+Common Differential Gene Expressions
+
+ceca: 7
+duodenum: 0
+ileum: 0
+jejunum: 2
+liver: 0
+
+revision: 7dc6ccd9814933606050ec934be2854860bdb23c
+
+Next step will be examining the genes that were not common to see which ones they are. 
+
 #### STAR results
 
 Did the first sample go through star this time?
@@ -133,16 +148,55 @@ Based on this I am comfortable running HTSeq I submitted the script to
 slurm: 32728
 revision: 2464f13c2d19d1978eadd1846aeef9d93a59ce02
 
-```bash
-
-```
-
-
 ### Visualize Ampliseq
 
 #### Check in Medium Richness Analysis 
 
-### Host Microbiome Analysis
+I did not get a chance to determine why the visualize ampliseq failed today. 
 
+
+### Todos for Tomorrow:
+
+
+- Check in on Medium Richness analysis
+- Run the data through DESeq after samtools(?) or alignment.
+- Tillocca
+  - look at references and see if we can get a generalized taxa table
+  - from the taxa table functionally annotate the 'role' of the taxa present in each segment
+    - they may have done some of this heavy lifting for us.
+- continue reading jones
+- Re-Run the low med high analyses
+  - Run Visualize Ampliseq
+    - on low med high richness samples
+- re-watch the lecture for ChIP-seq
+- Check in on classifier still running
+
+---
+
+- BIOSQL, SQL or Mongo DB tutorials
+- Genome Assembly from Isolates
+- Kelly Shotgun Metagenomic Data
+- good example 16s data to hone parameters
+- read reviews from Tilocca
+
+### Git commits
+
+#### Lab Notebook
+
+```bash
+2bc71fb - Benjamin Lorentz, Mon Nov 21 12:11:55 2022 -0500 : add notes for lunch
+bc850e8 - Benjamin Lorentz, Mon Nov 21 09:22:18 2022 -0500 : added page for monday
+```
+
+#### Gene 8940 Term Paper
+
+```bash
+2451d92 - Benjamin Lorentz, Mon Nov 21 16:30:27 2022 -0500 : add conda env file, make sure to use Renv to restore project
+7dc6ccd - Benjamin Lorentz, Mon Nov 21 16:25:15 2022 -0500 : added common deg results
+da490eb - Benjamin Lorentz, Mon Nov 21 16:24:31 2022 -0500 : add common DEG results tables
+a9219a1 - Benjamin Lorentz, Mon Nov 21 16:20:08 2022 -0500 : write csvs out
+dbcd803 - Benjamin Lorentz, Mon Nov 21 16:08:38 2022 -0500 : able to join based on gene ID or transcript ID
+f284a6f - Benjamin Lorentz, Mon Nov 21 12:11:36 2022 -0500 : added lines for biomaRt but they dont work right now
+```
 
 
