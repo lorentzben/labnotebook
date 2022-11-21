@@ -155,6 +155,10 @@ revision: 2464f13c2d19d1978eadd1846aeef9d93a59ce02
 I did not get a chance to determine why the visualize ampliseq failed today. 
 
 
+work dir that failed: /scratch/bjl34716/nf_dev/ampliseq-benchmark/work/72/b2d267519b32fd97679e0f8a9efbaf
+
+inside are qza files, that must be uncompressed. My best thought is to make a process that uncompresses the QZAs, we can do that with unzip, or build a docker img with qiime2R and then use that as the container to run this process.
+
 ### Todos for Tomorrow:
 
 
