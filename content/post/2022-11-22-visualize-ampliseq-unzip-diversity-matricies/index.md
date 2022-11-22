@@ -224,7 +224,7 @@ The classifier timed out after 30 days, is there a way we can speed up the proce
 - rebuild the supplemental tables 1-5 with my results
 - Run DESeq2 analysis on htseq-count table
 - Visualize Ampliseq
-  - examin slurm run 15474870
+  - examine slurm run 15474870
   
   
 ---
@@ -244,4 +244,40 @@ The classifier timed out after 30 days, is there a way we can speed up the proce
 - good example 16s data to hone parameters
 - read reviews from Tilocca
 
+### Git Commits
 
+#### Lab Notebook
+
+```bash
+e38ecd7 - Benjamin Lorentz, Tue Nov 22 16:16:32 2022 -0500 : updates about visualize ampliseq
+0325494 - Benjamin Lorentz, Tue Nov 22 11:11:23 2022 -0500 : added page for tuesday
+26ae1a7 - Benjamin Lorentz, Mon Nov 21 16:45:44 2022 -0500 : added some background for the visualize ampliseq issue
+af76d29 - Benjamin Lorentz, Mon Nov 21 16:33:04 2022 -0500 : added notes as to how I solved the ID join
+```
+
+#### Visualize Ampliseq
+
+```bash
+a0c7be6 - Benjamin Lorentz, Tue Nov 22 16:14:56 2022 -0500 : update paths in 10 report
+186941a - Benjamin Lorentz, Tue Nov 22 15:07:54 2022 -0500 : added script for uncompress diversity and porcess
+```
+
+#### Ampliseq Benchmark
+
+```bash
+e30e261 - Benjamin Lorentz, Tue Nov 22 16:21:43 2022 -0500 : comment out the analysis for medium to run more quickly
+```
+
+#### Term paper
+
+```bash
+dd319da - Benjamin Lorentz, Tue Nov 22 10:48:29 2022 -0500 : tell htseq that the data was stranded
+5034e19 - Benjamin Lorentz, Tue Nov 22 10:12:12 2022 -0500 : added output to file, removed num cpus
+dbc9c14 - Benjamin Lorentz, Tue Nov 22 09:51:38 2022 -0500 : re-order parameters again
+7931573 - Benjamin Lorentz, Tue Nov 22 09:42:20 2022 -0500 : move the params around
+ca0bdca - Benjamin Lorentz, Tue Nov 22 09:37:24 2022 -0500 : write the count table to file
+2451d92 - Benjamin Lorentz, Mon Nov 21 16:30:27 2022 -0500 : add conda env file, make sure to use Renv to restore projec
+t
+7dc6ccd - Benjamin Lorentz, Mon Nov 21 16:25:15 2022 -0500 : added common deg results
+da490eb - Benjamin Lorentz, Mon Nov 21 16:24:31 2022 -0500 : add common DEG results tables
+```
