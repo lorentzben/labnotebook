@@ -77,14 +77,17 @@ Then we can add these counts to individual counts.
 #### Lab Notebook
 
 ```bash
-
+d321621 - Benjamin Lorentz, Tue Nov 29 17:30:18 2022 -0500 : everything for tues except git logs
+090514f - Benjamin Lorentz, Tue Nov 29 12:01:07 2022 -0500 : updated progress notes for tuesday
+75ae4bd - Benjamin Lorentz, Tue Nov 29 10:37:48 2022 -0500 : added stub for tuesday page
 ```
 
 #### Term Paper
 
 ```bash
-
-
+84809fc - Benjamin Lorentz, Tue Nov 29 17:29:55 2022 -0500 : added r code to run DESeq2 and some refrence files
+ece26e8 - Benjamin Lorentz, Tue Nov 29 11:53:37 2022 -0500 : added skeleton for DGE analysis
+9b1855b - Benjamin Lorentz, Tue Nov 29 11:50:54 2022 -0500 : modified renv.lock to include deseq2
 ```
 
 #### Visualize Ampliseq
