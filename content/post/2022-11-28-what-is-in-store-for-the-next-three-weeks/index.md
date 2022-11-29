@@ -288,7 +288,7 @@ I read Bergen 2009 and ingested it into the repo, it is more related to pigs and
 dba844a - Benjamin Lorentz, Mon Nov 28 10:24:26 2022 -0500 : add bergen 2009 paper to citations
 ```
 
-#### Visualize Ampliseq
+#### Lab Notebook
 
 ```bash
 3dc9385 - Benjamin Lorentz, Mon Nov 28 11:49:57 2022 -0500 : add image
