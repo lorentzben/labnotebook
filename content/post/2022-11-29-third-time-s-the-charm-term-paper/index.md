@@ -89,16 +89,3 @@ d321621 - Benjamin Lorentz, Tue Nov 29 17:30:18 2022 -0500 : everything for tues
 ece26e8 - Benjamin Lorentz, Tue Nov 29 11:53:37 2022 -0500 : added skeleton for DGE analysis
 9b1855b - Benjamin Lorentz, Tue Nov 29 11:50:54 2022 -0500 : modified renv.lock to include deseq2
 ```
-
-#### Visualize Ampliseq
-
-```bash
-
-
-```
-
-#### Host Microbiome Interaction
-
-```bash
-
-```
