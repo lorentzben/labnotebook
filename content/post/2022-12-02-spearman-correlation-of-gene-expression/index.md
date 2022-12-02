@@ -134,14 +134,69 @@ slurm: 33192
 revision: f1efa451c05a50442cc00c7de8b5677ada1310d9
 
 ```bash
-
+LGTM
 ```
 
 #### Compare gene ids from sleuth and deseq2
 
+I am working on joining the tables in R, so far I have both of the genelists merging, so now the raw tables can grab onto their respective columns, but it keeps getting killed in the interactive shell so I will try to run it non-interactively when I get home.
+
+rev: 3cc4def4a259a91552229e9fff9ce2a84f62f8de
+
 #### Run spearman correlation on log2fold change
+
+TBD
 
 ### Visualize Ampliseq
 
+TBD
+
+### Todos for Next week:
+
+- Term paper
+  - confirm that the SRRs remain consistently linked from Kallisto on
+  - link fcs to gene id's and transcript ids
+  - run spearman's correlation on log2 fc based on gene ID
+  - Write Results Section for Term Paper
+- Visualize Ampliseq (STALE)
+  - examine slurm run 15474870
+  
+### Git commits
+
+#### Lab Notebook
+
+```bash
+8640eac - Benjamin Lorentz, Fri Dec 2 16:17:41 2022 -0500 : updates on development
+edcaa7a - Benjamin Lorentz, Fri Dec 2 10:01:09 2022 -0500 : added page for Friday
+d43b03c - Ben Lorentz, Thu Dec 1 22:41:51 2022 -0500 : added notes from night work
+a9a3c33 - Benjamin Lorentz, Thu Dec 1 17:09:26 2022 -0500 : updates for end of Thursday
+```
+
+
+#### Term Paper
+
+```bash
+3cc4def - Benjamin Lorentz, Fri Dec 2 16:49:11 2022 -0500 : DOES NOT WORK, transitioning from work to home setup
+f1efa45 - Benjamin Lorentz, Fri Dec 2 16:06:34 2022 -0500 : need to add the row names back in so we know what genes we're dealing with
+7c016b1 - Benjamin Lorentz, Fri Dec 2 15:42:22 2022 -0500 : fix a misspelling and save results to home dir
+4004db7 - Benjamin Lorentz, Fri Dec 2 15:37:34 2022 -0500 : updated outpath for sleuth wt
+36b588b - Benjamin Lorentz, Fri Dec 2 14:43:52 2022 -0500 : needed the _res
+05fd8bd - Benjamin Lorentz, Fri Dec 2 14:39:10 2022 -0500 : see if the /work was the issue
+c404a6d - Benjamin Lorentz, Fri Dec 2 14:20:24 2022 -0500 : change how filename is passed in
+4303626 - Benjamin Lorentz, Fri Dec 2 14:03:43 2022 -0500 : did not have output directory
+0746e09 - Benjamin Lorentz, Fri Dec 2 13:57:49 2022 -0500 : fix the error colnames don't match
+897160c - Benjamin Joseph Lorentz, Fri Dec 2 13:48:55 2022 -0500 : Merge branch 'main' of github.com:lorentzben/gene8940-term-paper into main
+db12826 - Benjamin Lorentz, Fri Dec 2 13:48:47 2022 -0500 : forgot the r in slurm 7
+5f79ac6 - Benjamin Joseph Lorentz, Fri Dec 2 13:38:20 2022 -0500 : Merge branch 'main' of github.com:lorentzben/gene8940
+-term-paper into main
+7655e77 - Benjamin Lorentz, Fri Dec 2 13:38:12 2022 -0500 : update the slurm submission script to remove conda call
+619fe4e - Benjamin Lorentz, Fri Dec 2 13:36:14 2022 -0500 : added dockerfile
+077cebc - Benjamin Joseph Lorentz, Fri Dec 2 11:55:09 2022 -0500 : updated Ryaml for libxml2
+abe0334 - Benjamin Lorentz, Fri Dec 2 11:04:26 2022 -0500 : update slurm sub 7 and activate r in script
+c3bf5b1 - Benjamin Lorentz, Fri Dec 2 11:01:06 2022 -0500 : update 7 to activate renv
+f0f0cc1 - Benjamin Joseph Lorentz, Fri Dec 2 10:58:51 2022 -0500 : updated R yaml
+445a07e - Ben Lorentz, Thu Dec 1 22:29:23 2022 -0500 : less than or equal to 0.05
+a3505ed - Ben Lorentz, Thu Dec 1 22:27:52 2022 -0500 : updated paths in sleuth WT scripts and in deseq2 script
+```
 
 
