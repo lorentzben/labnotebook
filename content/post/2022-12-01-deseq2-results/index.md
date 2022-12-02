@@ -61,7 +61,7 @@ An addition is that we could also make significance tables with the more stringe
 
 TODO: Confirm Metadata is not malformed
 - make sure that when the metadata is loaded (kallisto, sleuth, DESeq2) that the SRR line up to the tissue and FCR
-  - I crossed check the 
+  - I crossed check the "sample" columns across the two raw tables as well as the L###C id's too and everything looked correct.
 - run a spearman correlation on L2FC to cross check kallisto/sleuth res to HTSeq/DESeq2 results.
 - if anything other than defaults make sure to label
 
@@ -72,10 +72,12 @@ TODO: Confirm Metadata is not malformed
   I updated the various sleuth scripts to save the results and whole tables to disk
   slurm:33125
   revision: b7ca8eec37a0ae8703e21645e91e6c3bc6067cfe
-  this suceeded, however I need to fix the naming
+  this succeeded, however I need to fix the naming
   
 - generate full count tables for each tissue from DESeq2
   - make sure these files get saved in the correct dir.
+
+I updated the sleuth WT scripts and the DESeq2 scripts to have the correct outdir path (we may need to create the dirs with mkdir, to be checked), I have yet to run the scripts yet. Revision: 445a07e114aa70d21b6073d31f415c941bfaee86 
   
 - link gene id's to transcript ids
 - run spearman's correlation on log2 fc based on gene ID
@@ -93,6 +95,7 @@ Who are the most differentially expressed genes from my analysis that were not i
 ### Todos for Tomorrow:
 
 - Term paper
+  - confirm that the SRRs remain consistantly linked from Kallisto on
   - generate full count tables for each tissue from Sleuth
   - generate full count tables for each tissue from DESeq2
   - link gene id's to transcript ids
