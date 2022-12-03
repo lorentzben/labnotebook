@@ -15,11 +15,17 @@ description: Description for the page
 
 Merging the tables all at once kept getting a memory overflow error... So I'm thinking about iterating over one of the query lists and then doing a index lookup in the ensemble tabel and then doing a cbind on that row? Will update once I'm in it. 
 
-#### Merging Sleuth Results to Ensemble Results
+#### Merging Sleuth & Deseq Results to Ensemble Results
+
+I think I was able to iteratively add rows to a fold table for definitely sleuth but maybe Deseq
+
+slurm: 33210
+revision: 9cb97da5b9684965e4a4fff5a63d737e8b9b5ad6
+
+```bash
+```
 
 
-
-#### Merging Deseq Results to Merged Sleuth and Ensemble
 
 #### Implementing Pearsons Corr
 
