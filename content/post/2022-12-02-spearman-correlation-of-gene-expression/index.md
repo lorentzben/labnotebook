@@ -143,6 +143,27 @@ I am working on joining the tables in R, so far I have both of the genelists mer
 
 rev: 3cc4def4a259a91552229e9fff9ce2a84f62f8de
 
+I set up just the ceca block and had is save the file to disk
+
+slurm: 33197
+rev: 393ef8604e0218f9f7ed00e7c5daf4f3cc0ef378
+
+```bash
+var/lib/slurmd/job33197/slurm_script: line 43: /home/bjl34716/gene8940-term-paper/code/9_deseq2_DGE.r: No such file or directory
+```
+
+needed to use the right name in the slurm script
+
+slurm: 33198
+rev: 6a5f5e212d0b1484518fbfd4ecbf4d349f875831
+
+```bash
+nano /work/gene8940/bjl34716/log.33198
+
+
+```
+
+I cannot figure out how to merge the tables yet, will come back tomorrow. 
 #### Run spearman correlation on log2fold change
 
 TBD
