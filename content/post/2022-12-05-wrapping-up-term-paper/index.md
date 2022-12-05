@@ -62,12 +62,203 @@ d7530e7 - Ben Lorentz, Sat Dec 3 14:09:02 2022 -0500 : added in a diagnostic pri
 
 #### Check for Normality
 
+The data is not normally distributed so the spearmans corr is correct.
+
+```r
+data:  as.numeric(ceca$deseq_log2FoldChange)
+A = 11.192, p-value < 2.2e-16
+
+> ad.test(as.numeric(ceca$sleuth_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(ceca$sleuth_log2FoldChange)
+A = 347.36, p-value < 2.2e-16
+
+data:  as.numeric(duo$deseq_log2FoldChange)
+A = 266.24, p-value < 2.2e-16
+
+> ad.test(as.numeric(duo$sleuth_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(duo$sleuth_log2FoldChange)
+A = 36.808, p-value < 2.2e-16
+
+ad.test(as.numeric(ile$deseq_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(ile$deseq_log2FoldChange)
+A = 277.99, p-value < 2.2e-16
+
+> ad.test(as.numeric(ile$sleuth_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(ile$sleuth_log2FoldChange)
+A = 134.07, p-value < 2.2e-16
+
+ad.test(as.numeric(jeju$deseq_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(jeju$deseq_log2FoldChange)
+A = 171.04, p-value < 2.2e-16
+
+> ad.test(as.numeric(jeju$sleuth_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(jeju$sleuth_log2FoldChange)
+A = 136.92, p-value < 2.2e-16
+
+ ad.test(as.numeric(liver$sleuth_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(liver$sleuth_log2FoldChange)
+A = 20.121, p-value < 2.2e-16
+
+> ad.test(as.numeric(liver$deseq_log2FoldChange))
+
+        Anderson-Darling normality test
+
+data:  as.numeric(liver$deseq_log2FoldChange)
+A = 580.6, p-value < 2.2e-16
+```
+
 #### Cross check authors sig genes with my results in kallisto and Sleuth
+
+I went line by line for the merging and importing of data, but it keeps getting killed on my laptop so we are migrating to the server.
+
+slurm: 33274
+revision: 5adfc4bad6894229ed7ec443391600ae6184ca44
+
+```bash
+> colname(sleuth_table) <- c("tissue","R^2","Pvalue")
+Error in colname(sleuth_table) <- c("tissue", "R^2", "Pvalue") :
+  could not find function "colname<-"
+Execution halted
+```
+
+I need to update to colnames instead of colname
+
+slurm:33276
+revision: a9d95453735de01b197b872bc977872ce69d04e1
+
+```bash
+> print(sleuth_table)
+     tissue     R^2 Pvalue
+[1,] "ceca"     "0" "1"
+[2,] "duodenum" "0" "1"
+[3,] "ileum"    "0" "1"
+[4,] "jejunum"  "0" "1"
+[5,] "liver"    "0" "0.999999999999851"
+```
+
+I need to do this for deseq2, save to file and do same for the 9 script. 
+
+slurm: 33278
+revision: ad83431ab69dcb64a593e92f1dfad99241503c13
+
+```bash
+> print(sleuth_table)
+     tissue     R^2 Pvalue
+[1,] "ceca"     "0" "1"
+[2,] "duodenum" "0" "1"
+[3,] "ileum"    "0" "1"
+[4,] "jejunum"  "0" "1"
+[5,] "liver"    "0" "0.999999999999851"
+
+> print(deseq_table)
+     tissue     R^2 Pvalue
+[1,] "ceca"     "0" "1"
+[2,] "duodenum" "0" "1"
+[3,] "ileum"    "0" "1"
+[4,] "jejunum"  "0" "1"
+[5,] "liver"    "0" "0.999999999999851"
+
+ head ../spearman/supplemental_deseq_correlation_table.csv
+"tissue","R^2","Pvalue"
+"ceca","0","1"
+"duodenum","0","1"
+"ileum","0","1"
+"jejunum","0","1"
+"liver","0","0.999999999999851"
+
+head ../spearman/supplemental_sleuth_correlation_table.csv
+"tissue","R^2","Pvalue"
+"ceca","0","1"
+"duodenum","0","1"
+"ileum","0","1"
+"jejunum","0","1"
+"liver","0","0.999999999999851"
+```
+This was successful.
+
+#### Updating script 9 
+
+Time to make them for each of the tissues comparing sleuth and deseq 2 (script 9). 
+
+I made my changes and updated the script
+
+slurm: 33283
+revision: ba7437e9e580ab541f2c6f734fe995fc36ceca47
+
+```bash
+
+```
+
+#### Confirm Metadata is formed
+
+I re-downloaded the files and they seem the same. We can write up a little confirmation script when we get home if we are still feeling unsure.
 
 #### Writing Methods
 
+I need to go through each script and document what files go in and which files are output with a dir listing.
+
 #### Writing results
+
+how many genes were in authors, how many were in sleuth, how many were in deseq2?
+
+confirm one last time, from NCBI root, that I made the metadata correctly.
 
 #### What I would expand on or improve
 
 ### Visualize Ampliseq.
+
+TBD
+
+### Todos for Tomorrow:
+
+- Term paper
+  - Write Results Section
+  - Write Methods Section 
+  - format tables/graphics
+  - write intro
+- Visualize Ampliseq (STALE)
+  - examine slurm run 15474870
+- Host microbiome interaction
+  - new paper
+  
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+672ae62 - Benjamin Lorentz, Mon Dec 5 09:10:05 2022 -0500 : initial commit for monday
+f9d1929 - Benjamin Lorentz, Mon Dec 5 08:59:41 2022 -0500 : clean up dir
+```
+
+#### Term Paper
+
+```bash
+ba7437e - Benjamin Lorentz, Mon Dec 5 16:00:22 2022 -0500 : updates to script 9
+ad83431 - Benjamin Lorentz, Mon Dec 5 14:53:39 2022 -0500 : finish out correlation script for supplementals
+a9d9545 - Benjamin Lorentz, Mon Dec 5 14:35:22 2022 -0500 : colnames instead of colname
+5adfc4b - Benjamin Lorentz, Mon Dec 5 14:28:28 2022 -0500 : add slurm script
+579c002 - Benjamin Lorentz, Mon Dec 5 11:59:36 2022 -0500 : skeleton
+5416976 - Benjamin Lorentz, Mon Dec 5 10:54:25 2022 -0500 : in progress
+```
