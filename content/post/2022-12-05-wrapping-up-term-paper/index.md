@@ -216,7 +216,7 @@ I re-downloaded the files and they seem the same. We can write up a little confi
 
 #### Writing Methods
 
-I need to go through each script and document what files go in and which files are output with a dir listing.
+I need to go through each script and document what files go in and which files are output with a dir listing. In Process
 
 #### Writing results
 
