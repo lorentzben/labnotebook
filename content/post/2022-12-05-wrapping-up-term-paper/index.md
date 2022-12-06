@@ -215,7 +215,7 @@ revision: ba7437e9e580ab541f2c6f734fe995fc36ceca47
 
 ```bash
 > ceca_corr_est <- as.numeric(cor.test(as.numeric(complete_ceca_fold_table$sleuth_log2FoldChange), as.numeric(complete_ceca_fold_tabl$
-Error: unexpected ')' in "ceca_corr_est <- as.numeric(cor.test(as.numeric(complete_ceca_fold_table$sleuth_log2FoldChange), as.numeric$
+Error: unexpected ) in ceca_corr_est <- as.numeric(cor.test(as.numeric(complete_ceca_fold_table$sleuth_log2FoldChange), as.numeric$
 Execution halted
 
 ```
