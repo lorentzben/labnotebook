@@ -207,8 +207,17 @@ slurm: 33283
 revision: ba7437e9e580ab541f2c6f734fe995fc36ceca47
 
 ```bash
+did not git pull.....
+```
+
+slurm: 33296
+revision: ba7437e9e580ab541f2c6f734fe995fc36ceca47
+
+```bash
 
 ```
+
+check in on @ 21:42
 
 #### Confirm Metadata is formed
 
