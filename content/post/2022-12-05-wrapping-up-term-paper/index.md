@@ -214,18 +214,27 @@ slurm: 33296
 revision: ba7437e9e580ab541f2c6f734fe995fc36ceca47
 
 ```bash
+> ceca_corr_est <- as.numeric(cor.test(as.numeric(complete_ceca_fold_table$sleuth_log2FoldChange), as.numeric(complete_ceca_fold_tabl$
+Error: unexpected ')' in "ceca_corr_est <- as.numeric(cor.test(as.numeric(complete_ceca_fold_table$sleuth_log2FoldChange), as.numeric$
+Execution halted
 
 ```
 
-check in on @ 21:42
+I had broken parens (one extra for the correlation calc)
+
+slurm: 33304
+revision: 9a8760744be5833e2e06fbfb7850fe810061d703
+
+```bash
+```
 
 #### Confirm Metadata is formed
 
-I re-downloaded the files and they seem the same. We can write up a little confirmation script when we get home if we are still feeling unsure.
+I re-downloaded the files and they seem the same. We can write up a little confirmation script when we get home if we are still feeling unsure. We might not do this. 
 
 #### Writing Methods
 
-I need to go through each script and document what files go in and which files are output with a dir listing. In Process
+I need to go through each script and document what files go in and which files are output with a dir listing, I think I covered most of this when I put the input and output in the scripts but we must work this into the paper too. I also need to make sure to state the parameters that differed from the default
 
 #### Writing results
 
@@ -233,7 +242,11 @@ how many genes were in authors, how many were in sleuth, how many were in deseq2
 
 confirm one last time, from NCBI root, that I made the metadata correctly.
 
+I want to make a table highlighting the number of genes and how many common genes were found and how many were lost
+
 #### What I would expand on or improve
+
+There is a possibility the metadata on NCBI was uploaded incorrectly. One way I could examine to see if this is the case is to run a PCA on the DEGs to see if the samples from each alleged tissue cluster together, and therefore 
 
 ### Visualize Ampliseq.
 
@@ -242,9 +255,10 @@ TBD
 ### Todos for Tomorrow:
 
 - Term paper
-  - Write Results Section
   - Write Methods Section 
+  - Write Results Section
   - format tables/graphics
+	  - make a count table of genes from sleuth+deseq -> merged -> merged with author supps
   - write intro
 - Visualize Ampliseq (STALE)
   - examine slurm run 15474870
