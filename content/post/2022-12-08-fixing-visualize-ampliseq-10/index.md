@@ -51,6 +51,16 @@ ENTRYPOINT ["fixuid"]
 # docker run --rm -it -u 1000:1000 <image name> sh
 ```
 
+This dockerfile did not work for my use case but I was able to find the [params I needed](https://rocker-project.org/images/versioned/rstudio.html)
+
+##### 4.1.4 USERID and GROUPID
+
+The UID and GID of the default non-root user can be changed as follows:
+
+```bash
+docker run --rm -ti -e USERID=1001 -e GROUPID=1001 -p 8787:8787 rocker/rstudio
+```
+
 ### Visualize Ampliseq
 
 #### Fix process 10 
