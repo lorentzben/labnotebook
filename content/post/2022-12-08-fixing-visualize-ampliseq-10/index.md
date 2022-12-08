@@ -65,5 +65,40 @@ docker run --rm -ti -e USERID=1001 -e GROUPID=1001 -p 8787:8787 rocker/rstudio
 
 #### Fix process 10 
 
+I updated main to use qiime to generate the diversity pairwise comparisons for unifrac
 
+visualize ampliseq rev: c1ee5fd503bba30df9705b911ca5fc853a23fa8a
+ampliseq benchmark rev: 15c33da5f6243330fc5a4deda9ebe1fd63e1af80
+slurm sub: 15723902
+
+```bash
+[-        ] process > ORDERIOI -
+Process `UNCOMPRESSDIVMATS` declares 3 input channels but 2 were specified
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/main.nf' at line: 67 or see '.nextflow.log' fi
+
+```
+
+Whoops I mixed up which process is which, so I decided to just flip flop since the order isn't important. 
+
+visualize ampliseq rev: 1c476e4e8aa7304e45b455c2040329623c86f4c2
+ampliseq benchmark rev: 15c33da5f6243330fc5a4deda9ebe1fd63e1af80
+slurm sub: 15725716
+
+```bash
+
+No such variable: path
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/main.nf' at line: 765 or see '.nextflow.log' f$
+[-        ] process > ORDERIOI                       -
+```
+needed to give a pathname for uncompress div mat
+
+visualize ampliseq rev: 3212921f62abdedf29520556b64e0abaaccc6a79
+ampliseq benchmark rev: 15c33da5f6243330fc5a4deda9ebe1fd63e1af80
+slurm sub: 15725970
+
+```bash
+
+```
 ### Host Microbe interaction
