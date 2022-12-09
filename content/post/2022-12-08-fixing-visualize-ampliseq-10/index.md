@@ -11,7 +11,7 @@ meta_img: images/image.png
 description: Description for the page
 ---
 
-### Todos for Tomorrow:
+### Todos for Today:
 
 - Rebuild rocker/verse:4.2.0 to include boxboat/fixuid
 - Visualize Ampliseq 
@@ -221,6 +221,17 @@ Sh
 Alternatively, one can use a Makefile to evaluate and render an R Markdown script. A sample Makefile for rendering the above sample.Rmd can be downloaded here. To apply it to a custom Rmd file, one needs open the Makefile in a text editor and change the value assigned to MAIN (line 13) to the base name of the corresponding .Rmd file (e.g. assign systemPipeRNAseq if the file name is systemPipeRNAseq.Rmd). To execute the Makefile, run the following command from the command-line.
 
 $ make -B
+
+### Todos for Tomorrow:
+
+- Visualize Ampliseq 
+  - try to use a makefile for 3,4 
+  - check diverity for boxplot visualization
+  - modify uncompress diverity
+  - add a new process for boxplot
+- Host microbiome interaction
+  - new paper
+  
 
 [source](https://girke.bioinformatics.ucr.edu/GEN242/tutorials/rmarkdown/rmarkdown/)
 
