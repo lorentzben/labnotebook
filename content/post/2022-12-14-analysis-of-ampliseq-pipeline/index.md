@@ -11,7 +11,7 @@ meta_img: images/image.png
 description: Description for the page
 ---
 
-### Todos for Tomorrow:
+### Todos for Today:
 
 - Visualize Ampliseq 
   - examine the 3 results to see what richness should be selected for this set
@@ -44,7 +44,34 @@ description: Description for the page
 
 #### How do we describe diversity?
 
+richness = how many species are present
+evenness = how well represented each species is to another
+[source](https://www.nomnomnow.com/learn/article/microbiome-diversity)
 
+There are issues when you go not rich enough and when you have too rich, generally you want to balance richness and evenness. 
 
-### Host Microbiome Interaction
+I found this tool [M&M]() which could be a good use to generate mock communities to see if the tool I have built is performing well and if the visualizations look good. 
+
+### Todos for Tomorrow:
+
+- Visualize Ampliseq 
+  - determine the proper richness
+    - microbiome helper sop
+    - mock community analysis
+- Host microbiome interaction
+  - finish Borda-Molina
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+2e3a374 - Ben Lorentz, Wed Dec 14 15:07:44 2022 -0500 : updated cheatsheet with ubuntu command
+5f52992 - Ben Lorentz, Wed Dec 14 15:01:23 2022 -0500 : had to leave office since no wifi
+2acd0c9 - Benjamin Lorentz, Wed Dec 14 14:18:49 2022 -0500 : added some links to research
+2a82e4c - Benjamin Lorentz, Wed Dec 14 14:17:24 2022 -0500 : wednesday update with differences in report
+15156eb - Benjamin Lorentz, Wed Dec 14 09:19:35 2022 -0500 : notes for wednesday
+d4dd3b4 - Benjamin Lorentz, Tue Dec 13 16:50:38 2022 -0500 : final notes for tuesday
+```
+
 
