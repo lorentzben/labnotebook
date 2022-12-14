@@ -38,10 +38,10 @@ render("content/post/2022-11-02-project-check-in-and-examining-ampliseq-results/
 
 ### Docker
 
-start a rstudio session in docker 
+start a rstudio session in docker Updated 12.14.22 to allow write access to unix systems.
 
 ```bash
-docker run -p 8888:8787 -it -v $PWD:/mnt -e ROOT='true' -e PASSWORD='pass' rocker/verse:4.2.0
+docker run -it -v $PWD:/mnt -e ROOT='true' -e PASSWORD='pass' -p 8888:8787 -e USERID=1000 -e GROUPID=1000 rocker/verse:4.2.0
 ```
 
 Make a dockerfile based on a renv.lockfile
