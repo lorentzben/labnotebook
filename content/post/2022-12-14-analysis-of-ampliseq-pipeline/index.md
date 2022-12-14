@@ -17,6 +17,10 @@ description: Description for the page
   - examine the 3 results to see what richness should be selected for this set
     - AND record why!!
     - add these notes to the github as an example
+    - How do we measure diversity?
+      - https://www.nomnomnow.com/learn/article/microbiome-diversity
+      - https://pubmed.ncbi.nlm.nih.gov/33510727/
+      - https://microbiomeconservancy.org/news/the-global-microbiome-conservancy-the-race-to-preserve-the-species-in-our-feces/
 - Host microbiome interaction
   - finish Borda-Molina
   
