@@ -56,9 +56,42 @@ Make mapping and metadata files that match the whole sample dataset
 
 I made a [github issue under ampliseq-benchmark](https://github.com/lorentzben/ampliseq-benchmarking/issues/1) to track the progress of this section.
 
-#visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
+visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
 ampliseq benchmark rev: e4ca701e2ef305937ac3bba5791db0976ccf74da
 slurm: 15908186
+
+```bash
+Incompatible parameters: `--FW_primer` and `--RV_primer` are required for cutting the QIIME2 reference database to the amplimplicon sequences. Please specify primers or do not use `--qiime_ref_taxonomy`.
+```
+
+I changed to the primer clipped sequences
+
+visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
+ampliseq benchmark rev: bda360b6a75b5fc9670c81d1d6ac47a14a5c873b
+slurm:  15908838
+
+```bash
+Incompatible parameters: `--FW_primer` and `--RV_primer` are required for cutting the QIIME2 reference database to the amplimplicon sequences. Please specify primers or do not use `--qiime_ref_taxonomy`.
+```
+
+I misunderstood what the error message was saying. I want to go back and try to run the raw samples through trim adapt and see if it will go
+
+visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
+ampliseq benchmark rev: e53b3fe7cbaf952f5fd0a425fedc8d50c1a318cd
+slurm: 15908841
+
+```bash
+WARN: No DADA2 cutoffs were specified (`--trunclenf` & `--trunclenr`), therefore reads will be truncated where median quality drops below 25 (defined by `--trunc_qmin`) but at least a fraction of 0.75 (defined by `--trunc_rmin`) of the reads will be retained.
+The chosen cutoffs do not account for required overlap for merging, therefore DADA2 might have poor merging efficiency or even fail.
+
+Incompatible parameters: `--FW_primer` and `--RV_primer` are required for primer trimming. If primer trimming is not needed, use `--skip_cutadapt`.
+```
+
+will revert back to primer clipped manifest and add skip trim
+
+visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
+ampliseq benchmark rev: b5d930f458c994fafa64e32c446cd9ff5ce529b6 
+slurm: 15908843
 
 ```bash
 
