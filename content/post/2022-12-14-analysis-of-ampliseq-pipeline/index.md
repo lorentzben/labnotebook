@@ -50,7 +50,7 @@ evenness = how well represented each species is to another
 
 There are issues when you go not rich enough and when you have too rich, generally you want to balance richness and evenness. 
 
-I found this tool [M&M]() which could be a good use to generate mock communities to see if the tool I have built is performing well and if the visualizations look good. 
+I found this tool [M&M](https://github.com/ggnatalia/MMs) which could be a good use to generate mock communities to see if the tool I have built is performing well and if the visualizations look good. 
 
 ### Todos for Tomorrow:
 
