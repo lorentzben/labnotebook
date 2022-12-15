@@ -94,12 +94,45 @@ ampliseq benchmark rev: b5d930f458c994fafa64e32c446cd9ff5ce529b6
 slurm: 15908843
 
 ```bash
+Use DADA2 taxonomy classification
+ERROR: Please check input samplesheet -> Column 'sampleID' and 'forwardReads' are required but not detected.
+```
 
+visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
+ampliseq benchmark rev: 59fe5d1b461aa928bab6eaf18a32a060c8c2138a
+slurm: 15911517
+
+```bash
+Use DADA2 taxonomy classification
+ERROR: Please check input samplesheet -> Column 'sampleID' and 'forwardReads' are required but not detected.
+```
+
+visualize ampliseq rev: 61eab99387e188483e8827c03b07e7a3fd872462
+ampliseq benchmark rev: bd26d15f3544bafa11627dffc09dd28cf1e72433
+slurm: 15914277
+
+```bash
+success
+```
+
+### Implement Schloss analysis by hand
+
+I built a docker image that has tidyverse for the sloss analysis. 
+lorentzb/tidyverse:4.2.0
+
+```dockerfile
+
+FROM rocker/verse:4.2.1
+RUN apt-get update -y && apt-get install -y  libicu-dev  make procps libcurl4-openssl-dev  libssl-dev  zlib1g-dev  pandoc  libxml2-dev && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
+RUN echo "options(renv.config.pak.enabled = TRUE, repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
+RUN R -e 'install.packages(c("renv","remotes"))'
+COPY renv.lock renv.lock
+RUN R -e 'renv::restore()'
 ```
 
 TODO tasks:
 
-- run this analysis through ampliseq
 - run the schloss analysis by hand
 - compare automated value to hand picked
 - automate the schloss analysis as the first process of visualize ampliseq and create a report
@@ -109,25 +142,40 @@ TODO tasks:
 
 Can we use a mock microbial community tool to identify common species in the gut?
 
-
-### Host Microbiome Interaction 
-
-
 ### Todos for Tomorrow:
 
 - Visualize Ampliseq
-  - create a not-filtered/rarefied dataset
-  - run pat scholosses analysis on the non-rarefied data
+  - run pat schlosses analysis on the non-rarefied data
     - compare my numbers to ampliseqs
   - do we need to run cutadapt?
-- Host Microbiome Commuity
+- Host Microbiome Community
   - finish 
+- Open Up Space on the Lacie drive
 
 ### Git Commits
 
 #### Lab Notebook
 
 ```bash
+1456b22 - Benjamin Lorentz, Thu Dec 15 12:42:11 2022 -0500 : add notes before lunch
+d19d955 - Benjamin Lorentz, Thu Dec 15 12:20:53 2022 -0500 : notes for thursday
+6d2ba61 - Benjamin Lorentz, Thu Dec 15 09:22:31 2022 -0500 : added page for thursday
+993f49b - Ben Lorentz, Wed Dec 14 21:31:27 2022 -0500 : final notes for wednesday
+```
 
+#### Ampliseq Benchmark
 
+```bash
+bd26d15 - Benjamin Lorentz, Thu Dec 15 14:27:57 2022 -0500 : update no_filt_manifest.tsv
+59fe5d1 - Benjamin Lorentz, Thu Dec 15 13:51:19 2022 -0500 : update no_filt_manifest
+b5d930f - Benjamin Lorentz, Thu Dec 15 12:40:27 2022 -0500 : update no_filter_manifest and params
+e53b3fe - Benjamin Lorentz, Thu Dec 15 12:36:50 2022 -0500 : update no_filt_manifest and params
+bda360b - Benjamin Lorentz, Thu Dec 15 12:28:53 2022 -0500 : update no_filt_manifest no_filt_params
+```
+
+#### Visualize Ampliseq
+
+```bash
+1122049 - Benjamin Lorentz, Thu Dec 15 16:46:30 2022 -0500 : modified Dockerfile
+e4f5b0e - Benjamin Lorentz, Thu Dec 15 16:42:27 2022 -0500 : add Dockerfile and renv.lock file
 ```
