@@ -60,6 +60,7 @@ I found this tool [M&M]() which could be a good use to generate mock communities
     - mock community analysis
 - Host microbiome interaction
   - finish Borda-Molina
+- install Z
 
 ### Git Commits
 
