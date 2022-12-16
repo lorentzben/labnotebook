@@ -1,5 +1,4 @@
 ---
-description: Ben's blog
-menu: main
-title: Archive
+title: "Archive"
+summary: "Log Entries from Previous Years"
 ---

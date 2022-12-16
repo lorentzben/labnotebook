@@ -1,0 +1,7 @@
+<h1>{{ .Title }}</h1>
+<p>{{ .Summary }}</p>
+<div>
+	{{ range .Pages }}
+		{{ .Render "li" }}
+	{{ end }}
+</div>
