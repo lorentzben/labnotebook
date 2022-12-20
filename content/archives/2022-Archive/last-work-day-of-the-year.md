@@ -1,7 +1,7 @@
 ---
 title: 'Last Work Day of the Year'
 date: 2022-12-16T15:36:23Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
   - "2022"
