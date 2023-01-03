@@ -43,11 +43,29 @@ TODO:
 
 ### Gene 8940 Term Paper
 
+Most big issues were not capitalizing Wald test, and there were some grammatical issues that Dr. Bergman Highlighted but he seemed pleased overall with the results from this paper. 
+
 ### What Will I Achieve This Month?
+
+I want to determine the main actors is the gut segments of a chicken. I will achieve this by reviewing papers cited in other reviews as well as try to generate mock microbial communities to see if that is a feasible method to summarize the big players. I think that also examining the functional capacity of the microbes is also very important.
 
 ### What does Sucess Look Like?
 
+- Being able to summarize the major players in the gut 
+- Being able to summarize the major functions of the gut
+
 ### Visualize Ampliseq
 
+```bash
+update main.nf
 
+    NOT QUITE FUNCTIONAL YET
+
+    - imported the minmax script into the process
+    - downloaded a dir to test by hand
+    - have script flow control implemented
+    - need to translate bash to api calls
+```
+
+Current progress.
 
