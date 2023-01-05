@@ -210,12 +210,6 @@ slurm: 16479255
 same error
 ```
 
-visualize-ampliseq rev: 664743d0caece36f73e356270f00ffa47450412d
-ampliseq-benchmark rev: 206827a145d901fa96b94695644a688d4fac6241
-slurm: 16479596
-
-```bash
-```
 
 ### Todos for tomorrow:
 
