@@ -3,7 +3,7 @@ title: 'Downstream Correct Rarefact'
 date: 2023-01-06T14:14:42Z
 draft: false
 meta_img: "images/image.png"
-tags: [ "visualize-ampliseq", "downstream"]
+tags: ['visualize-ampliseq', 'downstream']
 description: "Description for the page"
 ---
 
