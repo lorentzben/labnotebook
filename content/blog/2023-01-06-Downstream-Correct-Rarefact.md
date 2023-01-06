@@ -14,7 +14,13 @@ description: "Description for the page"
 - Generate a Mock community M&M or other and validate pipelines
 - Examine some papers collected
 
+### Annotate Jackwood Blast Parser
+
+I started making a ppt do explain the commented code. 
+
 ### Visualize Ampliseq
+
+
 
 ### Mock Community
 
