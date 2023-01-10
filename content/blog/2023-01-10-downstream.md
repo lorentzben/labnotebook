@@ -1,4 +1,4 @@
-# ---
+---
 title: 'Downstream'
 date: 2023-01-10T15:36:39Z
 draft: false
@@ -149,11 +149,16 @@ Took a look at the correlation information
 #### Lab Notebook
 
 ```bash
-
+db93696 - Ben Lorentz, Tue Jan 10 17:15:52 2023 -0500 : updates for tuesday
+575bfe3 - Ben Lorentz, Tue Jan 10 09:10:59 2023 -0500 : added page for tuesday
 ```
 
-#### Jackwood Parser
+#### Visualize Ampliseq
 
 ```bash
+600a0ee - Ben Lorentz, Tue Jan 10 16:18:05 2023 -0500 : update 05_report
+db84f62 - Ben Lorentz, Tue Jan 10 15:07:55 2023 -0500 : updated main.nf and report 05
+58d595e - Ben Lorentz, Tue Jan 10 14:34:03 2023 -0500 : update main.nf and 05_report.md
+075d880 - Ben Lorentz, Tue Jan 10 10:59:15 2023 -0500 : update 04_report
 
 ```
