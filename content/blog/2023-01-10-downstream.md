@@ -1,6 +1,6 @@
 # ---
-title: 'Downstream and Jackwood'
-date: 2023-01-09T15:36:39Z
+title: 'Downstream'
+date: 2023-01-10T15:36:39Z
 draft: false
 meta_img: "images/image.png"
 tags:
@@ -14,9 +14,7 @@ description: "Description for the page"
 
 - Visualize Ampliseq
   - !!! update all downstream diversities !!!
-- Jackwood Parser
-  - Comment the powerpoint
-  - Comment the lower level functions
+- Read notes for stat class for tomorrow
 - Generate a Mock community M&M or other and validate pipelines
 - Examine some papers collected
 
@@ -24,16 +22,12 @@ description: "Description for the page"
 
 Can we use a mock community to describe the common taxa in the different chicken gut segments AND can we use that community to benchmark the pipeline we have developed?
 
-### Jackwood Parser
-
-I have been working on annotating the powerpoint this morning. I was able to finish annotating the powerpoint. Now it's time to examine the code itself. Finished adding comments to the code and pushed up to github. 
-
 ### Visualize Ampliseq
 
 
 ### Stat 6220
 
-- added quizzes homework and project to calendar
+
 
 ### Todos for Tomorrow:
 
