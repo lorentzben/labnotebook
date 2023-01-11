@@ -72,3 +72,12 @@ This tag is helpful when you want to link to a paragraph in Obsidian from anothe
 ```bash
 <a id="^c1a3b2"></a>
 ```
+
+### Git tags
+
+```bash
+
+$ git tag ____
+
+$ git push origin tagname
+```

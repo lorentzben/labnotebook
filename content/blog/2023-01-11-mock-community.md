@@ -78,5 +78,148 @@ visualize-ampliseq rev: 6d87ed86ceecb9c24094959ce81b1d580667eef4
 slurm sub: 16936472
 
 ```bash
+Command error:
+  1: In readLines("item_of_interest.csv") :
+    incomplete final line found on 'item_of_interest.csv'
+  2: Ignoring unknown aesthetics: show.legend 
+  3: Removed 4 rows containing missing values (geom_point). 
+  4: Removed 4 row(s) containing missing values (geom_path). 
+  5: Removed 4 rows containing missing values (geom_point). 
+  6: Removed 4 row(s) containing missing values (geom_path). 
+  Execution halted
+  
+  
+  processing file: 07_report.Rmd
+  -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+  v ggplot2 3.3.5     v purrr   0.3.4
+  v tibble  3.1.6     v dplyr   1.0.8
+  v tidyr   1.2.0     v stringr 1.4.0
+  v readr   2.1.2     v forcats 0.5.1
+  -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+  x dplyr::filter() masks stats::filter()
+  x dplyr::lag()    masks stats::lag()
+  
+  Attaching package: 'reshape2'
+  
+  The following object is masked from 'package:tidyr':
+  
+      smiths
+  
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Saving 16 x 10 in image
+  Quitting from lines 37-391 (07_report.Rmd) 
+  Error in data.frame(..., check.names = FALSE) : 
+    arguments imply differing number of rows: 89, 0
+  Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> cbind -> cbind -> data.frame
+  In addition: Warning messages:
+  1: In readLines("item_of_interest.csv") :
+    incomplete final line found on 'item_of_interest.csv'
+  2: Ignoring unknown aesthetics: show.legend 
+  3: Removed 4 rows containing missing values (geom_point). 
+  4: Removed 4 row(s) containing missing values (geom_path). 
+  5: Removed 4 rows containing missing values (geom_point). 
+  6: Removed 4 row(s) containing missing values (geom_path). 
+  Execution halted
+
+Work dir:
+  /scratch/bjl34716/nf_dev/ampliseq-benchmark/work/56/f9f8332b38728a21b629667cf77197
 ```
 
+ampliseq-benchmark rev: 206827a145d901fa96b94695644a688d4fac6241
+visualize-ampliseq rev: a659d62f75c250463cb664549c96a10ee2d4fd88
+slurm sub: 16937772
+
+```bash
+Attaching package: 'reshape2'
+  
+  The following object is masked from 'package:tidyr':
+  
+      smiths
+  
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Using sample as id variables
+  Saving 16 x 10 in image
+  Quitting from lines 40-397 (07_report.Rmd) 
+  Error in data.frame(..., check.names = FALSE) : 
+    arguments imply differing number of rows: 89, 0
+  Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> cbind -> cbind -> data.frame
+  In addition: Warning messages:
+  1: In readLines("item_of_interest.csv") :
+    incomplete final line found on 'item_of_interest.csv'
+  2: Ignoring unknown aesthetics: show.legend 
+  3: Removed 4 rows containing missing values (geom_point). 
+  4: Removed 4 row(s) containing missing values (geom_path). 
+  5: Removed 4 rows containing missing values (geom_point). 
+  6: Removed 4 row(s) containing missing values (geom_path). 
+  Execution halted
+
+Work dir:
+  /scratch/bjl34716/nf_dev/ampliseq-benchmark/work/16/8997be86df45a0fc4ad1dd49211ad9
+```
+
+this run was less about getting a result that works and more about getting metadata into a work dir that is accessible. 
+
+ampliseq-benchmark rev: 206827a145d901fa96b94695644a688d4fac6241
+visualize-ampliseq rev: 5f8155698c89f8bd96a0a47c8d188394a61e111e
+slurm sub: 16938521
+
+```bash
+success
+```
+
+This version of the pipeline is successful.
+
+
+### Mock Microbial Community
+
+M&Ms might not provide us with exactly what we want (it doesn't learn from environmental samples)
+but they might cite a tool that does do it https://www.biorxiv.org/content/10.1101/2021.04.21.440404v1.supplementary-material
+This is an ongoing issue for tomorrow.
+
+### Todos for Tomorrow:
+
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+- Examine some papers collected
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+b0197af - Benjamin Lorentz, Wed Jan 11 13:50:12 2023 -0500 : updates around lunchtime
+7286d9d - Ben Lorentz, Wed Jan 11 08:26:08 2023 -0500 :  added notes from first hour
+8c10bc8 - Ben Lorentz, Wed Jan 11 07:43:42 2023 -0500 : add page for wednesday
+1e4f6ea - Ben Lorentz, Tue Jan 10 17:20:59 2023 -0500 : update git commits
+db93696 - Ben Lorentz, Tue Jan 10 17:15:52 2023 -0500 : updates for tuesday
+```
+
+#### Visualize Ampliseq
+
+```bash
+71810dc - Benjamin Lorentz, Wed Jan 11 15:29:30 2023 -0500 : update main.nf 01_report 01_report_MbA 10_report
+5f81556 - Benjamin Lorentz, Wed Jan 11 15:12:16 2023 -0500 : update 07_report.md
+a659d62 - Benjamin Lorentz, Wed Jan 11 14:43:03 2023 -0500 : update main.nf 07_report.Rmd
+6d87ed8 - Benjamin Lorentz, Wed Jan 11 13:47:30 2023 -0500 : update main.nf 07_report.Rmd
+678b7b8 - Benjamin Lorentz, Wed Jan 11 11:51:50 2023 -0500 : update main.nf
+eede448 - Benjamin Lorentz, Wed Jan 11 11:42:48 2023 -0500 : update main.nf
+d62b704 - Ben Lorentz, Wed Jan 11 08:26:23 2023 -0500 : in progress main.nf
+```
