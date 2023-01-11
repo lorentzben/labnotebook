@@ -28,5 +28,12 @@ Can we use a mock community to describe the common taxa in the different chicken
 
 We need to add a process in [for this](https://docs.qiime2.org/2022.11/plugins/available/diversity/alpha-rarefaction/) to be fed into 07_report, and this can be implemented using Python
 
+TODO check that mindepth is the correct cutoff, or if we want maxdepth 
+TODO update these save commands
 
+```python3
+from qiime2.plugins.diversity.visualizers import alpha_rarefaction
+```
+
+We are going to keep the same structure of COREMETRICPYTHON but just sub in the alpha_rarefaction command as oppsed to the diversity pipeline command 
 
