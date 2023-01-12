@@ -41,4 +41,26 @@ From [Poultry World](https://www.poultryworld.net/health-nutrition/core-metageno
 Huang et. al. 2018
 
 There is a ftp:// ftp.agis.org.cn/~fanwei/Chicken_gut_metagenome ftp server that houses the gene catalog of all the genes from the chicken observed.
+
+Big questions:
+  - Who is there?
+    - do they have a tax table in the supps?
+    - can we classify their genes/seqs better than them? (better than diamond to NCBI-NR database)
+    - can we extract 16s sequences from the raw reads and run those through a pipeline?
+  - What are they doing?
+    - Okay great we have a gene table what kind of processes are generally occuring
+    - Is there any host-microbial interaction going on?
+    - what genes are involved with nitrogen metabolism in the foregut? and what are involved in the hindgut?
+    - can we look for those genes in HE/LE birds or another phenotype?
   
+Zhang et. al. 2022
+
+This paper has an overview of the MAGs that have been assembled based on multiple papers, they could be helpful to answer some of those big questions. 
+
+### Todos for Tomorrow:
+
+- Go Back to the Original question from Aggrey
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+- Examine some papers collected
