@@ -514,6 +514,18 @@ shannon_mine          1.433288   1.457838   1.347584   1.374686   1.607721
 
 success
 
+### Zhang
+
+from the Huang Paper
+
+```md
+
+Taxonomic assignments of protein sequences were made on the basis of DIAMOND (v0.8.28.90 diamond blastp --evalue 10 --max-target-seqs 250) alignment against the NCBI-NR database by CARMA3 (carma --classify-blast --type p --database p) [76, 77]. A number of 64,332 genes (0.71%) classified as eukaryota but not fungi were excluded from the non-redundant gene set, and the final chicken gut gene catalog includes 9,037,241 genes.
+
+To calculate of relative gene abundance, the clean reads from each sample were aligned against the gene catalog by BWA-MEM with the criteria of alignment length ≥ 50 bp and identity > 95%. Sequenced-based abundance profiling was performed as previously described [81]. Phylum, genus, species, KO, and OG relative abundances were calculated by summing the abundance of the respective genes belonging to each category per sample, based on the taxonomic assignments, KO and OG annotations, respectively. The relative gene abundance profile was also summarized into KEGG and eggNOG functional profiles for the functional analysis. The gene relative abundance profiles and sequences of integrated gene catalog (IGC) of human gut microbiome [16], and the reference gene catalog of the pig gut metagenome [17], were downloaded and analyzed by the same KEGG and eggNOG functional annotation pipeline in our study.
+
+```
+
 ### Todos for Tomorrow
 
 - gg-catalog
@@ -532,9 +544,16 @@ success
 #### Lab notebook
 
 ```bash
+1a2b75e - Benjamin Lorentz, Tue Jan 24 16:14:44 2023 -0500 : updates during tuesday
+97c5a11 - Benjamin Lorentz, Tue Jan 24 09:02:40 2023 -0500 : add tuesdays page
+75d73fe - Benjamin Lorentz, Mon Jan 23 16:45:01 2023 -0500 : notes for the end of Monday
 ```
 
 #### gg-catalog
 
 ```bash
+0f5d20b - Benjamin Lorentz, Tue Jan 24 16:13:40 2023 -0500 : update 02_huang
+4484f3c - Benjamin Lorentz, Tue Jan 24 11:56:00 2023 -0500 : update 02_huang.rmd
+26b9338 - Benjamin Lorentz, Tue Jan 24 10:03:44 2023 -0500 : update 02_huang.rmd add output huang
+a66eeb9 - Benjamin Lorentz, Mon Jan 23 16:41:06 2023 -0500 : update 02_huang
 ```
