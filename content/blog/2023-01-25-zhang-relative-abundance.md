@@ -107,5 +107,41 @@ CPU hours   : (a few seconds)
 Succeeded   : 1
 ```
 
-Sucess :)
+Success :)
+
+#### collect data
+
+gg-catalog rev: 65129682fde2019a1c5b2fa0cd01d6d2a52f6a6a 
+gg-catalog-nf rev: a9ac6237aa894be7d44250f06a52b03395349636
+slurm sub: 17890397
+
+```bash
+```
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+dc5fc98 - Benjamin Lorentz, Wed Jan 25 15:08:36 2023 -0500 : added updates for nextflow gg-catalog
+5faa8bf - Benjamin Lorentz, Wed Jan 25 10:38:57 2023 -0500 : added page for wednesday
+```
+
+#### gg-catalog
+
+```bash
+6512968 - Benjamin Lorentz, Wed Jan 25 16:07:21 2023 -0500 : add code/00_collect_data.sh
+fbba41f - Benjamin Lorentz, Wed Jan 25 14:54:16 2023 -0500 : update test_params.yaml
+13a3aa8 - Benjamin Lorentz, Wed Jan 25 14:46:07 2023 -0500 : added 00_zhang_nextflow and params
+```
+
+#### gg-catalog-nf
+
+```bash
+a9ac623 - Benjamin Lorentz, Wed Jan 25 14:49:22 2023 -0500 : update nextflow.config
+d98f4a5 - Benjamin Lorentz, Wed Jan 25 14:22:43 2023 -0500 : update main.nf
+3cb78c8 - Benjamin Lorentz, Wed Jan 25 14:14:07 2023 -0500 : add main.nf and others
+74c587b - Ben Lorentz, Wed Jan 25 13:51:12 2023 -0500 : Initial commit
+```
+
 
