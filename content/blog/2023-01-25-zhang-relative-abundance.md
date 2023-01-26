@@ -40,7 +40,7 @@ To calculate of relative gene abundance, the clean reads from each sample were a
 Input: clean reads
 
 What are clean reads?
-  To ensure assembly quality, the raw HiFi sequencing reads were filtered, requiring read lengths over 2 kb and average   read accuracy over 99%. In addition, the remaining reads were mapped to the host chicken genome and feed genomes       (maize and soybean) by Minimap2 (RRID:SCR_018550) v2-2.20 [24] with parameter “-x map-hifi” to remove contaminant      sequences, eliminating approximately 2%, 0.5%, 0.5%, 0.1%, and 0.1% of the reads for the duodenum, jejunum, ileum,     cecum, and colorectum samples, respectively. 
+  To ensure assembly quality, the raw HiFi sequencing reads were filtered, requiring read lengths over 2 kb and         average read accuracy over 99%. In addition, the remaining reads were mapped to the host chicken genome and feed      genomes (maize and soybean) by Minimap2 (RRID:SCR_018550) v2-2.20 [24] with parameter “-x map-hifi” to remove         contaminant sequences, eliminating approximately 2%, 0.5%, 0.5%, 0.1%, and 0.1% of the reads for the duodenum,        jejunum, ileum, cecum, and colorectum samples, respectively. 
   
 
 | Tissue | Percent Loss |
