@@ -1,7 +1,7 @@
 ---
-title: '2023 01 27 Minimap Implement'
+title: 'Minimap Implement'
 date: 2023-01-27T15:31:43Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
   - "one tag"
