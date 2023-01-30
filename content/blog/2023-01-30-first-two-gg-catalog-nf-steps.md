@@ -214,4 +214,169 @@ THE SAME ISSUE
 Since we are unable to use the "get" method, we can maybe make a new map using this:
 https://stackoverflow.com/questions/73204784/how-to-get-first-items-in-channel-of-tuples-in-nextflow
 
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: 7be06bccd09d54ae032fb6ddc91677b7b16ce325
+slurm sub: 18056715
 
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Process `FILTLONG` declares 1 input channel but 2 were specified
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf' at line: 75 or see '.nextflow.log' file for more details
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: e374c2a011fe51b18e389a93d26ce3e86d674e0a
+slurm sub: 18056732
+
+```bash
+[-        ] process > FILTLONG -
+WARN: Input tuple does not match input set cardinality declared by process `FILTLONG` -- offending value: [/scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq]
+Execution aborted due to an unexpected error
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/modules/nf-core/filtlong/main.nf' at line: 2 or see '.nextflow.log' file for more details
+
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/5QFnTsAq8lKUe3
+[-        ] process > FILTLONG -
+Execution cancelled -- Finishing pending tasks before exit
+WARN: Input tuple does not match input set cardinality declared by process `FILTLONG` -- offending value: [/scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq]
+Execution aborted due to an unexpected error
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: 9e51a762fb1a72d8f3e0477596e1838f7ee94703
+slurm sub: 18056804
+
+```bash
+N E X T F L O W  ~  version 22.04.5
+Pulling lorentzben/gg-catalog-nf ...
+ Fast-forward
+Launching `https://github.com/lorentzben/gg-catalog-nf` [naughty_faggin] DSL2 - revision: 9e51a762fb [main]
+Script compilation error
+- file : /home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf
+- cause: Unexpected input: '{' @ line 62, column 10.
+   workflow {
+            ^
+
+1 error
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: 08fe3a77104bcc100cd79bc14f2ed2eac748877f
+slurm sub: 18056818
+
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/modules/nf-core/filtlong/main.nf' at line: 2 or see '.nextflow.log' file for more details
+
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/eSQ9veXwqW3x
+[-        ] process > FILTLONG -
+Execution cancelled -- Finishing pending tasks before exit
+Execution aborted due to an unexpected error
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/modules/nf-core/filtlong/main.nf' at line: 2 or see '.nextflow.log' file for more details
+ 
+ java.lang.NullPointerException: Cannot get property 'id' on null object
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: d9c769d721e17cb5babbacfa256b807d70134ce8
+slurm sub: 18056971
+
+```bash
+java.lang.NullPointerException: Cannot get property 'id' on null object
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: fb0ce8e29e9e235c1c798405ec1adfd8a3a9f7bd
+slurm sub: 18057154
+
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more de$No such variable: id_map
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: 10cc178114038c56b14313b13ed24e6e7fe14f09
+slurm sub: 18057238
+
+```bash
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/4kzNkSK2HTl53x
+[-        ] process > FILTLONG -
+Invalid method invocation `call` with arguments: [[id:SRR15214153, single_end:true], [/scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq]] (java.util.ArrayList) on _closure5 type
+
+
+
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/4kzNkSK2HTl53x
+[-        ] process > FILTLONG -
+Invalid method invocation `call` with arguments: [[id:SRR15214153, single_end:true], [/scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq]] (java.util.ArrayList) on _closure5 type
+```
+
+I cannot get the method to work with their module. I am going to write my own process.
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: 841d321ec68fada1e5af3858c907dc259c596dec
+slurm sub: 18057387
+
+```bash
+java.lang.NullPointerException: Cannot get property 'id' on null object
+```
+
+gg-catalog rev: 82c851fc4a65d5974162775f6fba1a0a00cd937e 
+gg-catalog-nf rev: 8142fbbf91eb9048dab5a89ca46fde1ff520617e
+slurm sub: 18057609 
+
+```bash
+java.lang.NullPointerException: Cannot get property 'id' on null object
+```
+
+We need to write a process that runs:
+
+```bash
+filtlong --min_length 2000 --keep_percent 99 ../zhang/reads/duodenum/SRR19683891.fastq | gzip > SRR19683891.fastq.gz
+```
+
+### Todos for Tomorrow
+
+- Homework 1 Stat 6220
+- gg-catalog
+  - Zhang
+    - try to pass reads into filtlong
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### lab notebook
+
+```bash
+6da41bc - Benjamin Lorentz, Mon Jan 30 14:54:19 2023 -0500 : notes throughout the day
+dc14977 - Benjamin Lorentz, Mon Jan 30 10:44:49 2023 -0500 : add page for monday
+```
+
+#### gg-catalog
+
+```bash
+82c851f - Benjamin Lorentz, Mon Jan 30 13:39:46 2023 -0500 : remove the run column
+```
+
+#### gg-catalog-nf
+
+```bash
+8142fbb - Benjamin Lorentz, Mon Jan 30 16:53:29 2023 -0500 : update main.nf
+841d321 - Benjamin Lorentz, Mon Jan 30 16:48:10 2023 -0500 : update main.nf
+10cc178 - Benjamin Lorentz, Mon Jan 30 16:44:27 2023 -0500 : update main.nf
+fb0ce8e - Benjamin Lorentz, Mon Jan 30 16:42:51 2023 -0500 : update main.nf
+7b9cd06 - Benjamin Lorentz, Mon Jan 30 16:41:46 2023 -0500 : update main.nf
+d9c769d - Benjamin Lorentz, Mon Jan 30 16:37:45 2023 -0500 : update main.nf
+08fe3a7 - Benjamin Lorentz, Mon Jan 30 16:33:17 2023 -0500 : update main.nf
+4ee0397 - Benjamin Lorentz, Mon Jan 30 16:32:16 2023 -0500 : update main.nf
+9e51a76 - Benjamin Lorentz, Mon Jan 30 16:29:01 2023 -0500 : update main.nf
+46f5505 - Benjamin Lorentz, Mon Jan 30 16:28:06 2023 -0500 : update main.nf
+e374c2a - Benjamin Lorentz, Mon Jan 30 16:21:20 2023 -0500 : update main.nf
+7be06bc - Benjamin Lorentz, Mon Jan 30 16:18:04 2023 -0500 : update main.nf
+```
