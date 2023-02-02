@@ -149,4 +149,145 @@ gg-catalog-nf rev: N/A
 slurm sub: 18157122
 
 ```bash
+[M::main] Version: 2.24-r1155-dirty
+[M::main] CMD: /usr/local/bin/minimap2 -ax map-hifi contam-refs.fna.gz /scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq
+[M::main] Real time: 1903.941 sec; CPU: 5089.747 sec; Peak RSS: 13.910 GB
+```
+
+success
+
+gg-ref
+
+gg-catalog rev: 72c5b4e98c0d873326926839cfaa53ba862c413b 
+gg-catalog-nf rev: N/A
+slurm sub: 18159019
+
+```bash
+[M::worker_pipeline::1220.806*1.42] mapped 8961 sequences
+[M::main] Version: 2.24-r1155-dirty
+[M::main] CMD: /usr/local/bin/minimap2 -ax map-hifi /scratch/bjl34716/gg-catalog/refs/GalGal-reference.fna.gz /scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq
+[M::main] Real time: 1221.027 sec; CPU: 1730.478 sec; Peak RSS: 5.871 GB
+```
+
+glycine-max ref
+
+gg-catalog rev: 72c5b4e98c0d873326926839cfaa53ba862c413b 
+gg-catalog-nf rev: N/A
+slurm sub: 18160527
+
+```bash
+[M::worker_pipeline::1038.678*1.83] mapped 8961 sequences
+[M::main] Version: 2.24-r1155-dirty
+[M::main] CMD: /usr/local/bin/minimap2 -ax map-hifi /scratch/bjl34716/gg-catalog/refs/GlycineMax-reference.fna.gz /scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq
+[M::main] Real time: 1038.798 sec; CPU: 1903.994 sec; Peak RSS: 5.450 GB
+```
+
+zea-mays ref
+
+gg-catalog rev: 72c5b4e98c0d873326926839cfaa53ba862c413b 
+gg-catalog-nf rev: N/A
+slurm sub: 18160575
+
+```bash
+[M::main] Version: 2.24-r1155-dirty
+[M::main] CMD: /usr/local/bin/minimap2 -ax map-hifi /scratch/bjl34716/gg-catalog/refs/ZeaMays-reference.fna.gz /scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq
+[M::main] Real time: 1743.096 sec; CPU: 2265.874 sec; Peak RSS: 7.765 GB
+```
+
+We need to count the number of records in a samfile
+
+dir structure right now
+
+```bash
+/scratch/bjl34716/nf_dev/gg-catalog/compare-minimap/indv-ref/
+├── gal-gal
+│   └── SRR15214153_gal_gal.sam
+├── glycine-max
+│   └── SRR15214153_glycine_max.sam
+└── zea-mays
+    └── SRR15214153_zea_mays.sam
+```
+
+I updated the script to sort and then merge the samfiles into one file.
+
+things to check:
+
+  - the sorted files out are still sam (human readable)
+  - the merged file is still sam (human readble)
+  - the number of records is the same as the concat DB
+  - the number of records is the same as the fastx concat DB version
+  
+
+gg-catalog rev: 45f18c0697b5f0ae4d5d7ec97625b7b8765da9c4
+gg-catalog-nf rev: N/A
+slurm sub: 18160757
+
+```bash
+
+```
+
+### Ben Jackwood
+
+Ben sent me this email:
+
+"Ben, 
+Please see the attached output for when I attempt to run the script with the impromptu database. I do not think it generated a slurm output to view. Maybe we can sit down next week and figure out how to put the custom database into a format it will use. I have also attached the database. Thanks."
+
+I'm not certain what his is exact issue is, but in order:
+
+1. He needs to pull down the new version from github
+2. He had the header on the database which needs to be removed so that there isn't database_out.
+
+We will edit these two changes and see what else is left.
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - add in the isolate field into parser and output
+  - meet with Ben to talk about two points above 2/2/23
+- gg-catalog
+  - Zhang
+    - followup on slurm-18160757
+    - create a minimap process (either concat or separate)
+      - create a channel/process for each screening reference
+    - check for read loss (does it match the paper?)
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commits
+
+#### Lab Notebook 
+
+```bash
+a179a6f - Benjamin Lorentz, Thu Feb 2 11:58:26 2023 -0500 : notes before lunch
+4e00890 - Benjamin Lorentz, Thu Feb 2 09:24:27 2023 -0500 : page for thursday
+623fc91 - Benjamin Lorentz, Wed Feb 1 16:56:18 2023 -0500 : end of notes for wednesday
+```
+
+#### gg-catalog-nf
+
+```bash
+acf1675 - Benjamin Lorentz, Thu Feb 2 10:53:43 2023 -0500 : update modules.config and main.nf
+e7eb1cc - Benjamin Lorentz, Thu Feb 2 10:33:52 2023 -0500 : update main.nf
+79914ef - Benjamin Lorentz, Wed Feb 1 16:48:09 2023 -0500 : update main.nf
+13c5a64 - Benjamin Lorentz, Wed Feb 1 16:45:56 2023 -0500 : update main.nf
+7a5622f - Benjamin Lorentz, Wed Feb 1 16:32:24 2023 -0500 : update main.nf
+e9c1643 - Benjamin Lorentz, Wed Feb 1 16:28:43 2023 -0500 : update main.nf
+c163ac9 - Benjamin Lorentz, Wed Feb 1 16:23:34 2023 -0500 : update main.nf
+```
+
+### gg-catalog
+
+```bash
+45f18c0 - Benjamin Lorentz, Thu Feb 2 14:24:28 2023 -0500 : updated 05_sam_merge.sh
+72c5b4e - Benjamin Lorentz, Thu Feb 2 12:44:32 2023 -0500 : added 02-05
+9fb9a19 - Benjamin Lorentz, Thu Feb 2 11:35:15 2023 -0500 : add 01_concat_contam_refs.sh
+a9cec60 - Benjamin Lorentz, Wed Feb 1 16:19:05 2023 -0500 : add contam.tsv and update test_params.yaml
 ```
