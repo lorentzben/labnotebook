@@ -81,3 +81,9 @@ $ git tag ____
 
 $ git push origin tagname
 ```
+
+### Filter out contaminated reads from raw reads
+
+```bash
+minimap2 -a REF R1 R2 | samtools sort | samtools view -f 4 | samtools fastq -s R0' -1 R1' -2 R2'
+```
