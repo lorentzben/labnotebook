@@ -39,6 +39,12 @@ description: "Description for the page"
 
 #### Implement the xml parsing
 
+Of note, you do not reassign a dict when you add a value to the list, you just append just like any other list.
+
+Strain and isolate are the two fields, what we are going to want to do is to assign the val of isolate and if it is nonetype then we want to pull strain:
+
+(just do this opposite of how you did the nones)
+
 #### Generate the new dictionary
 
 
