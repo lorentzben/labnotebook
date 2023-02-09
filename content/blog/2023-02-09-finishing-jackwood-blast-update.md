@@ -124,7 +124,63 @@ gg-catalog-nf rev: 480361d1c9e2f273bbfbe290d489a985f1a28940
 slurm sub: 18670379
 
 ```bash
+Command error:
+  [WARNING][1;31m Indexing parameters (-k, -w or -H) overridden by parameters used in the prebuilt index.[0m
+  [WARNING][1;31m For a multi-part index, no @SQ lines will be outputted. Please use --split-prefix.[0m
+  [M::main::63.751*0.23] loaded/built the index for 507 target sequence(s)
+  [M::mm_mapopt_update::67.003*0.27] mid_occ = 500
+  [M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 507
+  [M::mm_idx_stat::69.171*0.29] distinct minimizers: 113152470 (39.56% are singletons); average occurrences: 6.599; average spacing: 5.372; total length: 4011685380
+  [E::sam_parse1] no SQ lines present in the header
+  [W::sam_read1_sam] Parse error at line 1758
+  samtools sort: truncated file. Aborting
+  [main_samview] fail to read the header from "-".
+
+Work dir:
+  /scratch/bjl34716/nf_dev/gg-catalog/work/7d/00357575ad21eaf2c570d99e676a00
 ```
 
 If this doesn't work then we should submit the concat reference fasta as opposed to the mmi. 
 
+### Todos for Today
+
+- Jackwood Blast
+  - validate the strain table
+  - rm strain table param
+  - find out where the ~ 100 missing records might be
+- gg-catalog
+  - Zhang
+    - follow up on slurm process 18670379
+    - create a minimap process (either concat or separate)
+      - read about what a meta map is and if we can implement it
+    - check for read loss (does it match the paper?)
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+871806d - Benjamin Lorentz, Thu Feb 9 16:48:45 2023 -0500 : notes from development
+4fe10b4 - Benjamin Lorentz, Thu Feb 9 10:01:05 2023 -0500 : notes before meeting with ben jackwood
+78d195e - Benjamin Lorentz, Thu Feb 9 09:05:53 2023 -0500 : added cheatsheet
+8e9ddef - Benjamin Lorentz, Thu Feb 9 08:22:20 2023 -0500 : added page for thursday
+c1e2ebc - Benjamin Lorentz, Wed Feb 8 17:22:03 2023 -0500 : notes for the end of wednesday
+```
+
+#### Jackwood Blast Parser
+
+```bash
+39d8474 - Benjamin Lorentz, Thu Feb 9 16:47:59 2023 -0500 : remove prints
+4461303 - Benjamin Lorentz, Thu Feb 9 16:45:23 2023 -0500 : update blast_parser.py
+a56302f - Benjamin Lorentz, Thu Feb 9 12:20:51 2023 -0500 : update main.nf
+9dc35dd - Benjamin Lorentz, Wed Feb 8 17:17:47 2023 -0500 : update blast_parser.py
+```
