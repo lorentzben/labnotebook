@@ -81,5 +81,50 @@ TODO line 164 nest the strain check
 TODO 245 same as 164
 
 See if we only need to use the updated on a list of tuples that exists which would be starting with line 164
+
+It currently does what I want it to do but I do need to refine the code a little more
+
+I need to update the second if else tree for the querying
+
+To Validate:
+  1. delete half the db check if it still works
+  2. ensure count of result = 153844
+    a. it does not the value I got was 51230
+  3. Check the number of strains coming out matches the accessions going in
+  4. where do the 100ish results go?
+
+
+  
+
+#### Meet with Ben Jackwood
+
+From Ben: 
+
+"I managed to update the code with gitpull. I have run some sequences through the pipeline with the updated database. It seemed to generate new accession numbers as well as pull from the database. However, I am getting generic IBV still. I guess if the sequence doesn't match anything in the IBV list it goes to NCBI for generic?"
+
+I have an updated database right now that links strain to sci name to accession, the current step is re-working the data structures so that the result table has:
+
+Species Strain Count
+XXX Unknown 93
+
+Expected GA 13 on RT-PCR Conn 
+
+He mentioned that Brian might be interested in setting up a patent for the process the code performs so that there would be a commission/royalty when the Vets use the code for diagnostics.
+
+I want to find a way to make this happen while also reserving the right for anyone else to utilize the code
 #### Validate the Strain Table
+
+
+### gg-catalog-nf
+
+I want it to rebuild the index and re-run 
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 480361d1c9e2f273bbfbe290d489a985f1a28940
+slurm sub: 18670379
+
+```bash
+```
+
+If this doesn't work then we should submit the concat reference fasta as opposed to the mmi. 
 
