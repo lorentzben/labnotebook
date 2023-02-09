@@ -80,6 +80,8 @@ This tag is helpful when you want to link to a paragraph in Obsidian from anothe
 $ git tag ____
 
 $ git push origin tagname
+
+$ git tag -d tagname
 ```
 
 ### Filter out contaminated reads from raw reads
