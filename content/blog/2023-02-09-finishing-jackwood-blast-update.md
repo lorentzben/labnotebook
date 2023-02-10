@@ -125,8 +125,8 @@ slurm sub: 18670379
 
 ```bash
 Command error:
-  [WARNING][1;31m Indexing parameters (-k, -w or -H) overridden by parameters used in the prebuilt index.[0m
-  [WARNING][1;31m For a multi-part index, no @SQ lines will be outputted. Please use --split-prefix.[0m
+  [WARNING][1;31m Indexing parameters (-k, -w or -H) overridden by parameters used in the prebuilt index.[0m
+  [WARNING][1;31m For a multi-part index, no @SQ lines will be outputted. Please use --split-prefix.[0m
   [M::main::63.751*0.23] loaded/built the index for 507 target sequence(s)
   [M::mm_mapopt_update::67.003*0.27] mid_occ = 500
   [M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 507
