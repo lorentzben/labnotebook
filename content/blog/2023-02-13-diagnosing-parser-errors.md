@@ -34,5 +34,16 @@ description: "Description for the page"
 
 #### compare the list passed into the calc_batch_size and what comes out of the create_batches
 
+Since the import and get first reads worked great, lets update the calc batch size and create batches to be 2 and then 5 to check for logical issues.
+
+git revision
+
+```bash
+$ python3 blast_parser.py -b david/david_10.out -o david/david_db_2_13.csv -n david/david_10_batch_2_res.csv
+
+```
+
+There is an issue where the length of the blast dict is smaller than the length of the accession list so we need to try the case of 5 so it passes 7 out actually not 5.
+
 ### gg-catalog-nf
 
