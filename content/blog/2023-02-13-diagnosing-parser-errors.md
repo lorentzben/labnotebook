@@ -176,5 +176,30 @@ I think Ive got the solution, we needed to include one last index to ensure that
 
 One last check is to ensure that the same accession isn't counted multiple times so that the value of the final table is equal to the number of records with results.
 
-### gg-catalog-nf
+Yes! I got the same value! the only thing now is that the percent coverage and percent identity doe not quite seem correct. 
 
+#### Percent Query Percent Identity
+
+We have to rebuild the same data structure from the scientific name dict, Done!
+
+#### Update the write table to functions
+
+See git rev e44792f2b6d78c5a5fd16ac7cc8de382c06f6ac6
+I think I need to modify the write res tab to file function to make one that can merge the taxa, species ave query and identity values into one table and then merge that with the counts table and write it all to file, should be a pretty easy fix but needed.
+
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+9f0ebe1 - Benjamin Lorentz, Mon Feb 13 14:26:08 2023 -0500 : updates that I think explain the spurious values
+0a886c7 - Benjamin Lorentz, Mon Feb 13 12:02:40 2023 -0500 : updates before lunch
+c2e4130 - Benjamin Lorentz, Mon Feb 13 10:28:19 2023 -0500 : added page for monday
+```
+
+#### jackwood parser
+
+```bash
+e44792f - Benjamin Lorentz, Mon Feb 13 16:50:51 2023 -0500 : update blast_parser.py
+```
