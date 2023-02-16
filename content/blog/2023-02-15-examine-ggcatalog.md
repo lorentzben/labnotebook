@@ -11,7 +11,7 @@ tags:
 description: "Description for the page"
 ---
 
-### Todos for Tomorrow
+### Todos for Today
 
 - Jackwood Blast
   - meet Ben and Brian TBD
@@ -83,7 +83,7 @@ slurm sub: 19015137
 Command error:
   [M::mm_idx_gen::75.742*1.60] collected minimizers
   [M::mm_idx_gen::82.654*1.95] sorted minimizers
-  [WARNING][1;31m For a multi-part index, no @SQ lines will be outputted. Please use --split-prefix.[0m
+  [WARNING][1;31m For a multi-part index, no @SQ lines will be outputted. Please use --split-prefix.[0m
   [M::main::82.654*1.95] loaded/built the index for 507 target sequence(s)
   [M::mm_mapopt_update::85.186*1.92] mid_occ = 500
   [M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 507
