@@ -70,5 +70,59 @@ gg-catalog-nf rev: fd4c2fbd5b8e666db09bf625cbc8880f86e4bd6a
 slurm sub: 19165713
 
 ```bash
-
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/2jvbZKqRQWBgni
+executor >  slurm (14)
+[1d/c59eb7] process > FILTLONG (SRR19726169)       [100%] 7 of 7, cached: 7 ✔
+[fa/898530] process > MINIMAP2_INDEX (1)           [100%] 1 of 1, cached: 1 ✔
+[92/5bf0c7] process > MINIMAP2_ALIGN (SRR19736685) [100%] 7 of 7, cached: 7 ✔
+[1b/0c1f89] process > SAMTOOLS_FASTQ (SRR19683890) [100%] 7 of 7 ✔
+[d6/5f86d5] process > SAMTOOLS_FASTA (SRR19736685) [100%] 7 of 7 ✔
+Completed at: 17-Feb-2023 16:17:57
+Duration    : 2h 27m 7s
+CPU hours   : 652.8 (64.1% cached)
+Succeeded   : 14
+Cached      : 15
 ```
+
+The next step is to count the fastq reads. Like I did on 2/1
+
+### Todos for Next Week
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+- gg-catalog
+  - Zhang
+    - check for read loss (does it match the paper?)
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+ed3062f - Benjamin Lorentz, Fri Feb 17 16:38:16 2023 -0500 : updated the cheatsheet
+f289fdb - Benjamin Lorentz, Fri Feb 17 12:02:56 2023 -0500 : update link
+e235eb0 - Benjamin Lorentz, Fri Feb 17 12:01:42 2023 -0500 : does this link work?
+a73d27c - Ben Lorentz, Fri Feb 17 08:56:39 2023 -0500 : added page for friday
+```
+
+#### gg-catalog-nf
+
+```bash
+fd4c2fb - Benjamin Lorentz, Fri Feb 17 13:48:26 2023 -0500 : update main.nf
+61ee5ad - Benjamin Lorentz, Fri Feb 17 13:47:37 2023 -0500 : update conf/modules.config
+52fcaab - Benjamin Lorentz, Fri Feb 17 13:30:34 2023 -0500 : update main.nf
+4f49b6c - Benjamin Lorentz, Fri Feb 17 13:27:00 2023 -0500 : update main.nf
+070f47a - Benjamin Lorentz, Fri Feb 17 11:51:56 2023 -0500 : update main.nf
+```
+
+
+
