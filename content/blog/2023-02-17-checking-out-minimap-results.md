@@ -51,4 +51,4 @@ Succeeded   : 7
 Cached      : 8
 ```
 
-So we have 7 sucessful bam files generated. I think the next step is to make some fast/q/a files from the bams so that we can [compare the counts to the original and filtlong values](blog/2023-02-01-minimap2-implement). 
+So we have 7 sucessful bam files generated. I think the next step is to make some fast/q/a files from the bams so that we can [compare the counts to the original and filtlong values](https://lorentznotebook.netlify.app/blog/2023-02-01-minimap2-implement/). 
