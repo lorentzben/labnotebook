@@ -52,3 +52,23 @@ Cached      : 8
 ```
 
 So we have 7 sucessful bam files generated. I think the next step is to make some fast/q/a files from the bams so that we can [compare the counts to the original and filtlong values](https://lorentznotebook.netlify.app/blog/2023-02-01-minimap2-implement/). 
+
+### Turn bams to fastq
+
+I pulled the [modules for fastq and fasta](https://nf-co.re/modules/samtools_fastq) and added a call to generate these files. 
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 4f49b6cedbcfa5ded78f6b94384638e6e53d1823
+slurm sub: 19160219
+
+```bash
+I recognized that it will be underpowered CANCELLED
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: fd4c2fbd5b8e666db09bf625cbc8880f86e4bd6a
+slurm sub: 19165713
+
+```bash
+
+```

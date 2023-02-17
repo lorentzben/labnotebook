@@ -87,5 +87,21 @@ $ git tag -d tagname
 ### Filter out contaminated reads from raw reads
 
 ```bash
-minimap2 -a REF R1 R2 | samtools sort | samtools view -f 4 | samtools fastq -s R0' -1 R1' -2 R2'
+minimap2 -a REF R1 R2 | samtools sort | samtools view -f 4 | samtools fastq -s 'R0' -1 'R1' -2 'R2'
 ```
+
+### Nextflow 
+
+Issue where you expect multiple process runs but you only get one back (especially in the case that one of your channels is a reference). By default channels are a channel of values, so in the case of a reference you have to specify .first() or .last() 
+
+ex: 
+
+```nextflow
+
+MINIMAP2_ALIGN(ch_filtered ,contam_path_ch, true, false, true)
+
+MINIMAP2_ALIGN(ch_filtered ,contam_path_ch.first(), true, false, true)
+```
+
+where ch_filtered is a channel of reads
+contam_path_ch is a tuple of the metadata and a path for the location of the reference database
