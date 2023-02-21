@@ -246,7 +246,7 @@ Right now I am stuck trying to pass just the paths of tables into the code. I th
 [this might be something](https://stackoverflow.com/questions/67746419/how-to-merge-multiple-grouped-output-files-in-nextflow)
 
 
-### Todos for Today
+### Todos for Tomorrow
 
 - Stat 6220 
   - Homework 2
