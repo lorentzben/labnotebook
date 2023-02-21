@@ -405,7 +405,7 @@ Command output:
   (empty)
 
 Command error:
-  [31m[ERRO][0m xopen: no content
+  [31m[ERRO][0m xopen: no content
 
 Work dir:
   /scratch/bjl34716/nf_dev/gg-catalog/work/3c/407923fdb96df36328150c7e3089d1
@@ -416,15 +416,417 @@ Tip: view the complete command output by changing to the process work dir and en
 
 How would I do this by hand?
 
+### Can we just pass all the reads in?
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 2d57dd7789f8c9134d92d9e678f7976d8add3c72
+slurm sub: 19248937
 
 
+```bash
+Error executing process > 'CSVTK_CONCAT (raw)'
+
+Caused by:
+  Process `CSVTK_CONCAT (raw)` terminated with an error exit status (255)
+
+Command executed:
+
+  csvtk \
+      concat \
+       \
+      --num-cpus 2 \
+      --delimiter "     " \
+      --out-delimiter " " \
+      --out-file raw.tsv \
+      SRR15214153.tsv
+
+  cat <<-END_VERSIONS > versions.yml
+  "CSVTK_CONCAT":
+      csvtk: $(echo $( csvtk version | sed -e "s/csvtk v//g" ))
+  END_VERSIONS
+
+Command exit status:
+  255
+
+Command output:
+```
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: c1b90f1a56d174921965e0c1b004cc837abb8ab7
+slurm sub: 19249033
+
+
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+No such variable: info
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/contam_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Missing process or function with name 'view'
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 454f41dd333a5a94e71cb5ba8ca3eb52455145ad
+slurm sub: 19249053
+
+
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/contam_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Missing process or function with name 'view'
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 4f52afa59c0cd493ae8e8559baff08ab9ae795fd
+slurm sub: 19249127
+
+
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+No such variable: info
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/contam_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Missing process or function with name 'getAt'
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf' at line: 137 or see '.nextflow.log' file for more details
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 01f1aacae661ba8e58eacb8ec6a7415e967c1bd2
+slurm sub: 19249136
+
+
+```bash
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Process `CSVTK_CONCAT` declares 3 input channels but 4 were specified
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf' at line: 139 or see '.nextflow.log' file for more details
+No such variable: info
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/contam_input.nf' at line: 60 or see '.nextflow.log' file for more details
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 342d659cc095dea39e95c50343512bab0dae912e
+slurm sub: 19249141
+
+
+```bash
+N E X T F L O W  ~  version 22.04.5
+Pulling lorentzben/gg-catalog-nf ...
+ Fast-forward
+Launching `https://github.com/lorentzben/gg-catalog-nf` [golden_becquerel] DSL2 - revision: 342d659cc0 [main]
+Script compilation error
+- file : /home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf
+- cause: Unexpected input: '{' @ line 71, column 9.
+   workflow{
+           ^
+
+1 error
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: fd9d8b84f379457162ce2c224f0f2900006fb1a9
+slurm sub: 19249146
+
+
+```bash
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+No such variable: info
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/contam_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Missing process or function with name 'Tuple'
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf' at line: 139 or see '.nextflow.log' file for more details
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 19249152
+slurm sub: 370c17c6dcadc26c1e0ed99eb3c5422c54e74b0f
+
+
+```bash
+[DataflowBroadcast around DataflowStream[?], DataflowVariable(value=null)]
+[['id':'SRR15214153', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/cecum/SRR15214153.fastq], ['id':'SRR19683890', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/colorectum/SRR19683890.fastq], ['id':'SRR19732729', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/colorectum/SRR19732729.fastq], ['id':'SRR19683891', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/duodenum/SRR19683891.fastq], ['id':'SRR19736685', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/ileum/SRR19736685.fastq], ['id':'SRR19726169', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/jejunum/SRR19726169.fastq], ['id':'SRR19732514', 'single_end':true], [/scratch/bjl34716/gg-catalog/zhang/reads/jejunum/SRR19732514.fastq]]
+Execution cancelled -- Finishing pending tasks before exit
+Execution aborted due to an unexpected error
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 217fcf0c900f2c73f34ae328507beeb5f090dc12
+slurm sub: 19249173
+
+
+```bash
+[a2/6b074f] Cached process > SEQKIT_STATS (SRR15214153)
+[34/7e432c] Cached process > FILTLONG (SRR19683890)
+[fa/898530] Cached process > MINIMAP2_INDEX (1)
+[22/80c792] Cached process > SEQKIT_STATS (SRR19683890)
+[04/9731d4] Cached process > FILTLONG (SRR15214153)
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/58YXwP2Micutba
+[-        ] process > FILTLONG       -
+[-        ] process > MINIMAP2_INDEX -
+[-        ] process > MINIMAP2_ALIGN -
+[-        ] process > SAMTOOLS_FASTQ -
+[-        ] process > SAMTOOLS_FASTA -
+[-        ] process > SEQKIT_STATS   -
+[-        ] process > CSVTK_CONCAT   -
+Execution cancelled -- Finishing pending tasks before exit
+Execution aborted due to an unexpected error
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/modules/nf-core/csvtk/concat/main.nf' at line: 2 or see '.nextflow.log' file for more details
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 2626e1522637d4e6dfdd2b98c78702df4418f675 
+slurm sub: 19249193
+
+```bash
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/61neCirQ1LfLzo
+[ba/34a78b] process > FILTLONG (SRR19732514)       [100%] 7 of 7, cached: 7 ✔
+[fa/898530] process > MINIMAP2_INDEX (1)           [100%] 1 of 1, cached: 1 ✔
+[d4/783587] process > MINIMAP2_ALIGN (SRR19732514) [100%] 7 of 7, cached: 7 ✔
+[25/d1bf49] process > SAMTOOLS_FASTQ (SRR19683891) [100%] 7 of 7, cached: 7 ✔
+[30/87d180] process > SAMTOOLS_FASTA (SRR19732514) [100%] 7 of 7, cached: 7 ✔
+[20/4394fe] process > SEQKIT_STATS (SRR19726169)   [100%] 7 of 7, cached: 7 ✔
+[/scratch/bjl34716/nf_dev/gg-catalog/work/a2/6b074f14a308af0195566b786c09d5/SRR15214153.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/22/80c79296235eb54fcf5e0e566a1165/SRR19683890.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/1f/983172df307510c23f415c319bbd8b/SRR19732729.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/f4/45ed941f60c1cebefe70838b21d939/SRR19683891.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/22/b242a25e150577c8a295ed7f312eb7/SRR19736685.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/cc/434a78f20aaec4fb36598c9a3dc61d/SRR19732514.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/20/4394fe97be04c534a01073955ac750/SRR19726169.tsv]
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: e9919e40223c5973b7a8bb0935140a6805a96eb1
+slurm sub: 19249214
+
+```bash
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Missing process or function with name 'set'
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf' at line: 136 or see '.nextflow.log' file for more details
+No such variable: info
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 3a939a22fe35b92180ed2ad3dd0d04078a6498af
+slurm sub: 19249220
+
+```bash
+
+[-        ] process > FILTLONG -
+No such variable: info
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/parse_input.nf' at line: 60 or see '.nextflow.log' file for more details
+No such variable: info
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/subworkflows/local/contam_input.nf' at line: 60 or see '.nextflow.log' file for more details
+Missing process or function with name 'Channel'
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/gg-catalog-nf/main.nf' at line: 136 or see '.nextflow.log' file for more details
+```
+
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: cfb4635ff8d6d559a29ec36cb70c55f4c6aac08c
+slurm sub: 19249226
+
+```bash
+[[id:raw, single_end:true], DataflowBroadcast around DataflowStream[?]]
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: a7b441c958abc6d9a741a6d251461e1cbdb70832
+slurm sub: 19249238
+
+```bash
+[[id:raw, single_end:true], DataflowVariable(value=null)]
+```
+
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: e1b4adef820c5caaca7499dcedd8be82f62b02a6
+slurm sub: 19249252
+
+```bash
+[[id:raw, single_end:true], DataflowVariable(value=null)]
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 2ad3a785062fdb37549d528e8084bba04d87a42e
+slurm sub: 19249286
+
+```bash
+DataflowVariable(value=null)
+WARN: The operator `first` is useless when applied to a value channel which returns a single value by definition -- check channel `ch_raw_table_loc`
+
+Monitor the execution with Nextflow Tower using this url https://tower.nf/user/bjl34716/watch/1m9XhkNRv3eNIu
+```
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 62b9e9541d9e70fa1f0e3986578774acb39d878b
+slurm sub: 19249312
+
+```bash
+DataflowVariable(value=null)
+[[id:raw, single_end:true], DataflowVariable(value=null)]
+```
+
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: be5a9f4121260ec4b4ce341a0de801d503b61f43
+slurm sub: 19249331
+
+```bash
+[[id:raw, single_end:true], DataflowVariable(value=null)]
+[/scratch/bjl34716/nf_dev/gg-catalog/work/a2/6b074f14a308af0195566b786c09d5/SRR15214153.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/22/80c79296235eb54fcf5e0e566a1165/SRR19683890.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/1f/983172df307510c23f415c319bbd8b/SRR19732729.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/f4/45ed941f60c1cebefe70838b21d939/SRR19683891.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/20/4394fe97be04c534a01073955ac750/SRR19726169.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/22/b242a25e150577c8a295ed7f312eb7/SRR19736685.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/cc/434a78f20aaec4fb36598c9a3dc61d/SRR19732514.tsv]
+```
+
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev:  71f730d47cb772863eee05fe29b6c3cb017365bc 
+slurm sub: 19249415
+
+```bash
+[[id:raw, single_end:true], [/scratch/bjl34716/nf_dev/gg-catalog/work/22/80c79296235eb54fcf5e0e566a1165/SRR19683890.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/a2/6b074f14a308af0195566b786c09d5/SRR15214153.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/1f/983172df307510c23f415c319bbd8b/SRR19732729.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/f4/45ed941f60c1cebefe70838b21d939/SRR19683891.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/22/b242a25e150577c8a295ed7f312eb7/SRR19736685.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/20/4394fe97be04c534a01073955ac750/SRR19726169.tsv, /scratch/bjl34716/nf_dev/gg-catalog/work/cc/434a78f20aaec4fb36598c9a3dc61d/SRR19732514.tsv]]
+```
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 10b514bbc54db137206443143e01004f9f734434 
+slurm sub: 19249435
+
+```bash
+ The exit status of the task that caused the workflow execution to fail was: 255
+
+Error executing process > 'CSVTK_CONCAT (raw)'
+
+Caused by:
+  Process `CSVTK_CONCAT (raw)` terminated with an error exit status (255)
+
+Command executed:
+
+  csvtk \
+      concat \
+       \
+      --num-cpus 2 \
+      --delimiter "	" \
+      --out-delimiter "	" \
+      --out-file raw.tsv \
+      SRR19683890.tsv SRR15214153.tsv SRR19732729.tsv SRR19683891.tsv SRR19736685.tsv SRR19732514.tsv SRR19726169.tsv
+  
+  cat <<-END_VERSIONS > versions.yml
+  "CSVTK_CONCAT":
+      csvtk: $(echo $( csvtk version | sed -e "s/csvtk v//g" ))
+  END_VERSIONS
+
+Command exit status:
+  255
+
+Command output:
+  (empty)
+
+Command error:
+  [31m[ERRO][0m xopen: no content
+
+Work dir:
+  /scratch/bjl34716/nf_dev/gg-catalog/work/2e/9e78cb3bec8e02d825438e162909ba
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+```
+```
+
+IT WORKS 
+
+gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
+gg-catalog-nf rev: 10b514bbc54db137206443143e01004f9f734434 
+slurm sub: 19249454
+
+```bash
+bjl34716@ss-sub2 code$ head /scratch/bjl34716/nf_dev/gg-catalog/work/bd/fde0b430dbf4805f623081d71e552a/raw.tsv
+file    format  type    num_seqs        sum_len min_len avg_len max_len Q1      Q2      Q3      sum_gap N50     Q20(%)  Q30(%)
+SRR19726169.fastq       FASTQ   DNA     521405  8598356757      2016    16490.7 44765   14342.0 15708.0 17875.0 0       16188 99.14    97.89
+SRR19683891.fastq       FASTQ   DNA     2872317 22416650091     467     7804.4  46626   4426.0  6885.0  10361.0 0       9726  98.90    97.38
+SRR15214153.fastq       FASTQ   DNA     1984390 33649253344     493     16957.0 52396   12960.0 15970.0 19871.0 0       17635 97.96    95.12
+SRR19732729.fastq       FASTQ   DNA     1932693 35894296324     508     18572.2 50558   15004.0 17375.0 21061.0 0       18640 98.19    95.76
+SRR19732514.fastq       FASTQ   DNA     2147916 35960758459     2006    16742.2 50018   14440.0 15921.0 18255.0 0       16474 98.61    96.60
+SRR19683890.fastq       FASTQ   DNA     3933708 75997734768     715     19319.6 65014   15555.0 18196.0 22033.0 0       19546 98.21    95.70
+SRR19736685.fastq       FASTQ   DNA     4282202 72828594344     2000    17007.3 53591   14333.0 16113.0 18791.0 0       16856 98.61    96.67
+bjl34716@ss-sub2 code$
+```
 
 ### Stat 6220 
 
 #### Homework 2 
+
+I was able to get parts 1-2 setup and have part 3 on to go. 
 
 
 ### Ben Jackwood
 
 Add in a better error handle for no database present but user asks for one.
 
+### Todos for Tomorrow
+
+- Stat 6220 
+  - Homework 2
+- Jackwood Blast
+  - meet Ben and Brian TBD
+- gg-catalog
+  - Zhang
+    - check for read loss (does it match the paper?)
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+e3a6689 - Benjamin Lorentz, Tue Feb 21 12:18:35 2023 -0500 : notes before lunch
+4a68813 - Benjamin Lorentz, Tue Feb 21 08:29:14 2023 -0500 : added page for tuesday
+1b21f7b - Benjamin Lorentz, Mon Feb 20 17:03:47 2023 -0500 : end of monday
+```
+
+#### gg-catalog-nf
+
+```bash
+10b514b - Benjamin Lorentz, Tue Feb 21 15:12:35 2023 -0500 : update main.nf
+71f730d - Benjamin Lorentz, Tue Feb 21 15:08:37 2023 -0500 : update main.nf
+be5a9f4 - Benjamin Lorentz, Tue Feb 21 15:01:24 2023 -0500 : update main.nf
+62b9e95 - Benjamin Lorentz, Tue Feb 21 14:58:11 2023 -0500 : update main.nf
+2ad3a78 - Benjamin Lorentz, Tue Feb 21 14:55:07 2023 -0500 : update main.nf
+e1b4ade - Benjamin Lorentz, Tue Feb 21 14:45:14 2023 -0500 : update main.nf
+a7b441c - Benjamin Lorentz, Tue Feb 21 14:40:34 2023 -0500 : update main.nf
+cfb4635 - Benjamin Lorentz, Tue Feb 21 14:36:20 2023 -0500 : update main.nf
+3a939a2 - Benjamin Lorentz, Tue Feb 21 14:34:06 2023 -0500 : update this to a channel
+e9919e4 - Benjamin Lorentz, Tue Feb 21 14:32:31 2023 -0500 : update main.nf
+2626e15 - Benjamin Lorentz, Tue Feb 21 14:28:45 2023 -0500 : update main.nf
+217fcf0 - Benjamin Lorentz, Tue Feb 21 14:25:29 2023 -0500 : update main.nf
+370c17c - Benjamin Lorentz, Tue Feb 21 14:19:34 2023 -0500 : update main.nf
+fd9d8b8 - Benjamin Lorentz, Tue Feb 21 14:17:48 2023 -0500 : update main.nf
+342d659 - Benjamin Lorentz, Tue Feb 21 14:14:26 2023 -0500 : update main.nf
+01f1aac - Benjamin Lorentz, Tue Feb 21 14:12:49 2023 -0500 : update main.nf
+4f52afa - Benjamin Lorentz, Tue Feb 21 14:10:37 2023 -0500 : update main.nf
+454f41d - Benjamin Lorentz, Tue Feb 21 13:55:15 2023 -0500 : update main.nf
+c1b90f1 - Benjamin Lorentz, Tue Feb 21 13:49:36 2023 -0500 : update main.nf
+2d57dd7 - Benjamin Lorentz, Tue Feb 21 13:36:20 2023 -0500 : update main.nf
+c215438 - Benjamin Lorentz, Tue Feb 21 12:15:03 2023 -0500 : update main.nf
+080afa6 - Benjamin Lorentz, Tue Feb 21 12:11:50 2023 -0500 : update main.nf
+32809a0 - Benjamin Lorentz, Tue Feb 21 12:06:22 2023 -0500 : update main.nf
+a6bcb49 - Benjamin Lorentz, Tue Feb 21 12:02:57 2023 -0500 : update main.nf
+dc25f39 - Benjamin Lorentz, Tue Feb 21 11:57:02 2023 -0500 : update main.nf
+48c964b - Benjamin Lorentz, Tue Feb 21 11:52:37 2023 -0500 : update main.nf
+9b06a51 - Benjamin Lorentz, Tue Feb 21 10:35:08 2023 -0500 : update main.nf
+f3235b7 - Benjamin Lorentz, Tue Feb 21 10:31:02 2023 -0500 : update main.nf
+8e0a6d4 - Benjamin Lorentz, Tue Feb 21 10:24:59 2023 -0500 : update main.nf
+c14e357 - Benjamin Lorentz, Tue Feb 21 10:21:15 2023 -0500 : update main.nf
+27866b9 - Benjamin Lorentz, Tue Feb 21 10:19:06 2023 -0500 : update main.nf
+095c342 - Benjamin Lorentz, Tue Feb 21 10:17:20 2023 -0500 : update main.nf
+d9bb8e4 - Benjamin Lorentz, Tue Feb 21 10:15:26 2023 -0500 : update main.nf
+504e62b - Benjamin Lorentz, Tue Feb 21 10:11:52 2023 -0500 : update main.nf
+abae466 - Benjamin Lorentz, Tue Feb 21 10:00:16 2023 -0500 : update main.nf
+cfba35f - Benjamin Lorentz, Tue Feb 21 09:55:09 2023 -0500 : update main.nf
+```
