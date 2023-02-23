@@ -204,3 +204,59 @@ SRR19732514.fastq	20994	0.98%	0	0.00%
 SRR19732729.fastq	18220	0.94%	0	0.00%
 SRR19736685.fastq	41509	0.97%	0	0.00%
 ```
+
+It's weird that the mapped reads do not decrease at all, I am going to look through the logfiles to see what it says. 
+
+What was the original data labeled as?
+
+So maybe my mapping was the issue? 
+
+```bash
+minimap2 chicken_and_feed_genomes.fa Duodenum.fq.gz -o Duodenum.fq.gz.host.paf  -x map-hifi -t 40 
+```
+
+### Todos for Next Week
+
+- Stat 6220 
+  - Homework 2 (ask prof about last question)
+- Jackwood Blast
+  - meet Ben and Brian TBD
+- gg-catalog
+  - Zhang
+    - check for read loss (does it match the paper?)
+      - kinda, but not really
+    - fix the mapping method to match the paper 
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+7f3629a - Benjamin Lorentz, Thu Feb 23 15:55:20 2023 -0500 : updated notes for thurs
+fb89814 - Benjamin Lorentz, Thu Feb 23 08:18:59 2023 -0500 : page for thursday
+```
+
+#### gg-catalog-nf
+
+```bash
+ce88e8c - Benjamin Lorentz, Thu Feb 23 15:37:40 2023 -0500 : update main.nf
+7106182 - Benjamin Lorentz, Thu Feb 23 09:33:33 2023 -0500 : update main.nf
+98d8891 - Benjamin Lorentz, Thu Feb 23 09:28:34 2023 -0500 : update main.nf
+f82bc3b - Benjamin Lorentz, Thu Feb 23 09:27:01 2023 -0500 : update main.nf
+fa59d38 - Benjamin Lorentz, Thu Feb 23 09:22:56 2023 -0500 : update main.nf
+ad803cc - Benjamin Lorentz, Thu Feb 23 09:20:58 2023 -0500 : update main.nf
+07573ff - Benjamin Lorentz, Thu Feb 23 09:19:41 2023 -0500 : update main.nf
+7560da6 - Benjamin Lorentz, Thu Feb 23 09:18:26 2023 -0500 : update main.nf
+eba549f - Benjamin Lorentz, Thu Feb 23 09:16:59 2023 -0500 : update main.nf
+4f5c83d - Benjamin Lorentz, Thu Feb 23 09:15:02 2023 -0500 : update main.nf
+0c20259 - Benjamin Lorentz, Thu Feb 23 09:13:08 2023 -0500 : update main.nf
+```
