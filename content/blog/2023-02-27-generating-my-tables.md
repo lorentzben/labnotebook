@@ -1,7 +1,7 @@
 ---
-title: '2023 02 27 Generating My Tables'
+title: 'Generating My Tables'
 date: 2023-02-27T15:21:02Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
   - "metamap"
@@ -14,11 +14,11 @@ tags:
 description: "Description for the page"
 ---
 
-### Todos for Next Week
+### Todos for Today
 
 - Ade 
   - find out what version was last used 
-  - send her code 
+  - send code 
 - Stat 6220 
   - Homework 2 (ask prof about last question)
 - Jackwood Blast
@@ -75,12 +75,3 @@ I can find the metadata for Day 21 but I do not have the day 28 sheet right now.
 He wants a table too, so we need to re-gen the data anyway. I set up a [git repo](https://github.com/lorentzben/cycle-4) to help with this 
 
 
-### gg-catalog-nf 
-
-#### Whats going on with Mapping?
-
-
-
-### Homework 2
-
-#### Updates
