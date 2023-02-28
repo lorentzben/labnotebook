@@ -283,19 +283,77 @@ Work dir:
 
 There is some weird padding around the metadata, I went into visualize ampliseq and updated them.
 
-visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+visualize ampliseq rev: EXPECTED but not used 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
 cycle 4 rev: 7bcc1534e241b6e38903ac820f54f1dd30a8de75
 slurm sub: 19522402
 
 ```bash
+Command error:
+  
+  
+  processing file: 01_report_MbA.Rmd
+  Loading required package: phyloseq
+  
+  Attaching package: 'dplyr'
+  
+  The following objects are masked from 'package:stats':
+  
+      filter, lag
+  
+  The following objects are masked from 'package:base':
+  
+      intersect, setdiff, setequal, union
+  
+  Quitting from lines 38-112 (01_report_MbA.Rmd) 
+  Error in mbSetObj$dataSet : $ operator is invalid for atomic vectors
+  Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> SanityCheckData -> apply
+  In addition: There were 33 warnings (use warnings() to see them)
+  Execution halted
 
+Work dir:
+  /scratch/bjl34716/ade/cycle-4/work/3a/e286a5c63062c3d719c9a89f738782
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
 ```
+
+visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+cycle 4 rev: 44734efb931e4965db37ffc7f780990d97051048
+slurm sub: 19522585
+
+```bash
+Command error:
+  
+  
+  processing file: 01_report_MbA.Rmd
+  Loading required package: phyloseq
+  
+  Attaching package: 'dplyr'
+  
+  The following objects are masked from 'package:stats':
+  
+      filter, lag
+  
+  The following objects are masked from 'package:base':
+  
+      intersect, setdiff, setequal, union
+  
+  Quitting from lines 38-113 (01_report_MbA.Rmd) 
+  Error in `*tmp*`$dataSet : $ operator is invalid for atomic vectors
+  Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> ApplyAbundanceFilter
+  In addition: There were 37 warnings (use warnings() to see them)
+  Execution halted
+
+Work dir:
+  /scratch/bjl34716/ade/cycle-4/work/e8/58b4159ca4dd45fd103d1ff3fbc05a
+```
+
 
 #### Submitting data through old revision of pipeline
 
 ### Todos for Tomorrow
 
 - Ade 
+  - why is visualize ampliseq failing out?
   - set up the old pipeline analysis to send the feature table over
   - find out what version was last used 
   - send code 
