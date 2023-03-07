@@ -52,7 +52,7 @@ I was wondering if you could share the code or the methods used for the analysis
 Also, can you provide us the ASV table including the taxonomy. 
 ```
 
-The last email I sent to her was:
+The last email I sent to him was:
 
 ```md
 Here are the reports for day 21 and day 28 with the Treatments in the order we discussed, I think it does look better. 
