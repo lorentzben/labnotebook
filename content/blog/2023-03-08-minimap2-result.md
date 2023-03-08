@@ -3,13 +3,7 @@ title: 'Minimap2 Result'
 date: 2023-03-08T15:53:48Z
 draft: false
 meta_img: "images/image.png"
-tags:
-  - "minimap2"
-  - "nextflow"
-  - "MAGs"
-  - "filtlong"
-  - "csvtk"
-  - "seqkit"
+
 description: "Description for the page"
 ---
 
@@ -43,6 +37,7 @@ gg-catalog-nf rev: baa43921ad60d52048fb4842662f28e8668d9b57
 slurm sub: 19742122
 
 ```bash
+
 N E X T F L O W  ~  version 22.04.5
 Pulling lorentzben/gg-catalog-nf ...
  Fast-forward
@@ -78,10 +73,12 @@ Duration    : 8h 52m 23s
 CPU hours   : 1097.1 (38.4% cached)
 Succeeded   : 43
 Cached      : 31
+
 ```
 
 
 ```bash
+
 bjl34716@ss-sub3 code$ less /scratch/bjl34716/nf_dev/gg-catalog/work/f2/ad6f8cfc19b6b97753376d098933c6
 
 file    format  type    num_seqs        sum_len min_len avg_len max_len Q1      Q2      Q3      sum_gap N50     Q20(%)  Q30(%)
