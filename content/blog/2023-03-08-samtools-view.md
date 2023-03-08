@@ -4,7 +4,6 @@ date: 2023-03-08T14:27:59Z
 draft: false
 meta_img: "images/image.png"
 tags:
-  - "samtools"
   - "minimap2"
   - "nextflow"
   - "MAGs"
