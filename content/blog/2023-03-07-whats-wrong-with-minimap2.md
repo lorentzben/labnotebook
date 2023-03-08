@@ -1,5 +1,5 @@
 ---
-title: 'What's Wrong With Minimap2'
+title: 'Whats Wrong With Minimap2'
 date: 2023-03-07T13:56:43Z
 draft: false
 meta_img: "images/image.png"
