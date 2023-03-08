@@ -7,8 +7,7 @@ meta_img: "images/image.png"
 description: "Description for the page"
 ---
 
-### Todos for Tomorrow
-
+### Todos for Today
 
 - Jackwood Blast
   - meet Ben and Brian TBD
@@ -144,3 +143,55 @@ SRR19683890_other.fastq.gz      FASTQ   DNA     3895696 75225651438     2008    
        19533   98.28   95.85
 ```
   
+This is cool, most of my reads are lining up with what the rearchers had the only thing is that the reads are not 1:1 with tissues right now. We can change this. 
+
+#### Concat FASTQ reads by tissue 
+
+cat SRR15214153.fastq SRR19732730.fastq > cecum.fastq
+
+gg-catalog rev: 5a1fbe512c1f18dad9a5771dba821d0f1a598557
+slurm job: 19758400
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- gg-catalog
+  - Zhang
+    - check for read loss (does it match the paper?)
+      - yes, but Need to confirm with cat samples
+    - make cat metadata and mapping
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab notebook
+
+```bash
+b9946b2 - Benjamin Lorentz, Wed Mar 8 11:05:55 2023 -0500 : modify to bash
+86b17fd - Benjamin Lorentz, Wed Mar 8 11:04:11 2023 -0500 : duh its the parens
+5f6ac2f - Benjamin Lorentz, Wed Mar 8 10:57:52 2023 -0500 : change to md
+2f130fb - Benjamin Lorentz, Wed Mar 8 10:57:02 2023 -0500 : just remove the tags
+36351b5 - Benjamin Lorentz, Wed Mar 8 10:55:06 2023 -0500 : reset a new page
+a1530ba - Benjamin Lorentz, Wed Mar 8 10:51:42 2023 -0500 : remove a tag?
+a1c5db6 - Benjamin Lorentz, Wed Mar 8 10:48:07 2023 -0500 : updated for wednesday
+b9c1c1c - Benjamin Lorentz, Wed Mar 8 10:44:13 2023 -0500 : added a table for minimapped reads
+ead077e - Benjamin Lorentz, Wed Mar 8 10:43:45 2023 -0500 : added a table for minimapped reads
+57806ab - Benjamin Lorentz, Wed Mar 8 09:29:50 2023 -0500 : added page for wednesday
+b6bb24b - Benjamin Lorentz, Tue Mar 7 17:09:43 2023 -0500 : final notes for tuesday
+```
+
+#### gg-catalog
+
+```bash
+5a1fbe5 - Benjamin Lorentz, Wed Mar 8 16:45:41 2023 -0500 : add code 00_cat_samples.sh
+```
