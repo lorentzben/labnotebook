@@ -1,7 +1,7 @@
 ---
 title: 'Core Microbiomes'
 date: 2023-01-13T14:05:21Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
   - "core microbiome"

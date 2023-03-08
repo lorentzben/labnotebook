@@ -1,5 +1,5 @@
 ---
-title: 'Samtools View'
+title: "Samtools View"
 date: 2023-03-08T14:27:59Z
 draft: false
 meta_img: "images/image.png"
@@ -13,7 +13,6 @@ tags:
   - "seqkit"
 description: "Description for the page"
 ---
-
 
 ### Todos for Tomorrow
 
