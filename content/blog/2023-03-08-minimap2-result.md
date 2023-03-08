@@ -1,6 +1,6 @@
 ---
-title: "Samtools View"
-date: 2023-03-08T14:27:59Z
+title: 'Minimap2 Result'
+date: 2023-03-08T15:53:48Z
 draft: false
 meta_img: "images/image.png"
 tags:
@@ -146,5 +146,4 @@ SRR19736685_other.fastq.gz      FASTQ   DNA     4240352 72094033171     2000    
 SRR19683890_other.fastq.gz      FASTQ   DNA     3895696 75225651438     2008    19309.9 63490   15551.0 18188.0 22018.0 0
        19533   98.28   95.85
 ```
-   
-   
+  
