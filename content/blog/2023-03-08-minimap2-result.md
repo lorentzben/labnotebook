@@ -36,7 +36,7 @@ gg-catalog rev: 100ef9b13f4a7de3246709c7327c522e90f0bb57
 gg-catalog-nf rev: baa43921ad60d52048fb4842662f28e8668d9b57
 slurm sub: 19742122
 
-````md
+```bash
 
 N E X T F L O W  ~  version 22.04.5
 Pulling lorentzben/gg-catalog-nf ...
@@ -77,7 +77,7 @@ Cached      : 31
 ```
 
 
-```md
+```bash
 
 bjl34716@ss-sub3 code$ less /scratch/bjl34716/nf_dev/gg-catalog/work/f2/ad6f8cfc19b6b97753376d098933c6
 
