@@ -59,14 +59,14 @@ Computation of relative gene abundance. The high quality reads from each sample 
 
 Step 1: Calculation of the copy number of each gene
 
-$ b_i = \frac{x_i}{L_i} $
+$$ b_i = \frac{x_i}{L_i} $$
 
 Step 2: Calculation of the relative abundance of gene i 
 
-$ a_i = \frac{b_i}{\Sigma_j b_j} = \frac{\frac{x_i}{L_i}}{\Sigma_j\frac{x_j}{L_j}} $
+$$ a_i = \frac{b_i}{\Sigma_j b_j} = \frac{\frac{x_i}{L_i}}{\Sigma_j\frac{x_j}{L_j}} $$
 
-$a_i$ : The relative abundance of gene 𝑖 in sample 𝑆.
-$L_i$ : The length of gene 𝑖.
-$x_i$ : The times which gene 𝑖 can be detected in sample 𝑆 (the number of mapped reads).
-$b_i$ : The copy number of gene 𝑖 in the sequenced data from sample 𝑆.
+$$a_i$$ : The relative abundance of gene 𝑖 in sample 𝑆.
+$$L_i$$ : The length of gene 𝑖.
+$$x_i$$ : The times which gene 𝑖 can be detected in sample 𝑆 (the number of mapped reads).
+$$b_i$$ : The copy number of gene 𝑖 in the sequenced data from sample 𝑆.
 
