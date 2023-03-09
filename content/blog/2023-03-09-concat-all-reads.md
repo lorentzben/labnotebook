@@ -70,3 +70,53 @@ $$L_i$$ : The length of gene 𝑖.
 $$x_i$$ : The times which gene 𝑖 can be detected in sample 𝑆 (the number of mapped reads).
 $$b_i$$ : The copy number of gene 𝑖 in the sequenced data from sample 𝑆.
 
+#### Uploading seqs 
+
+I collected the gene catalog from the ftp server ftp://ftp.agis.org.cn/∼fanwei/Chicken_gut_metagenome_Hifi/. and have put it on Sapelo2 at /scratch/bjl34716/gg-catalog/zhang/genes
+
+I added in the index step for BWA and it is in revision: c60deddafd6ce2b4d8dcc57e0b9301ef046d2f82
+We can run this tomorrow to see if it works, then we will have to pass the reads through one by one, then we need to use bedtools to count the number of reads that line up to a gene. 
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- gg-catalog
+  - Zhang
+    - check for read loss (does it match the paper?)
+      - yes, but Need to confirm with cat samples
+    - try out the indexing and mapping steps with BWA
+      - rev c60deddafd6ce2b4d8dcc57e0b9301ef046d2f82
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commits
+
+#### Lab notebook
+
+```bash
+49da0d5 - Benjamin Lorentz, Thu Mar 9 10:57:35 2023 -0500 : need double dollars
+3abdbbf - Benjamin Lorentz, Thu Mar 9 10:56:07 2023 -0500 : add notes about calculating relative abundance
+0940f19 - Benjamin Lorentz, Thu Mar 9 08:51:09 2023 -0500 : added page for thursday
+```
+
+#### gg-catalog-nf
+
+```bash
+c60dedd - Benjamin Lorentz, Thu Mar 9 16:49:48 2023 -0500 : update main.nf
+391cf26 - Benjamin Lorentz, Thu Mar 9 15:00:09 2023 -0500 : Revert "update main.nf"
+```
+
+#### gg-catalog
+
+```bash
+2827deb - Benjamin Lorentz, Thu Mar 9 09:41:26 2023 -0500 : add concat metadata and params
+```
