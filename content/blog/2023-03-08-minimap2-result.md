@@ -3,7 +3,13 @@ title: 'Minimap2 Result'
 date: 2023-03-08T15:53:48Z
 draft: false
 meta_img: "images/image.png"
-
+tags:
+  - "minimap2"
+  - "nextflow"
+  - "MAGs"
+  - "filtlong"
+  - "csvtk"
+  - "seqkit"
 description: "Description for the page"
 ---
 
