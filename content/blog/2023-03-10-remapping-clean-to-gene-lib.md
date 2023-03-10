@@ -105,6 +105,66 @@ gg-catalog-nf rev: 6e13ede93201191b89fe3b575dc9f4cbc161b92d
 slurm job: 19824367
 
 ```bash
+```
 
 ### Function or example for relative abundance
 
+I need some example seqs to work with... so I need a practice query which will be some of the first seqs from the clean reads:
+
+/scratch/bjl34716/nf_dev/gg-catalog/work/32/d0957dccda9335bcf3d814a670e5b1/SRR19683891_other.fastq.gz
+
+and then the index is located in: 
+/scratch/bjl34716/nf_dev/gg-catalog/work/43/0370b57b959be32c0c311633aa0ff1
+
+so we can open the docker image: 
+
+https://depot.galaxyproject.org/singularity/mulled-v2-e5d375990341c5aef3c9aff74f96f66f65375ef6:2cdf6bf1e92acbeb9b2834b1c58754167173a410-0
+
+I am still waiting on the file to unzip... will write a script in the scratch dir. Nevermind its good to go just need to collect some seqs from it. 
+
+
+### Todos for Next Week
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- gg-catalog
+  - Zhang
+    - check for read loss (does it match the paper?)
+      - yes, but Need to confirm with cat samples
+    - try out the indexing and mapping steps with BWA
+      - rev c60deddafd6ce2b4d8dcc57e0b9301ef046d2f82
+    - formula for relative abundance
+    - what is involved in clean-up
+    - calculate relative abundance for zhang data
+  - Huang
+    - compare to zhang data
+  - Other short read results
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+fce6345 - Benjamin Lorentz, Fri Mar 10 12:03:06 2023 -0500 : notes at lunch
+02c61ec - Benjamin Lorentz, Fri Mar 10 09:29:01 2023 -0500 : added page for friday
+5a4f965 - Benjamin Lorentz, Thu Mar 9 16:57:59 2023 -0500 : added final notes for thursday
+```
+
+#### gg-catalog-nf
+
+```bash
+6e13ede - Benjamin Lorentz, Fri Mar 10 09:52:19 2023 -0500 : update conf/modules.config
+6795ebc - Benjamin Lorentz, Fri Mar 10 09:32:40 2023 -0500 : update main.nf
+e0ee8cb - Benjamin Lorentz, Fri Mar 10 09:19:37 2023 -0500 : update conf/modules.config
+c60dedd - Benjamin Lorentz, Thu Mar 9 16:49:48 2023 -0500 : update main.nf
+```
+
+#### gg-catalog
+
+```bash
+4b058e8 - Benjamin Lorentz, Fri Mar 10 09:34:53 2023 -0500 : update params/concat_params.yaml
+```

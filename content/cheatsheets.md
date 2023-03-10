@@ -105,3 +105,9 @@ MINIMAP2_ALIGN(ch_filtered ,contam_path_ch.first(), true, false, true)
 
 where ch_filtered is a channel of reads
 contam_path_ch is a tuple of the metadata and a path for the location of the reference database
+
+### Slurm Interactive session
+
+```bash
+$ srun --pty  --cpus-per-task=8 --job-name=interact --ntasks=1 --nodes=1 --partition=inter_p --time=12:00:00 --mem=16GB /bin/bash -l
+```
