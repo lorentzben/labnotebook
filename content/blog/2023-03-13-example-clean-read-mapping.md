@@ -267,3 +267,32 @@ Step 2 I was thinking of was to then take those genes of interest and try to fin
 
 ### Examine Huang 2018 for what I know now
 
+We should download the sequences at some point, but right now I just want the stat sheets
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- gg-catalog
+  - finish downloading Huang 2018 dataset
+  - Find out which Kegg genes are involved in Nitrogen Metabolism
+  - Generate a gene network 
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+d61f7a1 - Benjamin Lorentz, Mon Mar 13 16:02:33 2023 -0400 : added notes from a meeting with Dr. Aggrey
+b09a0ac - Benjamin Lorentz, Mon Mar 13 11:48:49 2023 -0400 : add info on bwa mem
+1819886 - Benjamin Lorentz, Mon Mar 13 11:46:09 2023 -0400 : create subsetted reads file
+ab83b04 - Benjamin Lorentz, Mon Mar 13 11:25:16 2023 -0400 : updates
+a2929fa - Benjamin Lorentz, Mon Mar 13 10:28:48 2023 -0400 : added page for monday
+```
+
+  
