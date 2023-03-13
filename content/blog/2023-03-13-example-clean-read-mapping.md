@@ -251,3 +251,19 @@ Important parameter settings:
         AVG_SEEDS_PER_READ: 64
 ```
 
+Mapping example
+
+if we only see ~500 hits then we might need to up the -c flag
+
+```bash
+
+```
+
+### Meet Dr. Aggrey
+
+I wanted to check in with Dr. Aggrey and see if I am on the right path. It seems that I am a little lost. We talked through the data that I have and he suggested I get an easy victory. First he wanted me to identify the genes from the Huang data that are associate with Nitrogen Metabolism. Then he wants me to establish a gene network from those genes. I am not sure what I should do with that gene network once it is established.
+
+Step 2 I was thinking of was to then take those genes of interest and try to find a FCR efficiency study that uses shotgun reads and then examine the abundance of my genes of interest and see if that is correlated with FCR.
+
+### Examine Huang 2018 for what I know now
+
