@@ -156,3 +156,20 @@ slurm sub: 19868408
 
 Working directory: /scratch/bjl34716/nf_dev/gg-catalog/work/32/d0957dccda9335bcf3d814a670e5b1/
 
+from http://www.sixthresearcher.com/list-of-helpful-linux-commands-to-process-fastq-files-from-ngs-experiments/
+
+If we want to extract random sequences (1000):
+
+```bash
+> cat reads.fq | awk '{ printf("%s",$0); n++; if(n%4==0) { printf("n");} else { printf("X#&X");} }' | shuf | head -n 1000 | sed 's/X#&X/n/g' > reads.1000.fq
+```
+
+ended up using: 
+
+```bash
+# need to select 4000 since there are 4 lines
+cat SRR19683891_other.fastq | head -n 4000 > reads.1000.fastq
+# check number of reads == 1000
+cat reads.1000.fastq | echo $((`wc -l`/4))
+```
+
