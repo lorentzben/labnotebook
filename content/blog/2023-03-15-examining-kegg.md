@@ -343,4 +343,43 @@ K20204  	grixazone synthase / o-aminophenol oxidase [EC:1.10.3.15 1.10.3.4]
 K23947  	2-oxoglutarate-dependent dioxygenase [EC:1.14.11.-]
 K23384  	indoleacetate decarboxylase [EC:4.1.1.115]
 
+
 I want to look into the genes that produce SCFAs 
+
+There are some duplicate entries in the of interest table ^ 
+
+I want to merge the selected keggs by abundance
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Reply to Ade
+- gg-catalog
+  - compare abundances of genes of interest (gene and kegg tables)
+  - Generate a gene network 
+    - how do you do this?
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+0dabddb - Benjamin Lorentz, Wed Mar 15 11:53:56 2023 -0400 : added kegg ontologies
+3f5d6ab - Benjamin Lorentz, Wed Mar 15 10:34:14 2023 -0400 : added page for wednesday
+9b330d8 - Benjamin Lorentz, Tue Mar 14 17:01:29 2023 -0400 : final updates for friday
+```
+
+#### gg-catalog
+
+```bash
+e30bca2 - Benjamin Lorentz, Wed Mar 15 16:52:24 2023 -0400 : update 03_huang_kegg_examine.rmd
+607d65a - Benjamin Lorentz, Tue Mar 14 16:58:38 2023 -0400 : update code/03_huang_kegg_examine.sh
+```
