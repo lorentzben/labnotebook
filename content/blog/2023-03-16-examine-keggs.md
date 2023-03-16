@@ -70,6 +70,19 @@ their_kegg_abundance intersect genes of interest: 192
 number of genes identified to be of interest and present in the kegg table: 83293
 number of genes identified from selected and present in kegg table: 83293
 
+I have noticed we can't really link the gene ids to the keggs easily. I think we'll go with their table.
+
+```r
+> sum(gene_abundance$"#" %in% genes_of_interest)
+[1] 7124
+> sum(genes_of_interest %in% gene_abundance$"#")
+[1] 7124
+> sum(selected$"#gene_id" %in% gene_abundance$"#")
+[1] 7124
+``` 
+
+not equal to the 83293 we expected.
+
 
 
 
