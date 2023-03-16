@@ -61,4 +61,16 @@ These are the differences between the Kegg Abundance table and the Kegg info tab
 0 
 ```
 
-None of the keggs im interesting in are abundant but not accounted for.
+None of the keggs I'm interesting in are abundant but not accounted for.
+
+genes of interest: 277
+Kegg_gene subsetted by genes of interest: 192
+their_kegg_abundance intersect genes of interest: 192
+
+number of genes identified to be of interest and present in the kegg table: 83293
+number of genes identified from selected and present in kegg table: 83293
+
+
+
+
+
