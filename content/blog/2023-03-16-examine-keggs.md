@@ -15,7 +15,7 @@ description: "Description for the page"
 - Jackwood Blast
   - meet Ben and Brian TBD
   - try out a local blast search to see memory, cpu time limitation
-- Reply to Ade
+- Reply to Ade **DONE**
 - gg-catalog
   - compare abundances of genes of interest (gene and kegg tables)
   - Generate a gene network 
@@ -72,6 +72,8 @@ number of genes identified from selected and present in kegg table: 83293
 
 I have noticed we can't really link the gene ids to the keggs easily. I think we'll go with their table.
 
+
+
 ```r
 > sum(gene_abundance$"#" %in% genes_of_interest)
 [1] 7124
@@ -83,7 +85,53 @@ I have noticed we can't really link the gene ids to the keggs easily. I think we
 
 not equal to the 83293 we expected.
 
+I was able to get a table formed. We need to pivot to homework but then we can come back to try to make a gene network. 
 
+### Homework 3
+
+### Ade
+
+Do we need to run the negative control data through the pipeline to see what is present?
+
+### Todos for Tomorrow
+
+- Finalize Homework 3
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Run the same analysis with the Negative Controls to get out ahead of it. 
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+4e6405d - Benjamin Lorentz, Thu Mar 16 12:04:16 2023 -0400 : notes before lunch
+cbc73d6 - Benjamin Lorentz, Thu Mar 16 11:11:18 2023 -0400 : more notes on kegg
+0698dcd - Benjamin Lorentz, Thu Mar 16 10:40:21 2023 -0400 : notes on my vs their kegg
+8533cb8 - Benjamin Lorentz, Thu Mar 16 09:52:19 2023 -0400 : add page for thursday
+53fd1ef - Benjamin Lorentz, Wed Mar 15 16:56:05 2023 -0400 : final notes for friday
+```
+
+#### gg-catalog
+
+```bash
+cc4c5d4 - Benjamin Lorentz, Thu Mar 16 15:02:58 2023 -0400 : update 03
+1f52faa - Benjamin Lorentz, Thu Mar 16 14:11:00 2023 -0400 : update 03 script
+7c4c8af - Ben Lorentz, Wed Mar 15 18:53:32 2023 -0400 : update 03
+e30bca2 - Benjamin Lorentz, Wed Mar 15 16:52:24 2023 -0400 : update 03_huang_kegg_examine.rmd
+```
 
 
 
