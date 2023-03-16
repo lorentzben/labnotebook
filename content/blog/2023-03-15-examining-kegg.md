@@ -365,7 +365,7 @@ I want to merge the selected keggs by abundance
 - Generate a Mock community M&M or other and validate pipelines
 - Visualize Ampliseq
   - benchmark with a mock community
-
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
 
 ### Git Commits
 
