@@ -30,12 +30,21 @@ description: "Description for the page"
   
 ### Class
 
-- email Prof
-- fill out survey
+- email Prof ***Done***
+- fill out survey ***Done***
 
 ### Ade Analysis
 
 #### What did qiime do for negative controls?
+
+They didn't!!! 
+
+Ade Included negative controls and mock communities so we can look into implementing that?
+
+
+
+
+
 
 
 ### gg-catalog
