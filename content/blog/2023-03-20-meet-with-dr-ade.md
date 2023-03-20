@@ -43,3 +43,40 @@ I did not process the negative control samples, I can process them but I need a 
   - https://docs.qiime2.org/2023.2/tutorials/quality-control/
   
 #### Fix Visualize Ampliseq for drunk_kare
+
+cycle 4 ref: 9b90edcb464dfbc84df6a709dddf69a74ee7b9a3 
+slurm sub: 19919997
+
+```bash
+Command error:
+  ✖ dplyr::lag()    masks stats::lag()
+
+  Attaching package: 'kableExtra'
+
+  The following object is masked from 'package:dplyr':
+
+      group_rows
+
+  Quitting from lines 156-161 (03_report_test.Rmd)
+  Error in file(file, "rt") : cannot open the connection
+  Calls: <Anonymous> ... eval_with_user_handlers -> eval -> eval -> read.csv -> read.table -> file
+  In addition: Warning messages:
+  1: In readLines("item_of_interest.csv") :
+    incomplete final line found on 'item_of_interest.csv'
+  2: Transformation introduced infinite values in discrete y-axis
+  3: Transformation introduced infinite values in discrete y-axis
+  4: In file(file, "rt") :
+    cannot open file 'results/overall_summary.tsv': No such file or directory
+  Execution halted
+  
+3d/61453e
+```
+
+I re-copied over the dir for day 21 and resubmitted the job:
+
+cycle 4 ref: 9b90edcb464dfbc84df6a709dddf69a74ee7b9a3 
+slurm sub: 19997406
+
+```bash
+
+```
