@@ -97,6 +97,11 @@ He wants me to examine the litter samples to see if the same mess of PCoAs etc e
 This is on another sheet in the sample-sheet google doc. 
 
 
+### Set up Ade Litter Analysis
+
+I will make the metadata and mapping file, but then we will have to add a process for the decontam package. 
+
+
 ### Todos for Tomorrow
 
 - Finalize Homework 3
@@ -116,3 +121,21 @@ This is on another sheet in the sample-sheet google doc.
 - Generate a Mock community M&M or other and validate pipelines
 - Visualize Ampliseq
   - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+8b83c16 - Benjamin Lorentz, Mon Mar 20 14:58:30 2023 -0400 : notes after dr ade meet
+1ad9dd6 - Benjamin Lorentz, Mon Mar 20 13:39:50 2023 -0400 : updates to the mock samples run
+e15d9e9 - Benjamin Lorentz, Mon Mar 20 10:33:27 2023 -0400 : add page for Monday
+```
+
+#### Cycle 4
+
+```bash
+003b380 - Benjamin Lorentz, Mon Mar 20 16:56:00 2023 -0400 : add litter dir
+```
+
+
