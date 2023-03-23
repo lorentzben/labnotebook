@@ -154,9 +154,39 @@ Succeeded   : 4
 Cached      : 22
 ```
 
-### Dockerfile for decontam
+#### Dockerfile for decontam
 
 Generated lorentzb/decontam:1.0
+
+#### Function to Filter the Contamination out
+
+1. Create a function
+2. Pull table in 
+  2a. Read QZA -> phyloseq
+3. Pull in file with the sampleIDs of the NC samples
+4. How does decontam work?
+5. Output Filtered table
+  5a. QZA/phyloseq -> QZA/TSV for downstream analysis
+6. Replace former table.qza files with filtered file.
+  6a. OPT filter out Mock communities if applicable
+  
+1. test
+
+cycle 4 rev: 12bd4f8e59405ce6fcce725f28510eee946b82b9
+visualize-amplseq rev: 54f6f11e7135e78a11d4e98376b5ce94a4e25576
+slurm sub: 20076228
+
+```bash
+```
+
+The uncommitted changes issue is happening again, you might need to figure out which one that is
+
+  
+#### Function to Check Mock vs OBS communities
+7. Write a function that will evaluate Mock Community vs Samples
+
+
+
 
 ### Todos for Tomorrow
 
