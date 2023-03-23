@@ -43,3 +43,29 @@ maxdepth=$(count_table_minmax_reads.py filtered-table.tsv maximum 2>&1)
 if [ "$maxdepth" -gt "75000" ]; then maxdepth="75000"; fi
 if [ "$maxdepth" -gt "5000" ]; then maxsteps="250"; else maxsteps=$((maxdepth/20)); fi
 ```
+
+cycle 4 rev: 12bd4f8e59405ce6fcce725f28510eee946b82b9
+visualize-amplseq rev: 538c70e08287197450ec5b394f65338c96bf0168
+slurm sub: 20070364
+
+```bash
+N E X T F L O W  ~  version 22.04.5
+Pulling lorentzben/visualize-ampliseq ...
+ Already-up-to-date
+Launching `https://github.com/lorentzben/visualize-ampliseq` [pedantic_gutenberg] DSL2 - revision: 538c70e082 [control]
+Script compilation error
+- file : /home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/main.nf
+- cause: token recognition error at: '(' @ line 821, column 77.
+   axsteps="250"; else maxsteps=$((maxdepth
+                                 ^
+
+1 error
+```
+
+cycle 4 rev: 12bd4f8e59405ce6fcce725f28510eee946b82b9
+visualize-amplseq rev: 60d94718c6d2361c05b07b092bf80351ffa13c92
+slurm sub: 20070528
+
+```bash
+
+```
