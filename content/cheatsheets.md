@@ -17,6 +17,8 @@ git log --since=2.weeks
 git log --since=1.days --pretty=format:"%h - %an, %ad : %s"
 ```
 
+If I want to move commits from one branch to another check out [this post](https://stackoverflow.com/questions/67443821/steps-to-move-a-commit-from-one-branch-to-another-as-changes)
+
 ### Blogdown specific code
 
 To create a new file:
