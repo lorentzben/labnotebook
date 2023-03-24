@@ -477,7 +477,7 @@ Command error:
 ```
 
 Make sure that the colsum of these tabels line up with the unfiltered table example.
-Alternatively we can go back to dada2/ASV_table.tsv and pull it into phyloseq that way.
+Alternatively we can go back to dada2/ASV_table.tsv and pull it into phyloseq that way. There is a Biom R package that might be really useful
 
 ### Todos for Next Week
 
