@@ -35,6 +35,11 @@ description: "Description for the page"
 
 #### Import, Phyloseq-ize and then export tsv table
 
+Do this the proper way, https://joey711.github.io/phyloseq/import-data.html I have been doing too much hacky solutions right now.
+
+I need to have the biom format package right now
+https://github.com/joey711/biomformat
+
 #### TSV, BIOM-ize and QZA table
 
 #### Update downstream table qzas
