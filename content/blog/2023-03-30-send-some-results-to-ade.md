@@ -142,7 +142,20 @@ visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
 slurm sub: 20457339
 
 ```bash
+Sucess
+```
 
+We should update the params to match most of what Ben did:
+
+"Raw sequence reads obtained from the Illumina Miseq were processed in R using the DADA2 package (version 1.14) (Callahan et al., 2016). Only reads with a maximum number of expected errors lower than or equal to 2 were retained. In addition, reads were truncated where the phred quality score dropped below 30. Chimeras were identified and removed using the consensus method and the remaining reads were annotated to the SILVA database release 138 with a minimum bootstrap threshold of 50 (Quast et al., 2013). Additionally, full-length 16S rRNA gene sequences generated on the Pacbio Sequel II were processed in the SMRT Link software package version 8.0. The circular consensus reads (ccs) were determined with a minimum predicted accuracy of 0.99 and the minimum number of passes set to 3. After demultiplexing, the ccs were further processed with DADA2 (version 1.14) to obtain high quality amplicons with single-nucleotide resolution as previously described (Callahan et al., 2019). Same as the Illumina reads, the full-length 16S rRNA gene sequences were annotated to the SILVA database 138. Hereafter, the annotated Pacbio reads were used to create a custom formatted database that was utilized as a reference for the Illumina reads that were generated from the same samples. Iterating the species taxonomy assignment of the Illumina reads to the custom database and adding this information to the taxonomy table improved species classification rate by 35%. Amplicon sequence variants (ASVs) with less than 5 sequences in total were removed from the dataset before decontamination. Contaminant sequences were identified from extracted negative controls with the R package decontam and the probability threshold set to 0.5. After contaminant removal, samples with less than 1,000 sequences were removed. The average sequence depth per sample was 23,088.38, ranging from 1,769 to 93,023 sequences." [source](https://www.frontiersin.org/articles/10.3389/fphys.2023.1083192/full)
+
+I followed everything (minus the decontamination):
+
+cycle 4 rev: bb9b63b9d0f1dbc4829c6223e795c7b6b48ecaef 
+visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+slurm sub: 20459781 
+
+```bash
 ```
 
 
