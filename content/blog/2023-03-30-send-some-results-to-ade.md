@@ -134,6 +134,15 @@ visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
 slurm sub: 20456195
 
 ```bash
+/scratch/bjl34716/ade/cycle-4/litter-rm-mock-nc/metadata.tsv not found
+```
+
+cycle 4 rev: b8c6d97e0b6b49a3a95d272c64e18e35eeb297ff
+visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+slurm sub: 20457339
+
+```bash
+
 ```
 
 
