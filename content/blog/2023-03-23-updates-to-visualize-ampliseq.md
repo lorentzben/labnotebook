@@ -183,6 +183,7 @@ The uncommitted changes issue is happening again, you might need to figure out w
 
   
 #### Function to Check Mock vs OBS communities
+
 7. Write a function that will evaluate Mock Community vs Samples
 
 
