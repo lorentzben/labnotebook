@@ -89,6 +89,51 @@ visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
 slurm sub: 20452496
 
 ```bash
+Completed at: 30-Mar-2023 12:10:01
+Duration    : 49m 6s
+CPU hours   : 1.5 (15.2% cached)
+Succeeded   : 19
+Cached      : 7
+```
+
+The mock and NC samples were skewing the ordination plots, so I want a run without those two to possibly be able to send to Dr. Ade here is the setup:
+
+cycle 4 rev: 6ef9f97086eea2153fe588763ec95eb526fb4d10
+visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+slurm sub: 20456178
+
+```bash
+!! Only displaying parameters that differ from the pipeline defaults !!
+------------------------------------------------------
+If you use nf-core/ampliseq for your analysis please cite:
+
+* The pipeline publication
+  https://doi.org/10.3389/fmicb.2020.550420
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.1493841
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/ampliseq/blob/master/CITATIONS.md
+------------------------------------------------------
+No such file: /home/bjl34716/ade/cycle-4/litter/cycle_4_litter_metadata_rm_mock_nc.tsv
+
+ -- Check script '/home/bjl34716/.nextflow/assets/nf-core/ampliseq/./workflows/ampliseq.nf' at line: 15 or see '.nextflow.log' file for more details
+cp: cannot stat ‘/home/bjl34716/ade/cycle-4/litter-rm-mock-nc/cycle_4_litter_metadata_rm_mock_nc.tsv’: No such file or directory
+N E X T F L O W  ~  version 22.04.5
+Pulling lorentzben/visualize-ampliseq ...
+lorentzben/visualize-ampliseq contains uncommitted changes -- cannot pull from repository
+```
+ 
+ 
+cycle 4 rev: 93bb5dccf8e76cbaa04cceee6851755393ab08f3
+visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+slurm sub: 20456195
+
+```bash
 ```
 
 
@@ -109,4 +154,50 @@ I am pulling all previous analyses out of the work dir and moving to the lacie d
 
 #### Read Ellies writing
 
+I read over her notes and a lot make sense, but I have a couple notes I've added and I want to reconnect and see how we're doing. 
+
 #### What Can I do?
+
+I can help with the methods and results/discussion and maybe the conclusion.
+
+### Todos for Tomorrow
+
+- Class
+  - Meet and discuss
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Fix Downstream Uses of table with filtered
+  - Fix the rarefaction script to use the qiime ASV table and alt filtered table
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commit
+
+#### Lab notebook
+
+```bash
+b1b1532 - Benjamin Lorentz, Thu Mar 30 11:41:42 2023 -0400 : updates for before lunch
+8526d6b - Benjamin Lorentz, Thu Mar 30 08:32:37 2023 -0400 : added page for Thursday
+5c6cdb2 - Benjamin Lorentz, Wed Mar 29 17:12:35 2023 -0400 : final notes for wednesday
+```
+
+#### Cycle 4
+
+```bash
+93bb5dc - Benjamin Lorentz, Thu Mar 30 13:59:35 2023 -0400 : update metadata filenames
+6ef9f97 - Benjamin Lorentz, Thu Mar 30 13:55:32 2023 -0400 : add new metadata, mapping and yaml files
+078b239 - Benjamin Lorentz, Thu Mar 30 09:32:29 2023 -0400 : add ade-cycle-4...sh script and update params
+```
