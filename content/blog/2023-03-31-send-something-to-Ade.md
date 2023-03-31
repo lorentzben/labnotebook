@@ -137,6 +137,29 @@ Should we try to use [SRS](https://github.com/vitorheidrich/SRS) to transform th
 
 ### What does an SRS table look like?
 
+I generated a SRS docker image and am working on implementing it as a form for normalization. 
+
+
+### Multi-qc
+
+We should remove these samples, they did not undergo PCR correctly or there was sequencing errors.
+
+```bash
+LT83_2	13.2%	55%	0.0
+LT73_2	15.2%	56%	0.0
+LT97_2	32.7%	54%	0.0
+LT105_2	33.5%	51%	0.0
+LT83_1	44.7%	54%	0.0
+LT73_1	45.5%	54%	0.0
+LT105_1	57.0%	50%	0.0
+LT97_1	61.2%	52%	0.0
+LT96_2	88.8%	56%	0.0
+LT96_1	92.2%	55%	0.0
+```
+
+cycle 4 rev: e4229618f46863f33d516d798ebee917fb3f85c7
+visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
+slurm job: 20477067
 
 #### What does reddit and NIH suggest?
 
