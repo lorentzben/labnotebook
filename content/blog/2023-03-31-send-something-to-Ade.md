@@ -171,3 +171,60 @@ They suggest rarefying it, but I am not super satisfied by that.
 #### Contam Downstream
 
 
+### Todos for Next Week
+
+- Class
+  - Examine Comments on Word Doc
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Examine HQ analysis
+  - Examine How SRS changes result vs rarefying
+  - Fix Downstream Uses of table with filtered
+  - Fix the rarefaction script to use the qiime ASV table and alt filtered table
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+f7aaee1 - Ben Lorentz, Fri Mar 31 16:56:28 2023 -0400 : most notes for fri
+3723554 - Ben Lorentz, Fri Mar 31 16:49:06 2023 -0400 : poor quality samples
+cd63def - Benjamin Lorentz, Fri Mar 31 12:34:50 2023 -0400 : added notes before Bens Defense
+9a91432 - Ben Lorentz, Fri Mar 31 08:56:00 2023 -0400 : add page for friday
+e04803f - Ben Lorentz, Thu Mar 30 21:41:45 2023 -0400 : final notes for today
+53e5966 - Ben Lorentz, Thu Mar 30 19:30:14 2023 -0400 : added some more notes
+5399431 - Ben Lorentz, Thu Mar 30 17:42:20 2023 -0400 : first note from at home
+ba070b5 - Benjamin Lorentz, Thu Mar 30 17:05:25 2023 -0400 : final notes for Thursday
+```
+
+#### Cycle 4 
+
+```bash
+e422961 - Ben Lorentz, Fri Mar 31 16:45:41 2023 -0400 : add files for HQ analysis
+f527258 - Ben Lorentz, Fri Mar 31 14:53:46 2023 -0400 : remove one whitespace
+bb9b63b - Ben Lorentz, Thu Mar 30 19:26:28 2023 -0400 : update the vis params
+d4a9419 - Ben Lorentz, Thu Mar 30 19:22:26 2023 -0400 : update params file
+b8c6d97 - Ben Lorentz, Thu Mar 30 17:38:39 2023 -0400 : Update driver script
+```
+
+#### Visualize Ampliseq
+
+```bash
+eef8f7d - Ben Lorentz, Fri Mar 31 16:22:25 2023 -0400 : add dockefile and renv for srs docker
+```
+
