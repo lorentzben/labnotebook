@@ -40,7 +40,107 @@ description: "Description for the page"
 
 #### Recreate ordinations with NMDS by hand (BC)
 
+I want to see what the ordination looks like when you use NMDS. One thing I might have noticed is that the plot is based off the qiime results as opposed to the table I have created which may be wrong, aka it is looking at a very subset version (4 in this case).
+
+Let's compare the qiime bray and my bray, the first problem is that the table in the dir is the non-rarefied one.
+
+From this site: [Cancer NIH](https://btep.ccr.cancer.gov/docs/qiime2/Lesson5/)
+"Note: you may want to skip rarefaction if library sizes are fairly even. Rarefaction is more beneficial when there is a greater than ~10x difference in library size (Weiss et al. 2017)."
+
+I dug into the qiime source code and they do use the rarefied table. So I want to pull that one in and compare to the qiime table. 
+
+```r 
+
+#in "/scratch/bjl34716/ade/cycle-4/work/23/2c9ff2ef62e6e595ec6ad135bbe0b4"
+rooted_tree <- "results/qiime2/phylogenetic_tree/rooted-tree.qza"
+taxonomy_file <- "taxonomy.qza"
+metadata_file <- "metadata.tsv"
+table_dada2 <- "rarefied_table.qza"
+
+metadata<-read_q2metadata(metadata_file)
+
+metadata[[ioi]] <- factor(metadata[[ioi]], levels=ioi_ord)
+cycle_1 <- qza_to_phyloseq(table_dada2,rooted_tree,taxonomy_file,metadata_file) 
+
+> colSums(otu_table(cycle_1))
+LT100 LT101 LT102 LT103 LT104 LT106 LT107 LT108 LT109 LT110 LT111 LT112 LT113
+16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589
+LT114 LT115 LT117 LT118 LT119 LT120  LT74  LT75  LT76  LT77  LT78  LT79  LT80
+16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589
+ LT81  LT82  LT84  LT85  LT86  LT87  LT88  LT89  LT90  LT91  LT92  LT93  LT95
+16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589 16589
+ LT98  LT99
+16589 16589
+# correct
+
+ord <- ordinate(cycle_1, "NMDS", "bray")
+
+> ord
+
+Call:
+metaMDS(comm = veganifyOTU(physeq), distance = distance)
+
+global Multidimensional Scaling using monoMDS
+
+Data:     wisconsin(sqrt(veganifyOTU(physeq)))
+Distance: bray
+
+Dimensions: 2
+Stress:     0.1172569
+Stress type 1, weak ties
+No convergent solutions - best solution after 20 tries
+Scaling: centring, PC rotation, halfchange scaling
+Species: expanded scores based on ‘wisconsin(sqrt(veganifyOTU(physeq)))’
+
+p2 = plot_ordination(cycle_1, ord, type="samples", color='Treatment')
+
+ggsave(filename='treatment_bray_nmds.png',plot=p2)
+
+p3 = p2 + geom_polygon(aes(fill=Treatment)
+
+ggsave(filename='treatment_bray_nmds_shape.png',plot=p3)
+
+### Looking to see the old table/what we lose in taxa
+
+> table_dada2 <- "feature-table.qza"
+> cycle_2 <- qza_to_phyloseq(table_dada2,rooted_tree,taxonomy_file,metadata_file)
+> cycle_2
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 1040 taxa and 47 samples ]
+sample_data() Sample Data:       [ 47 samples by 5 sample variables ]
+tax_table()   Taxonomy Table:    [ 1040 taxa by 7 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 1040 tips and 1037 internal nodes ]
+> colSums(otu_table(cycle_2))
+ LT100  LT101  LT102  LT103  LT104  LT105  LT106  LT107  LT108  LT109  LT110
+ 48746  66405  48401  48539  41517     96  60333  43099  63962  54520  44780
+ LT111  LT112  LT113  LT114  LT115  LT116  LT117  LT118  LT119  LT120   LT73
+ 56839  64728  94560 100639  59086  16509  45220  51688  40942  52908      5
+  LT74   LT75   LT76   LT77   LT78   LT79   LT80   LT81   LT82   LT83   LT84
+ 31748  21837  33615  29848  30543  23055  28649  19470  24674      4  26625
+  LT85   LT86   LT87   LT88   LT89   LT90   LT91   LT92   LT93   LT95   LT96
+ 51316  47702  59751  45944  63414  35689  40697  35294  52495  52158   2857
+  LT97   LT98   LT99
+    28  54464  64066
+    
+> largest <- max(colSums(otu_table(cycle_2)))
+> my_rare <- 16589
+
+
+> largest/my_rare
+[1] 6.06661
+
+#6x difference
+```
+
+Okay so the plots kinda look the same...
+Should we try to use [SRS](https://github.com/vitorheidrich/SRS) to transform the table as opposed to rarefy it?
+
+### What does an SRS table look like?
+
+
 #### What does reddit and NIH suggest?
+
+They suggest rarefying it, but I am not super satisfied by that.
 
 #### Contam Downstream
 
