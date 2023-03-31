@@ -156,7 +156,14 @@ visualize ampliseq rev: 6282c8ec40a4cd89d11c552b5eb7b14c41ad4e77
 slurm sub: 20459781 
 
 ```bash
+Completed at: 30-Mar-2023 20:12:21
+Duration    : 26m 7s
+CPU hours   : 0.8 (1.1% cached)
+Succeeded   : 25
+Cached      : 1
 ```
+
+It's still a little bit messy... we'll see what we can do.
 
 
 #### Clean Up Work Dir
