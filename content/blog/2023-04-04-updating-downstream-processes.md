@@ -160,17 +160,44 @@ visualize ampliseq rev: cd6f0204569ac99073929bf87b6487b1e4c92e2c
 slurm sub: 20703809
 
 ```bash
+Completed at: 04-Apr-2023 11:18:46
+Duration    : 8m 6s
+CPU hours   : 1.8 (95.2% cached)
+Succeeded   : 3
+Cached      : 25
 ```
 
 03
 
+Looks good the if uses qza table and the else uses table qza
+
 04
+
+Looks good, uses the Core metric out vectors which uses the filtered table if its in the if
+
 
 05
 
+Looks good, uses the Core metric out vectors which uses the filtered table if its in the if
+
+Testing updated ordioi and samplenames 
+
+cycle 4 rev: 2259deb3df703ac33b914312d295379c729b73c8 
+visualize ampliseq rev: 2d5a58f2b3a77eef458fa67291d4d553ebedda92
+slurm sub: 20705688
+
+```bash
+```
+
 06
 
+Looks good uses updated table for phyloseq object and core metric out.
+
+TODO possibly update to NMDS in the future
+
 07
+
+
 
 08
 
