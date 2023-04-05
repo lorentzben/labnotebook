@@ -45,11 +45,16 @@ description: "Description for the page"
 
 Currently the method will read in the ordered IOI if provided, but it fails to write it out to file, so I want to go by hand and see what the issue is, and then update the code.
 
-cycle 4 rev: 
-visualize ampliseq rev: 
-slurm sub: 
+cycle 4 rev: e4cda0d877e7f7a9a1c695be00a3f9d445830311
+visualize ampliseq rev: ac114e300c20aa9f02b36c14d21ad1888d3ff090
+slurm sub: 20735135
 
 ```bash
+Completed at: 05-Apr-2023 11:53:54
+Duration    : 27m 8s
+CPU hours   : 1.2 (36.6% cached)
+Succeeded   : 17
+Cached      : 9
 ```
 
 #### Update Report 10 
