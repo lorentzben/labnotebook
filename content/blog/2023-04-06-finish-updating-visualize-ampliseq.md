@@ -62,7 +62,27 @@ Cached      : 27
 
 I want to run the normality test and then either automatically or manually produce both parametric and non-parametric results.
 
+cycle 4 rev: e35d6670e818a70ba4e398a48e3713c91b861169
+visualize ampliseq rev: 8c912a528a26f8785250a360ab68bd9fc1026cce
+slurm sub: 20780581
+
+```bash
+ Workflow execution completed unsuccessfully
+
+/scratch/bjl34716/ade/cycle-4/litter-normality/metadata.tsv
+```
+
+
+cycle 4 rev:  ac63f67db464e39e43fecfb22afb08ff7d348989
+visualize ampliseq rev: 8c912a528a26f8785250a360ab68bd9fc1026cce
+slurm sub: 20781060
+
+```bash
+```
+
 #### Implement FIGARO and Compare results
+
+#### Use Mock Communities to Validate results
 
 
 #### SRS Normalization
