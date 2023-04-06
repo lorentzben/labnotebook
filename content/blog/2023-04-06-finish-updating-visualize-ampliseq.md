@@ -8,10 +8,11 @@ tags:
   - "negative control"
   - "positive control"
   - "visualize-ampliseq"
+  - "normalize"
 description: "Description for the page"
 ---
 
-### Todos for Tomorrow
+### Todos for Today
 
 - Class
   - Examine Comments on Word Doc
@@ -71,7 +72,6 @@ slurm sub: 20780581
 
 /scratch/bjl34716/ade/cycle-4/litter-normality/metadata.tsv
 ```
-
 
 cycle 4 rev:  7071fe188d375c9b070bbb0728eebb72289aca70
 visualize ampliseq rev: 8c912a528a26f8785250a360ab68bd9fc1026cce
@@ -138,23 +138,68 @@ Succeeded   : 1
 Cached      : 28
 ```
 
-It looks good to me!
+It looks good to me! Tagged as 1.2.1
 
+#### Breakaway
 
-#### Implement FIGARO and Compare results
+An alternative to SRS could be [Breakaway](https://forum.qiime2.org/t/q2-breakaway-community-tutorial/5756) which looks at rare sequences to generate error profiles and estimates diversity based on those error bars. 
 
+#### DEICODE
 
+A second alternative is [DEICODE])(https://forum.qiime2.org/t/robust-aitchison-pca-beta-diversity-with-deicode/8333) which uses Robust Aitchison PCA with pseudocounts to Log-transform the data to detect underlying patters in abundance.
 
-#### Use Mock Communities to Validate results
+### Todos for Tomorrow
 
+- Class
+  - Examine Comments on Word Doc
+  - Homework 4
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Examine How SRS changes result vs rarefying
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
 
-#### SRS Normalization
+### Git Commits
 
-### Class
+#### Lab Notebook
 
-#### Homework 4 
+```bash
+03d8c92 - Benjamin Lorentz, Thu Apr 6 16:26:54 2023 -0400 : updates to 05
+dc76714 - Benjamin Lorentz, Thu Apr 6 12:18:48 2023 -0400 : updates
+d7b2a06 - Benjamin Lorentz, Thu Apr 6 11:04:44 2023 -0400 : added page for thurs and notes
+e6773dc - Benjamin Lorentz, Wed Apr 5 17:09:29 2023 -0400 : final notes for wednesday
+```
 
-#### Notes from Paper
+#### Cycle 4
 
+```bash
+7071fe1 - Benjamin Lorentz, Thu Apr 6 12:26:10 2023 -0400 : update bash script
+ac63f67 - Benjamin Lorentz, Thu Apr 6 12:17:35 2023 -0400 : update bash script
+e35d667 - Benjamin Lorentz, Thu Apr 6 12:10:52 2023 -0400 : add ade-cycle-4-nextflow_litter_normality
+```
 
+#### Visualize Ampliseq
+
+```bash
+3f4f735 - Benjamin Lorentz, Thu Apr 6 16:11:02 2023 -0400 : update 05 report
+0d83c20 - Benjamin Lorentz, Thu Apr 6 15:48:59 2023 -0400 : update 05 report
+699d0cd - Benjamin Lorentz, Thu Apr 6 13:19:54 2023 -0400 : update 05 report
+8c912a5 - Benjamin Lorentz, Thu Apr 6 12:08:05 2023 -0400 : update 05_report
+3a2fe31 - Benjamin Lorentz, Thu Apr 6 11:44:24 2023 -0400 : update main.nf
+09c021b - Benjamin Lorentz, Thu Apr 6 11:21:36 2023 -0400 : update 06b file
+726eacb - Benjamin Lorentz, Thu Apr 6 10:34:01 2023 -0400 : update main.nf
+```
 
