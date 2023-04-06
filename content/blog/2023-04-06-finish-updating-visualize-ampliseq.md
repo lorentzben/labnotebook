@@ -73,14 +73,77 @@ slurm sub: 20780581
 ```
 
 
-cycle 4 rev:  ac63f67db464e39e43fecfb22afb08ff7d348989
+cycle 4 rev:  7071fe188d375c9b070bbb0728eebb72289aca70
 visualize ampliseq rev: 8c912a528a26f8785250a360ab68bd9fc1026cce
-slurm sub: 20781060
+slurm sub: 20781690
 
 ```bash
+  Attaching package: 'rstatix'
+
+  The following object is masked from 'package:stats':
+
+      filter
+
+  Quitting from lines 72-137 (05_report.Rmd)
+  Error in asserttat_group_columns_exists(data) :
+    data should contain group1 and group2 columns
+  Calls: <Anonymous> ... stat_pvalue_manual -> asserttat_group_columns_exists
+  In addition: There were 16 warnings (use warnings() to see them)
+  Execution halted
+
 ```
 
+#### Check metadata reading
+
+This is one example I encountered, it subset 1 sample it shouldn't have 
+
+```r
+I don't think this is needed if error examine
+metadata <- metadata[2:length(metadata[,1]),]
+```
+
+cycle 4 rev:  7071fe188d375c9b070bbb0728eebb72289aca70
+visualize ampliseq rev: 699d0cd3e125bbb70b995ef7aad245319fe10aca
+slurm sub: 20783096
+
+```bash
+Completed at: 06-Apr-2023 14:02:19
+Duration    : 38m 6s
+CPU hours   : 1.3 (51.9% cached)
+Succeeded   : 5
+Cached      : 24
+```
+
+cycle 4 rev:  7071fe188d375c9b070bbb0728eebb72289aca70
+visualize ampliseq rev: 0d83c20b3ae2c236c734cf337e00ec8f2e6d6e41
+slurm sub: 20786171
+
+```bash
+Completed at: 06-Apr-2023 15:54:05
+Duration    : 1m 6s
+CPU hours   : 1.3 (99.5% cached)
+Succeeded   : 1
+Cached      : 28
+```
+
+cycle 4 rev:  7071fe188d375c9b070bbb0728eebb72289aca70
+visualize ampliseq rev: 3f4f735f7cb4da5dce591336072f88720773d006
+slurm sub: 20786606
+
+```bash
+Completed at: 06-Apr-2023 16:16:53
+Duration    : 1m 5s
+CPU hours   : 1.3 (99.4% cached)
+Succeeded   : 1
+Cached      : 28
+```
+
+It looks good to me!
+
+
 #### Implement FIGARO and Compare results
+
+
 
 #### Use Mock Communities to Validate results
 
