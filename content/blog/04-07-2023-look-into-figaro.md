@@ -20,4 +20,8 @@ description: "Description for the page"
 
 #### Homewok 4 
 
+Finished and submitted
+
 #### Paper Comments
+
+I read over the comments and thought they all make sense, I did re-write the last section to be an ANCOVA analysis as opposed to an ANOVA since we have the continuous variable of health that we can leverage. 
