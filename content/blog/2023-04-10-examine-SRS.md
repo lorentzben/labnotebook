@@ -40,3 +40,14 @@ description: "Description for the page"
 
 #### What Does FIGARO need?
 
+I updated the figaro docker image to:
+1. enter a bash setting
+2. include procps
+
+I have pushed this to lorentzb/figaro:1.0 
+
+cycle 4 rev: 374b13a9b92c744712ec095c038608b7ad8d046c
+visualize ampliseq rev: 70d8f4f2904bdf309f0fb012913bc8827822fe3b
+slurm sub: 20874558
+
+I was able to run figaro and have some sense of parsing the results the issue comes from passing those results into the paramfiles or others. Maybe we need a small driverscript that will edit the paramfile to include the cutoffs if they are generated, and will read in the json file from figaro.
