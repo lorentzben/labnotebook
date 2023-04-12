@@ -50,6 +50,7 @@ slurm job: 20933907
 ```bash
 ```
 
+
 ### Todos for Tomorrow
 
 - Class
@@ -82,7 +83,6 @@ slurm job: 20933907
 ```
 
 #### Cycle 4
-
 ```bash
 a0d5d49 - Benjamin Lorentz, Tue Apr 11 17:07:25 2023 -0400 : update litter params, figaro batch and viz params
 8452fca - Benjamin Lorentz, Tue Apr 11 16:54:19 2023 -0400 : update figaro find
