@@ -159,6 +159,24 @@ To answer the main question: no --trunc_qmin is not considered if you provide cu
 
 Pretty straight forward question but will the answer be too?
 
+Description from [whitepaper](https://files.zymoresearch.com/documents/figaro_whitepaper.pdf):
+
+"that can select optimal trimming sites
+for paired-end data that allows for minimizing expected sequencing errors while
+maximizing read retention and maintaining sufficient read length for downstream merging."
+ 
+It uses the cumulative expected errors, $y = a * e^{bx} + c$ n-th percentile for expected errors at a given position. 
+
+Max EE are calculated based on forward and reverse trim positions with the correct overlap length. FEE and REE are iterated to determine how many reads would be retained. 
+
+There is a balance between read retention and subtracting EE>1
+
+$score = read_retention - [(expected_error_forward - 1)^2 + (expected_error_reverse - 1)^2]$
+
+
+  
+
+
 #### PERMANOVA post-hoc
 
 Does my method follow the same procedure as the R package I found online?
