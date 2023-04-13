@@ -173,17 +173,50 @@ There is a balance between read retention and subtracting EE>1
 
 $score = read_retention - [(expected_error_forward - 1)^2 + (expected_error_reverse - 1)^2]$
 
+#### Check Alpha diversity test
 
-  
+Make sure that the factors are being filtered like beta diversity test
 
+They were not even present so I added print calls
+
+cycle 4 rev: 973b51163e2e4375a0bf2f233e3a9cd72e0402b4
+visualize ampliseq res: 37592a7c3983effb09606b8187d4d29968b501b8
+slurm sub: 20971956
+
+```bash
+[2d/c57294] process > REPORT05ALPHABOXPLOT (1)       [100%] 1 of 1 ✔
+
+Completed at: 13-Apr-2023 16:32:41
+Duration    : 1m 7s
+CPU hours   : 1.3 (99.4% cached)
+Succeeded   : 1
+Cached      : 28
+```
+
+cycle 4 rev: 973b51163e2e4375a0bf2f233e3a9cd72e0402b4
+visualize ampliseq res: 8bc14050feb6748038d76095d97aaa14e713513f 
+slurm sub: 20972504
+
+```bash
+[1f/f2104c] process > REPORT05ALPHABOXPLOT (1)       [100%] 1 of 1 ✔
+
+Completed at: 13-Apr-2023 16:55:52
+Duration    : 1m 7s
+CPU hours   : 1.3 (99.2% cached)
+Succeeded   : 1
+Cached      : 28
+```
+
+cycle 4 rev: 973b51163e2e4375a0bf2f233e3a9cd72e0402b4
+visualize ampliseq res: 26f48e393a1068f142aabe32fee765ce5effcaf9 
+slurm sub: 20973212
+
+```bash
+```
 
 #### PERMANOVA post-hoc
 
 Does my method follow the same procedure as the R package I found online?
-
-#### Check Alpha diversity test
-
-Make sure that the factors are being filtered like beta diversity test
 
 #### Beta diversity measurments
 
@@ -196,3 +229,54 @@ Provide the option to Cluster taxa into 97% otus
 ### Merge Figaro Back to Main
 
 #### SRS vs Rarefy
+
+
+### Todos for Tomorrow
+
+- Class
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Is my pairise permanova the same as the pairwise one
+  - Beta diversity measurements
+  - Cluster to 97% similarity?
+  - Examine How SRS changes result vs rarefying
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commit
+
+#### Lab Notebook
+
+```bash
+11f3fb9 - Benjamin Lorentz, Thu Apr 13 16:02:05 2023 -0400 : add figaro updates
+e5d432c - Benjamin Lorentz, Thu Apr 13 11:51:14 2023 -0400 : cutoff comparison found
+47973f3 - Benjamin Lorentz, Thu Apr 13 10:35:30 2023 -0400 : add page for thursday
+```
+
+#### Visualize Ampliseq
+
+```bash
+26f48e3 - Benjamin Lorentz, Thu Apr 13 17:01:46 2023 -0400 : update 05
+8bc1405 - Benjamin Lorentz, Thu Apr 13 16:44:00 2023 -0400 : update 05
+37592a7 - Benjamin Lorentz, Thu Apr 13 16:17:54 2023 -0400 : update 05 report
+```
+
+#### Cycle 4
+
+```bash
+973b511 - Benjamin Lorentz, Thu Apr 13 16:00:54 2023 -0400 : update ade-cycle*figaro
+```
+  
