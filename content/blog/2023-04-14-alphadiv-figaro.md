@@ -48,7 +48,27 @@ visualize ampliseq res: 26f48e393a1068f142aabe32fee765ce5effcaf9
 slurm sub: 20973212
 
 ```bash
+
+[5a/0ec1ae] process > REPORT05ALPHABOXPLOT (1)       [100%] 1 of 1 ✔
+
+Completed at: 13-Apr-2023 17:14:03
+Duration    : 1m 6s
+CPU hours   : 1.3 (99.4% cached)
+Succeeded   : 1
+Cached      : 28
+
 ```
+
+It's still kinda messy i want to see if we make it a df first then a kable?
+
+cycle 4 rev: 973b51163e2e4375a0bf2f233e3a9cd72e0402b4
+visualize ampliseq res: 93f9ba37ae59f9c9cad1e613355c47be59453d8d
+slurm sub: 20999572
+
+```bash
+```
+
+
 
 #### PERMANOVA post-hoc
 
@@ -63,5 +83,7 @@ Are there any other tests I should consider?
 Provide the option to Cluster taxa into 97% otus
 
 ### Merge Figaro Back to Main
+
+Update the Readme for visualize ampliseq
 
 #### SRS vs Rarefy
