@@ -66,21 +66,59 @@ visualize ampliseq res: 93f9ba37ae59f9c9cad1e613355c47be59453d8d
 slurm sub: 20999572
 
 ```bash
+[41/8ade2f] process > REPORT05ALPHABOXPLOT (1)       [100%] 1 of 1 ✔
+
+Completed at: 14-Apr-2023 12:08:55
+Duration    : 1m 4s
+CPU hours   : 1.3 (99.4% cached)
+Succeeded   : 1
+Cached      : 28
 ```
 
+cycle 4 rev: 973b51163e2e4375a0bf2f233e3a9cd72e0402b4
+visualize ampliseq res: ea5f207e38a7c83e64f3a9cfefb755265b3a3ce0
+slurm sub: 21000820
 
+
+
+cycle 4 rev: 973b51163e2e4375a0bf2f233e3a9cd72e0402b4
+visualize ampliseq res: aa95a63bdf23842ff8c24ed7a914b361bf916ae0
+slurm sub: 21004001
+
+```bash
+[c3/1b53e5] process > REPORT05ALPHABOXPLOT (1)       [100%] 1 of 1 ✔
+
+Completed at: 14-Apr-2023 13:48:45
+Duration    : 1m 4s
+CPU hours   : 1.3 (99.4% cached)
+Succeeded   : 1
+Cached      : 28
+```
+
+This looks good to me!
 
 #### PERMANOVA post-hoc
 
 Does my method follow the same procedure as the R package I found online?
 
+I think it looks the same so we'll keep it. 
+
 #### Beta diversity measurments
 
 Are there any other tests I should consider?
 
+8.1.2 PCoA for ASV-level data with Aitchison distance
+
+Now the same using Aitchison distance. This metric corresponds to Euclidean distances between CLR transformed sample abundance vectors. [source](https://microbiome.github.io/course_2021_radboud/beta-diversity.html)
+
+PERMANOVA analysis [source](https://microbiome.github.io/OMA/beta-diversity.html)
+
+Seems like Ordinations and then permanova are the measurements that make sense.
+
 #### OTUs at 97% 
 
 Provide the option to Cluster taxa into 97% otus
+ampliseq does not allow this, we could look into it, but Right now let's just keep it at ASVs
 
 ### Merge Figaro Back to Main
 
