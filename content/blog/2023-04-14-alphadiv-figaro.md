@@ -124,4 +124,53 @@ ampliseq does not allow this, we could look into it, but Right now let's just ke
 
 Update the Readme for visualize ampliseq
 
+Done
+
 #### SRS vs Rarefy
+
+Take this up next week
+
+#### Positive Control Sample
+
+
+### Todos for Tomorrow
+
+- Class
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Examine How SRS changes result vs rarefying
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+  
+### Git Commits
+
+#### Lab notebook
+
+```bash
+b5202c5 - Benjamin Lorentz, Fri Apr 14 15:42:25 2023 -0400 : notes from figaro, alpha div and new notes
+cfba5f6 - Benjamin Lorentz, Fri Apr 14 12:07:09 2023 -0400 : added notes before lunch
+7337748 - Benjamin Lorentz, Fri Apr 14 11:42:16 2023 -0400 : added page for friday
+e9ac44b - Benjamin Lorentz, Thu Apr 13 17:05:49 2023 -0400 : final notes for thurs
+```
+
+#### Visualize Ampliseq
+
+```bash
+aa95a63 - Benjamin Lorentz, Fri Apr 14 13:38:24 2023 -0400 : update 05
+ea5f207 - Benjamin Lorentz, Fri Apr 14 12:25:37 2023 -0400 : update 05
+93f9ba3 - Benjamin Lorentz, Fri Apr 14 11:57:27 2023 -0400 : update 05
+26f48e3 - Benjamin Lorentz, Thu Apr 13 17:01:46 2023 -0400 : update 05
+```
