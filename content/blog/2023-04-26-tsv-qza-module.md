@@ -41,9 +41,11 @@ description: "Description for the page"
 
 #### Restart analysis on Sapelo2
 
-cycle 4 rev: 
-visualize ampliseq rev:
-slurm job:
+I built a module for TSV to QZA and then aliased it multiple times:
+
+cycle 4 rev: e2f5c2d9e6e57827bf1afacd30c2143d45e131cc
+visualize ampliseq rev: e744f5a1fd6a0bf6faabcf7c781a9c1e1f901e4f
+slurm job: 21471021
 
 ```bash
 ```
