@@ -180,6 +180,13 @@ ValueError: table.qza is not a QIIME archive.`, size: 974 (max: 255)
 
 We need to figure out qzatable to just be the qza archive not the whole thing
 
+cycle 4 rev: e2f5c2d9e6e57827bf1afacd30c2143d45e131cc
+visualize ampliseq rev: 791f834dd728be23fbbfec73c0a1ce8dacb18038
+slurm job: 21479740
+
+```bash
+```
+
 ### Todos for Tomorrow
 
 - Class
