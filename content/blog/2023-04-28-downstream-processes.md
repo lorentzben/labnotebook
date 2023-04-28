@@ -295,3 +295,52 @@ Does the coremetric and SRS use the same depth? (so same table)
 Here is the nf-core test data location
 
 https://github.com/nf-core/test-datasets/tree/ampliseq
+
+### Todos for Next Week
+
+- Class
+  - Paper finalize
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Finish SRS implement:
+     - Yes NC Yes SRS
+     - Yes NC no SRS
+     - No NC Yes SRS
+     - No NC No SRS
+  - Taguchi optmization for richness?
+  - Make these subworkflows as opposed to one long workflow?
+  - Unit tests based on the example data
+  - Positive Control Analysis
+  - Examine How SRS changes result vs rarefying
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+    - Filtering unknown taxa?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+- Check out https://youtu.be/oBfu3prR5FA
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+abec8a9 - Benjamin Lorentz, Fri Apr 28 16:36:29 2023 -0400 : notes for SRS y NC y and SRS y NC n
+fa7b72f - Benjamin Lorentz, Thu Apr 27 17:11:42 2023 -0400 : final notes for thursday
+```
+
+#### Visualize Ampliseq
+
+```bash
+e937871 - Benjamin Lorentz, Fri Apr 28 16:33:03 2023 -0400 : update main.nf, 01_mba 14 reports
+```
