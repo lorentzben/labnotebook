@@ -4,8 +4,11 @@ date: 2023-05-05T13:40:19Z
 draft: false
 meta_img: "images/image.png"
 tags:
-  - "one tag"
-  - "another tag"
+  - "Ade"
+  - "visualize-ampliseq"
+  - "normalize"
+  - "SRS"
+  - "Module"
 description: "Description for the page"
 ---
 
