@@ -808,3 +808,128 @@ LT114 LT115 LT116 LT117 LT118 LT119 LT120  LT74  LT75  LT76  LT77  LT78  LT79
 > sum(colSums(srs_nc_mock_tsv))
 [1] 693000
 ```
+
+#### Reformat and QZA tax
+
+
+cycle 4 rev: 08aad11963ccbc54fde2d78ed50551e5b68a18c9
+visualize ampliseq rev: 9a17c864ff639560c979e9e77a69e7f5c744f58a
+slurm sub: 22276493
+
+```bash
+Completed at: 09-May-2023 17:04:05
+Duration    : 1m 5s
+CPU hours   : 0.2 (96.8% cached)
+Succeeded   : 1
+Cached      : 14
+```
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Finish Modularization
+    - GENERATEBIOMFORGRAPHLAN
+    - COREMETRICPYTHON
+    - QIIME2_EXPORT_ABSOLUTE_CORE(COREMETRICPYTHON.out.rare_table)
+  - Taguchi optmization for richness?
+  - Make these subworkflows as opposed to one long workflow?
+  - Unit tests based on the example data
+  - Positive Control Analysis
+  - Examine How SRS changes result vs rarefying
+  - Run a proper analysis to send to Ade
+  - Mock Community Investigation
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+    - Filtering unknown taxa?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commits
+
+#### Labnotebook
+
+```bash
+23e6447 - Benjamin Lorentz, Tue May 9 16:22:18 2023 -0400 : update notes on final tables for the 8 different options
+832ee68 - Benjamin Lorentz, Tue May 9 11:59:15 2023 -0400 : notes before lunch
+3ad0c39 - Benjamin Lorentz, Tue May 9 10:03:31 2023 -0400 : added tuesdays page
+```
+
+#### Visualize Ampliseq
+
+```bash
+9a17c86 - Benjamin Lorentz, Tue May 9 17:03:23 2023 -0400 : update reformat and qza tax
+dcdf1e5 - Benjamin Lorentz, Tue May 9 17:00:35 2023 -0400 : add reformat and qza tax
+81e5085 - Benjamin Lorentz, Tue May 9 14:02:42 2023 -0400 : update visualize-ampliseq
+df63231 - Benjamin Lorentz, Tue May 9 11:47:18 2023 -0400 : visualize ampliseq
+5790d38 - Benjamin Lorentz, Tue May 9 11:41:25 2023 -0400 : try this
+9602b32 - Benjamin Lorentz, Tue May 9 11:38:51 2023 -0400 : update visualize ampliseq
+bb93726 - Benjamin Lorentz, Tue May 9 11:31:19 2023 -0400 : try this
+0f194f1 - Benjamin Lorentz, Tue May 9 11:28:16 2023 -0400 : update visualize ampliseq
+142eaed - Benjamin Lorentz, Tue May 9 11:26:27 2023 -0400 : update visualize-ampliseq
+069d972 - Benjamin Lorentz, Tue May 9 11:17:13 2023 -0400 : update visualize-amplseq
+93bd0ec - Benjamin Lorentz, Tue May 9 11:13:29 2023 -0400 : update visualize-ampliseq
+9dde9f3 - Benjamin Lorentz, Tue May 9 11:10:57 2023 -0400 : update visualize-ampliseq
+6d1d51d - Benjamin Lorentz, Tue May 9 11:08:11 2023 -0400 : update visualize-ampliseq
+:...skipping...
+9a17c86 - Benjamin Lorentz, Tue May 9 17:03:23 2023 -0400 : update reformat and qza tax
+dcdf1e5 - Benjamin Lorentz, Tue May 9 17:00:35 2023 -0400 : add reformat and qza tax
+81e5085 - Benjamin Lorentz, Tue May 9 14:02:42 2023 -0400 : update visualize-ampliseq
+df63231 - Benjamin Lorentz, Tue May 9 11:47:18 2023 -0400 : visualize ampliseq
+5790d38 - Benjamin Lorentz, Tue May 9 11:41:25 2023 -0400 : try this
+9602b32 - Benjamin Lorentz, Tue May 9 11:38:51 2023 -0400 : update visualize ampliseq
+bb93726 - Benjamin Lorentz, Tue May 9 11:31:19 2023 -0400 : try this
+0f194f1 - Benjamin Lorentz, Tue May 9 11:28:16 2023 -0400 : update visualize ampliseq
+142eaed - Benjamin Lorentz, Tue May 9 11:26:27 2023 -0400 : update visualize-ampliseq
+069d972 - Benjamin Lorentz, Tue May 9 11:17:13 2023 -0400 : update visualize-amplseq
+93bd0ec - Benjamin Lorentz, Tue May 9 11:13:29 2023 -0400 : update visualize-ampliseq
+9dde9f3 - Benjamin Lorentz, Tue May 9 11:10:57 2023 -0400 : update visualize-ampliseq
+6d1d51d - Benjamin Lorentz, Tue May 9 11:08:11 2023 -0400 : update visualize-ampliseq
+6ac204e - Benjamin Lorentz, Tue May 9 11:05:09 2023 -0400 : update visualize-ampliseq
+895276d - Benjamin Lorentz, Tue May 9 11:00:18 2023 -0400 : update modules.conf
+bcf1060 - Benjamin Lorentz, Tue May 9 10:56:02 2023 -0400 : update modules.conf
+27c1757 - Benjamin Lorentz, Tue May 9 10:50:21 2023 -0400 : update modules.conf
+451f782 - Benjamin Lorentz, Tue May 9 10:47:02 2023 -0400 : update modules.conf
+b5ddfc3 - Benjamin Lorentz, Tue May 9 10:41:26 2023 -0400 : update modules.conf
+```
+
+#### Cycle 4
+
+```bash
+08aad11 - Benjamin Lorentz, Tue May 9 15:02:19 2023 -0400 : update driver script
+1eb029c - Benjamin Lorentz, Tue May 9 14:49:14 2023 -0400 : update driver script
+cfe5064 - Benjamin Lorentz, Tue May 9 14:36:44 2023 -0400 : update driver script
+3dae5e3 - Benjamin Lorentz, Tue May 9 14:26:21 2023 -0400 : update driver script
+1c2ab38 - Benjamin Lorentz, Tue May 9 14:20:00 2023 -0400 : update driver scipt
+a188637 - Benjamin Lorentz, Tue May 9 14:14:36 2023 -0400 : update driver script
+cf1f1ed - Benjamin Lorentz, Tue May 9 14:10:04 2023 -0400 : update driver script
+fb85eee - Benjamin Lorentz, Tue May 9 14:04:37 2023 -0400 : update driver script
+899c796 - Benjamin Lorentz, Tue May 9 11:43:12 2023 -0400 : move back to mock and nc
+51cf64b - Benjamin Lorentz, Tue May 9 11:32:41 2023 -0400 : remove resume
+8f74472 - Benjamin Lorentz, Tue May 9 11:01:07 2023 -0400 : update driverscript
+9c0a294 - Benjamin Lorentz, Tue May 9 10:54:29 2023 -0400 : update driver script
+:...skipping...
+08aad11 - Benjamin Lorentz, Tue May 9 15:02:19 2023 -0400 : update driver script
+1eb029c - Benjamin Lorentz, Tue May 9 14:49:14 2023 -0400 : update driver script
+cfe5064 - Benjamin Lorentz, Tue May 9 14:36:44 2023 -0400 : update driver script
+3dae5e3 - Benjamin Lorentz, Tue May 9 14:26:21 2023 -0400 : update driver script
+1c2ab38 - Benjamin Lorentz, Tue May 9 14:20:00 2023 -0400 : update driver scipt
+a188637 - Benjamin Lorentz, Tue May 9 14:14:36 2023 -0400 : update driver script
+cf1f1ed - Benjamin Lorentz, Tue May 9 14:10:04 2023 -0400 : update driver script
+fb85eee - Benjamin Lorentz, Tue May 9 14:04:37 2023 -0400 : update driver script
+899c796 - Benjamin Lorentz, Tue May 9 11:43:12 2023 -0400 : move back to mock and nc
+51cf64b - Benjamin Lorentz, Tue May 9 11:32:41 2023 -0400 : remove resume
+8f74472 - Benjamin Lorentz, Tue May 9 11:01:07 2023 -0400 : update driverscript
+9c0a294 - Benjamin Lorentz, Tue May 9 10:54:29 2023 -0400 : update driver script
+a7d00b7 - Benjamin Lorentz, Tue May 9 10:31:39 2023 -0400 : update driver script
+329ea90 - Benjamin Lorentz, Tue May 9 10:22:52 2023 -0400 : update ade-cycle-4-nextflow_litter_srs-driver.sh
+```
