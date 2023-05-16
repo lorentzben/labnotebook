@@ -273,7 +273,7 @@ Work dir:
   /scratch/bjl34716/ade/cycle-4/work/f1/d55fccf1e9db9cfdde758797a7082c
 ```
 
-No SRS Yes NC No Mock No Rarefaction
+No SRS Yes NC Yes Mock No Rarefaction
 
 cycle 4 rev: 0421a1e4a140e293354ae14c5bcb1872061bd2fc 
 visualize ampliseq rev: c2f73491a5c6e9c7ff7c12ca3f953c9cea01b532
