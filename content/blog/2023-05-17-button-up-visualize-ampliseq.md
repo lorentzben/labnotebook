@@ -68,5 +68,55 @@ Done
 
 Done check revision: eddd6a3f44ff5fa01636d6acce36bcde3bbc8c89
 
+#### Taguchi optmization for richness
+
+We Don't really need to use taguchi, we can just plot a table/array
+
+Interesting results, first SRS will produce the average richest measurement, and will keep similar number of samples which we like. I feel like SRS is a robust method to move forward with.
+
+
+#### Check output 
+
+Based on rev: b5cb1caba1d39fc0218304356c9e8cedbb917b45
+
 #### Mock Community Samples
 
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Check updated output analysis
+  - Positive Control Analysis
+  - Mock Community Investigation
+  - Run a proper analysis to send to Ade
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+    - Filtering unknown taxa?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commit
+
+#### Lab notebook
+
+```bash
+7961a66 - Benjamin Lorentz, Wed May 17 11:59:34 2023 -0400 : notes before lunch
+f3ce8a3 - Benjamin Lorentz, Wed May 17 08:46:44 2023 -0400 : add page for wednesday
+```
+
+#### Visualize Ampliseq
+
+```bash
+b5cb1ca - Benjamin Lorentz, Wed May 17 13:49:20 2023 -0400 : update conf and main.nf
+eddd6a3 - Benjamin Lorentz, Wed May 17 11:57:13 2023 -0400 : update 14 citations
+```
