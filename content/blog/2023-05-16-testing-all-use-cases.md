@@ -387,9 +387,21 @@ visualize ampliseq rev: 558b4af7e4dca29d90550a07998d9da730f73130
 slurm job: 22873337
 
 ```bash
+Completed at: 16-May-2023 16:43:23
+Duration    : 16m 9s
+CPU hours   : 2.1 (76.3% cached)
+Succeeded   : 4
+Cached      : 31
 ```
 
 Yes SRS No NC Yes Mock Yes Rarefaction
+
+cycle 4 rev: a66a53047ceeda98c28c02d7c3a1aa7788bf4960
+visualize ampliseq rev: 558b4af7e4dca29d90550a07998d9da730f73130
+slurm job: 22873906
+
+```bash
+```
 
 
 #### Remove TODOs
