@@ -131,3 +131,186 @@ Cached      : 36
 [Examining longitudinal analysis](https://docs.qiime2.org/2023.2/tutorials/longitudinal/)
 
 #### Concating sequenece and making a reference seq from it
+
+```bash
+#singularity shell docker://lorentzb/automate_16_nf:2.0
+
+cd /work/sealab/bjl34716/ade/reference-community
+cat *.fasta > atcc_20_ref.fasta
+head /work/sealab/bjl34716/ade/reference-community/atcc_20_ref.fasta
+
+qiime tools import \
+  --input-path /work/sealab/bjl34716/ade/reference-community/atcc_20_ref.fasta \
+  --output-path /work/sealab/bjl34716/ade/reference-community/atcc_20_ref.qza \
+  --type 'FeatureData[Sequence]'
+
+biom convert \
+  -i reftab.tsv \
+  -o expected-taxonomy.biom \
+  --table-type="OTU table" \
+  --to-json
+
+qiime tools import \
+ --type FeatureTable[RelativeFrequency] \
+ --input-path expected-taxonomy.biom \
+ --input-format BIOMV100Format \
+ --output-path /work/sealab/bjl34716/ade/reference-community/expected-taxonomy.qza
+```
+
+test the implementation
+
+cycle 4 rev: 05af9c384a45110b1ad5327aa2dfec247eeb44e8
+visualize ampliseq rev: 8e5da0a2b72c473aaa3ffaf315dfaab0e567ed25
+slurm job: 22911415
+
+```bash
+N E X T F L O W  ~  version 22.04.5
+Pulling lorentzben/visualize-ampliseq ...
+ Fast-forward
+Launching `https://github.com/lorentzben/visualize-ampliseq` [cranky_dijkstra] DSL2 - revision: 8e5da0a2b7 [srs]
+Cannot find a component with name 'QIIME2_FILTERONLYSAMPLES' in module: /home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/modules/local/qiime2_filtersamples.nf
+
+Did you mean any of these?
+  QIIME2_FILTERSAMPLES
+```
+
+cycle 4 rev: 05af9c384a45110b1ad5327aa2dfec247eeb44e8
+visualize ampliseq rev: 7220389227bd6d9b746f29c08ec6be670f38acde
+slurm job: 22911438
+
+```bash
+No such variable: query
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/modules/local/qiime2_evaluate_seqs.nf' at line: 12 or see '.nextflow.log' file for more details
+```
+
+cycle 4 rev: 05af9c384a45110b1ad5327aa2dfec247eeb44e8
+visualize ampliseq rev: c46d3024390e189e6f792adae72444e9058fc31f
+slurm job: 22911467
+
+```bash
+No such variable: experimental
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/modules/local/qiime2_evaluate_composition.nf' at line: 12 or see '.nextflow.log' file for more details
+```
+
+cycle 4 rev: 05af9c384a45110b1ad5327aa2dfec247eeb44e8
+visualize ampliseq rev: eb4caaca03f2354dd382adc66524e4ca9aa8fa8b
+slurm job: 22911528
+
+```bash
+Error executing process > 'VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_FILTERSEQS (MOCK)'
+
+Caused by:
+  Process `VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_FILTERSEQS (MOCK)` terminated with an error exit status (1)
+
+Command executed:
+
+  export XDG_CONFIG_HOME="${PWD}/HOME"
+
+  qiime feature-table filter-seqs \
+      --i-data filtered-sequences.qza \
+      --m-metadata-file metadata.tsv \
+      --p-where "[Treatment]='MOCK'" \
+      --o-filtered-data MOCK.qza
+
+  cat <<-END_VERSIONS > versions.yml
+  "VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_FILTERSEQS":
+      qiime2: $( qiime --version | sed '1!d;s/.* //' )
+  END_VERSIONS
+
+Command exit status:
+  1
+
+Command output:
+Command error:
+  QIIME is caching your current deployment for improved performance. This may take a few moments and should only happen once per deployment.
+  /opt/conda/envs/qiime2-2020.8/lib/python3.6/site-packages/skbio/util/_testing.py:15: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+    import pandas.util.testing as pdt
+  Plugin error from feature-table:
+
+    All features were filtered out of the data.
+
+  Debug info has been saved to /tmp/qiime2-q2cli-err-lfi56ubp.log
+
+Work dir:
+  /scratch/bjl34716/ade/cycle-4/work/06/1dceb4078851b11b1ca42cc9a12dd1
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+
+WARN: Tower request field `workflow.errorMessage` exceeds expected size | offending value: `QIIME is caching your current deployment for improved performance. This may take a few moments and should only happen once per deployment.
+/opt/conda/envs/qiime2-2020.8/lib/python3.6/site-packages/skbio/util/_testing.py:15: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as pdt
+Plugin error from feature-table:
+
+  All features were filtered out of the data.
+
+Debug info has been saved to /tmp/qiime2-q2cli-err-lfi56ubp.log`, size: 517 (max: 255)
+"'
+```
+```
+
+So we are having an issue with filtering the sequences we should go back and use the steps outlied by the qiime forum:
+
+```md
+
+You can take your existing feature-table and rep-seqs.qza file that you got from Deblur or DADA2 and work from there.
+
+    Filter the samples you want from your feature table using the filter-sample 11 plugin.
+    Use the new filtered table to remove sequences from your rep-seqs.qza file with the filter-seqs 8 plugin.
+    Then you can build your new tree with this new rep-seqs file. You can also use the fragment-insertion plugin for tree building.
+```
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Positive Control Analysis
+  - Mock Community Investigation
+  - Run a proper analysis to send to Ade
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+    - Filtering unknown taxa?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Communities
+
+#### Lab notebook
+
+```bash
+364b835 - Benjamin Lorentz, Thu May 18 12:05:12 2023 -0400 : notes before lunch
+2a3a5cd - Benjamin Lorentz, Thu May 18 08:26:51 2023 -0400 : page for thursday
+8923282 - Benjamin Lorentz, Wed May 17 17:01:48 2023 -0400 : final notes for wednesday
+```
+
+#### Cycle 4
+
+```bash
+05af9c3 - Benjamin Lorentz, Thu May 18 16:16:57 2023 -0400 : rename output
+6af5b4c - Benjamin Lorentz, Thu May 18 16:11:03 2023 -0400 : add refSeq and refTab and pass in new parafile
+1a7409c - Benjamin Lorentz, Thu May 18 10:49:01 2023 -0400 : update paramfile
+```
+
+#### Visualize ampliseq
+
+```bash
+eb4caac - Benjamin Lorentz, Thu May 18 16:33:25 2023 -0400 : update qiime2filterseqs
+646e015 - Benjamin Lorentz, Thu May 18 16:27:37 2023 -0400 : update evaluate composition
+c46d302 - Benjamin Lorentz, Thu May 18 16:25:02 2023 -0400 : update evaluate seqs
+7220389 - Benjamin Lorentz, Thu May 18 16:18:56 2023 -0400 : update filtersamples
+8e5da0a - Benjamin Lorentz, Thu May 18 16:13:54 2023 -0400 : update visualize-ampliseq and qiime2 evalutate composition
+3de75d8 - Benjamin Lorentz, Thu May 18 15:36:05 2023 -0400 : update visualize-ampliseq
+2f9ba15 - Benjamin Lorentz, Thu May 18 14:58:11 2023 -0400 : update visualize ampliseq
+a44b7ac - Benjamin Lorentz, Thu May 18 14:32:33 2023 -0400 : update visualize-ampliseq
+```
