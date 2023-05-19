@@ -258,12 +258,138 @@ Succeeded   : 23
 Cached      : 21
 ```
 
-cycle 4 rev: f1251f1cebc463f4720e61f87a7787e459b13059
+cycle 4 rev: 9e604399ce43e59f868eadd67dcb95acd67b790a
 visualize ampliseq rev: 00ef8e3376a888e26571388ca17431f0a8f1e560
-slurm job: 22920763
+slurm job: 22920772
+
+```bash
+[e3/d0448c] process > VISUALIZE_AMPLISEQ:VISUALIZ... [100%] 1 of 1, cached: 1 ✔
+Completed at: 19-May-2023 12:51:47
+Duration    : 1m 8s
+CPU hours   : (a few seconds)
+Succeeded   : 0
+Cached      : 5
+```
+
+cycle 4 rev: 9e604399ce43e59f868eadd67dcb95acd67b790a
+visualize ampliseq rev: fc777f3df7f63e40ffaece6e774eaba893aa51ff
+slurm job: 22921221
+
+```bash
+Completed at: 19-May-2023 13:46:12
+Duration    : 2m 8s
+CPU hours   : 0.1 (30.1% cached)
+Succeeded   : 2
+Cached      : 5
+```
+
+cycle 4 rev: 9e604399ce43e59f868eadd67dcb95acd67b790a
+visualize ampliseq rev: 94a8456b6f59f56a88aa0621309fd8b86f4a6995
+slurm job: 22921370
+
+```bash
+Launching `https://github.com/lorentzben/visualize-ampliseq` [lethal_kowalevski] DSL2 - revision: 94a8456b6f [srs]
+WARN: Access to undefined parameter `refSeq` -- Initialise it to a default value eg. `params.refSeq = some_value`
+WARN: Access to undefined parameter `refTab` -- Initialise it to a default value eg. `params.refTab = some_value`
+```
+
+What did I break?
+This should break in an expected way
+
+cycle 4 rev: 9e604399ce43e59f868eadd67dcb95acd67b790a
+visualize ampliseq rev: 9129ba2dede7863153baeaf836ccd2441c012d82
+slurm job: 22921434
+
+```bash
+No such variable: contam_script_ch
+
+ -- Check script '/home/bjl34716/.nextflow/assets/lorentzben/visualize-ampliseq/workflows/visualize-ampliseq.nf' at line: 173 or see '.nextflow.log' file for more details
+[-        ] process > VISUALIZE_AMPLISEQ:VISUALIZ... -
+```
+
+
+cycle 4 rev: 2a890c2e4af8270acd98f15e5c63c272ca585c37
+visualize ampliseq rev: 3f1296358fc34c9878d46e893f27d066fe0a8fb1 
+slurm job: 22921499
+
+```bash
+Completed at: 19-May-2023 14:11:58
+Duration    : 1m 7s
+CPU hours   : 2.2 (99.5% cached)
+Succeeded   : 1
+Cached      : 28
+```
+
+cycle 4 rev: 2a890c2e4af8270acd98f15e5c63c272ca585c37
+visualize ampliseq rev: 79a8ff1435c69eacb80a9c467d7dfce734055a89
+slurm job: 22921529
+
+```bash
+Completed at: 19-May-2023 14:15:10
+Duration    : 1m 5s
+CPU hours   : 0.5 (100% cached)
+Succeeded   : 0
+Cached      : 8
+```
+
+cycle 4 rev: 2a890c2e4af8270acd98f15e5c63c272ca585c37
+visualize ampliseq rev: 710fcc4b0dc6d6746b092ad3f4093e544eec7648
+slurm job: 22921555
+
+```bash
+Completed at: 19-May-2023 14:17:30
+Duration    : 1m 5s
+CPU hours   : 2.2 (100% cached)
+Succeeded   : 0
+Cached      : 29
+```
+
+cycle 4 rev: 31d9fc7a87f05c1d7a03703e8b1222f097b00531
+visualize ampliseq rev: 710fcc4b0dc6d6746b092ad3f4093e544eec7648
+slurm job: 22921582
+
+```bash
+Completed at: 19-May-2023 14:57:32
+Duration    : 39m 6s
+CPU hours   : 1.9 (2.7% cached)
+Succeeded   : 35
+Cached      : 9
+```
+
+### Todos for Next Week
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Mock Community Investigation
+  - Run a proper analysis to send to Ade
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+    - Filtering unknown taxa?
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+- Generate a Mock community M&M or other and validate pipelines
+- Visualize Ampliseq
+  - benchmark with a mock community
+
+### Git Commits
+
+#### Lab notebook
 
 ```bash
 ```
 
+#### Visualize Ampliseq
 
+```bash
+```
 
+#### Cycle 4
+
+```bash
+```

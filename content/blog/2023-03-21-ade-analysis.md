@@ -1,7 +1,7 @@
 ---
 title: '2023 03 21 Ade Analysis'
 date: 2023-03-21T15:05:47Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
   - "Ade"

@@ -9,7 +9,6 @@ tags:
   - "normalize"
   - "SRS"
   - "Module"
-option for the page"
 ---
 
 ### Todos for Today
