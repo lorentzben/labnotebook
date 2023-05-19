@@ -356,6 +356,24 @@ Succeeded   : 35
 Cached      : 9
 ```
 
+#### Updated Visualize-Ampliseq Readme
+
+I clarified and updated the readme so that it is a little more clear how you actually use the tool.
+
+### Mocrobiota
+
+Options that make sense to analyse: 
+
+- mock-13
+- mock-14
+- mock-15
+- mock-16
+- mock-20
+- mock-21
+- mock-22
+- mock-23
+
+
 ### Todos for Next Week
 
 - Jackwood Blast
@@ -363,33 +381,75 @@ Cached      : 9
   - try out a local blast search to see memory, cpu time limitation
 - Ade
   - Mock Community Investigation
-  - Run a proper analysis to send to Ade
   - How does the other Ben's Analysis line up with mine/ampliseq?
     - filtering step for the abundance?
     - Filtering unknown taxa?
+  - Run a proper analysis to send to Ade
 - gg-catalog
   - Generate a gene network 
     - how do you do this?
       - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
   - query the KO list and cross ref to the abundance data
   - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
-- Generate a Mock community M&M or other and validate pipelines
-- Visualize Ampliseq
-  - benchmark with a mock community
+
 
 ### Git Commits
 
 #### Lab notebook
 
 ```bash
+d4e361a - Benjamin Lorentz, Fri May 19 16:17:19 2023 -0400 : updates for friday
+f971b3a - Benjamin Lorentz, Fri May 19 12:50:57 2023 -0400 : notes before lunch
+50c94ae - Benjamin Lorentz, Fri May 19 08:35:20 2023 -0400 : add page for Friday
+a9ab95e - Benjamin Lorentz, Thu May 18 16:45:49 2023 -0400 : final notes for thursday
 ```
 
 #### Visualize Ampliseq
 
 ```bash
+a1bdb51 - Benjamin Lorentz, Fri May 19 16:28:41 2023 -0400 : update Readme.md
+b73ff43 - Benjamin Lorentz, Fri May 19 16:24:47 2023 -0400 : Update Readme.md
+710fcc4 - Benjamin Lorentz, Fri May 19 14:16:50 2023 -0400 : update visualize ampliseq
+79a8ff1 - Benjamin Lorentz, Fri May 19 14:14:10 2023 -0400 : update visualize-ampliseq
+3f12963 - Benjamin Lorentz, Fri May 19 14:10:39 2023 -0400 : update visualize ampliseq and filternegative controls
+a343772 - Benjamin Lorentz, Fri May 19 14:05:01 2023 -0400 : update visualize ampliseq
+9129ba2 - Benjamin Lorentz, Fri May 19 14:02:47 2023 -0400 : update visualize-ampliseq
+94a8456 - Benjamin Lorentz, Fri May 19 13:55:06 2023 -0400 : update visualize-ampliseq
+049a397 - Benjamin Lorentz, Fri May 19 13:51:46 2023 -0400 : update visualize ampliseq
+fc777f3 - Benjamin Lorentz, Fri May 19 13:43:01 2023 -0400 : update visualize ampliseq
+00ef8e3 - Benjamin Lorentz, Fri May 19 11:32:59 2023 -0400 : update build tree and filterseq
+bfe9697 - Benjamin Lorentz, Fri May 19 11:27:39 2023 -0400 : update visualize ampliseq
+4dc6f71 - Benjamin Lorentz, Fri May 19 11:25:23 2023 -0400 : update visualize ampliseq
+dce224a - Benjamin Lorentz, Fri May 19 11:17:52 2023 -0400 : fixing rooted tree
+:...skipping...
+a1bdb51 - Benjamin Lorentz, Fri May 19 16:28:41 2023 -0400 : update Readme.md
+b73ff43 - Benjamin Lorentz, Fri May 19 16:24:47 2023 -0400 : Update Readme.md
+710fcc4 - Benjamin Lorentz, Fri May 19 14:16:50 2023 -0400 : update visualize ampliseq
+79a8ff1 - Benjamin Lorentz, Fri May 19 14:14:10 2023 -0400 : update visualize-ampliseq
+3f12963 - Benjamin Lorentz, Fri May 19 14:10:39 2023 -0400 : update visualize ampliseq and filternegative controls
+a343772 - Benjamin Lorentz, Fri May 19 14:05:01 2023 -0400 : update visualize ampliseq
+9129ba2 - Benjamin Lorentz, Fri May 19 14:02:47 2023 -0400 : update visualize-ampliseq
+94a8456 - Benjamin Lorentz, Fri May 19 13:55:06 2023 -0400 : update visualize-ampliseq
+049a397 - Benjamin Lorentz, Fri May 19 13:51:46 2023 -0400 : update visualize ampliseq
+fc777f3 - Benjamin Lorentz, Fri May 19 13:43:01 2023 -0400 : update visualize ampliseq
+00ef8e3 - Benjamin Lorentz, Fri May 19 11:32:59 2023 -0400 : update build tree and filterseq
+bfe9697 - Benjamin Lorentz, Fri May 19 11:27:39 2023 -0400 : update visualize ampliseq
+4dc6f71 - Benjamin Lorentz, Fri May 19 11:25:23 2023 -0400 : update visualize ampliseq
+dce224a - Benjamin Lorentz, Fri May 19 11:17:52 2023 -0400 : fixing rooted tree
+e8b403c - Benjamin Lorentz, Fri May 19 09:48:22 2023 -0400 : update filterseq
+127adc3 - Benjamin Lorentz, Fri May 19 09:43:27 2023 -0400 : update visualize-ampliseq
+b29e773 - Benjamin Lorentz, Fri May 19 09:41:27 2023 -0400 : update visualize-ampliseq
+d7c4dc5 - Benjamin Lorentz, Fri May 19 09:27:08 2023 -0400 : update filterseqs
+fd2d0e6 - Benjamin Lorentz, Fri May 19 09:12:09 2023 -0400 : update qiime2 filterseqs
+c095176 - Benjamin Lorentz, Fri May 19 09:06:06 2023 -0400 : update filterseqs
 ```
 
 #### Cycle 4
 
 ```bash
+31d9fc7 - Benjamin Lorentz, Fri May 19 14:18:45 2023 -0400 : revert driver scipt back to /home/bjl34716/ade/cycle-4/litter/srs-test/ade_viz_params_litter_SRS_NC_MOCK_VIZ.yaml
+2a890c2 - Benjamin Lorentz, Fri May 19 14:09:30 2023 -0400 : update ade viz
+9e60439 - Benjamin Lorentz, Fri May 19 12:51:37 2023 -0400 : forgot to add the file
+f1251f1 - Benjamin Lorentz, Fri May 19 11:52:34 2023 -0400 : create a litter VIZ paramfile, but no mock so it is not a vis i guess
+a440dc8 - Benjamin Lorentz, Fri May 19 10:32:16 2023 -0400 : added reference table
 ```
