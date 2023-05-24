@@ -33,5 +33,39 @@ description: "Description for the page"
 
 #### Picking proper parameters
 
+In report 01, I want to double check the headines to make sure they are correct, and not right up against anything
+
+Table 3 Note this is to the least rich sample, not the final analysis. 
+
+Table 4 Note, this is from the proper rardepth, so like 3 but updated and only diversity.
+
+Report 05 check how the adjusting p-value make sense
+
+cycle 4 rev: 862562856bb047aeef4ca08bdd05a469d0063f2b
+visualize ampliseq rev: a1bdb51bc10ca4fec1d7bc75e4e398b91ed60bf8
+slurm job: 22997178
+
+```bash
+Completed at: 24-May-2023 11:15:08
+Duration    : 1m 7s
+CPU hours   : 1.9 (100% cached)
+Succeeded   : 0
+Cached      : 44
+```
+
+Who was filtered out of the negative control analysis?
+
+
+
+What was the accuracy of the mock analysis?
+
+#### Ben's Other analysis
+
+What steps did he take?
+
+What steps do I take?
+
+
+
 #### Longitudinal Analysis
 
