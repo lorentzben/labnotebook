@@ -191,8 +191,49 @@ updated dockerfile to include parallel rerunning primer-trimming:
 
 TODO come back to this process
 
-cycle 4 rev: 3880fe7df5754a7f62b417a6f315975a534a493f
-slurm job: 23043349
+cycle 4 rev: 15c66f2089dc1745a7f5890d8647eaf672ca876e 
+slurm job: 23044093
+
+```bash
+INFO:    Using cached SIF image
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+gzip: /work/sealab/bjl34716/ade_cycle_1_prinseq_clean_fastq/*: No such file or directory
+```
+
+cycle 4 rev: 369a02f3135fdce9bd6b5c744f52a8758063f59c
+slurm job: 23044827
+
+```bash
+INFO:    Using cached SIF image
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+gzip: /work/sealab/bjl34716/ade_cycle_1_prinseq_clean_fastq/*.fastq: No such file or directory
+```
+
+cycle 4 rev: 8a3a50f002b1e3ea5df422d9403a989f0f4bc907
+slurm job: 23045006
+
+```bash
+INFO:    Using cached SIF image
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+^_<8B>^H^@^@^@^@^@^@^C^C^@^@^@^@^@^@^@^@^@/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/usr/bin/bash: line 1: /work/sealab/bjl34716/ade_cycle_1_prinseq_clean_fastq/1-0_S193_L001_R1_001.fastq: Permission denied
+```
+
+
+cycle 4 rev: 844f04f430da394e9afaa966e931b1205f68224e
+slurm job: 23045460
+
+```bash
+INFO:    Using cached SIF image
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+gzip: /work/sealab/bjl34716/ade_cycle_1_prinseq_clean_fastq/*.fastq: No such file or directory
+```
+
+cycle 4 rev: 11ec7308685dc135fea473ea88db77c93ef82fc0
+slurm job: 23046096
 
 ```bash
 ```
@@ -225,13 +266,59 @@ visualize ampliseq srs rev: c6b07c621749576e0cd35813d7861d2a5573da36
 slurm job: 23043483
 
 ```bash
+No such file: /scratch/bjl34716/ade/cycle-4/litter-fastp/overall_summary.tsv
+
+
+No such file: /scratch/bjl34716/ade/cycle-4/litter-fastp/dada2/ASV_tax_species.tsv
+
+
+No such file: /scratch/bjl34716/ade/cycle-4/litter-fastp/qiime2/phylogenetic_tree/rooted-tree.qza
+
+
+No such file: /scratch/bjl34716/ade/cycle-4/litter-fastp/qiime2/abundance_tables/feature-table.biom
+
+
+No such file: /scratch/bjl34716/ade/cycle-4/litter-fastp/qiime2/representative_sequences/filtered-sequences.qza
+
+
+No such file: /scratch/bjl34716/ade/cycle-4/litter-fastp/qiime2/abundance_tables/feature-table.tsv
+
+
+
+cp: cannot stat ‘/home/bjl34716/ade/cycle-4/litter/primer-detect/figaro_fastp_result’: No such file or directory
+```
+
+cycle 4 rev:  369a02f3135fdce9bd6b5c744f52a8758063f59c
+visualize ampliseq srs rev: c6b07c621749576e0cd35813d7861d2a5573da36
+slurm job: 23044970
+
+```bash
+```
+
+#### Generating an Analysis for Ade
+
+cycle 4 rev:  3097ad09135b2099bd7a6f0a9ab065163f0e4946
+visualize ampliseq srs rev: c6b07c621749576e0cd35813d7861d2a5573da36
+slurm job: 23046627
+
+```bash
 ```
 
 #### Ben's Other analysis
 
 What steps did he take?
 
+- 
+
 What steps do I take?
+
+-
+
+#### Report for Dr. Ade
+
+- update the TODO #TODO save these contams to disk so we can examine them in contam_script.r
+- understand how good the mock community analysis is
+- Describe the difference between SRS and Longitudinal analysis
 
 
 
@@ -247,3 +334,70 @@ See if it makes a difference in this specific analysis.
 - What sequencer did you use?
 - What kind of extraction did you perform? (Kit manual etc)
 - Do you have nanodrop/qubit 
+
+
+### Todos for Next Week
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - compare fastp and prinseq analyses
+  - How does the other Ben's Analysis line up with mine/ampliseq?
+    - filtering step for the abundance?
+    - Filtering unknown taxa?
+  - Run a proper analysis to send to Ade
+    - Create Report
+      - NC
+      - Mock Quality
+      - Why SRS?
+  - Longitudinal Analysis By hand
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+d10f437 - Benjamin Lorentz, Fri May 26 12:04:01 2023 -0400 : notes before lunch
+16b222a - Benjamin Lorentz, Fri May 26 10:16:52 2023 -0400 : add page for friday
+883e8ba - Benjamin Lorentz, Thu May 25 17:13:08 2023 -0400 : final notes for thursday
+```
+
+#### Cycle 4
+
+```bash
+b4dba1f - Benjamin Lorentz, Fri May 26 16:35:43 2023 -0400 : add markdown report
+3097ad0 - Benjamin Lorentz, Fri May 26 15:33:52 2023 -0400 : add new params for figaro-nc-mock-srs-viz analysis
+a518ad6 - Benjamin Lorentz, Fri May 26 15:00:17 2023 -0400 : fix command
+11ec730 - Benjamin Lorentz, Fri May 26 14:39:30 2023 -0400 : just change to dir and then gzip
+844f04f - Benjamin Lorentz, Fri May 26 14:06:18 2023 -0400 : dont try to parallelize
+8a3a50f - Benjamin Lorentz, Fri May 26 13:38:14 2023 -0400 : fix the order for parallel
+369a02f - Benjamin Lorentz, Fri May 26 13:14:40 2023 -0400 : fix pathname for gzip
+15c66f2 - Benjamin Lorentz, Fri May 26 12:34:34 2023 -0400 : update primer-trim.sh
+bb86aa6 - Benjamin Lorentz, Fri May 26 11:43:28 2023 -0400 : fix mapping file fastp
+dd0c5c7 - Benjamin Lorentz, Fri May 26 11:37:53 2023 -0400 : update fastp mapping
+3880fe7 - Benjamin Lorentz, Fri May 26 11:33:24 2023 -0400 : update primer-trimming
+28cd67c - Benjamin Lorentz, Fri May 26 11:15:58 2023 -0400 : update driver scripts
+:...skipping...
+b4dba1f - Benjamin Lorentz, Fri May 26 16:35:43 2023 -0400 : add markdown report
+3097ad0 - Benjamin Lorentz, Fri May 26 15:33:52 2023 -0400 : add new params for figaro-nc-mock-srs-viz analysis
+a518ad6 - Benjamin Lorentz, Fri May 26 15:00:17 2023 -0400 : fix command
+11ec730 - Benjamin Lorentz, Fri May 26 14:39:30 2023 -0400 : just change to dir and then gzip
+844f04f - Benjamin Lorentz, Fri May 26 14:06:18 2023 -0400 : dont try to parallelize
+8a3a50f - Benjamin Lorentz, Fri May 26 13:38:14 2023 -0400 : fix the order for parallel
+369a02f - Benjamin Lorentz, Fri May 26 13:14:40 2023 -0400 : fix pathname for gzip
+15c66f2 - Benjamin Lorentz, Fri May 26 12:34:34 2023 -0400 : update primer-trim.sh
+bb86aa6 - Benjamin Lorentz, Fri May 26 11:43:28 2023 -0400 : fix mapping file fastp
+dd0c5c7 - Benjamin Lorentz, Fri May 26 11:37:53 2023 -0400 : update fastp mapping
+3880fe7 - Benjamin Lorentz, Fri May 26 11:33:24 2023 -0400 : update primer-trimming
+28cd67c - Benjamin Lorentz, Fri May 26 11:15:58 2023 -0400 : update driver scripts
+b87e4b6 - Benjamin Lorentz, Fri May 26 11:10:15 2023 -0400 : revert driver scripts back to docker images       
+d0adfb7 - Benjamin Lorentz, Fri May 26 11:01:33 2023 -0400 : update prinseq driver script
+5563d66 - Benjamin Lorentz, Thu May 25 16:49:54 2023 -0400 : update driver scripts
+```
