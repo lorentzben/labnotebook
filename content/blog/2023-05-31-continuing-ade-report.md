@@ -65,16 +65,71 @@ I'm not convinced that this is a better result so I think we'll just go with wha
 - ASV not present in more than 0.1% relative abundance in any sample
 - Core microbiome: RA > 0.1% and present in 80% of samples
 
-cycle 4 rev: 76e16cedb95dbf821ce064c2a70ff3db3a0f864c
+
+#### Updated Params with Ben Z's params
+
+ycle 4 rev: 76e16cedb95dbf821ce064c2a70ff3db3a0f864c
 visualize ampliseq rev: d8cfbe9871bfd3ae8add451c7547e0475a91e167
 slurm job: 23135527
 
 ```bash
+Waiting files transfer to complete (1 files)
+Completed at: 31-May-2023 14:27:43
+Duration    : 1h 4m 15s
+CPU hours   : 4.1 (0.2% cached)
+Succeeded   : 42
+Cached      : 2
 ```
 
-#### Updated Params with Ben Z's params
-
+Based on the results they look similar faith pd comes back significant, but otherwise they're the same. Can offer as a result but not needed. 
 
 #### Longitudinal Analysis By hand
 
+examining the code here: https://docs.qiime2.org/2023.5/tutorials/pd-mice/#longitudinal-analysis
+
+We need an ampliseq run for day 7 to day 28 so I setup an analysis for that:
+
+cycle 4 rev: 681d1bd138828175a89c9c9b8a904f56c0f9d906
+visualize ampliseq rev: d8cfbe9871bfd3ae8add451c7547e0475a91e167
+slurm job: 23139002
+
+```bash
+```
+
 #### Email Dr. Ade
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Longitudinal Analysis By hand
+    - Check out slurm 23139002
+  - Email Dr. Ade
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+ce12035 - Benjamin Lorentz, Wed May 31 13:12:24 2023 -0400 : notes before lunch
+7979ff8 - Benjamin Lorentz, Wed May 31 10:11:03 2023 -0400 : add page for wednesday
+1a695a8 - Benjamin Lorentz, Tue May 30 17:07:01 2023 -0400 : final notes for Tuesday
+```
+
+#### Cycle 4
+
+```bash
+681d1bd - Benjamin Lorentz, Wed May 31 16:12:44 2023 -0400 : add driver and paramfile for all samples
+54d3f44 - Benjamin Lorentz, Wed May 31 15:59:27 2023 -0400 : added all sample metadata and mapping for longitudinal analysis
+76e16ce - Benjamin Lorentz, Wed May 31 12:02:13 2023 -0400 : add paramfiles for ben z param analysis
+2d7183c - Benjamin Lorentz, Tue May 30 16:54:12 2023 -0400 : add report and update markdown file
+```
+
