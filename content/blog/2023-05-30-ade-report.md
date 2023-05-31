@@ -4,8 +4,10 @@ date: 2023-05-30T13:06:00Z
 draft: false
 meta_img: "images/image.png"
 tags:
-  - "one tag"
-  - "another tag"
+  - "Ade"
+  - "visualize-ampliseq"
+  - "Mock"
+  - "Module"
 description: "Description for the page"
 ---
 
