@@ -103,4 +103,39 @@ Work dir:
 
 Something is wrong here...
 
+
+cycle 4 rev: 2068d8b3d18e3c2271bd0586a8aef4cebaa5bbb0
+visualize ampliseq rev: 85f7c5515b7951e258448cf76236a4aaa6a7ed88
+slurm job: 23178435
+
+```bash
+  Loading required package: lattice
+  This is vegan 2.6-2
+  Quitting from lines 365-466 (12_report.Rmd)
+  Error in cl.vec[within] <- levels(grouping)[grouping[take]] :
+    NAs are not allowed in subscripted assignments
+  Calls: <Anonymous> ... withVisible -> eval_with_user_handlers -> eval -> eval -> anosim
+  In addition: There were 50 or more warnings (use warnings() to see the first 50)
+  Execution halted
+
+Work dir:
+  /scratch/bjl34716/ade/cycle-4/work/c2/a59797081f1526a9217ccf6d844d66
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+
+
+slurmstepd: error: *** JOB 23178435 ON a2-11 CANCELLED AT 2023-06-02T12:13:16 ***
+```
+
+cycle 4 rev: 2068d8b3d18e3c2271bd0586a8aef4cebaa5bbb0
+visualize ampliseq rev: cad0477788d6c859b692f218993a0b1b4618f834
+slurm job: 23179130
+
+```bash
+```
+
+
+
+
 #### Email Dr. Ade
