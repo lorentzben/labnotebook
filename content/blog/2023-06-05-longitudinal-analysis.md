@@ -734,4 +734,47 @@ visualize ampliseq rev: 33997cdb315d22eaddb6d464542f6e56ffacc3b4
 slurm job: 23272564
 
 ```bash
+Completed at: 05-Jun-2023 17:01:57
+Duration    : 1h 19m 9s
+CPU hours   : 68.0 (95.4% cached)
+Succeeded   : 11
+Cached      : 33
+```
+
+### Todos for Tomorrow
+
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+- Ade
+  - Update Tags for Visualize Ampliseq
+- gg-catalog
+  - Generate a gene network 
+    - how do you do this?
+      - possibly this: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-3371-7
+  - query the KO list and cross ref to the abundance data
+  - Find a Shotgun Analysis involved with chickens and some kind of phenotypic data.
+  
+### Git Commits
+
+
+#### Lab Notebook
+
+```bash
+d5a26aa - Benjamin Lorentz, Mon Jun 5 15:28:51 2023 -0400 : added notes about longitudinal analysis
+cae706b - Benjamin Lorentz, Mon Jun 5 13:13:02 2023 -0400 : notes before lunch
+5ae6c3b - Benjamin Lorentz, Mon Jun 5 09:40:17 2023 -0400 : added page for monday
+```
+
+#### Cycle 4
+
+```bash
+f97e241 - Benjamin Lorentz, Mon Jun 5 15:14:22 2023 -0400 : add updated ordered iois
+caa0c60 - Benjamin Lorentz, Mon Jun 5 14:53:31 2023 -0400 : add longitudinal analysis report
+```
+
+#### Visualize Amplsieq
+
+```bash
+33997cd - Benjamin Lorentz, Mon Jun 5 15:24:48 2023 -0400 : update visualize-ampliseq.nf
 ```
