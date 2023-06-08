@@ -57,6 +57,43 @@ description: "Description for the page"
 
 1.3b bias example
 
+1.3c election example
+
+1.3d government example
+
+1.3e experiments
+
+1.3f cofounding causation
+
+1.3g random assignment
+
+1.3h random sampling vs random assignment
+
+1.4a completely random design
+
+1.4b matched pair design
+
+1.4c blocking
+
+1.4d Mozart example
+
+1.4e New Drug Example
+
+1.4f Anna's resturant tips
+
+1.5a barplot
+
+1.5b histogram
+
+1.5c boxplot
+
+1.5d side by side
+
+1.5e standard deviation
+
+1.3f z-score
+
+Now for homework #1
 
 ### gg-catalog
 
