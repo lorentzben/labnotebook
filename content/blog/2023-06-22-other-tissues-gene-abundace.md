@@ -31,6 +31,16 @@ description: "Description for the page"
 
 #### Generate Gene Network 
 
+
+from the readme:
+
+5th English letter:
+D	Duodeum
+J	Jejunum
+I	Ileum
+C	Ceceum
+R	Colorectum
+
 Next to examine Duodenum:
 
 Subsample table code:
@@ -67,3 +77,55 @@ colnames(duo_average_df) <- c("kegg", "gene", "abundance")
 write_tsv(duo_average_df,"../output/huang/duo-average-gene-abundance.tsv")
 
 ```
+
+Nitrogen metabolism | Yes
+Protein Digestion and Absorption | No
+Tryptophan metabolism | Yes
+Tyrosine Metabolism | Yes
+Valine Leucine Isoleucine Degredation | Yes
+
+Examine Jejunum
+
+Subsample table code:
+
+```R
+library(tidyverse)
+
+
+#select just gene names from kegg table so we can join on them later
+
+kegg_tab <- read_table("../output/huang/kegg-gene-abundance.tsv")
+kegg_simp <- str_split(kegg_tab$kegg_gene,":",simplify=T)
+kegg_simp <- kegg_simp[,1]
+
+# reassing gene names to 
+kegg_tab$simple_kegg <- kegg_simp
+
+#select cols with ceca in the 5th english letter
+
+jeju_samp <- kegg_tab[,str_sub(colnames(kegg_tab),5,5) == "J"]
+
+n_samp <- dim(jeju_samp)[2]
+
+abund <- rowSums(jeju_samp)
+
+abund <- abund/n_samp
+
+jeju_average_table <- cbind(kegg_tab$ListOfKOs, kegg_tab$simple_kegg,abund)
+
+jeju_average_df <- data.frame(jeju_average_table)
+colnames(jeju_average_df) <- c("kegg", "gene", "abundance")
+
+
+write_tsv(jeju_average_df,"../output/huang/jeju-average-gene-abundance.tsv")
+
+```
+
+We should be saving these as SVGs not pngs
+
+Nitrogen metabolism | Yes
+Protein Digestion and Absorption | No
+Tryptophan metabolism | Yes
+Tyrosine Metabolism | Yes
+Valine Leucine Isoleucine Degredation | Yes
+
