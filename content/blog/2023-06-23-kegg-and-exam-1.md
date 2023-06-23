@@ -33,7 +33,19 @@ description: "Description for the page"
 
 I am examining the review videos for exam 1
 
-Assumptions we need to check for : 
+Assumptions we need to check for hypothesis testing: 
 
-- randomly selected for independence
-- 
+- independence: randomly selected 
+- normality of phat: 
+  - n*p > 15 n*1-p > 15
+  - binomial no
+
+Describe sampling dist 
+
+- mean = p
+- SD = sqrt(p 1-p/n) 
+- Shape = np > 15 n(1-p) > 15 approx normally distributed 
+
+Formula to calculate z score:
+
+x-mu/stdev 
