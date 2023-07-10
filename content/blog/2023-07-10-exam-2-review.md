@@ -29,4 +29,6 @@ description: "Description for the page"
 
 #### Exam 2 review
 
-Problem 5
+I completed Problems 5-13 and worked on generating a cheatsheet for this exam. 
+
+Everyone is gone for PSA in Philly this week. Since I was able to complete homeworks 7 and 8 already, I can spend the next couple days looking into the KEGG stuff as well as corresponding with Dr. Ade. 
