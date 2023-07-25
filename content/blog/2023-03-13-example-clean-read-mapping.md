@@ -265,6 +265,9 @@ I wanted to check in with Dr. Aggrey and see if I am on the right path. It seems
 
 Step 2 I was thinking of was to then take those genes of interest and try to find a FCR efficiency study that uses shotgun reads and then examine the abundance of my genes of interest and see if that is correlated with FCR.
 
+![meeting-1](/images/3-13-23-aggrey-meeting-1.jpg)
+![meeting-2](/images/7-13-23-aggrey-meeting-2.jpg)
+
 ### Examine Huang 2018 for what I know now
 
 We should download the sequences at some point, but right now I just want the stat sheets
