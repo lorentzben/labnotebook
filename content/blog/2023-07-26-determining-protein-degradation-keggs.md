@@ -35,7 +35,38 @@ There are 20 amino acids, humans can generate 11 of them but 9 must be consumed 
 
 Two important enzymes are amylase and lipase, though they mostly break down carbohydrates and fat, I am curious to see if they break down ammino acids at all? [source](https://www.healthline.com/health/protein-digestion)
 
+There are a bunch of types of amino acids (over 500) but alpha amino acids are the ones we think of. [source](https://en.wikipedia.org/wiki/Amino_acid)
 
+I have a preliminary list of keggs to look into, we might want to add the build up processes too (anabolism) since there could be some interchange between AAs.
 
+### Todos for Tomorrow
 
+- gg-catalog
+  - Identify KEGG pathways that deal with Protein Metabolism/Nitrogen metabolism
+  
+- Read papers about microbiome analysis
 
+- Reply to Shailes 
+
+- STAT 6315
+  - Watch Module 13
+  - Finish Module 13 Homework
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+
+### Git commits
+
+#### Lab Notebook
+
+```bash
+7255040 - Benjamin Lorentz, Wed Jul 26 12:37:10 2023 -0400 : notes before lunch
+a592e1e - Benjamin Lorentz, Wed Jul 26 09:33:19 2023 -0400 : add page for wednesday
+```
+
+#### gg-catalog
+
+```bash
+fa168fa - Benjamin Lorentz, Wed Jul 26 17:06:06 2023 -0400 : add data/nitrogen-degradation-kegg-pathways.tsv
+```
