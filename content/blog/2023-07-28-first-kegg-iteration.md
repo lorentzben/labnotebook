@@ -24,6 +24,7 @@ description: "Description for the page"
 - Look into ggpicrust2 for shailes
 
 - STAT 6315
+  - Fill out Survey for Exam next week
   - Watch Module 13
   - Finish Module 13 Homework
   
@@ -148,6 +149,104 @@ However there is not a significant difference between the mean fuel required for
 if the battery is used at a temperature of 15 degrees, there is not a significant difference in the mean battery life for the three plate materials.  
 if the battery is used at a temperature of 70 degrees, the mean battery life is significantly lowest for plate material A but, there is not a significant difference between plate material b and c
 if the battery is used at a temperature of 125, there is not a significant difference in the mean battery life for the three plate materials. 
+
+13.2c plant growth part 1
+
+Independence: not matched pairs since the plants were randomly assigned to only one of the treatment combinations and there was random assignment
+
+Constant variance: since BF p-value = 0.2440 > 0.1 the constant  variance condition is reasonable.
+
+normality: The normal quantile plot of residuals is approximatley linear indicating the normality condition is plausible. 
+
+13.2d plant growth part 2
+
+test for equal means
+h0: mean height is the same for all six combination of feeding frequency and variety of food
+Ha: the mean height is different for at least two treatment combinations 
+
+F: 10.4593 p-value: < 0.0001 
+
+reject h0, there is enough evidence to conclude that the mean height is different for at least two combinations of feeding frequency and variety of food.
+
+test for interaction
+
+h0: feeding frequency and variety of food do not interact to affect the mean height
+ha: feeding frequency and variety of food do interact to affect the mean height
+
+F= 9.333 p-value= 0.0004
+
+reject h0 there is enough evidence to conclude that the feeding frequency and variety of food do interact to affect the mean height.
+
+13.2e plant growth part 3
+
+compare the treatment combinations
+
+the mean height is significantly lowest when using variety of food type c and 2 feedings
+
+the remaining 5 treatment combinations do not differ significantly with respect to mean height
+
+13.2e plant growth part 3
+
+independence: not matched pairs; the cacti should have been randomly assigned to the 10 treatment combinations. 
+
+constant variance: since BF p-value=0.3740 > 0.1 which indicates the constant variance condition is plausible 
+
+normality: the normal quantile plot of residuals adequetly follows a linear pattern indicating the normality condition is plausible.
+
+13.2g golden torch cacti part 2
+
+test for equal means
+
+h0: the mean weight gain of the cacti is the same for all 10 combinations of irrigation and polymers
+ha: the mean weight gain of the cacti is different for at least 2 treatment combinations
+
+f=12.4208 p-value: < 0.0001
+
+reject H0 there is enough evidence to conclude that the mean weight gain of the cacti is different for at least 2 combinations of polymer and irrigation. 
+
+test for interaction 
+
+H0: polymer and irrigation do not interact to affect mean weight gain
+ha: polymer and irrigation do interact to affect mean weight gain
+
+f=0.3871 p-value: 0.8161
+
+There is not enough evidence to conclude polymer and irrigation interact to affect mean weight gain of cacti
+
+13.2h golden torch cacti part 3
+
+analyze the main effects
+
+polymer 
+h0 the mean weight gain is the same whether there is a polymer used or not
+ha the mean weight gain is different when a polymer is used vs when it is not used
+
+f=1.8452 p-value= 0.1845
+
+fail to reject h0 there is not enough evidence to conclude that the mean weight gain of the cacti is different whether the hydorphylic polymer is used or not
+
+irrigation
+
+h0 the mean weight gain is the same for all 5 irrigation regimes
+ha the mean weight gain is different for at least two irrigation regimes
+
+f= 27.0985 p-value= <0.0001
+
+reject h0 there is enough evidence to conclude that the mean weight gain of the cacti is different for at least two irrigation regimes
+
+The mean weight gain is significantly lowest when there is no irrigation. 
+The xheavy irrigation resulted in a significantly higher mean weight gain than the medium and light irrigation. 
+The heavy irrigation resulted in a significantly higher mean weight gain than light irrigation. 
+There is not a significant difference in the mean weight gain of cacti for medium versus light irrigation. 
+
+
+
+
+
+
+
+
+
 
 
 ### gg-catalog
