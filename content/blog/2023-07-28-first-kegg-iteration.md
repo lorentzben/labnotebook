@@ -12,7 +12,7 @@ description: "Description for the page"
 ---
 
 
-### Todos for Tomorrow
+### Todos for Today
 
 - gg-catalog
   - Make Tissue, then Pathway, then gene specific tables
@@ -239,15 +239,50 @@ The xheavy irrigation resulted in a significantly higher mean weight gain than t
 The heavy irrigation resulted in a significantly higher mean weight gain than light irrigation. 
 There is not a significant difference in the mean weight gain of cacti for medium versus light irrigation. 
 
-
-
-
-
-
-
-
-
-
+Completed and submitted homework 13
 
 ### gg-catalog
 
+So the kegg_gene table is not the same as kegg_abundance...
+
+We should just go with the /02.relative.KEGG.abundance/CGM-RGC.gene.abundance.xls.KEGG.KO.ratio kegg_abundance data and then just use the average relative abundance between samples, we will pick this up on Monday.
+
+
+### Todos for Next Week
+
+- gg-catalog
+  - select just the relative abundance table and check average
+  - Make Tissue, then Pathway, then gene specific tables
+  - Select top 25 most abundant genes from these tables
+ 
+  
+- Read papers about microbiome analysis
+
+- Look into ggpicrust2 for shailes
+  - Possibly meet Shailes on Monday
+
+- STAT 6315
+  - Watch exam 3 prep material
+  - Take exam 3 on Thursday
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+
+### Git Commits
+
+#### Labnotebook
+
+```bash
+2fce087 - Benjamin Lorentz, Fri Jul 28 13:52:22 2023 -0400 : added notes for module 13
+37178f9 - Benjamin Lorentz, Fri Jul 28 12:03:28 2023 -0400 : notes before lunch
+702fca5 - Benjamin Lorentz, Fri Jul 28 09:00:27 2023 -0400 : add page for friday
+613ba56 - Benjamin Lorentz, Thu Jul 27 17:07:11 2023 -0400 : added note for thursday
+```
+
+#### gg-catalog
+
+```bash
+6d9d785 - Benjamin Lorentz, Fri Jul 28 10:11:58 2023 -0400 : fix merge
+45a6c92 - Benjamin Lorentz, Fri Jul 28 10:08:36 2023 -0400 : update 04 and add pathways of interest
+```
