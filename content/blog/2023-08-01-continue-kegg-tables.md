@@ -40,3 +40,12 @@ Need to edit the for loop tomorrow to fix functionality.
 
 
 For loop and kegg dict
+
+TODO, rebuild docker to include collections.
+
+Right now, I have a table where the key is kegg ontologies, each column is a relative abunance sample of those ontologies, and then the last column is a frequency count of the genes that fit into that ontology to be able to maybe point to who is changing. Is this the best approach?
+
+An alternative I can approach is by selecting for keggs of interest in the gene table examining the genes; This gives us the benefit of knowing the DNA segement the gene came from but the drawback of not including relative abundance data which although a coarse selector might be helpful.
+
+For my first approach I want to work with the relative abundance data. 
+
