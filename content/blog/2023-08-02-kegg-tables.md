@@ -36,3 +36,5 @@ currently, we have average relative abundance by tissue, this is the main thing 
 
 TODO functionalize the kegg_gene_names dict and more info tables.
 
+generate_kegg_gene_list(duo_average_df, protein_digestion_and_absorption, kegg_gene)
+
