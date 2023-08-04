@@ -38,3 +38,7 @@ TODO: complete exam 3
 - make ileum table
 - make ceca table
 - make rectum table
+
+### Regmi 
+
+See what Regmi had related to the RFID data
