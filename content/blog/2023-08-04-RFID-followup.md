@@ -32,5 +32,7 @@ description: "Description for the page"
   
 ### gg-catalog
 
+I was able to generate all of the table and format them pretty like, but I do not have access to the printer currently so I am waiting on OITs to resolve the issue. 
+
 ### RFID
 
