@@ -8,6 +8,7 @@ tags:
   - "kegg ontology network"
   - "gg-catalog"
   - "rfid-tracking"
+  - "meet dr. aggrey"
 description: "Description for the page"
 ---
 
@@ -39,6 +40,19 @@ description: "Description for the page"
 
 - what is the takeaway from the tables I've Made
 - make a easier to read printout to show Dr. Aggrey
+
+A quick meeting with Dr. Aggrey to show him the tables I have constructed. He wanted me to have the phrase " a catalog of genes associated with microbial function in gut of chickens"
+
+he wants the table to be better formatted so that the clarity is better.
+
+He wants a better understanding of what ammino acids are being processed in each segment
+  - valine is processed in the duodenum but not the jejunum
+  
+He wants a gene network of all keggs in one network for each tissue (this might be a big undertaking but we will generate it).
+
+He wants me to go into the literature and see what kind of gene catalogs for a biological process in an organism. 
+
+Need to compare/remove the common genes/processes so that we can compare what is different in each tissue. 
 
 ### RFID analysis
 
