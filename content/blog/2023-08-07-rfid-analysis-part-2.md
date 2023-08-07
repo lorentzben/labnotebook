@@ -57,4 +57,51 @@ Need to compare/remove the common genes/processes so that we can compare what is
 ### RFID analysis
 
 - Make new scripts for RFID analysis
+
+Generated new script up to line 339, need to update downstream.
+  
 - Small writeup for new results. 
+
+### Todos for Tomorrow
+
+- gg-catalog
+  - better formatted table so that the clarity is better.
+  - what ammino acids are being processed in each segment
+    - valine is processed in the duodenum but not the jejunum
+  - gene network of all keggs in one network for each tissue
+  - go into the literature; gene catalogs for a biological process in an organism.
+      - Need to compare/remove the common genes/processes 
+      
+- RFID
+  - analyze the new data from Michigan State
+    - Check Data integrity from Feb to May
+    - Summary stats, days etc.
+  - Possibly reach out to Drew Arbogast about GPS/network analysis analysis. 
+
+- Look at flight options from ATL to Stockholm Sept 3 to Sept 9th
+  - Follow up with Swedes
+- Possibly help Regmi with picrust from previously analyzed projects. 
+ 
+- Read papers about microbiome analysis
+
+- Look into ggpicrust2 for shailes
+  - Possibly meet Shailes on Monday
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+  
+### Git Commit
+
+#### Lab Notebook
+
+```bash
+1c353e2 - Benjamin Lorentz, Mon Aug 7 11:55:38 2023 -0400 : added notes for before lunch
+c146d0d - Benjamin Lorentz, Mon Aug 7 10:40:13 2023 -0400 : added page for Monday
+```
+
+#### rfid-bird-tracking
+
+```bash
+7adf139 - Benjamin Lorentz, Mon Aug 7 16:57:08 2023 -0400 : add and update room_2_set_2
+```
