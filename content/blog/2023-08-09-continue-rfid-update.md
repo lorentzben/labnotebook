@@ -42,6 +42,8 @@ description: "Description for the page"
   - meet Ben and Brian TBD
   - try out a local blast search to see memory, cpu time limitation
   
+- Risk management training and quiz
+  
 ### RFID
 
 
@@ -51,7 +53,13 @@ Check Data integrity from Feb to May
 
 Summary stats, days etc.
 
+Room 3
+
+- does it really start in march?
+
 Room 8
+
+is feb 5 throwing away too much data?
 
 Room 11
 
