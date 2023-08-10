@@ -68,3 +68,5 @@ Concat Data
 Summary
 
 Possibly reach out to Drew Arbogast about GPS/network analysis analysis. 
+
+Need to finish up code, and then write up a report
