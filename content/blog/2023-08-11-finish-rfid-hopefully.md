@@ -72,3 +72,7 @@ Possibly reach out to Drew Arbogast about GPS/network analysis analysis.
 
 Need to finish up code, and then write up a report
 
+### Candice Stopped By 
+
+She's working on setting up a 16s analysis of C prefingus in ceca and ilea scraping samples using  a qiagen power fecal kit and was asking about sequencing help since the core said it would take about 6 months. I didn't have any clear recomendations sequencing wise but I gave a brief overview of what kind of analysis you want to setup. I offered to help run the Moving pictures tutorial and teach her some git so that could be helpful in the future.
+
