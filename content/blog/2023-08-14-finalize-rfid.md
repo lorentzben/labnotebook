@@ -69,5 +69,47 @@ Summary
 
 Possibly reach out to Drew Arbogast about GPS/network analysis analysis. 
 
-Need to finish up code, and then write up a report
+I wrote a report in obsidian and rendered it to PDF and sent it off to Dr. Regmi so that he has it. 
 
+### Todos for Tomorrow
+
+*- Do I have to cancel and re-book the flight?*
+
+- Any course info posted
+
+- gg-catalog
+  - better formatted table so that the clarity is better.
+  - what ammino acids are being processed in each segment
+    - valine is processed in the duodenum but not the jejunum
+  - gene network of all keggs in one network for each tissue
+  - go into the literature; gene catalogs for a biological process in an organism.
+      - Need to compare/remove the common genes/processes 
+      
+- RFID
+  - any feedback from Dr. Regmi
+ 
+ 
+- Possibly help Regmi with picrust from previously analyzed projects. 
+ 
+- Read papers about microbiome analysis
+
+- Look into ggpicrust2 for shailes
+  - Possibly meet Shailes on Monday
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+  
+- Risk management training and quiz
+
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+```
+
+#### RFID Analysis
+
+```bash
+```
