@@ -107,9 +107,15 @@ I wrote a report in obsidian and rendered it to PDF and sent it off to Dr. Regmi
 #### Lab Notebook
 
 ```bash
+7777103 - Benjamin Lorentz, Mon Aug 14 15:44:17 2023 -0400 : updates over the course of today
+d51bf85 - Benjamin Lorentz, Mon Aug 14 12:03:18 2023 -0400 : add page for monday
 ```
 
 #### RFID Analysis
 
 ```bash
+7e316c4 - Benjamin Lorentz, Mon Aug 14 15:40:35 2023 -0400 : Add pdf copy of report
+686d0fd - Benjamin Lorentz, Mon Aug 14 15:29:48 2023 -0400 : update concat room 3 and report
+2709e99 - Benjamin Lorentz, Mon Aug 14 12:01:26 2023 -0400 : update concat all the data set 2
+39bf248 - Benjamin Lorentz, Mon Aug 14 11:27:49 2023 -0400 : add report folder
 ```
