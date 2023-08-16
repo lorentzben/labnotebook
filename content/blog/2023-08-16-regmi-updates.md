@@ -12,7 +12,8 @@ description: "Description for the page"
 
 ### Todos for Today
 
-*- Do I have to cancel and re-book the flight?*
+- Is there a cheaper flight option?
+- Book Hotel
 
 - Any course info posted
 
@@ -43,6 +44,12 @@ description: "Description for the page"
   
 - Risk management training and quiz
 
+### Admin Tasks
+
+- Is there a cheaper flight option?
+- Book Hotel
+
 ### RFID
+
 
 ### STAT 8200
