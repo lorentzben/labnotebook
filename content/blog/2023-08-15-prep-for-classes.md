@@ -4,7 +4,6 @@ date: 2023-08-15T13:55:24Z
 draft: true
 meta_img: "images/image.png"
 tags:
-  - "rfid-tracking"
   - "gg-catalog"
   - "stat 8200"
 description: "Description for the page"
