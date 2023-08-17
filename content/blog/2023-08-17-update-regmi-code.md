@@ -38,6 +38,21 @@ description: "Description for the page"
 
 ### RFID
 
+Send Regmi the bird IDs by activity level
+
+- Wierdly my all rooms table does not include room 3, so I am re-running the table build to see if there is an issue with that?
+
+make a duration table for each bird and how long they spend in low medium and high zones; average each bird across the low med high 
+
+combine global transition plots series onto one chart. 
+
+Room 3 was commented out of the code....
+So now we need to check the cutoffs for the whole room analysis
+
+update lines 978-989 and then check the output table.
+
 ### gg-catalog
 
+Cancel Hotels.
+Figure out new plan.
 
