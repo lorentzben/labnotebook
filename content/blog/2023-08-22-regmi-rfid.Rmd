@@ -1,0 +1,108 @@
+---
+title: 'Regmi RFID'
+date: 2023-08-22T14:09:59Z
+draft: false
+meta_img: "images/image.png"
+tags:
+  - "rfid-tracking"
+  - "gg-catalog"
+  - "stat 8200"
+description: "Description for the page"
+---
+
+blogdown::build_site(build_rmd = T,run_hugo = F,local = T)
+
+### Todos for Today
+
+- class
+  reading for hw 1
+  
+- other sweden tasks
+  - github etc
+  
+- gg-catalog
+  - better formatted table so that the clarity is better.
+  - what ammino acids are being processed in each segment
+    - valine is processed in the duodenum but not the jejunum
+  - gene network of all keggs in one network for each tissue
+  - go into the literature; gene catalogs for a biological process in an organism.
+      - Need to compare/remove the common genes/processes 
+- Regmi
+  - Microbiome Work
+    - Make a doc to import data into:
+      - QIIME2
+      - Phyloseq
+      -biopython
+  - RFID
+    - combine global transition plots series onto one chart. 
+ 
+- Possibly help Regmi with picrust from previously analyzed projects. 
+ 
+- Read papers about microbiome analysis
+
+- Look into ggpicrust2 for shailes
+  - Possibly meet Shailes on Monday
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+  
+### Regmi Meeting
+
+He gave me some info about the scope of my trip and what I need to be prepared for when I come back including a seminar about what I learned. 
+
+He wants me to look at the data from his stressed bird analysis specifically the microbiome data; They have seen differences previously in the Inflamation examination so they expect that something will appear different. 
+I said I can help import the data into phyloseq, qiime2 etc formats and get his student set up to analyse it
+He also wanted me to look into the picrust analysis to be able to look at some of the differences in enterobater and one other bacteria
+
+The grant to make depressed birds was also funded! I hope I can be a part of the project in some way and I understand needing to make his students look good. 
+
+He sent over the data with this note:
+  Hi Ben, We are primarily interested in AC-FC comparison where FC is the undisturbed control and AC is the group that were subjected to catching/handling stress while moving from pullet house  to the hen house at 17 weeks of age. A baseline data for 16 weeks, and then data for 18 week (1 wk after stress challenge), 20 wk, 22 wk and 24 wk are available for comparison. Please feel free to reach out if there are any concerns.
+Many thanks 
+
+
+```{r follow the usgs example}
+#library(dataRetrieval)
+library(dplyr) # for `rename` & `select`
+library(tidyr) # for `gather`
+library(ggplot2)
+
+wi_daily_wq <- read.csv("/mnt/content/data/wi_daily_wq.csv")
+
+# Get the data by giving site numbers and parameter codes
+# 00060 = stream flow, 00530 = total suspended solids, 00631 = concentration of inorganic nitrogen
+#wi_daily_wq <- readNWISdv(siteNumbers = c("05430175", "05427880", "05427927"),
+#                          parameterCd = c("00060", "00530", "00631"),
+#                          startDate = "2017-08-01", endDate = "2017-08-31")
+
+# Clean up data to have human-readable names + move data into long format
+# wi_daily_wq <- renameNWISColumns(wi_daily_wq,
+#                                  p00530 = "TSS",
+#                                  p00631 = "InorganicN") %>%
+#   select(-ends_with("_cd")) %>%
+#   gather(key = "parameter", value = "value", -site_no, -Date)
+
+# Setup plot without facets
+p <- ggplot(data = wi_daily_wq, aes(x = Date, y = value)) +
+  geom_point(aes(color = site_no)) +
+  theme_bw()
+
+# Now, we can look at the plot and see how it looks before we facet
+# Obviously, the scales are off because we are plotting flow with concentrations
+p
+
+# Add vertical facets, aka divide the plot up vertically since they share an x axis
+p + facet_grid(parameter ~ .)
+
+# Add vertical facets, but scale only the y axes freely
+p + facet_grid(parameter ~ ., scales = "free_y")
+
+p + facet_grid(parameter ~ ., scales = "free_y",
+               switch = "y", # flip the facet labels along the y axis from the right side to the left
+               labeller = as_labeller( # redefine the text that shows up for the facets
+                 c(Flow = "Flow, cfs", InorganicN = "Inorganic N, mg/L", TSS = "TSS, mg/L"))) +
+  ylab(NULL) + # remove the word "values"
+  theme(strip.background = element_blank(), # remove the background
+        strip.placement = "outside") # put labels to the left of the axis text
+```
