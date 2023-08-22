@@ -109,3 +109,65 @@ p + facet_grid(parameter ~ ., scales = "free_y",
   theme(strip.background = element_blank(), # remove the background
         strip.placement = "outside") # put labels to the left of the axis text
 ```
+
+Because we are missing the feature table and some intermediary files; I asked Dr. Regmi if the previous researchers can send the raw sequences over so we can examine them. 
+
+I also am able to facet the grpahs correctly and am waiting for them to render before sending to Dr. Regmi
+
+### Todos for Tomorrow
+
+- class
+  - read review 1&2 sampleinf.pdf
+  - read first 2 chapters of dean and voss
+  - reach ch 1 and sections 2.2-2.3 of oehlerts book
+  - Complete homework 1 problems
+  
+- other sweden tasks
+  - github etc
+  
+- gg-catalog
+  - better formatted table so that the clarity is better.
+  - what ammino acids are being processed in each segment
+    - valine is processed in the duodenum but not the jejunum
+  - gene network of all keggs in one network for each tissue
+  - go into the literature; gene catalogs for a biological process in an organism.
+      - Need to compare/remove the common genes/processes 
+- Regmi
+  - Microbiome Work
+    - Make script to get from raw data to QZAs
+    - Compile all params I'm gonna need
+    - Make a doc to import data into:
+      - QIIME2
+      - Phyloseq
+      -biopython
+  - RFID
+    - combine global transition plots series onto one chart. 
+    - Send updated charts. 
+ 
+- Read papers about microbiome analysis
+
+- Look into ggpicrust2 for shailes
+  - Possibly meet Shailes on Monday
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation
+  
+### Git Commits
+
+#### Lab Notebook
+
+```bash
+c872825 - Benjamin Lorentz, Tue Aug 22 16:38:23 2023 -0400 : update static
+8772e0f - Benjamin Lorentz, Tue Aug 22 15:10:33 2023 -0400 : change today's page to rmd file
+0ae01c2 - Benjamin Lorentz, Tue Aug 22 10:11:25 2023 -0400 : add page for tuesday
+9e14e31 - Benjamin Lorentz, Mon Aug 21 17:11:50 2023 -0400 : final notes for monday
+```
+
+#### rfid
+
+```bash
+8f2db87 - Benjamin Lorentz, Tue Aug 22 16:59:10 2023 -0400 : update concat all the data set 2
+62c0289 - Benjamin Lorentz, Tue Aug 22 15:27:57 2023 -0400 : update concat all the dataset
+cc2ce10 - Benjamin Lorentz, Tue Aug 22 15:26:34 2023 -0400 : update concat all the data
+```
