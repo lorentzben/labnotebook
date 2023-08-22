@@ -15,7 +15,10 @@ blogdown::build_site(build_rmd = T,run_hugo = F,local = T)
 ### Todos for Today
 
 - class
-  reading for hw 1
+  - read review 1&2 sampleinf.pdf
+  - read first 2 chapters of dean and voss
+  - reach ch 1 and sections 2.2-2.3 of oehlerts book
+  - Complete homework 1 problems
   
 - other sweden tasks
   - github etc
