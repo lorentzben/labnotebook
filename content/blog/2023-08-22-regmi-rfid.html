@@ -1,0 +1,209 @@
+---
+title: 'Regmi RFID'
+date: 2023-08-22T14:09:59Z
+draft: false
+meta_img: "images/image.png"
+tags:
+  - "rfid-tracking"
+  - "gg-catalog"
+  - "stat 8200"
+description: "Description for the page"
+---
+
+
+
+<p>blogdown::build_site(build_rmd = T,run_hugo = F,local = T)</p>
+<div id="todos-for-today" class="section level3">
+<h3>Todos for Today</h3>
+<ul>
+<li><p>class</p>
+<ul>
+<li>read review 1&amp;2 sampleinf.pdf</li>
+<li>read first 2 chapters of dean and voss</li>
+<li>reach ch 1 and sections 2.2-2.3 of oehlerts book</li>
+<li>Complete homework 1 problems</li>
+</ul></li>
+<li><p>other sweden tasks</p>
+<ul>
+<li>github etc</li>
+</ul></li>
+<li><p>gg-catalog</p>
+<ul>
+<li>better formatted table so that the clarity is better.</li>
+<li>what ammino acids are being processed in each segment
+<ul>
+<li>valine is processed in the duodenum but not the jejunum</li>
+</ul></li>
+<li>gene network of all keggs in one network for each tissue</li>
+<li>go into the literature; gene catalogs for a biological process in an organism.
+<ul>
+<li>Need to compare/remove the common genes/processes</li>
+</ul></li>
+</ul></li>
+<li><p>Regmi</p>
+<ul>
+<li>Microbiome Work
+<ul>
+<li>Make a doc to import data into:
+<ul>
+<li>QIIME2</li>
+<li>Phyloseq
+-biopython</li>
+</ul></li>
+</ul></li>
+<li>RFID
+<ul>
+<li>combine global transition plots series onto one chart.</li>
+</ul></li>
+</ul></li>
+<li><p>Possibly help Regmi with picrust from previously analyzed projects.</p></li>
+<li><p>Read papers about microbiome analysis</p></li>
+<li><p>Look into ggpicrust2 for shailes</p>
+<ul>
+<li>Possibly meet Shailes on Monday</li>
+</ul></li>
+<li><p>Jackwood Blast</p>
+<ul>
+<li>meet Ben and Brian TBD</li>
+<li>try out a local blast search to see memory, cpu time limitation</li>
+</ul></li>
+</ul>
+</div>
+<div id="regmi-meeting" class="section level3">
+<h3>Regmi Meeting</h3>
+<p>He gave me some info about the scope of my trip and what I need to be prepared for when I come back including a seminar about what I learned.</p>
+<p>He wants me to look at the data from his stressed bird analysis specifically the microbiome data; They have seen differences previously in the Inflamation examination so they expect that something will appear different.
+I said I can help import the data into phyloseq, qiime2 etc formats and get his student set up to analyse it
+He also wanted me to look into the picrust analysis to be able to look at some of the differences in enterobater and one other bacteria</p>
+<p>The grant to make depressed birds was also funded! I hope I can be a part of the project in some way and I understand needing to make his students look good.</p>
+<p>He sent over the data with this note:
+Hi Ben, We are primarily interested in AC-FC comparison where FC is the undisturbed control and AC is the group that were subjected to catching/handling stress while moving from pullet house to the hen house at 17 weeks of age. A baseline data for 16 weeks, and then data for 18 week (1 wk after stress challenge), 20 wk, 22 wk and 24 wk are available for comparison. Please feel free to reach out if there are any concerns.
+Many thanks</p>
+<pre class="r"><code>#library(dataRetrieval)
+library(dplyr) # for `rename` &amp; `select`</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(tidyr) # for `gather`
+library(ggplot2)
+
+wi_daily_wq &lt;- read.csv(&quot;/mnt/content/data/wi_daily_wq.csv&quot;)
+
+# Get the data by giving site numbers and parameter codes
+# 00060 = stream flow, 00530 = total suspended solids, 00631 = concentration of inorganic nitrogen
+#wi_daily_wq &lt;- readNWISdv(siteNumbers = c(&quot;05430175&quot;, &quot;05427880&quot;, &quot;05427927&quot;),
+#                          parameterCd = c(&quot;00060&quot;, &quot;00530&quot;, &quot;00631&quot;),
+#                          startDate = &quot;2017-08-01&quot;, endDate = &quot;2017-08-31&quot;)
+
+# Clean up data to have human-readable names + move data into long format
+# wi_daily_wq &lt;- renameNWISColumns(wi_daily_wq,
+#                                  p00530 = &quot;TSS&quot;,
+#                                  p00631 = &quot;InorganicN&quot;) %&gt;%
+#   select(-ends_with(&quot;_cd&quot;)) %&gt;%
+#   gather(key = &quot;parameter&quot;, value = &quot;value&quot;, -site_no, -Date)
+
+# Setup plot without facets
+p &lt;- ggplot(data = wi_daily_wq, aes(x = Date, y = value)) +
+  geom_point(aes(color = site_no)) +
+  theme_bw()
+
+# Now, we can look at the plot and see how it looks before we facet
+# Obviously, the scales are off because we are plotting flow with concentrations
+p</code></pre>
+<p><img src="/blog/2023-08-22-regmi-rfid_files/figure-html/follow%20the%20usgs%20example-1.png" width="672" /></p>
+<pre class="r"><code># Add vertical facets, aka divide the plot up vertically since they share an x axis
+p + facet_grid(parameter ~ .)</code></pre>
+<p><img src="/blog/2023-08-22-regmi-rfid_files/figure-html/follow%20the%20usgs%20example-2.png" width="672" /></p>
+<pre class="r"><code># Add vertical facets, but scale only the y axes freely
+p + facet_grid(parameter ~ ., scales = &quot;free_y&quot;)</code></pre>
+<p><img src="/blog/2023-08-22-regmi-rfid_files/figure-html/follow%20the%20usgs%20example-3.png" width="672" /></p>
+<pre class="r"><code>p + facet_grid(parameter ~ ., scales = &quot;free_y&quot;,
+               switch = &quot;y&quot;, # flip the facet labels along the y axis from the right side to the left
+               labeller = as_labeller( # redefine the text that shows up for the facets
+                 c(Flow = &quot;Flow, cfs&quot;, InorganicN = &quot;Inorganic N, mg/L&quot;, TSS = &quot;TSS, mg/L&quot;))) +
+  ylab(NULL) + # remove the word &quot;values&quot;
+  theme(strip.background = element_blank(), # remove the background
+        strip.placement = &quot;outside&quot;) # put labels to the left of the axis text</code></pre>
+<p><img src="/blog/2023-08-22-regmi-rfid_files/figure-html/follow%20the%20usgs%20example-4.png" width="672" /></p>
+<p>Because we are missing the feature table and some intermediary files; I asked Dr. Regmi if the previous researchers can send the raw sequences over so we can examine them.</p>
+<p>I also am able to facet the grpahs correctly and am waiting for them to render before sending to Dr. Regmi</p>
+</div>
+<div id="todos-for-tomorrow" class="section level3">
+<h3>Todos for Tomorrow</h3>
+<ul>
+<li><p>class</p>
+<ul>
+<li>read review 1&amp;2 sampleinf.pdf</li>
+<li>read first 2 chapters of dean and voss</li>
+<li>reach ch 1 and sections 2.2-2.3 of oehlerts book</li>
+<li>Complete homework 1 problems</li>
+</ul></li>
+<li><p>other sweden tasks</p>
+<ul>
+<li>github etc</li>
+</ul></li>
+<li><p>gg-catalog</p>
+<ul>
+<li>better formatted table so that the clarity is better.</li>
+<li>what ammino acids are being processed in each segment
+<ul>
+<li>valine is processed in the duodenum but not the jejunum</li>
+</ul></li>
+<li>gene network of all keggs in one network for each tissue</li>
+<li>go into the literature; gene catalogs for a biological process in an organism.
+<ul>
+<li>Need to compare/remove the common genes/processes</li>
+</ul></li>
+</ul></li>
+<li><p>Regmi</p>
+<ul>
+<li>Microbiome Work
+<ul>
+<li>Make script to get from raw data to QZAs</li>
+<li>Compile all params I’m gonna need</li>
+<li>Make a doc to import data into:
+<ul>
+<li>QIIME2</li>
+<li>Phyloseq
+-biopython</li>
+</ul></li>
+</ul></li>
+<li>RFID
+<ul>
+<li>combine global transition plots series onto one chart.</li>
+<li>Send updated charts.</li>
+</ul></li>
+</ul></li>
+<li><p>Read papers about microbiome analysis</p></li>
+<li><p>Look into ggpicrust2 for shailes</p>
+<ul>
+<li>Possibly meet Shailes on Monday</li>
+</ul></li>
+<li><p>Jackwood Blast</p>
+<ul>
+<li>meet Ben and Brian TBD</li>
+<li>try out a local blast search to see memory, cpu time limitation</li>
+</ul></li>
+</ul>
+</div>
+<div id="git-commits" class="section level3">
+<h3>Git Commits</h3>
+<div id="lab-notebook" class="section level4">
+<h4>Lab Notebook</h4>
+<pre class="bash"><code>c872825 - Benjamin Lorentz, Tue Aug 22 16:38:23 2023 -0400 : update static
+8772e0f - Benjamin Lorentz, Tue Aug 22 15:10:33 2023 -0400 : change today&#39;s page to rmd file
+0ae01c2 - Benjamin Lorentz, Tue Aug 22 10:11:25 2023 -0400 : add page for tuesday
+9e14e31 - Benjamin Lorentz, Mon Aug 21 17:11:50 2023 -0400 : final notes for monday</code></pre>
+</div>
+<div id="rfid" class="section level4">
+<h4>rfid</h4>
+<pre class="bash"><code>8f2db87 - Benjamin Lorentz, Tue Aug 22 16:59:10 2023 -0400 : update concat all the data set 2
+62c0289 - Benjamin Lorentz, Tue Aug 22 15:27:57 2023 -0400 : update concat all the dataset
+cc2ce10 - Benjamin Lorentz, Tue Aug 22 15:26:34 2023 -0400 : update concat all the data</code></pre>
+</div>
+</div>
