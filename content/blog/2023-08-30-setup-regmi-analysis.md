@@ -1,7 +1,7 @@
 ---
-title: '2023 08 30 Setup Regmi Analysis'
+title: 'Setup Regmi Analysis'
 date: 2023-08-30T13:27:10Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
    - "stat 8200"
