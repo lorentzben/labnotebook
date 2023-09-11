@@ -58,6 +58,7 @@ description: "Description for the page"
 - Keni from Sweden gave me some good ideas about how to approach the RFID data
   1. Clean the data by removing consecutive transitions into the same zone (possibly in a short amount of time. )
   2. Infill the sampling interval to a regular timeframe
+    - make a table of difftime to get the sampling distribution .
     - is this 1 sec, 5 sec? what is the current average duration between reads?
   3. Perform a time budget analysis to see what areas the birds spend the most time on average
     - I want to do an overall one and then one based on each day
@@ -83,3 +84,48 @@ slurm job: 24491311
 
 Homework 1
   - Solutions are posted, how did I do?
+ 
+  
+### Todos for Tomorrow
+
+- Sweden
+  - Consolidate notes for class
+  - Home range analysis for my turkey vulture dataset
+  - writeup
+  - read this paper: [https://pubmed.ncbi.nlm.nih.gov/31434210/](https://pubmed.ncbi.nlm.nih.gov/31434210/)
+  
+- Regmi
+  - RFID
+    - Create a plot that shows the average amount of time each bird spends in a zone
+    - Send to Regmi
+  - Microbiome Work
+    - Make script to get from raw data to QZAs
+    - Compile all params I'm gonna need
+    - Make a doc to import data into:
+      - QIIME2
+      - Phyloseq
+      -biopython
+  - Heat Stress
+    - Re-Run the heat stress analysis to see what the results look like
+    - New subset with 9-5/6pm
+    - Is there a better way to analyze this type of data
+      - What did Lars/Ana/the rest send?
+      
+- gg-catalog
+  - better formatted table so that the clarity is better.
+  - what ammino acids are being processed in each segment
+    - valine is processed in the duodenum but not the jejunum
+  - gene network of all keggs in one network for each tissue
+  - go into the literature; gene catalogs for a biological process in an organism.
+      - Need to compare/remove the common genes/processes 
+
+ 
+- Read papers about microbiome analysis
+
+- Look into ggpicrust2 for shailes
+  - Possibly meet Shailes on Monday
+  
+- Jackwood Blast
+  - meet Ben and Brian TBD
+  - try out a local blast search to see memory, cpu time limitation  
+ 
