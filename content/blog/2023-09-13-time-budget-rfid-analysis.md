@@ -75,7 +75,7 @@ Expense log
     - Are the time budgets for each activity level different based on the class? 
     
     
-### Remi Microbiome
+### Regmi Microbiome
 
 Where did that analysis leave off?
 
@@ -84,3 +84,10 @@ slurm job: 24491311
 
 ```bash
 ```
+
+### Aggrey Upload
+
+1. generate md5 sum file for each fastq.gz file in the dir 
+2. add to seq template excel
+3. add to md5 checksum excelfile
+
