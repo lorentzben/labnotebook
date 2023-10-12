@@ -1,0 +1,178 @@
+---
+title: 'Rfid Daily Time Budget'
+date: 2023-10-12T13:32:19Z
+draft: false
+meta_img: "images/image.png"
+tags:
+  - "stat 8200"
+  - "regmi-rfid"
+description: "Description for the page"
+---
+
+### Regmi RFID
+
+getTimeBudgetProp is broken:
+
+```{r eval=FALSE, include=TRUE}
+getTimeBudgetProp(room_2_all_room_day$day_int[[1]]$daily_int[[8]])
+          Interval.1.         Interval.2. X1 X2 X3
+1 2021-02-26 05:00:00 2021-02-26 21:59:55  0  0  0
+
+> room_2_all_room_day$day_int[[1]]$daily_int[[8]]
+          t1         t2 from_zone to_zone
+1 1614315600 1614336155      <NA>  bottom
+2 1614336155 1614340792    bottom  middle
+3 1614340792 1614346195    middle     top
+4 1614346195 1614349537       top  bottom
+5 1614349537 1614376795    bottom     top
+```
+
+
+There's also a second wierd issue in the timeToIntervals function:
+
+```{r eval=FALSE, include=TRUE}
+> room_2_all_room_day$day_int[[1]]$daily_int[[6]]
+          t1         t2 from_zone to_zone
+1 1614142800 1614160845      <NA>  bottom
+2 1614142800 1614178800      <NA>  bottom
+3 1614160845 1614203995    bottom     top
+4 1614178800 1614203995       top  bottom
+```
+
+
+```{r eval=FALSE}
+> data <- room_2_all_room_day$day_int[[1]]$by_day[[6]]
+
+```
+
+
+```{r eval=FALSE}
+
+checkNTrans <- function(big_data,id, len){
+  
+  return_table <- data.frame()
+  
+  for(i in 1:len){
+    data <- big_data$day_int[[id]]$by_day[[i]]
+    first_entry <- head(data,n=1)
+    transition_into <- data[which(data$value != dplyr::lag(data$value)),]
+    transition_from <- data[which(data$value != dplyr::lag(data$value))-1,]
+    last_entry <- tail(data,n=1)
+    
+    if((first_entry$value == last_entry$value) & length(transition_into$value) == 0 ){
+        count = 0
+        case <- "no_trans"
+    } else if(length(transition_into$value) == 1 &  tail(transition_into,n=1)$value == last_entry$value){
+      # if there is only one transition from beginning
+      count <- length(transition_into$value)
+      case <- "trans_into_len_one"
+    } else if(tail(transition_into,n=1)$value == last_entry$value){
+        # count length plus the first transition
+        # This does not catch the 2 transtion case
+        count <- length(transition_into$value)+1
+        case <- "len_trans_into_plus_first"
+    } else {
+      # transition from first to transition into and then into end since last
+      count <- length(transition_into$value) + 2
+      case <- "should_not_happen"
+    }
+    
+    new_row <- c(i, count,case)
+    return_table <- rbind(return_table, new_row)
+  }
+    
+  return(return_table)
+}
+  
+fake_data <- room_2_all_room_day$day_int[[2]]$by_day[[14]]
+two_trans <- bind_rows(fake_data[10,],transition_into,tail(fake_data,n=1))
+two_trans[3,2] <- "top"
+
+```
+
+if last_entry$zone == tail(transition_into, n=1)$zone{
+  set last entry of transition time as the last entry timepoint 
+} else {
+  append the last entry though should not be used since it would get caught by the which
+}
+
+Case 1 Many Transitions: 
+
+five_transitions <- room_2_all_room_day$day_int[[1]]$by_day[[1]]
+
+Case 2 No transitions during the day:
+
+zero_transitions <- room_2_all_room_day$day_int[[1]]$by_day[[27]]
+
+Case 3 One transition during the day:
+
+one_transition <- room_2_all_room_day$day_int[[2]]$by_day[[14]]
+
+Case 4 Two transitions during the day:
+
+
+
+
+Case 5 Three Transitions during the day: 
+
+three_transitions <- <- room_2_all_room_day$day_int[[1]]$by_day[[2]]
+
+
+
+
+
+### Shailes
+
+The normality assumption of the residuals should be pretty robust if the sample size is over 30 so the assumption that is more of concern is the non-constant variance of the residuals. 
+This is elaborated on in the responses in this forum post if you want to take a look. 
+
+If we can look at the data and make sure that the model assumptions are met, there is a qiime plugin that can run a two way anova and then pairwise t-tests outlined by this forum discussion https://forum.qiime2.org/t/how-to-analyse-data-using-anova-in-qiime2/10981/7
+
+If you want me to take a look at the data and get back to you with what I find you can send what you have over. 
+If you’d rather meet I am happy to do so also.
+
+### Nabin
+
+This is Nabin, graduate student of Dr. Prafulla Regmi. We talked last Friday about the random, mixed effect model. I want to provide you with short description of my trial. 
+
+The experimental was 1 factorial design, where treatment was the amount of feed given to birds. All brids were fed adlibitum for a week and there after only feed restriction was applied. The  standard group was fed adlibitum throughout the experiment. The intermediate and slow groups were feed restricted groups. The intermediate and slow groups were pair fed based on feed intake by standard on previous day, such that intermediate was fed 90% and slow was fed 80%. 
+
+The three treatments were replicated 8 times, such that there were 24 pens altogether. 30 birds were kept in each pen. 
+
+The data presented in the spreadsheet is the average bodyweight of birds in each pen taken at week 5 and week 6. 
+Pen ID = Pen where the birds were housed.
+Age = day of pen body weight taken
+Three treartment groups = Standard, intermediate and slow.
+BW = Bodyweight taken in Kilograms. 
+
+I can  analyze the BW against fixed effects - Treatment and Age using the lm or aov function in R. However, I want to use the PenID as the random effect and  haven't been successful. 
+
+I was wondering if you could help me in this regard. 
+I have attached the excel spreadsheet along with this email. 
+
+
+### Git Commit
+
+#### 2023 Nabin BW
+
+```bash
+a660221 - Benjamin Lorentz, Thu Oct 12 14:55:41 2023 -0400 : fix naming
+6b5bd9f - Benjamin Lorentz, Thu Oct 12 14:55:14 2023 -0400 : remove
+49fe35f - Benjamin Lorentz, Thu Oct 12 14:55:01 2023 -0400 : fix naming
+5e39b65 - Benjamin Lorentz, Thu Oct 12 14:54:01 2023 -0400 : added report for nabin
+2e9fa29 - Benjamin Lorentz, Thu Oct 12 14:23:02 2023 -0400 : update initial analysis
+bd77086 - Benjamin Lorentz, Thu Oct 12 12:11:49 2023 -0400 : update initial analysis
+1c0d650 - Benjamin Lorentz, Thu Oct 12 11:45:08 2023 -0400 : update code
+9a40462 - Benjamin Lorentz, Thu Oct 12 11:40:25 2023 -0400 : added data and first script
+8d0a4a2 - Ben Lorentz, Thu Oct 12 11:27:10 2023 -0400 : Initial commit
+```
+
+#### Regmi RFID 
+
+```bash
+e326920 - Benjamin Lorentz, Thu Oct 12 17:42:37 2023 -0400 : updates for thursday
+c09c4a0 - Benjamin Lorentz, Wed Oct 11 17:45:38 2023 -0400 : TODO in the nestedtimetointervals function
+```
+
+
+
