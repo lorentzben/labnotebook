@@ -77,12 +77,34 @@ one_transition <- room_2_all_room_day$day_int[[2]]$by_day[[14]]
 
 Case 4 Two transitions during the day:
 
-
-
-
 Case 5 Three Transitions during the day: 
 
 three_transitions <- <- room_2_all_room_day$day_int[[1]]$by_day[[2]]
 
 
+We have to figure out where time to Intervals breaks: 
 
+theres still an issue with the night data:
+
+```bash
+room_2_all_room_day$night_int[[1]]$daily_int[[4]]
+    t1         t2 from_zone to_zone
+1 <NA> 1613951995      <NA>  bottom
+> room_2_all_room_day$night_int[[1]]$daily_int[[5]]
+    t1         t2 from_zone to_zone
+1 <NA> 1614038395      <NA>  bottom
+> room_2_all_room_day$night_int[[1]]$daily_int[[6]]
+    t1         t2 from_zone to_zone
+1 <NA> 1614124795      <NA>  bottom
+```
+
+### Git commits
+
+#### RFID Analysis
+
+```bash
+5f78e21 - Benjamin Lorentz, Fri Oct 13 16:48:17 2023 -0400 : day nestedtime to intervals function works but issue with nighttime function
+97af93a - Benjamin Lorentz, Fri Oct 13 14:55:24 2023 -0400 : retooling the time to intervals function
+05c89bd - Benjamin Lorentz, Fri Oct 13 11:16:32 2023 -0400 : update just 2
+e326920 - Benjamin Lorentz, Thu Oct 12 17:42:37 2023 -0400 : updates for thursday
+```
