@@ -13,3 +13,4 @@ description: "Description for the page"
 
 I want to clean up the directory so that the analysis is easier to set up. 
 
+I have moved everything and now I need to translate the Rmd code into rscripts. 
