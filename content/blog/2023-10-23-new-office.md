@@ -13,8 +13,15 @@ description: "Description for the page"
 
 I have moved everything and now I need to translate the Rmd code into rscripts. 
 
-### STAT 8220 
+I have to add room 8 and room 11 code and then the all room analysis at the end for:
 
-#### Lab 7
+- activity
+- Time Budget analysis
+
+### STAT 8220  
 
 #### Homework 4
+
+I have one more part to problem 3 and then all of problem 4 to complete tomorrow and my hope is then to work on Dr. Regmi's stuff right after. 
+
+#### Lab 8
