@@ -24,4 +24,11 @@ I have to add room 8 and room 11 code and then the all room analysis at the end 
 
 I have one more part to problem 3 and then all of problem 4 to complete tomorrow and my hope is then to work on Dr. Regmi's stuff right after. 
 
+I completed Homework 4 and submitted a copy; may want to review results to double check
+
 #### Lab 8
+
+I finished and submitted lab 8. 
+
+
+Tomorrow we are getting back into the RFID analysis
