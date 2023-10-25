@@ -23,9 +23,10 @@ only made room 2 figures
 
 We need to update/fix the room 8 and 11 code
 
-rfid rev:
+This might be helpful: https://stackoverflow.com/questions/68082332/how-to-master-x-axis-breaks-in-ggplot
 
-```bash
-```
+Currently we are splitting out the analysis into separate scripts and then we can re-concat those tables together so that we can find the number of transitions.
+
+
   
 - Concat the tables for all rooms so that we can do a re-classification of activity level.
