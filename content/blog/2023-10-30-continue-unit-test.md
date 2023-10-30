@@ -52,3 +52,25 @@ rev: e7c02390a498023c571b97dba2ab1461eadf8370
 data <- d1t3_regular$sampled[[1]]
 timeToIntervals(data)
 ``
+
+
+### Git Commits
+
+#### Labnotebook
+
+```bash
+775f004 - Benjamin Lorentz, Mon Oct 30 11:15:43 2023 -0400 : add page for Monday
+```
+
+#### RFID
+
+```bash
+a2b6b1a - Benjamin Lorentz, Mon Oct 30 16:53:03 2023 -0400 : all of two days
+ac8f046 - Benjamin Lorentz, Mon Oct 30 16:08:51 2023 -0400 : update two day two trans
+423ff75 - Benjamin Lorentz, Mon Oct 30 15:14:08 2023 -0400 : add d2t1, some wierd timeseries cutoffs
+756f5d1 - Benjamin Lorentz, Mon Oct 30 14:24:53 2023 -0400 : update testRFID.r
+441ae23 - Benjamin Lorentz, Mon Oct 30 13:50:19 2023 -0400 : update rfid_functions.r
+e7c0239 - Benjamin Lorentz, Mon Oct 30 10:58:51 2023 -0400 : error
+d52f733 - Benjamin Lorentz, Mon Oct 30 10:18:23 2023 -0400 : d1t2 calculated
+8abf9c7 - Benjamin Lorentz, Mon Oct 30 10:02:33 2023 -0400 : Mismatch error in 457
+```
