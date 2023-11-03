@@ -1,10 +1,12 @@
 ---
-title: '2023 11 03 Joint Analysis'
+title: 'Joint Analysis'
 date: 2023-11-03T13:28:17Z
-draft: true
+draft: false
 meta_img: "images/image.png"
 tags:
-  - "one tag"
-  - "another tag"
+  - "regmi-rfid"
 description: "Description for the page"
 ---
+
+### RFID
+
