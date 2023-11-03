@@ -121,3 +121,22 @@ Script finished
 ```
 
 Why aren't intermediates written to disk?
+
+code is acting wierd so we reverted to commit cd10867d594c9fc0daa991ec291954ecdd067bae
+
+```bash
+it passes
+```
+
+If that works without a hitch then we can update cutoffs and if it still works then merge to main
+
+rev: dafa30f236f13deba6f0a95c2f6f5d8ff71fc75e
+
+```bash
+driver.sh OK
+test.sh OK
+```
+
+The only thing is a weird artificat if there is a 1 for the first day, I changed line 200 to be 0,1,2,3 as opposed to 0,1,2,3
+
+I was able to fix the code up and have started the analysis to compare high and low activity nesting zones which we can pick up on Monday
